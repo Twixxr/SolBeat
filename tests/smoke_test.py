@@ -61,6 +61,15 @@ FAKE_DEX_VOLUME = {
 
 FAKE_FEES = {"total24h": 2_500_000, "change_1d": -3.1}
 
+FAKE_PROTOCOLS = [
+    {"name": "Jupiter", "category": "DEX Aggregator", "chainTvls": {"Solana": 900_000_000},
+     "change_1d": 2.1, "url": "https://jup.ag"},
+    {"name": "Kamino", "category": "Lending", "chainTvls": {"Solana": 600_000_000},
+     "change_1d": -1.4, "url": "https://kamino.finance"},
+    {"name": "Aave", "category": "Lending", "chainTvls": {"Ethereum": 5_000_000_000},
+     "change_1d": 0.3, "url": "https://aave.com"},  # no Solana entry -> should be excluded
+]
+
 FAKE_COINGECKO_PRICE = {"solana": {"usd": 210.5, "usd_24h_change": 12.4, "usd_24h_vol": 3_000_000_000,
                                     "usd_market_cap": 100_000_000_000}}
 FAKE_COINGECKO_TREND = {"prices": [[1_700_000_000_000 + i * 86400000, 200 + i] for i in range(7)]}
@@ -93,6 +102,8 @@ def fake_get_json(url, timeout=None, retries=None):
         return FAKE_DEX_VOLUME
     if "overview/fees" in url:
         return FAKE_FEES
+    if "/protocols" in url:
+        return FAKE_PROTOCOLS
     if "simple/price" in url:
         return FAKE_COINGECKO_PRICE
     if "market_chart" in url:
@@ -146,6 +157,9 @@ def main():
     assert report["validators"]["active_count"] == 30
     assert report["validators"]["delinquent_count"] == 1
     assert report["defi"]["tvl"]["tvl_usd"] == 4_500_000_000
+    assert report["defi"]["top_protocols"]["protocol_count"] == 2  # Aave excluded (no Solana chainTvl)
+    assert report["defi"]["top_protocols"]["protocols"][0]["name"] == "Jupiter"
+    assert "history_series" in payload and len(payload["history_series"]) >= 5
     assert report["market"]["price"]["price_usd"] == 210.5
     assert any(a["metric"] == "avg_tps" for a in anomalies), "expected a TPS anomaly to fire"
     assert any(a["metric"] == "sol_price_change_pct_24h" for a in anomalies), "expected a price-move anomaly to fire"

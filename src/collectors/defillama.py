@@ -94,10 +94,53 @@ def collect_fees_and_rev():
     }
 
 
+def collect_top_protocols(limit=15):
+    """
+    Break Solana chain TVL down by individual protocol (e.g. Jupiter,
+    Kamino, Marinade...) rather than just the aggregate chain total.
+
+    Note on "coins": DeFiLlama does not expose a single keyless endpoint
+    for "TVL by underlying token across an entire chain" — that requires
+    per-protocol token-breakdown calls (one request per protocol, which
+    would quickly hit rate limits across hundreds of Solana protocols).
+    As a practical proxy, we surface the pegged-asset breakdown from the
+    stablecoin collector (collect_stablecoin_supply) as the "by coin"
+    view, and protocol-level TVL here as the "by protocol" view — matching
+    the two most useful cuts DeFiLlama's own UI leads with.
+    """
+    data, err = _safe_get(config.DEFILLAMA_PROTOCOLS_URL)
+    if err or not data:
+        return {"_errors": [err] if err else ["empty response"]}
+
+    solana_protocols = []
+    for p in data:
+        chain_tvls = p.get("chainTvls", {})
+        solana_tvl = chain_tvls.get("Solana")
+        if solana_tvl is None:
+            continue
+        solana_protocols.append({
+            "name": p.get("name"),
+            "category": p.get("category"),
+            "tvl_usd": round(solana_tvl, 2),
+            "change_1d_pct": p.get("change_1d"),
+            "url": p.get("url"),
+        })
+
+    solana_protocols.sort(key=lambda p: p["tvl_usd"], reverse=True)
+    top = solana_protocols[:limit]
+
+    total_tvl = sum(p["tvl_usd"] for p in solana_protocols)
+    for p in top:
+        p["pct_of_solana_tvl"] = round(100 * p["tvl_usd"] / total_tvl, 2) if total_tvl else None
+
+    return {"protocols": top, "protocol_count": len(solana_protocols)}
+
+
 def collect_all():
     return {
         "tvl": collect_chain_tvl(),
         "stablecoins": collect_stablecoin_supply(),
         "dex_volume": collect_dex_volume(),
         "fees_and_rev": collect_fees_and_rev(),
+        "top_protocols": collect_top_protocols(),
     }

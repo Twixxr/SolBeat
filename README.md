@@ -17,6 +17,15 @@ A no-API-key, low-dependency pipeline that:
 4. Writes three output formats: `data/latest.json` (machine-readable), `data/latest.md` (human-readable), and `dashboard/data.json` (feeds the dark-theme HTML dashboard).
 5. Repeats automatically on a schedule via **GitHub Actions**, committing fresh data and redeploying the dashboard to **GitHub Pages** — no server to run or maintain.
 
+The dashboard (`dashboard/index.html`) is a **tabbed, chart-driven interface**:
+- **Overview** — top-line network + economic stats
+- **Network** — TPS trend, slot time, estimated daily transaction trend (charted from rolling history)
+- **Validators** — stake distribution chart with a dropdown to show top 10/20/all fetched validators, plus the full table
+- **DeFi** — chain TVL trend, TVL split by protocol (bar chart + table, sourced from DeFiLlama's protocol list), and stablecoin supply split by peg type as the closest available keyless "by coin" cut
+- **Ecosystem** — the Twitter/X watchlist with direct clickable links to each account, plus upcoming upgrades
+
+It also auto-refreshes every 30 seconds in the browser (re-fetching `data.json`), so it feels live between the underlying ~30-minute data refreshes.
+
 Every requirement in the bounty's "No API Keys/Dependencies" preference is honored: the entire data-collection path (RPC + DeFiLlama + CoinGecko) runs on Python's standard library (`urllib`) with zero required third-party packages. `requirements.txt` is intentionally empty for that reason.
 
 ---
@@ -153,5 +162,7 @@ solpulse-canada/
 ## Known limitations
 
 - **solana.com/data** has no stable public API — covered on a best-effort basis (see table above).
-- **Twitter/X live content** requires the optional `snscrape` dependency and can break if X changes their frontend; the curated watchlist is always present as a fallback.
+- **Twitter/X live content** requires the optional `snscrape` dependency and can break if X changes their frontend; the curated watchlist is always present as a fallback, with direct clickable links to each account.
+- **Unique/daily active wallet counts** are not available from any keyless source used here (Solana RPC, DeFiLlama, CoinGecko). Reliable unique-address tracking requires a paid indexer (Dune, Flipside, Artemis, etc.), which conflicts with the bounty's "no API keys" preference. The dashboard's Network tab states this explicitly rather than showing a fabricated number, and instead charts an **estimated daily transaction trend** (avg TPS × seconds/day) as the closest available proxy.
+- **"TVL split by coin"** — DeFiLlama doesn't expose a single keyless "TVL by underlying token across a chain" endpoint (it would require one API call per protocol, which risks rate-limiting). The DeFi tab instead shows stablecoin supply split by peg type as the closest available keyless coin-level cut, documented inline in the dashboard itself.
 - **Public RPC/CoinGecko rate limits** — the default 30-minute refresh interval comfortably respects free-tier limits; if you tighten it significantly, consider pointing `SOLANA_RPC_URL` at a private RPC provider (env var, still no code changes needed).

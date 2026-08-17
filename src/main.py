@@ -26,6 +26,27 @@ from .anomaly import detect
 from .report.build_markdown import render as render_markdown
 
 
+def _load_history_series(max_points=96):
+    """
+    Trimmed time series (most recent `max_points` snapshots, ~48 hours at
+    the default 30-minute refresh interval) pulled from history.jsonl, for
+    the dashboard's trend charts (network activity, TVL, price over time).
+    """
+    if not os.path.exists(config.HISTORY_FILE):
+        return []
+    entries = []
+    with open(config.HISTORY_FILE, "r") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                entries.append(json.loads(line))
+            except json.JSONDecodeError:
+                continue
+    return entries[-max_points:]
+
+
 def run_once():
     print(f"[{time.strftime('%Y-%m-%d %H:%M:%S')}] Collecting Solana ecosystem data…")
 
@@ -36,7 +57,7 @@ def run_once():
     os.makedirs(config.OUTPUT_DIR, exist_ok=True)
     os.makedirs(config.DASHBOARD_DIR, exist_ok=True)
 
-    payload = {"report": report, "anomalies": anomalies}
+    payload = {"report": report, "anomalies": anomalies, "history_series": _load_history_series()}
 
     with open(config.LATEST_JSON, "w") as f:
         json.dump(payload, f, indent=2, default=str)

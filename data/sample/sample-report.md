@@ -1,10 +1,9 @@
 # Solana Ecosystem Report — SolPulse Canada
 
-_Generated: 2026-08-17T05:45:34.641554+00:00 (UTC)_
+_Generated: 2026-08-17T18:36:06.805859+00:00 (UTC)_
 
 ## Alerts
 
-- 🟠 **WARNING** — TPS dropped 26.4% vs. recent baseline (2944 vs. ~4000)
 - 🔵 **INFO** — SOL price is up 12.4% in 24h
 
 ## Network Performance

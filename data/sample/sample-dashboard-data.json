@@ -1,8 +1,8 @@
 {
   "report": {
     "meta": {
-      "generated_at_utc": "2026-08-17T05:45:34.641554+00:00",
-      "generated_at_unix": 1786945534,
+      "generated_at_utc": "2026-08-17T18:36:06.805859+00:00",
+      "generated_at_unix": 1786991766,
       "generator": "SolPulse Canada",
       "version": "1.0"
     },
@@ -21,7 +21,7 @@
       "min_tps": 1000.0,
       "samples_used": 3,
       "avg_slot_time_ms": 401.8,
-      "collected_at_unix": 1786945534
+      "collected_at_unix": 1786991766
     },
     "validators": {
       "active_count": 30,
@@ -232,6 +232,27 @@
       "fees_and_rev": {
         "chain_revenue_24h_usd": 2500000,
         "chain_revenue_change_pct_24h": -3.1
+      },
+      "top_protocols": {
+        "protocols": [
+          {
+            "name": "Jupiter",
+            "category": "DEX Aggregator",
+            "tvl_usd": 900000000,
+            "change_1d_pct": 2.1,
+            "url": "https://jup.ag",
+            "pct_of_solana_tvl": 60.0
+          },
+          {
+            "name": "Kamino",
+            "category": "Lending",
+            "tvl_usd": 600000000,
+            "change_1d_pct": -1.4,
+            "url": "https://kamino.finance",
+            "pct_of_solana_tvl": 40.0
+          }
+        ],
+        "protocol_count": 2
       }
     },
     "market": {
@@ -345,18 +366,233 @@
   },
   "anomalies": [
     {
-      "severity": "warning",
-      "metric": "avg_tps",
-      "message": "TPS dropped 26.4% vs. recent baseline (2944 vs. ~4000)",
-      "value": 2944.44,
-      "baseline": 4000.0
-    },
-    {
       "severity": "info",
       "metric": "sol_price_change_pct_24h",
       "message": "SOL price is up 12.4% in 24h",
       "value": 12.4,
       "baseline": 0
+    }
+  ],
+  "history_series": [
+    {
+      "generated_at_unix": 1700000000,
+      "network_performance": {
+        "avg_tps": 3800,
+        "avg_slot_time_ms": 405
+      },
+      "validators": {
+        "delinquent_stake_pct": 1.0
+      },
+      "defi": {
+        "tvl": {
+          "tvl_usd": 4000000000
+        }
+      },
+      "market": {
+        "price": {
+          "price_usd": 190
+        }
+      }
+    },
+    {
+      "generated_at_unix": 1700001800,
+      "network_performance": {
+        "avg_tps": 3815,
+        "avg_slot_time_ms": 406
+      },
+      "validators": {
+        "delinquent_stake_pct": 1.0
+      },
+      "defi": {
+        "tvl": {
+          "tvl_usd": 4020000000
+        }
+      },
+      "market": {
+        "price": {
+          "price_usd": 191
+        }
+      }
+    },
+    {
+      "generated_at_unix": 1700003600,
+      "network_performance": {
+        "avg_tps": 3830,
+        "avg_slot_time_ms": 407
+      },
+      "validators": {
+        "delinquent_stake_pct": 1.0
+      },
+      "defi": {
+        "tvl": {
+          "tvl_usd": 4040000000
+        }
+      },
+      "market": {
+        "price": {
+          "price_usd": 192
+        }
+      }
+    },
+    {
+      "generated_at_unix": 1700005400,
+      "network_performance": {
+        "avg_tps": 3845,
+        "avg_slot_time_ms": 408
+      },
+      "validators": {
+        "delinquent_stake_pct": 1.0
+      },
+      "defi": {
+        "tvl": {
+          "tvl_usd": 4060000000
+        }
+      },
+      "market": {
+        "price": {
+          "price_usd": 193
+        }
+      }
+    },
+    {
+      "generated_at_unix": 1700007200,
+      "network_performance": {
+        "avg_tps": 3860,
+        "avg_slot_time_ms": 409
+      },
+      "validators": {
+        "delinquent_stake_pct": 1.0
+      },
+      "defi": {
+        "tvl": {
+          "tvl_usd": 4080000000
+        }
+      },
+      "market": {
+        "price": {
+          "price_usd": 194
+        }
+      }
+    },
+    {
+      "generated_at_unix": 1700009000,
+      "network_performance": {
+        "avg_tps": 3875,
+        "avg_slot_time_ms": 410
+      },
+      "validators": {
+        "delinquent_stake_pct": 1.0
+      },
+      "defi": {
+        "tvl": {
+          "tvl_usd": 4100000000
+        }
+      },
+      "market": {
+        "price": {
+          "price_usd": 195
+        }
+      }
+    },
+    {
+      "generated_at_unix": 1700010800,
+      "network_performance": {
+        "avg_tps": 3890,
+        "avg_slot_time_ms": 411
+      },
+      "validators": {
+        "delinquent_stake_pct": 1.0
+      },
+      "defi": {
+        "tvl": {
+          "tvl_usd": 4120000000
+        }
+      },
+      "market": {
+        "price": {
+          "price_usd": 196
+        }
+      }
+    },
+    {
+      "generated_at_unix": 1700012600,
+      "network_performance": {
+        "avg_tps": 3905,
+        "avg_slot_time_ms": 412
+      },
+      "validators": {
+        "delinquent_stake_pct": 1.0
+      },
+      "defi": {
+        "tvl": {
+          "tvl_usd": 4140000000
+        }
+      },
+      "market": {
+        "price": {
+          "price_usd": 197
+        }
+      }
+    },
+    {
+      "generated_at_unix": 1700014400,
+      "network_performance": {
+        "avg_tps": 3920,
+        "avg_slot_time_ms": 413
+      },
+      "validators": {
+        "delinquent_stake_pct": 1.0
+      },
+      "defi": {
+        "tvl": {
+          "tvl_usd": 4160000000
+        }
+      },
+      "market": {
+        "price": {
+          "price_usd": 198
+        }
+      }
+    },
+    {
+      "generated_at_unix": 1700016200,
+      "network_performance": {
+        "avg_tps": 3935,
+        "avg_slot_time_ms": 414
+      },
+      "validators": {
+        "delinquent_stake_pct": 1.0
+      },
+      "defi": {
+        "tvl": {
+          "tvl_usd": 4180000000
+        }
+      },
+      "market": {
+        "price": {
+          "price_usd": 199
+        }
+      }
+    },
+    {
+      "generated_at_unix": 1786991766,
+      "network_performance": {
+        "avg_tps": 2944.44,
+        "avg_slot_time_ms": 401.8
+      },
+      "validators": {
+        "delinquent_stake_pct": 0.166
+      },
+      "defi": {
+        "tvl": {
+          "tvl_usd": 4500000000
+        }
+      },
+      "market": {
+        "price": {
+          "price_usd": 210.5
+        }
+      }
     }
   ]
 }
