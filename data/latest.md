@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolPulse Canada
 
-_Generated: 2026-08-17T19:05:15.322491+00:00 (UTC)_
+_Generated: 2026-08-17T19:33:49.719125+00:00 (UTC)_
 
 ## Alerts
 
@@ -11,69 +11,69 @@ _Generated: 2026-08-17T19:05:15.322491+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 439,906,700 |
-| Block height | 417,957,153 |
+| Current slot | 439,910,819 |
+| Block height | 417,961,264 |
 | Epoch | 1018 |
-| Epoch progress | 30.25% |
-| Current TPS | 4,277.75 |
-| Avg TPS (~30 samples) | 4,436.59 |
-| Max / Min TPS | 5,388.03 / 3,777.08 |
-| Avg slot time | 416.8 ms |
+| Epoch progress | 31.21% |
+| Current TPS | 4,260.97 |
+| Avg TPS (~30 samples) | 4,408.22 |
+| Max / Min TPS | 4,878.53 / 3,934.02 |
+| Avg slot time | 415.9 ms |
 
 ## Validator Status
 
 | Metric | Value |
 |---|---|
-| Active validators | 688 |
-| Delinquent validators | 7 |
-| Delinquent (% of validator count) | 1.01% |
-| Delinquent (% of active stake) | 0.08% |
-| Total active stake | 435,314,415 SOL |
-| Validators controlling 33% of stake | 18 |
+| Active validators | 687 |
+| Delinquent validators | 8 |
+| Delinquent (% of validator count) | 1.15% |
+| Delinquent (% of active stake) | 0.23% |
+| Total active stake | 434,672,739 SOL |
+| Validators controlling 33% of stake | 17 |
 
 ### Top 20 Validators by Stake
 
 | # | Vote Account | Stake (SOL) | Commission | Last Vote |
 |---|---|---|---|---|
-| 1 | `CcaHc2L43ZWjwCHART3oZoJvHLAe9hzT2DJNUpBzoTN1` | 17,091,057 | 7% | 439906700 |
-| 2 | `he1iusunGwqrNtafDtLdhsUQDFvo13z9sUa36PauBtk` | 16,003,006 | 0% | 439906700 |
-| 3 | `CatzoSMUkTRidT5DwBxAC2pEtnwMBTpkCepHkFgZDiqb` | 12,495,360 | 5% | 439906700 |
-| 4 | `3N7s9zXMZ4QqvHQR15t5GNHyqc89KduzMP7423eWiD5g` | 12,259,520 | 0% | 439906700 |
-| 5 | `26pV97Ce83ZQ6Kz9XT4td8tdoUFPTng8Fb8gPyc53dJx` | 9,203,436 | 7% | 439906700 |
-| 6 | `51JBzSTU5rAM8gLAVQKgp4WoZerQcSqWC7BitBzgUNAm` | 8,992,381 | 10% | 439906700 |
-| 7 | `8GbwASqdpw4dVcwbWUxbHXMrjyQx2aKkoBR5H1GJF8iD` | 8,305,834 | 0% | 439906700 |
-| 8 | `9QU2QSxhb24FUX3Tu2FpczXjpK3VYrvRudywSZaM29mF` | 7,983,993 | 7% | 439906700 |
-| 9 | `CvSb7wdQAFpHuSpTYTJnX5SYH4hCfQ9VuGnqrKaKwycB` | 7,342,590 | 5% | 439906700 |
-| 10 | `DumiCKHVqoCQKD8roLApzR5Fit8qGV5fVQsJV9sTZk4a` | 6,588,037 | 0% | 439906700 |
-| 11 | `HZKopZYvv8v6un2H6KUNVQCnK5zM9emKKezvqhTBSpEc` | 6,122,617 | 100% | 439906700 |
-| 12 | `3JD3jMmnR6g88qff2WZ3cMHJRjJMUk9yVZtmYTYeFrXf` | 5,994,422 | 0% | 439906700 |
-| 13 | `DdCNGDpP7qMgoAy6paFzhhak2EeyCZcgjH7ak5u5v28m` | 5,971,637 | 5% | 439906700 |
-| 14 | `GHViLgbrJdZDPb6sphRbeuPNM9cmjsFuGWzrTF1sKF5n` | 5,811,980 | 100% | 439906700 |
-| 15 | `HimWQUK61d9wxhw7EYu9jUje7xQiDs4jKexaTSvuCmXE` | 4,660,187 | 8% | 439906700 |
-| 16 | `FKsC411dik9ktS6xPADxs4Fk2SCENvAiuccQHLAPndvk` | 4,571,816 | 7% | 439906700 |
-| 17 | `3ZYJxzCeweSoh2Jj7oCgencFs9y27iKmXJeqYapje1cj` | 4,110,113 | 100% | 439906700 |
-| 18 | `AZoCYB4VgoM9DR9f1ZFcBn8xPSbtbqoxZnKJR7tkvEoX` | 4,052,233 | 100% | 439906700 |
-| 19 | `G9x1mqewTeVnXLmv3FamYD5tq1AdS395RHH3MLQPj6TY` | 4,037,568 | 100% | 439906700 |
-| 20 | `EcEowA4GKDsdVBF9PNAZa6c9M4WgYG8y4GnpZSUaqioS` | 4,013,265 | 100% | 439906700 |
+| 1 | `CcaHc2L43ZWjwCHART3oZoJvHLAe9hzT2DJNUpBzoTN1` | 17,091,057 | 7% | 439910819 |
+| 2 | `he1iusunGwqrNtafDtLdhsUQDFvo13z9sUa36PauBtk` | 16,003,006 | 0% | 439910819 |
+| 3 | `CatzoSMUkTRidT5DwBxAC2pEtnwMBTpkCepHkFgZDiqb` | 12,495,360 | 5% | 439910819 |
+| 4 | `3N7s9zXMZ4QqvHQR15t5GNHyqc89KduzMP7423eWiD5g` | 12,259,520 | 0% | 439910819 |
+| 5 | `26pV97Ce83ZQ6Kz9XT4td8tdoUFPTng8Fb8gPyc53dJx` | 9,203,436 | 7% | 439910819 |
+| 6 | `51JBzSTU5rAM8gLAVQKgp4WoZerQcSqWC7BitBzgUNAm` | 8,992,381 | 10% | 439910819 |
+| 7 | `8GbwASqdpw4dVcwbWUxbHXMrjyQx2aKkoBR5H1GJF8iD` | 8,305,834 | 0% | 439910819 |
+| 8 | `9QU2QSxhb24FUX3Tu2FpczXjpK3VYrvRudywSZaM29mF` | 7,983,993 | 7% | 439910819 |
+| 9 | `CvSb7wdQAFpHuSpTYTJnX5SYH4hCfQ9VuGnqrKaKwycB` | 7,342,590 | 5% | 439910819 |
+| 10 | `DumiCKHVqoCQKD8roLApzR5Fit8qGV5fVQsJV9sTZk4a` | 6,588,037 | 0% | 439910819 |
+| 11 | `HZKopZYvv8v6un2H6KUNVQCnK5zM9emKKezvqhTBSpEc` | 6,122,617 | 100% | 439910819 |
+| 12 | `3JD3jMmnR6g88qff2WZ3cMHJRjJMUk9yVZtmYTYeFrXf` | 5,994,422 | 0% | 439910819 |
+| 13 | `DdCNGDpP7qMgoAy6paFzhhak2EeyCZcgjH7ak5u5v28m` | 5,971,637 | 5% | 439910819 |
+| 14 | `GHViLgbrJdZDPb6sphRbeuPNM9cmjsFuGWzrTF1sKF5n` | 5,811,980 | 100% | 439910819 |
+| 15 | `HimWQUK61d9wxhw7EYu9jUje7xQiDs4jKexaTSvuCmXE` | 4,660,187 | 8% | 439910819 |
+| 16 | `FKsC411dik9ktS6xPADxs4Fk2SCENvAiuccQHLAPndvk` | 4,571,816 | 7% | 439910819 |
+| 17 | `3ZYJxzCeweSoh2Jj7oCgencFs9y27iKmXJeqYapje1cj` | 4,110,113 | 100% | 439910819 |
+| 18 | `AZoCYB4VgoM9DR9f1ZFcBn8xPSbtbqoxZnKJR7tkvEoX` | 4,052,233 | 100% | 439910819 |
+| 19 | `G9x1mqewTeVnXLmv3FamYD5tq1AdS395RHH3MLQPj6TY` | 4,037,568 | 100% | 439910819 |
+| 20 | `EcEowA4GKDsdVBF9PNAZa6c9M4WgYG8y4GnpZSUaqioS` | 4,013,265 | 100% | 439910819 |
 
 ## SOL Supply
 
-- Total: 632,388,262 SOL
-- Circulating: 582,896,002 SOL
-- Non-circulating: 49,492,259 SOL
+- Total: N/A SOL
+- Circulating: N/A SOL
+- Non-circulating: N/A SOL
 
 ## Economic Indicators
 
 | Metric | Value |
 |---|---|
 | SOL price | $76 |
-| SOL 24h change | +0.83% |
-| SOL 24h volume | $1,320,463,930 |
-| SOL market cap | $44,176,843,069 |
-| Solana chain TVL | $4,849,180,219 |
-| TVL change (24h) | +0.84% |
-| TVL change (7d) | -0.10% |
-| Stablecoin supply on Solana | $15,365,332,418 |
+| SOL 24h change | +0.66% |
+| SOL 24h volume | $1,327,467,142 |
+| SOL market cap | $44,157,463,999 |
+| Solana chain TVL | $4,851,287,128 |
+| TVL change (24h) | +0.88% |
+| TVL change (7d) | -0.06% |
+| Stablecoin supply on Solana | $15,376,094,870 |
 | DEX volume (24h) | $1,055,467,634 |
 | Chain revenue / REV proxy (24h) | $3,350,801 |
 
@@ -83,14 +83,14 @@ _Generated: 2026-08-17T19:05:15.322491+00:00 (UTC)_
 |---|---|
 | PumpSwap | $502,558,096 |
 | Orca DEX | $97,211,854 |
+| Raydium AMM | $78,795,839 |
 | BisonFi | $78,496,252 |
-| Raydium AMM | $77,880,134 |
-| Manifest Trade | $72,174,360 |
+| Manifest Trade | $77,268,956 |
 | pump.fun | $65,310,815 |
 | HumidiFi | $53,101,926 |
 | Axiom | $48,693,821 |
 | Meteora DLMM | $48,303,548 |
-| Deriverse | $27,916,412 |
+| Deriverse | $28,453,426 |
 
 ## Ecosystem & Community Watchlist
 
