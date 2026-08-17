@@ -1,0 +1,362 @@
+{
+  "report": {
+    "meta": {
+      "generated_at_utc": "2026-08-17T05:45:34.641554+00:00",
+      "generated_at_unix": 1786945534,
+      "generator": "SolPulse Canada",
+      "version": "1.0"
+    },
+    "network_performance": {
+      "health": "ok",
+      "current_slot": 290123456,
+      "block_time_unix": 1700600000,
+      "epoch": 600,
+      "slot_index": 123456,
+      "slots_in_epoch": 432000,
+      "epoch_progress_pct": 28.58,
+      "block_height": 290000000,
+      "current_tps": 4000.0,
+      "avg_tps": 2944.44,
+      "max_tps": 4000.0,
+      "min_tps": 1000.0,
+      "samples_used": 3,
+      "avg_slot_time_ms": 401.8,
+      "collected_at_unix": 1786945534
+    },
+    "validators": {
+      "active_count": 30,
+      "delinquent_count": 1,
+      "total_validator_count": 31,
+      "delinquent_pct_of_validators": 3.23,
+      "total_active_stake_sol": 300000.0,
+      "total_delinquent_stake_sol": 500.0,
+      "delinquent_stake_pct": 0.166,
+      "top_validators": [
+        {
+          "vote_pubkey": "Vote0",
+          "node_pubkey": "Node0",
+          "activated_stake_sol": 10000.0,
+          "commission_pct": 5,
+          "last_vote": 12345,
+          "root_slot": 12300
+        },
+        {
+          "vote_pubkey": "Vote1",
+          "node_pubkey": "Node1",
+          "activated_stake_sol": 10000.0,
+          "commission_pct": 5,
+          "last_vote": 12345,
+          "root_slot": 12300
+        },
+        {
+          "vote_pubkey": "Vote2",
+          "node_pubkey": "Node2",
+          "activated_stake_sol": 10000.0,
+          "commission_pct": 5,
+          "last_vote": 12345,
+          "root_slot": 12300
+        },
+        {
+          "vote_pubkey": "Vote3",
+          "node_pubkey": "Node3",
+          "activated_stake_sol": 10000.0,
+          "commission_pct": 5,
+          "last_vote": 12345,
+          "root_slot": 12300
+        },
+        {
+          "vote_pubkey": "Vote4",
+          "node_pubkey": "Node4",
+          "activated_stake_sol": 10000.0,
+          "commission_pct": 5,
+          "last_vote": 12345,
+          "root_slot": 12300
+        },
+        {
+          "vote_pubkey": "Vote5",
+          "node_pubkey": "Node5",
+          "activated_stake_sol": 10000.0,
+          "commission_pct": 5,
+          "last_vote": 12345,
+          "root_slot": 12300
+        },
+        {
+          "vote_pubkey": "Vote6",
+          "node_pubkey": "Node6",
+          "activated_stake_sol": 10000.0,
+          "commission_pct": 5,
+          "last_vote": 12345,
+          "root_slot": 12300
+        },
+        {
+          "vote_pubkey": "Vote7",
+          "node_pubkey": "Node7",
+          "activated_stake_sol": 10000.0,
+          "commission_pct": 5,
+          "last_vote": 12345,
+          "root_slot": 12300
+        },
+        {
+          "vote_pubkey": "Vote8",
+          "node_pubkey": "Node8",
+          "activated_stake_sol": 10000.0,
+          "commission_pct": 5,
+          "last_vote": 12345,
+          "root_slot": 12300
+        },
+        {
+          "vote_pubkey": "Vote9",
+          "node_pubkey": "Node9",
+          "activated_stake_sol": 10000.0,
+          "commission_pct": 5,
+          "last_vote": 12345,
+          "root_slot": 12300
+        },
+        {
+          "vote_pubkey": "Vote10",
+          "node_pubkey": "Node10",
+          "activated_stake_sol": 10000.0,
+          "commission_pct": 5,
+          "last_vote": 12345,
+          "root_slot": 12300
+        },
+        {
+          "vote_pubkey": "Vote11",
+          "node_pubkey": "Node11",
+          "activated_stake_sol": 10000.0,
+          "commission_pct": 5,
+          "last_vote": 12345,
+          "root_slot": 12300
+        },
+        {
+          "vote_pubkey": "Vote12",
+          "node_pubkey": "Node12",
+          "activated_stake_sol": 10000.0,
+          "commission_pct": 5,
+          "last_vote": 12345,
+          "root_slot": 12300
+        },
+        {
+          "vote_pubkey": "Vote13",
+          "node_pubkey": "Node13",
+          "activated_stake_sol": 10000.0,
+          "commission_pct": 5,
+          "last_vote": 12345,
+          "root_slot": 12300
+        },
+        {
+          "vote_pubkey": "Vote14",
+          "node_pubkey": "Node14",
+          "activated_stake_sol": 10000.0,
+          "commission_pct": 5,
+          "last_vote": 12345,
+          "root_slot": 12300
+        },
+        {
+          "vote_pubkey": "Vote15",
+          "node_pubkey": "Node15",
+          "activated_stake_sol": 10000.0,
+          "commission_pct": 5,
+          "last_vote": 12345,
+          "root_slot": 12300
+        },
+        {
+          "vote_pubkey": "Vote16",
+          "node_pubkey": "Node16",
+          "activated_stake_sol": 10000.0,
+          "commission_pct": 5,
+          "last_vote": 12345,
+          "root_slot": 12300
+        },
+        {
+          "vote_pubkey": "Vote17",
+          "node_pubkey": "Node17",
+          "activated_stake_sol": 10000.0,
+          "commission_pct": 5,
+          "last_vote": 12345,
+          "root_slot": 12300
+        },
+        {
+          "vote_pubkey": "Vote18",
+          "node_pubkey": "Node18",
+          "activated_stake_sol": 10000.0,
+          "commission_pct": 5,
+          "last_vote": 12345,
+          "root_slot": 12300
+        },
+        {
+          "vote_pubkey": "Vote19",
+          "node_pubkey": "Node19",
+          "activated_stake_sol": 10000.0,
+          "commission_pct": 5,
+          "last_vote": 12345,
+          "root_slot": 12300
+        }
+      ],
+      "stake_concentration": {
+        "validators_to_control_33pct": 10
+      }
+    },
+    "supply": {
+      "total_sol": 588000000.0,
+      "circulating_sol": 470000000.0,
+      "non_circulating_sol": 118000000.0
+    },
+    "defi": {
+      "tvl": {
+        "tvl_usd": 4500000000,
+        "as_of_unix": 1700600000,
+        "tvl_change_pct_24h": 0.0,
+        "tvl_change_pct_7d": 15.38
+      },
+      "stablecoins": {
+        "total_stablecoin_supply_usd": 8500000000,
+        "breakdown": {
+          "peggedUSD": 8500000000
+        }
+      },
+      "dex_volume": {
+        "dex_volume_24h_usd": 1200000000,
+        "dex_volume_change_pct_24h": 5.3,
+        "top_dexs_by_volume": [
+          {
+            "name": "Jupiter",
+            "volume_24h_usd": 700000000
+          },
+          {
+            "name": "Raydium",
+            "volume_24h_usd": 300000000
+          }
+        ]
+      },
+      "fees_and_rev": {
+        "chain_revenue_24h_usd": 2500000,
+        "chain_revenue_change_pct_24h": -3.1
+      }
+    },
+    "market": {
+      "price": {
+        "price_usd": 210.5,
+        "price_change_pct_24h": 12.4,
+        "volume_24h_usd": 3000000000,
+        "market_cap_usd": 100000000000
+      },
+      "trend_7d": {
+        "seven_day_series": [
+          {
+            "date_unix": 1700000000,
+            "price_usd": 200
+          },
+          {
+            "date_unix": 1700086400,
+            "price_usd": 201
+          },
+          {
+            "date_unix": 1700172800,
+            "price_usd": 202
+          },
+          {
+            "date_unix": 1700259200,
+            "price_usd": 203
+          },
+          {
+            "date_unix": 1700345600,
+            "price_usd": 204
+          },
+          {
+            "date_unix": 1700432000,
+            "price_usd": 205
+          },
+          {
+            "date_unix": 1700518400,
+            "price_usd": 206
+          }
+        ]
+      }
+    },
+    "ecosystem_site": {
+      "_note": "solana.com/data has no stable public JSON API at this time; this section is intentionally omitted rather than scraped unreliably. See src/collectors/solana_data_site.py for the documented extension point (headless-browser based scraping)."
+    },
+    "social": {
+      "accounts": [
+        {
+          "handle": "@solana",
+          "reason": "Official Solana Foundation account \u2014 protocol news, upgrades",
+          "recent_tweets": [],
+          "_note": "snscrape not installed (optional dependency)"
+        },
+        {
+          "handle": "@heliuslabs",
+          "reason": "Infra/RPC provider \u2014 frequent deep-dives on network stats",
+          "recent_tweets": [],
+          "_note": "snscrape not installed (optional dependency)"
+        },
+        {
+          "handle": "@solanafndn",
+          "reason": "Solana Foundation \u2014 governance, SIMD proposals",
+          "recent_tweets": [],
+          "_note": "snscrape not installed (optional dependency)"
+        },
+        {
+          "handle": "@superteam",
+          "reason": "Superteam global \u2014 ecosystem builder news",
+          "recent_tweets": [],
+          "_note": "snscrape not installed (optional dependency)"
+        },
+        {
+          "handle": "@SuperteamCA",
+          "reason": "Superteam Canada \u2014 local ecosystem news",
+          "recent_tweets": [],
+          "_note": "snscrape not installed (optional dependency)"
+        },
+        {
+          "handle": "@DefiLlama",
+          "reason": "Cross-chain DeFi data, occasional Solana TVL callouts",
+          "recent_tweets": [],
+          "_note": "snscrape not installed (optional dependency)"
+        },
+        {
+          "handle": "@jup_ag",
+          "reason": "Jupiter \u2014 largest Solana DEX aggregator, ecosystem bellwether",
+          "recent_tweets": [],
+          "_note": "snscrape not installed (optional dependency)"
+        }
+      ],
+      "live_pull_active": false,
+      "_note": "Live tweet pulling requires the optional 'snscrape' package (pip install -r requirements-optional.txt) and can still be blocked by X at any time. Falling back to a curated watchlist so the report remains useful without it."
+    },
+    "upcoming": [
+      {
+        "name": "Alpenglow",
+        "description": "Proposed consensus overhaul (Votor + Rotor) targeting ~100-150ms finality, replacing TowerBFT/Turbine-era assumptions.",
+        "track": "https://github.com/solana-foundation/solana-improvement-documents"
+      },
+      {
+        "name": "SIMD-related fee market / tokenomics changes",
+        "description": "Ongoing SIMD proposals affecting base fee burn, priority fees, and inflation schedule. Check the SIMD repo for the current numbered proposal under active discussion.",
+        "track": "https://github.com/solana-foundation/solana-improvement-documents/pulls"
+      },
+      {
+        "name": "Firedancer",
+        "description": "Independent validator client (Jump Crypto) aimed at client diversity and higher throughput ceilings; rolling out in stages across mainnet-beta.",
+        "track": "https://github.com/firedancer-io/firedancer"
+      }
+    ]
+  },
+  "anomalies": [
+    {
+      "severity": "warning",
+      "metric": "avg_tps",
+      "message": "TPS dropped 26.4% vs. recent baseline (2944 vs. ~4000)",
+      "value": 2944.44,
+      "baseline": 4000.0
+    },
+    {
+      "severity": "info",
+      "metric": "sol_price_change_pct_24h",
+      "message": "SOL price is up 12.4% in 24h",
+      "value": 12.4,
+      "baseline": 0
+    }
+  ]
+}

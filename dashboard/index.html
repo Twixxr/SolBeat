@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SolPulse Canada — Solana Ecosystem Report</title>
+<style>
+  :root{
+    --bg: #0a0b0d;
+    --panel: #111318;
+    --panel-border: #1e2129;
+    --text: #e8e9ec;
+    --text-dim: #8b909c;
+    --text-faint: #565b66;
+    --purple: #9945FF;
+    --green: #14F195;
+    --crit: #ff5c5c;
+    --warn: #ffb454;
+    --info: #5ac8ff;
+    --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+    --sans: "Inter", -apple-system, "Segoe UI", sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:var(--sans);}
+  a{color:var(--green);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  .wrap{max-width:1180px;margin:0 auto;padding:28px 20px 80px;}
+
+  /* ---------- Header / signature pulse bar ---------- */
+  header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;
+    padding-bottom:20px;margin-bottom:6px;border-bottom:1px solid var(--panel-border);}
+  .brand{display:flex;align-items:baseline;gap:10px;}
+  .brand h1{font-size:22px;margin:0;font-weight:700;letter-spacing:-0.02em;}
+  .brand .sub{font-family:var(--mono);font-size:12px;color:var(--text-dim);}
+  .updated{font-family:var(--mono);font-size:12px;color:var(--text-dim);text-align:right;}
+  .updated .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);
+    margin-right:6px;animation:pulse 2s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+
+  .pulsebar{height:3px;width:100%;margin:0 0 28px;border-radius:2px;overflow:hidden;
+    background:linear-gradient(90deg, var(--purple), var(--green));background-size:200% 100%;
+    animation:flow 6s linear infinite;}
+  @keyframes flow{0%{background-position:0% 0;}100%{background-position:-200% 0;}}
+  @media (prefers-reduced-motion: reduce){
+    .pulsebar{animation:none;} .updated .dot{animation:none;}
+  }
+
+  /* ---------- Alerts ---------- */
+  #alerts{margin-bottom:28px;display:flex;flex-direction:column;gap:8px;}
+  .alert{font-family:var(--mono);font-size:13px;padding:10px 14px;border-radius:6px;border:1px solid;
+    display:flex;gap:10px;align-items:baseline;}
+  .alert.critical{border-color:rgba(255,92,92,.4);background:rgba(255,92,92,.08);color:var(--crit);}
+  .alert.warning{border-color:rgba(255,180,84,.4);background:rgba(255,180,84,.08);color:var(--warn);}
+  .alert.info{border-color:rgba(90,200,255,.4);background:rgba(90,200,255,.08);color:var(--info);}
+  .alert.ok{border-color:rgba(20,241,149,.35);background:rgba(20,241,149,.06);color:var(--green);}
+  .alert .badge{text-transform:uppercase;font-weight:700;font-size:10px;letter-spacing:.06em;}
+
+  /* ---------- Section headers ---------- */
+  h2.section{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-dim);
+    margin:34px 0 12px;font-weight:600;}
+
+  /* ---------- Stat grid ---------- */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(200px,1fr));gap:12px;}
+  .card{background:var(--panel);border:1px solid var(--panel-border);border-radius:10px;padding:16px 18px;}
+  .card .label{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--text-dim);margin-bottom:8px;}
+  .card .value{font-family:var(--mono);font-size:24px;font-weight:600;line-height:1.1;}
+  .card .value.sm{font-size:18px;}
+  .card .delta{font-family:var(--mono);font-size:12px;margin-top:6px;}
+  .delta.up{color:var(--green);}
+  .delta.down{color:var(--crit);}
+  .delta.flat{color:var(--text-dim);}
+
+  /* ---------- Epoch progress ring ---------- */
+  .epoch-card{display:flex;align-items:center;gap:16px;}
+  .ring{position:relative;width:64px;height:64px;flex:none;}
+  .ring svg{transform:rotate(-90deg);}
+  .ring .pct{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-family:var(--mono);font-size:13px;font-weight:600;}
+
+  /* ---------- Tables ---------- */
+  table{width:100%;border-collapse:collapse;font-size:13px;}
+  th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--text-dim);
+    padding:8px 10px;border-bottom:1px solid var(--panel-border);font-weight:600;}
+  td{padding:9px 10px;border-bottom:1px solid var(--panel-border);font-family:var(--mono);color:var(--text);}
+  tr:last-child td{border-bottom:none;}
+  .table-wrap{background:var(--panel);border:1px solid var(--panel-border);border-radius:10px;overflow:hidden;overflow-x:auto;}
+  .mono-dim{color:var(--text-faint);}
+
+  /* ---------- Watchlist / upcoming ---------- */
+  .list-card{background:var(--panel);border:1px solid var(--panel-border);border-radius:10px;padding:6px 18px;}
+  .list-item{padding:14px 0;border-bottom:1px solid var(--panel-border);}
+  .list-item:last-child{border-bottom:none;}
+  .list-item .name{font-weight:600;font-size:14px;}
+  .list-item .desc{color:var(--text-dim);font-size:13px;margin-top:4px;line-height:1.5;}
+
+  footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--panel-border);
+    font-size:12px;color:var(--text-faint);font-family:var(--mono);}
+
+  .loading{font-family:var(--mono);color:var(--text-dim);padding:40px 0;text-align:center;}
+  .err{font-family:var(--mono);color:var(--crit);padding:16px;border:1px solid rgba(255,92,92,.4);
+    border-radius:8px;background:rgba(255,92,92,.06);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <h1>SolPulse <span style="color:var(--green)">Canada</span></h1>
+      <span class="sub">// solana ecosystem report</span>
+    </div>
+    <div class="updated" id="updated">loading…</div>
+  </header>
+  <div class="pulsebar"></div>
+
+  <div id="alerts"></div>
+
+  <div id="content">
+    <div class="loading">Fetching latest snapshot…</div>
+  </div>
+
+  <footer id="footer"></footer>
+</div>
+
+<script>
+const DATA_URL = "data.json";
+
+function fmtUsd(v){
+  if(v === null || v === undefined) return "N/A";
+  const abs = Math.abs(v);
+  if(abs >= 1e9) return "$" + (v/1e9).toFixed(2) + "B";
+  if(abs >= 1e6) return "$" + (v/1e6).toFixed(2) + "M";
+  if(abs >= 1e3) return "$" + (v/1e3).toFixed(1) + "K";
+  return "$" + v.toFixed(2);
+}
+function fmtNum(v, decimals=2){
+  if(v === null || v === undefined) return "N/A";
+  return Number(v).toLocaleString(undefined, {maximumFractionDigits: decimals});
+}
+function fmtPct(v){
+  if(v === null || v === undefined) return "N/A";
+  const sign = v > 0 ? "+" : "";
+  return sign + v.toFixed(2) + "%";
+}
+function deltaClass(v){
+  if(v === null || v === undefined) return "flat";
+  return v > 0 ? "up" : (v < 0 ? "down" : "flat");
+}
+function statCard(label, value, deltaText, deltaCls, small=false){
+  return `<div class="card">
+    <div class="label">${label}</div>
+    <div class="value ${small ? 'sm':''}">${value}</div>
+    ${deltaText ? `<div class="delta ${deltaCls}">${deltaText}</div>` : ""}
+  </div>`;
+}
+function epochRing(pct){
+  pct = pct === null || pct === undefined ? 0 : pct;
+  const r = 26, c = 2*Math.PI*r;
+  const offset = c - (pct/100)*c;
+  return `<div class="ring">
+    <svg width="64" height="64">
+      <circle cx="32" cy="32" r="${r}" stroke="#1e2129" stroke-width="6" fill="none"/>
+      <circle cx="32" cy="32" r="${r}" stroke="url(#grad)" stroke-width="6" fill="none"
+        stroke-dasharray="${c}" stroke-dashoffset="${offset}" stroke-linecap="round"/>
+      <defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#9945FF"/><stop offset="100%" stop-color="#14F195"/>
+      </linearGradient></defs>
+    </svg>
+    <div class="pct">${pct.toFixed(0)}%</div>
+  </div>`;
+}
+
+function renderAlerts(anomalies){
+  const el = document.getElementById("alerts");
+  if(!anomalies || anomalies.length === 0){
+    el.innerHTML = `<div class="alert ok"><span class="badge">OK</span> No anomalies detected in this snapshot.</div>`;
+    return;
+  }
+  const order = {critical:0, warning:1, info:2};
+  const sorted = [...anomalies].sort((a,b)=>order[a.severity]-order[b.severity]);
+  el.innerHTML = sorted.map(a =>
+    `<div class="alert ${a.severity}"><span class="badge">${a.severity}</span> ${a.message}</div>`
+  ).join("");
+}
+
+function renderContent(report){
+  const net = report.network_performance || {};
+  const val = report.validators || {};
+  const supply = report.supply || {};
+  const defi = report.defi || {};
+  const tvl = defi.tvl || {};
+  const stable = defi.stablecoins || {};
+  const dex = defi.dex_volume || {};
+  const fees = defi.fees_and_rev || {};
+  const market = (report.market || {}).price || {};
+  const social = report.social || {};
+  const upcoming = report.upcoming || [];
+
+  let html = "";
+
+  // Network performance
+  html += `<h2 class="section">Network Performance</h2><div class="grid">`;
+  html += statCard("Current TPS", fmtNum(net.current_tps, 0));
+  html += statCard("Avg TPS", fmtNum(net.avg_tps, 0));
+  html += statCard("Avg Slot Time", fmtNum(net.avg_slot_time_ms,0) + " ms");
+  html += statCard("Block Height", fmtNum(net.block_height, 0), null, null, true);
+  html += `<div class="card epoch-card">${epochRing(net.epoch_progress_pct)}
+    <div><div class="label">Epoch ${net.epoch ?? "N/A"}</div>
+    <div class="value sm">${fmtNum(net.epoch_progress_pct,1)}% complete</div></div></div>`;
+  html += statCard("RPC Health", (net.health === "ok" ? "🟢 ok" : (net.health || "N/A")), null, null, true);
+  html += `</div>`;
+
+  // Validators
+  html += `<h2 class="section">Validator Status</h2><div class="grid">`;
+  html += statCard("Active Validators", fmtNum(val.active_count, 0));
+  html += statCard("Delinquent Validators", fmtNum(val.delinquent_count, 0));
+  html += statCard("Delinquent Stake %", fmtNum(val.delinquent_stake_pct, 2) + "%");
+  html += statCard("Total Active Stake", fmtNum(val.total_active_stake_sol, 0) + " SOL", null, null, true);
+  const conc = val.stake_concentration || {};
+  html += statCard("Validators to 33% Stake", fmtNum(conc.validators_to_control_33pct, 0));
+  html += `</div>`;
+
+  if(val.top_validators && val.top_validators.length){
+    html += `<div class="table-wrap" style="margin-top:12px;"><table>
+      <thead><tr><th>#</th><th>Vote Account</th><th>Stake (SOL)</th><th>Commission</th><th>Last Vote</th></tr></thead>
+      <tbody>`;
+    val.top_validators.forEach((v,i)=>{
+      html += `<tr><td>${i+1}</td><td>${v.vote_pubkey ? v.vote_pubkey.slice(0,6)+"…"+v.vote_pubkey.slice(-6) : "N/A"}</td>
+        <td>${fmtNum(v.activated_stake_sol,0)}</td><td>${v.commission_pct}%</td>
+        <td class="mono-dim">${v.last_vote ?? "N/A"}</td></tr>`;
+    });
+    html += `</tbody></table></div>`;
+  }
+
+  // Economic indicators
+  html += `<h2 class="section">Economic Indicators</h2><div class="grid">`;
+  html += statCard("SOL Price", fmtUsd(market.price_usd), fmtPct(market.price_change_pct_24h) + " (24h)", deltaClass(market.price_change_pct_24h));
+  html += statCard("Market Cap", fmtUsd(market.market_cap_usd));
+  html += statCard("Chain TVL", fmtUsd(tvl.tvl_usd), fmtPct(tvl.tvl_change_pct_24h) + " (24h)", deltaClass(tvl.tvl_change_pct_24h));
+  html += statCard("Stablecoin Supply", fmtUsd(stable.total_stablecoin_supply_usd));
+  html += statCard("DEX Volume (24h)", fmtUsd(dex.dex_volume_24h_usd));
+  html += statCard("Chain Revenue / REV (24h)", fmtUsd(fees.chain_revenue_24h_usd));
+  html += `</div>`;
+
+  // Supply
+  html += `<h2 class="section">SOL Supply</h2><div class="grid">`;
+  html += statCard("Total Supply", fmtNum(supply.total_sol, 0) + " SOL");
+  html += statCard("Circulating", fmtNum(supply.circulating_sol, 0) + " SOL");
+  html += statCard("Non-Circulating", fmtNum(supply.non_circulating_sol, 0) + " SOL");
+  html += `</div>`;
+
+  // Ecosystem watchlist
+  html += `<h2 class="section">Ecosystem &amp; Community Watchlist</h2><div class="list-card">`;
+  if(social._note){
+    html += `<div class="list-item"><div class="desc">${social._note}</div></div>`;
+  }
+  (social.accounts || []).forEach(acc=>{
+    html += `<div class="list-item"><div class="name">${acc.handle}</div><div class="desc">${acc.reason}</div></div>`;
+  });
+  html += `</div>`;
+
+  // Upcoming
+  html += `<h2 class="section">Upcoming Upgrades &amp; Developments</h2><div class="list-card">`;
+  upcoming.forEach(u=>{
+    html += `<div class="list-item"><div class="name">${u.name}</div>
+      <div class="desc">${u.description} — <a href="${u.track}" target="_blank" rel="noopener">track progress</a></div></div>`;
+  });
+  html += `</div>`;
+
+  document.getElementById("content").innerHTML = html;
+}
+
+async function load(){
+  try{
+    const res = await fetch(DATA_URL, {cache: "no-store"});
+    if(!res.ok) throw new Error("HTTP " + res.status);
+    const payload = await res.json();
+    const report = payload.report;
+    const anomalies = payload.anomalies || [];
+
+    document.getElementById("updated").innerHTML =
+      `<span class="dot"></span>updated ${report.meta.generated_at_utc}`;
+    renderAlerts(anomalies);
+    renderContent(report);
+    document.getElementById("footer").innerHTML =
+      `Data: Solana RPC · DeFiLlama · CoinGecko — refreshed automatically. ` +
+      `<a href="https://github.com/YOUR_GITHUB_USERNAME/solpulse-canada" target="_blank">Source on GitHub</a>`;
+  }catch(err){
+    document.getElementById("content").innerHTML =
+      `<div class="err">Couldn't load data.json (${err.message}). If you're running this locally, ` +
+      `run <code>python -m src.main</code> first to generate dashboard/data.json, then reload.</div>`;
+  }
+}
+load();
+</script>
+</body>
+</html>

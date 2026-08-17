@@ -1,0 +1,6 @@
+# Optional: enables live pulling of recent tweets from the curated watchlist
+# in src/collectors/twitter_feed.py. Not required for the rest of the report.
+# Uses X's public web surface (no API key), so it can break if X changes
+# their frontend or blocks scraping — the report degrades gracefully
+# without it (falls back to a static watchlist).
+snscrape @ git+https://github.com/JustAnotherArchivist/snscrape.git

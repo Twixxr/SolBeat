@@ -1,0 +1,7 @@
+# Core requirements: NONE beyond the Python standard library.
+#
+# Every collector (Solana RPC, DeFiLlama, CoinGecko) is implemented with
+# urllib from the standard library (see src/http_client.py) specifically so
+# `pip install -r requirements.txt` has nothing to install for the core
+# report to run. This file is kept for convenience/CI clarity and is
+# intentionally empty of hard requirements.
