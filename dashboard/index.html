@@ -291,7 +291,8 @@ async function load(){
       `run <code>python -m src.main</code> first to generate dashboard/data.json, then reload.</div>`;
   }
 }
-load();
+load(); 
+  setInterval(load, 30000);
 </script>
 </body>
 </html>
