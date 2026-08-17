@@ -18,3 +18,4 @@
 {"generated_at_unix": 1786981572, "network_performance": {"avg_tps": 3862.76, "avg_slot_time_ms": 418.7}, "validators": {"delinquent_stake_pct": 0.008}, "defi": {"tvl": {"tvl_usd": 4826302100}}, "market": {"price": {"price_usd": 75.97}}}
 {"generated_at_unix": 1786983256, "network_performance": {"avg_tps": 4264.41, "avg_slot_time_ms": 421.0}, "validators": {"delinquent_stake_pct": 0.083}, "defi": {"tvl": {"tvl_usd": 4841198881}}, "market": {"price": {"price_usd": 75.96}}}
 {"generated_at_unix": 1786985528, "network_performance": {"avg_tps": 4604.05, "avg_slot_time_ms": 427.8}, "validators": {"delinquent_stake_pct": 0.083}, "defi": {"tvl": {"tvl_usd": 4841198881}}, "market": {"price": {"price_usd": 76.04}}}
+{"generated_at_unix": 1786987031, "network_performance": {"avg_tps": 4596.02, "avg_slot_time_ms": 420.6}, "validators": {"delinquent_stake_pct": 0.083}, "defi": {"tvl": {"tvl_usd": 4844111010}}, "market": {"price": {"price_usd": 75.76}}}
