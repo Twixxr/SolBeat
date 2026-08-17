@@ -40,7 +40,7 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add data/latest.json data/latest.md data/history.jsonl dashboard/data.json
           git diff --cached --quiet || git commit -m "chore: refresh Solana ecosystem report [skip ci]"
-          git push
+          git pull --rebase origin main git push
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
