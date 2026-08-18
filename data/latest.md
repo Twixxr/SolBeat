@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolPulse Canada
 
-_Generated: 2026-08-18T19:04:51.400703+00:00 (UTC)_
+_Generated: 2026-08-18T19:46:34.010748+00:00 (UTC)_
 
 ## Alerts
 
@@ -11,55 +11,55 @@ _Generated: 2026-08-18T19:04:51.400703+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 440,114,752 |
-| Block height | 418,165,034 |
+| Current slot | 440,120,753 |
+| Block height | 418,171,030 |
 | Epoch | 1018 |
-| Epoch progress | 78.42% |
-| Current TPS | 4,597.03 |
-| Avg TPS (~30 samples) | 4,630.88 |
-| Max / Min TPS | 5,777.97 / 3,725.93 |
-| Avg slot time | 417.4 ms |
+| Epoch progress | 79.80% |
+| Current TPS | 4,271.63 |
+| Avg TPS (~30 samples) | 4,057.13 |
+| Max / Min TPS | 4,637.97 / 3,562.92 |
+| Avg slot time | 418.1 ms |
 
 ## Validator Status
 
 | Metric | Value |
 |---|---|
-| Active validators | 688 |
-| Delinquent validators | 7 |
-| Delinquent (% of validator count) | 1.01% |
-| Delinquent (% of active stake) | 0.01% |
-| Total active stake | 435,626,689 SOL |
+| Active validators | 687 |
+| Delinquent validators | 8 |
+| Delinquent (% of validator count) | 1.15% |
+| Delinquent (% of active stake) | 0.02% |
+| Total active stake | 435,603,116 SOL |
 | Validators controlling 33% of stake | 18 |
 
 ### Top 20 Validators by Stake
 
 | # | Vote Account | Stake (SOL) | Commission | Last Vote |
 |---|---|---|---|---|
-| 1 | `CcaHc2L43ZWjwCHART3oZoJvHLAe9hzT2DJNUpBzoTN1` | 17,091,057 | 7% | 440114752 |
-| 2 | `he1iusunGwqrNtafDtLdhsUQDFvo13z9sUa36PauBtk` | 16,003,006 | 0% | 440114752 |
-| 3 | `CatzoSMUkTRidT5DwBxAC2pEtnwMBTpkCepHkFgZDiqb` | 12,495,360 | 5% | 440114752 |
-| 4 | `3N7s9zXMZ4QqvHQR15t5GNHyqc89KduzMP7423eWiD5g` | 12,259,520 | 0% | 440114752 |
-| 5 | `26pV97Ce83ZQ6Kz9XT4td8tdoUFPTng8Fb8gPyc53dJx` | 9,203,436 | 7% | 440114752 |
-| 6 | `51JBzSTU5rAM8gLAVQKgp4WoZerQcSqWC7BitBzgUNAm` | 8,992,381 | 10% | 440114752 |
-| 7 | `8GbwASqdpw4dVcwbWUxbHXMrjyQx2aKkoBR5H1GJF8iD` | 8,305,834 | 0% | 440114752 |
-| 8 | `9QU2QSxhb24FUX3Tu2FpczXjpK3VYrvRudywSZaM29mF` | 7,983,993 | 7% | 440114752 |
-| 9 | `CvSb7wdQAFpHuSpTYTJnX5SYH4hCfQ9VuGnqrKaKwycB` | 7,342,590 | 5% | 440114752 |
-| 10 | `DumiCKHVqoCQKD8roLApzR5Fit8qGV5fVQsJV9sTZk4a` | 6,588,037 | 0% | 440114752 |
-| 11 | `HZKopZYvv8v6un2H6KUNVQCnK5zM9emKKezvqhTBSpEc` | 6,122,617 | 100% | 440114752 |
-| 12 | `3JD3jMmnR6g88qff2WZ3cMHJRjJMUk9yVZtmYTYeFrXf` | 5,994,422 | 0% | 440114752 |
-| 13 | `DdCNGDpP7qMgoAy6paFzhhak2EeyCZcgjH7ak5u5v28m` | 5,971,637 | 5% | 440114752 |
-| 14 | `GHViLgbrJdZDPb6sphRbeuPNM9cmjsFuGWzrTF1sKF5n` | 5,811,980 | 100% | 440114752 |
-| 15 | `HimWQUK61d9wxhw7EYu9jUje7xQiDs4jKexaTSvuCmXE` | 4,660,187 | 8% | 440114752 |
-| 16 | `FKsC411dik9ktS6xPADxs4Fk2SCENvAiuccQHLAPndvk` | 4,571,816 | 7% | 440114752 |
-| 17 | `3ZYJxzCeweSoh2Jj7oCgencFs9y27iKmXJeqYapje1cj` | 4,110,113 | 100% | 440114752 |
-| 18 | `AZoCYB4VgoM9DR9f1ZFcBn8xPSbtbqoxZnKJR7tkvEoX` | 4,052,233 | 100% | 440114752 |
-| 19 | `G9x1mqewTeVnXLmv3FamYD5tq1AdS395RHH3MLQPj6TY` | 4,037,568 | 100% | 440114752 |
-| 20 | `EcEowA4GKDsdVBF9PNAZa6c9M4WgYG8y4GnpZSUaqioS` | 4,013,265 | 100% | 440114752 |
+| 1 | `CcaHc2L43ZWjwCHART3oZoJvHLAe9hzT2DJNUpBzoTN1` | 17,091,057 | 7% | 440120753 |
+| 2 | `he1iusunGwqrNtafDtLdhsUQDFvo13z9sUa36PauBtk` | 16,003,006 | 0% | 440120753 |
+| 3 | `CatzoSMUkTRidT5DwBxAC2pEtnwMBTpkCepHkFgZDiqb` | 12,495,360 | 5% | 440120753 |
+| 4 | `3N7s9zXMZ4QqvHQR15t5GNHyqc89KduzMP7423eWiD5g` | 12,259,520 | 0% | 440120753 |
+| 5 | `26pV97Ce83ZQ6Kz9XT4td8tdoUFPTng8Fb8gPyc53dJx` | 9,203,436 | 7% | 440120753 |
+| 6 | `51JBzSTU5rAM8gLAVQKgp4WoZerQcSqWC7BitBzgUNAm` | 8,992,381 | 10% | 440120753 |
+| 7 | `8GbwASqdpw4dVcwbWUxbHXMrjyQx2aKkoBR5H1GJF8iD` | 8,305,834 | 0% | 440120753 |
+| 8 | `9QU2QSxhb24FUX3Tu2FpczXjpK3VYrvRudywSZaM29mF` | 7,983,993 | 7% | 440120753 |
+| 9 | `CvSb7wdQAFpHuSpTYTJnX5SYH4hCfQ9VuGnqrKaKwycB` | 7,342,590 | 5% | 440120753 |
+| 10 | `DumiCKHVqoCQKD8roLApzR5Fit8qGV5fVQsJV9sTZk4a` | 6,588,037 | 0% | 440120753 |
+| 11 | `HZKopZYvv8v6un2H6KUNVQCnK5zM9emKKezvqhTBSpEc` | 6,122,617 | 100% | 440120753 |
+| 12 | `3JD3jMmnR6g88qff2WZ3cMHJRjJMUk9yVZtmYTYeFrXf` | 5,994,422 | 0% | 440120753 |
+| 13 | `DdCNGDpP7qMgoAy6paFzhhak2EeyCZcgjH7ak5u5v28m` | 5,971,637 | 5% | 440120753 |
+| 14 | `GHViLgbrJdZDPb6sphRbeuPNM9cmjsFuGWzrTF1sKF5n` | 5,811,980 | 100% | 440120753 |
+| 15 | `HimWQUK61d9wxhw7EYu9jUje7xQiDs4jKexaTSvuCmXE` | 4,660,187 | 8% | 440120753 |
+| 16 | `FKsC411dik9ktS6xPADxs4Fk2SCENvAiuccQHLAPndvk` | 4,571,816 | 7% | 440120753 |
+| 17 | `3ZYJxzCeweSoh2Jj7oCgencFs9y27iKmXJeqYapje1cj` | 4,110,113 | 100% | 440120753 |
+| 18 | `AZoCYB4VgoM9DR9f1ZFcBn8xPSbtbqoxZnKJR7tkvEoX` | 4,052,233 | 100% | 440120753 |
+| 19 | `G9x1mqewTeVnXLmv3FamYD5tq1AdS395RHH3MLQPj6TY` | 4,037,568 | 100% | 440120753 |
+| 20 | `EcEowA4GKDsdVBF9PNAZa6c9M4WgYG8y4GnpZSUaqioS` | 4,013,265 | 100% | 440120753 |
 
 ## SOL Supply
 
-- Total: 632,387,430 SOL
-- Circulating: 582,892,245 SOL
+- Total: 632,387,403 SOL
+- Circulating: 582,892,219 SOL
 - Non-circulating: 49,495,185 SOL
 
 ## Economic Indicators
@@ -67,13 +67,13 @@ _Generated: 2026-08-18T19:04:51.400703+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | SOL price | $77 |
-| SOL 24h change | +1.86% |
-| SOL 24h volume | $1,375,122,687 |
-| SOL market cap | $44,992,916,008 |
-| Solana chain TVL | $4,895,885,674 |
-| TVL change (24h) | +2.49% |
-| TVL change (7d) | +1.17% |
-| Stablecoin supply on Solana | $15,424,454,266 |
+| SOL 24h change | +1.75% |
+| SOL 24h volume | $1,385,348,336 |
+| SOL market cap | $44,967,228,154 |
+| Solana chain TVL | $4,901,646,211 |
+| TVL change (24h) | +2.61% |
+| TVL change (7d) | +1.29% |
+| Stablecoin supply on Solana | $15,418,453,554 |
 | DEX volume (24h) | $1,474,970,358 |
 | Chain revenue / REV proxy (24h) | $4,375,967 |
 
@@ -86,10 +86,10 @@ _Generated: 2026-08-18T19:04:51.400703+00:00 (UTC)_
 | HumidiFi | $137,878,314 |
 | Orca DEX | $99,175,288 |
 | Meteora DLMM | $93,854,404 |
+| Raydium AMM | $80,466,382 |
 | pump.fun | $80,155,477 |
-| Raydium AMM | $77,485,243 |
 | Axiom | $77,087,817 |
-| Manifest Trade | $72,705,592 |
+| Manifest Trade | $71,677,303 |
 | fomo Wallet | $44,342,476 |
 
 ## Ecosystem & Community Watchlist
