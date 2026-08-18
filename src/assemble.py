@@ -78,12 +78,31 @@ def append_history(report):
         },
         "validators": {
             "delinquent_stake_pct": report.get("validators", {}).get("delinquent_stake_pct"),
+            "active_count": report.get("validators", {}).get("active_count"),
         },
         "defi": {
-            "tvl": {"tvl_usd": report.get("defi", {}).get("tvl", {}).get("tvl_usd")},
+            "tvl": {
+                "tvl_usd": report.get("defi", {}).get("tvl", {}).get("tvl_usd"),
+            },
+            "stablecoins": {
+                "total_stablecoin_supply_usd": report.get("defi", {}).get("stablecoins", {}).get("total_stablecoin_supply_usd"),
+            },
+            "dex_volume": {
+                "dex_volume_24h_usd": report.get("defi", {}).get("dex_volume", {}).get("dex_volume_24h_usd"),
+            },
+            "fees_and_rev": {
+                "chain_revenue_24h_usd": report.get("defi", {}).get("fees_and_rev", {}).get("chain_revenue_24h_usd"),
+            },
         },
         "market": {
-            "price": {"price_usd": report.get("market", {}).get("price", {}).get("price_usd")},
+            "price": {
+                "price_usd": report.get("market", {}).get("price", {}).get("price_usd"),
+                "market_cap_usd": report.get("market", {}).get("price", {}).get("market_cap_usd"),
+                "volume_24h_usd": report.get("market", {}).get("price", {}).get("volume_24h_usd"),
+            },
+        },
+        "supply": {
+            "total_sol": report.get("supply", {}).get("total_sol"),
         },
     }
 

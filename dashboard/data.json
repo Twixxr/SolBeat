@@ -1,8 +1,8 @@
 {
   "report": {
     "meta": {
-      "generated_at_utc": "2026-08-17T18:36:06.805859+00:00",
-      "generated_at_unix": 1786991766,
+      "generated_at_utc": "2026-08-18T00:15:24.963276+00:00",
+      "generated_at_unix": 1787012124,
       "generator": "SolPulse Canada",
       "version": "1.0"
     },
@@ -21,7 +21,7 @@
       "min_tps": 1000.0,
       "samples_used": 3,
       "avg_slot_time_ms": 401.8,
-      "collected_at_unix": 1786991766
+      "collected_at_unix": 1787012124
     },
     "validators": {
       "active_count": 30,
@@ -381,17 +381,32 @@
         "avg_slot_time_ms": 405
       },
       "validators": {
-        "delinquent_stake_pct": 1.0
+        "delinquent_stake_pct": 1.0,
+        "active_count": 1500
       },
       "defi": {
         "tvl": {
           "tvl_usd": 4000000000
+        },
+        "stablecoins": {
+          "total_stablecoin_supply_usd": 8000000000
+        },
+        "dex_volume": {
+          "dex_volume_24h_usd": 1000000000
+        },
+        "fees_and_rev": {
+          "chain_revenue_24h_usd": 2000000
         }
       },
       "market": {
         "price": {
-          "price_usd": 190
+          "price_usd": 190,
+          "market_cap_usd": 95000000000,
+          "volume_24h_usd": 2900000000
         }
+      },
+      "supply": {
+        "total_sol": 588000000000000000
       }
     },
     {
@@ -401,17 +416,32 @@
         "avg_slot_time_ms": 406
       },
       "validators": {
-        "delinquent_stake_pct": 1.0
+        "delinquent_stake_pct": 1.0,
+        "active_count": 1501
       },
       "defi": {
         "tvl": {
           "tvl_usd": 4020000000
+        },
+        "stablecoins": {
+          "total_stablecoin_supply_usd": 8010000000
+        },
+        "dex_volume": {
+          "dex_volume_24h_usd": 1005000000
+        },
+        "fees_and_rev": {
+          "chain_revenue_24h_usd": 2010000
         }
       },
       "market": {
         "price": {
-          "price_usd": 191
+          "price_usd": 191,
+          "market_cap_usd": 95100000000,
+          "volume_24h_usd": 2900000000
         }
+      },
+      "supply": {
+        "total_sol": 588000001000000000
       }
     },
     {
@@ -421,17 +451,32 @@
         "avg_slot_time_ms": 407
       },
       "validators": {
-        "delinquent_stake_pct": 1.0
+        "delinquent_stake_pct": 1.0,
+        "active_count": 1502
       },
       "defi": {
         "tvl": {
           "tvl_usd": 4040000000
+        },
+        "stablecoins": {
+          "total_stablecoin_supply_usd": 8020000000
+        },
+        "dex_volume": {
+          "dex_volume_24h_usd": 1010000000
+        },
+        "fees_and_rev": {
+          "chain_revenue_24h_usd": 2020000
         }
       },
       "market": {
         "price": {
-          "price_usd": 192
+          "price_usd": 192,
+          "market_cap_usd": 95200000000,
+          "volume_24h_usd": 2900000000
         }
+      },
+      "supply": {
+        "total_sol": 588000002000000000
       }
     },
     {
@@ -441,17 +486,32 @@
         "avg_slot_time_ms": 408
       },
       "validators": {
-        "delinquent_stake_pct": 1.0
+        "delinquent_stake_pct": 1.0,
+        "active_count": 1503
       },
       "defi": {
         "tvl": {
           "tvl_usd": 4060000000
+        },
+        "stablecoins": {
+          "total_stablecoin_supply_usd": 8030000000
+        },
+        "dex_volume": {
+          "dex_volume_24h_usd": 1015000000
+        },
+        "fees_and_rev": {
+          "chain_revenue_24h_usd": 2030000
         }
       },
       "market": {
         "price": {
-          "price_usd": 193
+          "price_usd": 193,
+          "market_cap_usd": 95300000000,
+          "volume_24h_usd": 2900000000
         }
+      },
+      "supply": {
+        "total_sol": 588000003000000000
       }
     },
     {
@@ -461,17 +521,32 @@
         "avg_slot_time_ms": 409
       },
       "validators": {
-        "delinquent_stake_pct": 1.0
+        "delinquent_stake_pct": 1.0,
+        "active_count": 1504
       },
       "defi": {
         "tvl": {
           "tvl_usd": 4080000000
+        },
+        "stablecoins": {
+          "total_stablecoin_supply_usd": 8040000000
+        },
+        "dex_volume": {
+          "dex_volume_24h_usd": 1020000000
+        },
+        "fees_and_rev": {
+          "chain_revenue_24h_usd": 2040000
         }
       },
       "market": {
         "price": {
-          "price_usd": 194
+          "price_usd": 194,
+          "market_cap_usd": 95400000000,
+          "volume_24h_usd": 2900000000
         }
+      },
+      "supply": {
+        "total_sol": 588000004000000000
       }
     },
     {
@@ -481,17 +556,32 @@
         "avg_slot_time_ms": 410
       },
       "validators": {
-        "delinquent_stake_pct": 1.0
+        "delinquent_stake_pct": 1.0,
+        "active_count": 1505
       },
       "defi": {
         "tvl": {
           "tvl_usd": 4100000000
+        },
+        "stablecoins": {
+          "total_stablecoin_supply_usd": 8050000000
+        },
+        "dex_volume": {
+          "dex_volume_24h_usd": 1025000000
+        },
+        "fees_and_rev": {
+          "chain_revenue_24h_usd": 2050000
         }
       },
       "market": {
         "price": {
-          "price_usd": 195
+          "price_usd": 195,
+          "market_cap_usd": 95500000000,
+          "volume_24h_usd": 2900000000
         }
+      },
+      "supply": {
+        "total_sol": 588000005000000000
       }
     },
     {
@@ -501,17 +591,32 @@
         "avg_slot_time_ms": 411
       },
       "validators": {
-        "delinquent_stake_pct": 1.0
+        "delinquent_stake_pct": 1.0,
+        "active_count": 1506
       },
       "defi": {
         "tvl": {
           "tvl_usd": 4120000000
+        },
+        "stablecoins": {
+          "total_stablecoin_supply_usd": 8060000000
+        },
+        "dex_volume": {
+          "dex_volume_24h_usd": 1030000000
+        },
+        "fees_and_rev": {
+          "chain_revenue_24h_usd": 2060000
         }
       },
       "market": {
         "price": {
-          "price_usd": 196
+          "price_usd": 196,
+          "market_cap_usd": 95600000000,
+          "volume_24h_usd": 2900000000
         }
+      },
+      "supply": {
+        "total_sol": 588000006000000000
       }
     },
     {
@@ -521,17 +626,32 @@
         "avg_slot_time_ms": 412
       },
       "validators": {
-        "delinquent_stake_pct": 1.0
+        "delinquent_stake_pct": 1.0,
+        "active_count": 1507
       },
       "defi": {
         "tvl": {
           "tvl_usd": 4140000000
+        },
+        "stablecoins": {
+          "total_stablecoin_supply_usd": 8070000000
+        },
+        "dex_volume": {
+          "dex_volume_24h_usd": 1035000000
+        },
+        "fees_and_rev": {
+          "chain_revenue_24h_usd": 2070000
         }
       },
       "market": {
         "price": {
-          "price_usd": 197
+          "price_usd": 197,
+          "market_cap_usd": 95700000000,
+          "volume_24h_usd": 2900000000
         }
+      },
+      "supply": {
+        "total_sol": 588000007000000000
       }
     },
     {
@@ -541,17 +661,32 @@
         "avg_slot_time_ms": 413
       },
       "validators": {
-        "delinquent_stake_pct": 1.0
+        "delinquent_stake_pct": 1.0,
+        "active_count": 1508
       },
       "defi": {
         "tvl": {
           "tvl_usd": 4160000000
+        },
+        "stablecoins": {
+          "total_stablecoin_supply_usd": 8080000000
+        },
+        "dex_volume": {
+          "dex_volume_24h_usd": 1040000000
+        },
+        "fees_and_rev": {
+          "chain_revenue_24h_usd": 2080000
         }
       },
       "market": {
         "price": {
-          "price_usd": 198
+          "price_usd": 198,
+          "market_cap_usd": 95800000000,
+          "volume_24h_usd": 2900000000
         }
+      },
+      "supply": {
+        "total_sol": 588000008000000000
       }
     },
     {
@@ -561,37 +696,67 @@
         "avg_slot_time_ms": 414
       },
       "validators": {
-        "delinquent_stake_pct": 1.0
+        "delinquent_stake_pct": 1.0,
+        "active_count": 1509
       },
       "defi": {
         "tvl": {
           "tvl_usd": 4180000000
+        },
+        "stablecoins": {
+          "total_stablecoin_supply_usd": 8090000000
+        },
+        "dex_volume": {
+          "dex_volume_24h_usd": 1045000000
+        },
+        "fees_and_rev": {
+          "chain_revenue_24h_usd": 2090000
         }
       },
       "market": {
         "price": {
-          "price_usd": 199
+          "price_usd": 199,
+          "market_cap_usd": 95900000000,
+          "volume_24h_usd": 2900000000
         }
+      },
+      "supply": {
+        "total_sol": 588000009000000000
       }
     },
     {
-      "generated_at_unix": 1786991766,
+      "generated_at_unix": 1787012124,
       "network_performance": {
         "avg_tps": 2944.44,
         "avg_slot_time_ms": 401.8
       },
       "validators": {
-        "delinquent_stake_pct": 0.166
+        "delinquent_stake_pct": 0.166,
+        "active_count": 30
       },
       "defi": {
         "tvl": {
           "tvl_usd": 4500000000
+        },
+        "stablecoins": {
+          "total_stablecoin_supply_usd": 8500000000
+        },
+        "dex_volume": {
+          "dex_volume_24h_usd": 1200000000
+        },
+        "fees_and_rev": {
+          "chain_revenue_24h_usd": 2500000
         }
       },
       "market": {
         "price": {
-          "price_usd": 210.5
+          "price_usd": 210.5,
+          "market_cap_usd": 100000000000,
+          "volume_24h_usd": 3000000000
         }
+      },
+      "supply": {
+        "total_sol": 588000000.0
       }
     }
   ]

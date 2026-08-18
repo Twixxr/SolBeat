@@ -79,6 +79,15 @@
   .delta.down{color:var(--crit);}
   .delta.flat{color:var(--text-dim);}
 
+  .card.expandable{cursor:pointer;transition:border-color .15s;}
+  .card.expandable:hover{border-color:rgba(20,241,149,.4);}
+  .card.expandable .expand-hint{font-family:var(--mono);font-size:10px;color:var(--text-faint);
+    margin-top:8px;display:flex;align-items:center;gap:4px;}
+  .card.expandable .chevron{display:inline-block;transition:transform .15s;}
+  .card.expandable.expanded .chevron{transform:rotate(180deg);}
+  .mini-chart{height:0;overflow:hidden;transition:height .25s ease;margin-top:0;}
+  .card.expandable.expanded .mini-chart{height:90px;margin-top:10px;}
+
   .epoch-card{display:flex;align-items:center;gap:16px;}
   .ring{position:relative;width:64px;height:64px;flex:none;}
   .ring svg{transform:rotate(-90deg);}
@@ -156,6 +165,7 @@
 <script>
 const DATA_URL = "data.json";
 let REPORT = null, ANOMALIES = [], HISTORY = [];
+let LAST_GENERATED_UNIX = null;
 const CHARTS = {};
 
 Chart.defaults.color = "#8b909c";
@@ -184,61 +194,58 @@ function deltaClass(v){
   if(v === null || v === undefined) return "flat";
   return v > 0 ? "up" : (v < 0 ? "down" : "flat");
 }
-function statCard(label, value, deltaText, deltaCls, small=false){
-  return `<div class="card">
-    <div class="label">${label}</div>
-    <div class="value ${small ? 'sm':''}">${value}</div>
-    ${deltaText ? `<div class="delta ${deltaCls}">${deltaText}</div>` : ""}
-  </div>`;
-}
-function epochRing(pct){
-  pct = pct === null || pct === undefined ? 0 : pct;
-  const r = 26, c = 2*Math.PI*r;
-  const offset = c - (pct/100)*c;
-  return `<div class="ring">
-    <svg width="64" height="64">
-      <circle cx="32" cy="32" r="${r}" stroke="#1e2129" stroke-width="6" fill="none"/>
-      <circle cx="32" cy="32" r="${r}" stroke="url(#grad)" stroke-width="6" fill="none"
-        stroke-dasharray="${c}" stroke-dashoffset="${offset}" stroke-linecap="round"/>
-      <defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#9945FF"/><stop offset="100%" stop-color="#14F195"/>
-      </linearGradient></defs>
-    </svg>
-    <div class="pct">${pct.toFixed(0)}%</div>
-  </div>`;
-}
 function twitterHandleUrl(handle){
   return "https://twitter.com/" + handle.replace(/^@/, "");
 }
+
+function relativeTimeString(unixSeconds){
+  if(!unixSeconds) return "";
+  const diff = Math.max(0, Math.floor(Date.now()/1000) - unixSeconds);
+  if(diff < 5) return "just now";
+  if(diff < 60) return diff + "s ago";
+  const mins = Math.floor(diff/60);
+  if(mins < 60) return mins + " minute" + (mins===1?"":"s") + " ago";
+  const hrs = Math.floor(mins/60);
+  if(hrs < 24) return hrs + " hour" + (hrs===1?"":"s") + " ago";
+  const days = Math.floor(hrs/24);
+  return days + " day" + (days===1?"":"s") + " ago";
+}
+function tickUpdatedLabel(){
+  if(!LAST_GENERATED_UNIX) return;
+  document.getElementById("updated").innerHTML =
+    "<span class=\"dot\"></span>updated " + relativeTimeString(LAST_GENERATED_UNIX);
+}
+
 function destroyChart(id){
   if(CHARTS[id]){ CHARTS[id].destroy(); delete CHARTS[id]; }
 }
-function lineChart(id, labels, datasets, yFormatter){
+function lineChart(id, labels, datasets, yFormatter, opts){
+  opts = opts || {};
   destroyChart(id);
   const ctx = document.getElementById(id);
   if(!ctx) return;
   CHARTS[id] = new Chart(ctx, {
     type: "line",
-    data: { labels, datasets },
+    data: { labels: labels, datasets: datasets },
     options: {
       responsive: true, maintainAspectRatio: false,
       interaction: {mode: "index", intersect: false},
-      plugins: { legend: { display: datasets.length > 1, labels: {boxWidth: 10} } },
+      plugins: { legend: { display: !!opts.legend && datasets.length > 1, labels: {boxWidth: 10} } },
       scales: {
-        x: { grid: { color: GRID_COLOR }, ticks: { maxTicksLimit: 8 } },
-        y: { grid: { color: GRID_COLOR }, ticks: { callback: yFormatter || (v => v) } }
+        x: { display: opts.axes !== false, grid: { color: GRID_COLOR }, ticks: { maxTicksLimit: 6 } },
+        y: { display: opts.axes !== false, grid: { color: GRID_COLOR }, ticks: { callback: yFormatter || function(v){return v;}, maxTicksLimit: 4 } }
       }
     }
   });
 }
-function barChart(id, labels, data, label, horizontal=false, colorFn=null){
+function barChart(id, labels, data, label, horizontal, colorFn){
   destroyChart(id);
   const ctx = document.getElementById(id);
   if(!ctx) return;
-  const colors = colorFn ? labels.map((_,i)=>colorFn(i)) : "#14F195";
+  const colors = colorFn ? labels.map(function(_,i){return colorFn(i);}) : "#14F195";
   CHARTS[id] = new Chart(ctx, {
     type: "bar",
-    data: { labels, datasets: [{ label, data, backgroundColor: colors, borderRadius: 4 }] },
+    data: { labels: labels, datasets: [{ label: label, data: data, backgroundColor: colors, borderRadius: 4 }] },
     options: {
       responsive: true, maintainAspectRatio: false,
       indexAxis: horizontal ? "y" : "x",
@@ -251,17 +258,87 @@ function barChart(id, labels, data, label, horizontal=false, colorFn=null){
   });
 }
 
+function statCard(label, value, deltaText, deltaCls, small){
+  return "<div class=\"card\"><div class=\"label\">" + label + "</div>" +
+    "<div class=\"value " + (small?"sm":"") + "\">" + value + "</div>" +
+    (deltaText ? "<div class=\"delta " + deltaCls + "\">" + deltaText + "</div>" : "") +
+    "</div>";
+}
+
+let CARD_COUNTER = 0;
+const CARD_REGISTRY = {};
+
+function getByPath(obj, path){
+  return path.split(".").reduce(function(o,k){ return (o && o[k] !== undefined) ? o[k] : null; }, obj);
+}
+function seriesForPath(path){
+  return HISTORY.map(function(h){ return getByPath(h, path); });
+}
+function historyLabels(){
+  return HISTORY.map(function(h){
+    return new Date(h.generated_at_unix * 1000).toLocaleString(undefined,
+      {month:"short", day:"numeric", hour:"2-digit", minute:"2-digit"});
+  });
+}
+
+function expandableStatCard(label, value, deltaText, deltaCls, historyPath, color, formatter, small){
+  const id = "ecard-" + (CARD_COUNTER++);
+  CARD_REGISTRY[id] = { historyPath: historyPath, color: color, formatter: formatter };
+  return "<div class=\"card expandable\" id=\"" + id + "\" onclick=\"toggleExpandCard('" + id + "')\">" +
+    "<div class=\"label\">" + label + "</div>" +
+    "<div class=\"value " + (small?"sm":"") + "\">" + value + "</div>" +
+    (deltaText ? "<div class=\"delta " + deltaCls + "\">" + deltaText + "</div>" : "") +
+    "<div class=\"expand-hint\"><span class=\"chevron\">▾</span> click for history</div>" +
+    "<div class=\"mini-chart\"><canvas id=\"" + id + "-canvas\"></canvas></div>" +
+    "</div>";
+}
+
+function toggleExpandCard(id){
+  const card = document.getElementById(id);
+  if(!card) return;
+  const wasExpanded = card.classList.contains("expanded");
+  card.classList.toggle("expanded");
+  if(!wasExpanded){
+    const meta = CARD_REGISTRY[id];
+    if(!meta) return;
+    const data = seriesForPath(meta.historyPath);
+    const hasData = data.some(function(v){ return v !== null && v !== undefined; });
+    const canvasWrap = document.getElementById(id + "-canvas").parentElement;
+    if(!hasData){
+      canvasWrap.innerHTML = "<div style=\"font-family:var(--mono);font-size:11px;color:var(--text-faint);padding-top:10px;\">Not enough history yet — check back after a few more automatic refreshes.</div>";
+      return;
+    }
+    setTimeout(function(){
+      lineChart(id + "-canvas", historyLabels(), [{
+        data: data, borderColor: meta.color, backgroundColor: meta.color + "22",
+        fill: true, tension: 0.3, pointRadius: 0
+      }], meta.formatter, { axes: false });
+    }, 260);
+  }
+}
+
+function epochRing(pct){
+  pct = (pct === null || pct === undefined) ? 0 : pct;
+  const r = 26, c = 2*Math.PI*r;
+  const offset = c - (pct/100)*c;
+  return "<div class=\"ring\"><svg width=\"64\" height=\"64\">" +
+    "<circle cx=\"32\" cy=\"32\" r=\"" + r + "\" stroke=\"#1e2129\" stroke-width=\"6\" fill=\"none\"/>" +
+    "<circle cx=\"32\" cy=\"32\" r=\"" + r + "\" stroke=\"url(#grad)\" stroke-width=\"6\" fill=\"none\" stroke-dasharray=\"" + c + "\" stroke-dashoffset=\"" + offset + "\" stroke-linecap=\"round\"/>" +
+    "<defs><linearGradient id=\"grad\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\"><stop offset=\"0%\" stop-color=\"#9945FF\"/><stop offset=\"100%\" stop-color=\"#14F195\"/></linearGradient></defs>" +
+    "</svg><div class=\"pct\">" + pct.toFixed(0) + "%</div></div>";
+}
+
 function renderAlerts(anomalies){
   const el = document.getElementById("alerts");
   if(!anomalies || anomalies.length === 0){
-    el.innerHTML = `<div class="alert ok"><span class="badge">OK</span> No anomalies detected in this snapshot.</div>`;
+    el.innerHTML = "<div class=\"alert ok\"><span class=\"badge\">OK</span> No anomalies detected in this snapshot.</div>";
     return;
   }
   const order = {critical:0, warning:1, info:2};
-  const sorted = [...anomalies].sort((a,b)=>order[a.severity]-order[b.severity]);
-  el.innerHTML = sorted.map(a =>
-    `<div class="alert ${a.severity}"><span class="badge">${a.severity}</span> ${a.message}</div>`
-  ).join("");
+  const sorted = anomalies.slice().sort(function(a,b){ return order[a.severity]-order[b.severity]; });
+  el.innerHTML = sorted.map(function(a){
+    return "<div class=\"alert " + a.severity + "\"><span class=\"badge\">" + a.severity + "</span> " + a.message + "</div>";
+  }).join("");
 }
 
 function renderOverview(){
@@ -272,23 +349,28 @@ function renderOverview(){
   const tvl = defi.tvl || {};
   const market = (REPORT.market || {}).price || {};
 
-  let html = `<h2 class="section">Network Performance</h2><div class="grid">`;
-  html += statCard("Current TPS", fmtNum(net.current_tps, 0));
-  html += statCard("Avg TPS", fmtNum(net.avg_tps, 0));
-  html += statCard("Avg Slot Time", fmtNum(net.avg_slot_time_ms,0) + " ms");
+  let html = "<h2 class=\"section\">Network Performance</h2><div class=\"grid\">";
+  html += expandableStatCard("Avg TPS", fmtNum(net.avg_tps, 0), null, null,
+    "network_performance.avg_tps", "#14F195", function(v){return fmtNum(v,0);});
+  html += expandableStatCard("Avg Slot Time", fmtNum(net.avg_slot_time_ms,0) + " ms", null, null,
+    "network_performance.avg_slot_time_ms", "#14F195", function(v){return fmtNum(v,0)+"ms";});
   html += statCard("Block Height", fmtNum(net.block_height, 0), null, null, true);
-  html += `<div class="card epoch-card">${epochRing(net.epoch_progress_pct)}
-    <div><div class="label">Epoch ${net.epoch ?? "N/A"}</div>
-    <div class="value sm">${fmtNum(net.epoch_progress_pct,1)}% complete</div></div></div>`;
+  html += "<div class=\"card epoch-card\">" + epochRing(net.epoch_progress_pct) +
+    "<div><div class=\"label\">Epoch " + (net.epoch != null ? net.epoch : "N/A") + "</div>" +
+    "<div class=\"value sm\">" + fmtNum(net.epoch_progress_pct,1) + "% complete</div></div></div>";
   html += statCard("RPC Health", (net.health === "ok" ? "🟢 ok" : (net.health || "N/A")), null, null, true);
-  html += `</div>`;
+  html += "</div>";
 
-  html += `<h2 class="section">Economic Snapshot</h2><div class="grid">`;
-  html += statCard("SOL Price", fmtUsd(market.price_usd), fmtPct(market.price_change_pct_24h) + " (24h)", deltaClass(market.price_change_pct_24h));
-  html += statCard("Chain TVL", fmtUsd(tvl.tvl_usd), fmtPct(tvl.tvl_change_pct_24h) + " (24h)", deltaClass(tvl.tvl_change_pct_24h));
-  html += statCard("Active Validators", fmtNum(val.active_count, 0));
-  html += statCard("Total SOL Supply", fmtNum(supply.total_sol, 0));
-  html += `</div>`;
+  html += "<h2 class=\"section\">Economic Snapshot <span class=\"note\" style=\"margin:0;\">— click any card for its history</span></h2><div class=\"grid\">";
+  html += expandableStatCard("SOL Price", fmtUsd(market.price_usd), fmtPct(market.price_change_pct_24h) + " (24h)", deltaClass(market.price_change_pct_24h),
+    "market.price.price_usd", "#14F195", function(v){return fmtUsd(v);});
+  html += expandableStatCard("Chain TVL", fmtUsd(tvl.tvl_usd), fmtPct(tvl.tvl_change_pct_24h) + " (24h)", deltaClass(tvl.tvl_change_pct_24h),
+    "defi.tvl.tvl_usd", "#9945FF", function(v){return fmtUsd(v);});
+  html += expandableStatCard("Active Validators", fmtNum(val.active_count, 0), null, null,
+    "validators.active_count", "#5ac8ff", function(v){return fmtNum(v,0);});
+  html += expandableStatCard("Total SOL Supply", fmtNum(supply.total_sol, 0), null, null,
+    "supply.total_sol", "#ffb454", function(v){return fmtNum(v,0);});
+  html += "</div>";
 
   document.getElementById("tab-overview").innerHTML = html;
 }
@@ -296,90 +378,86 @@ function renderOverview(){
 function renderNetwork(){
   const net = REPORT.network_performance || {};
 
-  let html = `<h2 class="section">Live Metrics</h2><div class="grid">`;
+  let html = "<h2 class=\"section\">Live Metrics</h2><div class=\"grid\">";
   html += statCard("Current TPS", fmtNum(net.current_tps, 0));
-  html += statCard("Avg / Max / Min TPS", `${fmtNum(net.avg_tps,0)} / ${fmtNum(net.max_tps,0)} / ${fmtNum(net.min_tps,0)}`, null, null, true);
+  html += statCard("Avg / Max / Min TPS", fmtNum(net.avg_tps,0) + " / " + fmtNum(net.max_tps,0) + " / " + fmtNum(net.min_tps,0), null, null, true);
   html += statCard("Avg Slot Time", fmtNum(net.avg_slot_time_ms,0) + " ms");
   html += statCard("Current Slot", fmtNum(net.current_slot, 0), null, null, true);
-  html += `</div>`;
+  html += "</div>";
 
-  html += `<h2 class="section">Estimated Daily Transactions (trend)</h2>`;
-  html += `<div class="chart-card"><div class="chart-title">Derived from avg TPS × 86,400s per snapshot — a proxy, not an exact daily tx count</div>
-    <div class="chart-wrap"><canvas id="chart-tx-trend"></canvas></div></div>`;
+  html += "<h2 class=\"section\">Estimated Daily Transactions (trend)</h2>";
+  html += "<div class=\"chart-card\"><div class=\"chart-title\">Derived from avg TPS × 86,400s per snapshot — a proxy, not an exact daily tx count</div>" +
+    "<div class=\"chart-wrap\"><canvas id=\"chart-tx-trend\"></canvas></div></div>";
 
-  html += `<h2 class="section">Unique Active Wallets</h2>`;
-  html += `<div class="list-card"><div class="list-item"><div class="desc">
-    Not available from this project's keyless data sources (Solana RPC / DeFiLlama / CoinGecko don't expose
-    unique active-wallet counts). Getting this reliably requires a paid indexer (e.g. Dune, Flipside, Artemis).
-    Left as a documented limitation rather than shown with fabricated numbers — see README "Known limitations."
-    </div></div></div>`;
+  html += "<h2 class=\"section\">Unique Active Wallets</h2>";
+  html += "<div class=\"list-card\"><div class=\"list-item\"><div class=\"desc\">" +
+    "Not available from this project's keyless data sources (Solana RPC / DeFiLlama / CoinGecko don't expose " +
+    "unique active-wallet counts). Getting this reliably requires a paid indexer (e.g. Dune, Flipside, Artemis). " +
+    "Left as a documented limitation rather than shown with fabricated numbers — see README \"Known limitations.\"" +
+    "</div></div></div>";
 
-  html += `<h2 class="section">TPS Trend (recent snapshots)</h2>`;
-  html += `<div class="chart-card"><div class="chart-wrap"><canvas id="chart-tps-trend"></canvas></div></div>`;
+  html += "<h2 class=\"section\">TPS Trend (recent snapshots)</h2>";
+  html += "<div class=\"chart-card\"><div class=\"chart-wrap\"><canvas id=\"chart-tps-trend\"></canvas></div></div>";
 
   document.getElementById("tab-network").innerHTML = html;
 
-  const labels = HISTORY.map(h => new Date(h.generated_at_unix * 1000).toLocaleString(undefined, {month:"short", day:"numeric", hour:"2-digit", minute:"2-digit"}));
-  const tpsValues = HISTORY.map(h => h.network_performance ? h.network_performance.avg_tps : null);
-  const txEstimate = tpsValues.map(v => v === null ? null : Math.round(v * 86400));
+  const labels = historyLabels();
+  const tpsValues = seriesForPath("network_performance.avg_tps");
+  const txEstimate = tpsValues.map(function(v){ return v === null ? null : Math.round(v * 86400); });
 
   lineChart("chart-tps-trend", labels, [{
     label: "Avg TPS", data: tpsValues, borderColor: "#14F195",
     backgroundColor: "rgba(20,241,149,0.08)", fill: true, tension: 0.3, pointRadius: 0
-  }]);
+  }], function(v){return fmtNum(v,0);});
   lineChart("chart-tx-trend", labels, [{
     label: "Est. txs/day", data: txEstimate, borderColor: "#9945FF",
     backgroundColor: "rgba(153,69,255,0.08)", fill: true, tension: 0.3, pointRadius: 0
-  }], v => fmtUsd(v).replace("$",""));
+  }], function(v){return fmtNum(v,0);});
 }
 
 function renderValidators(){
   const val = REPORT.validators || {};
   const top = val.top_validators || [];
 
-  let html = `<h2 class="section">Validator Status</h2><div class="grid">`;
+  let html = "<h2 class=\"section\">Validator Status</h2><div class=\"grid\">";
   html += statCard("Active Validators", fmtNum(val.active_count, 0));
   html += statCard("Delinquent Validators", fmtNum(val.delinquent_count, 0));
   html += statCard("Delinquent Stake %", fmtNum(val.delinquent_stake_pct, 2) + "%");
   const conc = val.stake_concentration || {};
   html += statCard("Validators to 33% Stake", fmtNum(conc.validators_to_control_33pct, 0));
-  html += `</div>`;
+  html += "</div>";
 
-  html += `<h2 class="section">Stake Distribution</h2>`;
-  html += `<div class="controls">
-    <label for="val-count-select">Show top</label>
-    <select id="val-count-select">
-      <option value="10">10 validators</option>
-      <option value="20" selected>20 validators</option>
-      <option value="${top.length}">All fetched (${top.length})</option>
-    </select>
-  </div>`;
-  html += `<div class="chart-card"><div class="chart-title">Active stake (SOL) by validator</div>
-    <div class="chart-wrap tall"><canvas id="chart-validator-stake"></canvas></div></div>`;
+  html += "<h2 class=\"section\">Stake Distribution</h2>";
+  html += "<div class=\"controls\"><label for=\"val-count-select\">Show top</label>" +
+    "<select id=\"val-count-select\">" +
+    "<option value=\"10\">10 validators</option>" +
+    "<option value=\"20\" selected>20 validators</option>" +
+    "<option value=\"" + top.length + "\">All fetched (" + top.length + ")</option>" +
+    "</select></div>";
+  html += "<div class=\"chart-card\"><div class=\"chart-title\">Active stake (SOL) by validator</div>" +
+    "<div class=\"chart-wrap tall\"><canvas id=\"chart-validator-stake\"></canvas></div></div>";
 
   if(top.length){
-    html += `<div class="table-wrap" style="margin-top:16px;"><table>
-      <thead><tr><th>#</th><th>Vote Account</th><th>Stake (SOL)</th><th>Commission</th><th>Last Vote</th></tr></thead>
-      <tbody>`;
-    top.forEach((v,i)=>{
-      html += `<tr><td>${i+1}</td><td>${v.vote_pubkey ? v.vote_pubkey.slice(0,6)+"…"+v.vote_pubkey.slice(-6) : "N/A"}</td>
-        <td>${fmtNum(v.activated_stake_sol,0)}</td><td>${v.commission_pct}%</td>
-        <td class="mono-dim">${v.last_vote ?? "N/A"}</td></tr>`;
+    html += "<div class=\"table-wrap\" style=\"margin-top:16px;\"><table><thead><tr><th>#</th><th>Vote Account</th><th>Stake (SOL)</th><th>Commission</th><th>Last Vote</th></tr></thead><tbody>";
+    top.forEach(function(v,i){
+      html += "<tr><td>" + (i+1) + "</td><td>" + (v.vote_pubkey ? v.vote_pubkey.slice(0,6)+"…"+v.vote_pubkey.slice(-6) : "N/A") + "</td>" +
+        "<td>" + fmtNum(v.activated_stake_sol,0) + "</td><td>" + v.commission_pct + "%</td>" +
+        "<td class=\"mono-dim\">" + (v.last_vote != null ? v.last_vote : "N/A") + "</td></tr>";
     });
-    html += `</tbody></table></div>`;
+    html += "</tbody></table></div>";
   }
 
   document.getElementById("tab-validators").innerHTML = html;
 
   function draw(count){
     const subset = top.slice(0, count);
-    const labels = subset.map(v => v.vote_pubkey ? v.vote_pubkey.slice(0,4)+"…"+v.vote_pubkey.slice(-4) : "?");
-    const data = subset.map(v => v.activated_stake_sol);
+    const labels = subset.map(function(v){ return v.vote_pubkey ? v.vote_pubkey.slice(0,4)+"…"+v.vote_pubkey.slice(-4) : "?"; });
+    const data = subset.map(function(v){ return v.activated_stake_sol; });
     barChart("chart-validator-stake", labels, data, "Stake (SOL)", true,
-      i => `rgba(20,241,149,${1 - i*0.03})`);
+      function(i){ return "rgba(20,241,149," + (1 - i*0.03) + ")"; });
   }
   draw(20);
-  document.getElementById("val-count-select").addEventListener("change", (e) => draw(parseInt(e.target.value, 10)));
+  document.getElementById("val-count-select").addEventListener("change", function(e){ draw(parseInt(e.target.value, 10)); });
 }
 
 function renderDefi(){
@@ -388,63 +466,57 @@ function renderDefi(){
   const stable = defi.stablecoins || {};
   const dex = defi.dex_volume || {};
   const fees = defi.fees_and_rev || {};
+  const market = (REPORT.market || {}).price || {};
   const protocols = (defi.top_protocols || {}).protocols || [];
 
-  let html = `<h2 class="section">Chain-Wide Metrics</h2><div class="grid">`;
-  html += statCard("Chain TVL", fmtUsd(tvl.tvl_usd), fmtPct(tvl.tvl_change_pct_24h) + " (24h)", deltaClass(tvl.tvl_change_pct_24h));
+  let html = "<h2 class=\"section\">Chain-Wide Metrics <span class=\"note\" style=\"margin:0;\">— click any card for its history</span></h2><div class=\"grid\">";
+  html += expandableStatCard("Chain TVL", fmtUsd(tvl.tvl_usd), fmtPct(tvl.tvl_change_pct_24h) + " (24h)", deltaClass(tvl.tvl_change_pct_24h),
+    "defi.tvl.tvl_usd", "#9945FF", function(v){return fmtUsd(v);});
   html += statCard("TVL Change (7d)", fmtPct(tvl.tvl_change_pct_7d), null, null, true);
-  html += statCard("Stablecoin Supply", fmtUsd(stable.total_stablecoin_supply_usd));
-  html += statCard("DEX Volume (24h)", fmtUsd(dex.dex_volume_24h_usd));
-  html += statCard("Chain Revenue / REV (24h)", fmtUsd(fees.chain_revenue_24h_usd));
-  html += `</div>`;
+  html += expandableStatCard("Stablecoin Supply", fmtUsd(stable.total_stablecoin_supply_usd), null, null,
+    "defi.stablecoins.total_stablecoin_supply_usd", "#5ac8ff", function(v){return fmtUsd(v);});
+  html += expandableStatCard("DEX Volume (24h)", fmtUsd(dex.dex_volume_24h_usd), null, null,
+    "defi.dex_volume.dex_volume_24h_usd", "#14F195", function(v){return fmtUsd(v);});
+  html += expandableStatCard("Chain Revenue / REV (24h)", fmtUsd(fees.chain_revenue_24h_usd), null, null,
+    "defi.fees_and_rev.chain_revenue_24h_usd", "#ffb454", function(v){return fmtUsd(v);});
+  html += expandableStatCard("Market Cap", fmtUsd(market.market_cap_usd), null, null,
+    "market.price.market_cap_usd", "#9945FF", function(v){return fmtUsd(v);});
+  html += "</div>";
 
-  html += `<h2 class="section">TVL Trend</h2>`;
-  html += `<div class="chart-card"><div class="chart-wrap"><canvas id="chart-tvl-trend"></canvas></div></div>`;
-
-  html += `<h2 class="section">TVL Split by Protocol</h2>`;
-  html += `<div class="chart-card"><div class="chart-title">Top ${protocols.length} Solana protocols by TVL</div>
-    <div class="chart-wrap tall"><canvas id="chart-protocols"></canvas></div></div>`;
+  html += "<h2 class=\"section\">TVL Split by Protocol</h2>";
+  html += "<div class=\"chart-card\"><div class=\"chart-title\">Top " + protocols.length + " Solana protocols by TVL</div>" +
+    "<div class=\"chart-wrap tall\"><canvas id=\"chart-protocols\"></canvas></div></div>";
   if(protocols.length){
-    html += `<div class="table-wrap" style="margin-top:16px;"><table>
-      <thead><tr><th>#</th><th>Protocol</th><th>Category</th><th>TVL</th><th>% of Chain TVL</th><th>24h</th></tr></thead>
-      <tbody>`;
-    protocols.forEach((p,i)=>{
-      html += `<tr><td>${i+1}</td><td>${p.url ? `<a href="${p.url}" target="_blank">${p.name}</a>` : p.name}</td>
-        <td class="mono-dim">${p.category || "—"}</td><td>${fmtUsd(p.tvl_usd)}</td>
-        <td>${fmtNum(p.pct_of_solana_tvl,2)}%</td>
-        <td>${fmtPct(p.change_1d_pct)}</td></tr>`;
+    html += "<div class=\"table-wrap\" style=\"margin-top:16px;\"><table><thead><tr><th>#</th><th>Protocol</th><th>Category</th><th>TVL</th><th>% of Chain TVL</th><th>24h</th></tr></thead><tbody>";
+    protocols.forEach(function(p,i){
+      html += "<tr><td>" + (i+1) + "</td><td>" + (p.url ? "<a href=\"" + p.url + "\" target=\"_blank\">" + p.name + "</a>" : p.name) + "</td>" +
+        "<td class=\"mono-dim\">" + (p.category || "—") + "</td><td>" + fmtUsd(p.tvl_usd) + "</td>" +
+        "<td>" + fmtNum(p.pct_of_solana_tvl,2) + "%</td><td>" + fmtPct(p.change_1d_pct) + "</td></tr>";
     });
-    html += `</tbody></table></div>`;
+    html += "</tbody></table></div>";
   }
 
-  html += `<h2 class="section">TVL Split by Coin (stablecoins)</h2>`;
+  html += "<h2 class=\"section\">TVL Split by Coin (stablecoins)</h2>";
   const breakdown = stable.breakdown || {};
   const coinLabels = Object.keys(breakdown);
   if(coinLabels.length){
-    html += `<div class="chart-card"><div class="chart-title">Stablecoin supply on Solana by peg type</div>
-      <div class="chart-wrap"><canvas id="chart-coins"></canvas></div></div>
-      <div class="note">DeFiLlama does not expose a single keyless "TVL by underlying token" endpoint across
-      an entire chain (it would require one call per protocol). This chart shows the closest available
-      keyless breakdown — stablecoin supply by peg type. See README for details.</div>`;
+    html += "<div class=\"chart-card\"><div class=\"chart-title\">Stablecoin supply on Solana by peg type</div>" +
+      "<div class=\"chart-wrap\"><canvas id=\"chart-coins\"></canvas></div></div>" +
+      "<div class=\"note\">DeFiLlama does not expose a single keyless \"TVL by underlying token\" endpoint across " +
+      "an entire chain (it would require one call per protocol). This chart shows the closest available " +
+      "keyless breakdown — stablecoin supply by peg type. See README for details.</div>";
   } else {
-    html += `<div class="list-card"><div class="list-item"><div class="desc">No coin-level breakdown available in this snapshot.</div></div></div>`;
+    html += "<div class=\"list-card\"><div class=\"list-item\"><div class=\"desc\">No coin-level breakdown available in this snapshot.</div></div></div>";
   }
 
   document.getElementById("tab-defi").innerHTML = html;
 
-  const labels = HISTORY.map(h => new Date(h.generated_at_unix * 1000).toLocaleString(undefined, {month:"short", day:"numeric", hour:"2-digit", minute:"2-digit"}));
-  const tvlValues = HISTORY.map(h => h.defi && h.defi.tvl ? h.defi.tvl.tvl_usd : null);
-  lineChart("chart-tvl-trend", labels, [{
-    label: "Chain TVL", data: tvlValues, borderColor: "#9945FF",
-    backgroundColor: "rgba(153,69,255,0.08)", fill: true, tension: 0.3, pointRadius: 0
-  }], v => fmtUsd(v));
-
   if(protocols.length){
-    barChart("chart-protocols", protocols.map(p=>p.name), protocols.map(p=>p.tvl_usd), "TVL", true,
-      i => `rgba(153,69,255,${1 - i*0.05})`);
+    barChart("chart-protocols", protocols.map(function(p){return p.name;}), protocols.map(function(p){return p.tvl_usd;}), "TVL", true,
+      function(i){ return "rgba(153,69,255," + (1 - i*0.05) + ")"; });
   }
   if(coinLabels.length){
-    barChart("chart-coins", coinLabels, coinLabels.map(k=>breakdown[k]), "Supply (USD)", false);
+    barChart("chart-coins", coinLabels, coinLabels.map(function(k){return breakdown[k];}), "Supply (USD)", false);
   }
 }
 
@@ -452,31 +524,30 @@ function renderEcosystem(){
   const social = REPORT.social || {};
   const upcoming = REPORT.upcoming || [];
 
-  let html = `<h2 class="section">Ecosystem &amp; Community Watchlist</h2>`;
+  let html = "<h2 class=\"section\">Ecosystem &amp; Community Watchlist</h2>";
   if(social._note){
-    html += `<div class="note" style="margin-bottom:10px;">${social._note}</div>`;
+    html += "<div class=\"note\" style=\"margin-bottom:10px;\">" + social._note + "</div>";
   }
-  html += `<div class="list-card">`;
-  (social.accounts || []).forEach(acc=>{
-    html += `<div class="list-item">
-      <div><div class="name">${acc.handle}</div><div class="desc">${acc.reason}</div></div>
-      <a class="twitter-link" href="${twitterHandleUrl(acc.handle)}" target="_blank" rel="noopener">Open on X →</a>
-    </div>`;
+  html += "<div class=\"list-card\">";
+  (social.accounts || []).forEach(function(acc){
+    html += "<div class=\"list-item\"><div><div class=\"name\">" + acc.handle + "</div><div class=\"desc\">" + acc.reason + "</div></div>" +
+      "<a class=\"twitter-link\" href=\"" + twitterHandleUrl(acc.handle) + "\" target=\"_blank\" rel=\"noopener\">Open on X →</a></div>";
   });
-  html += `</div>`;
+  html += "</div>";
 
-  html += `<h2 class="section">Upcoming Upgrades &amp; Developments</h2><div class="list-card">`;
-  upcoming.forEach(u=>{
-    html += `<div class="list-item"><div><div class="name">${u.name}</div>
-      <div class="desc">${u.description}</div></div>
-      <a class="twitter-link" href="${u.track}" target="_blank" rel="noopener">Track →</a></div>`;
+  html += "<h2 class=\"section\">Upcoming Upgrades &amp; Developments</h2><div class=\"list-card\">";
+  upcoming.forEach(function(u){
+    html += "<div class=\"list-item\"><div><div class=\"name\">" + u.name + "</div><div class=\"desc\">" + u.description + "</div></div>" +
+      "<a class=\"twitter-link\" href=\"" + u.track + "\" target=\"_blank\" rel=\"noopener\">Track →</a></div>";
   });
-  html += `</div>`;
+  html += "</div>";
 
   document.getElementById("tab-ecosystem").innerHTML = html;
 }
 
 function renderAllTabs(){
+  CARD_COUNTER = 0;
+  Object.keys(CARD_REGISTRY).forEach(function(k){ delete CARD_REGISTRY[k]; });
   renderOverview();
   renderNetwork();
   renderValidators();
@@ -485,10 +556,10 @@ function renderAllTabs(){
 }
 
 function setupTabs(){
-  document.querySelectorAll(".tab-btn").forEach(btn=>{
-    btn.addEventListener("click", ()=>{
-      document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("active"));
-      document.querySelectorAll(".tab-panel").forEach(p=>p.classList.remove("active"));
+  document.querySelectorAll(".tab-btn").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      document.querySelectorAll(".tab-btn").forEach(function(b){ b.classList.remove("active"); });
+      document.querySelectorAll(".tab-panel").forEach(function(p){ p.classList.remove("active"); });
       btn.classList.add("active");
       document.getElementById("tab-" + btn.dataset.tab).classList.add("active");
     });
@@ -503,34 +574,35 @@ async function load(){
     REPORT = payload.report;
     ANOMALIES = payload.anomalies || [];
     HISTORY = payload.history_series || [];
+    LAST_GENERATED_UNIX = REPORT.meta.generated_at_unix;
 
-    document.getElementById("updated").innerHTML =
-      `<span class="dot"></span>updated ${REPORT.meta.generated_at_utc}`;
+    tickUpdatedLabel();
     renderAlerts(ANOMALIES);
 
     if(document.getElementById("tab-overview") === null){
-      document.getElementById("content").innerHTML = `
-        <div class="tab-panel active" id="tab-overview"></div>
-        <div class="tab-panel" id="tab-network"></div>
-        <div class="tab-panel" id="tab-validators"></div>
-        <div class="tab-panel" id="tab-defi"></div>
-        <div class="tab-panel" id="tab-ecosystem"></div>
-      `;
+      document.getElementById("content").innerHTML =
+        "<div class=\"tab-panel active\" id=\"tab-overview\"></div>" +
+        "<div class=\"tab-panel\" id=\"tab-network\"></div>" +
+        "<div class=\"tab-panel\" id=\"tab-validators\"></div>" +
+        "<div class=\"tab-panel\" id=\"tab-defi\"></div>" +
+        "<div class=\"tab-panel\" id=\"tab-ecosystem\"></div>";
       setupTabs();
     }
     renderAllTabs();
 
     document.getElementById("footer").innerHTML =
-      `Data: Solana RPC · DeFiLlama · CoinGecko — refreshed automatically. ` +
-      `<a href="https://github.com/YOUR_GITHUB_USERNAME/solpulse-canada" target="_blank">Source on GitHub</a>`;
+      "Data: Solana RPC · DeFiLlama · CoinGecko — refreshed automatically. " +
+      "<a href=\"https://github.com/YOUR_GITHUB_USERNAME/solpulse-canada\" target=\"_blank\">Source on GitHub</a>";
   }catch(err){
     document.getElementById("content").innerHTML =
-      `<div class="err">Couldn't load data.json (${err.message}). If you're running this locally, ` +
-      `run <code>python -m src.main</code> first to generate dashboard/data.json, then reload.</div>`;
+      "<div class=\"err\">Couldn't load data.json (" + err.message + "). If you're running this locally, " +
+      "run <code>python -m src.main</code> first to generate dashboard/data.json, then reload.</div>";
   }
 }
+
 load();
 setInterval(load, 30000);
+setInterval(tickUpdatedLabel, 1000);
 </script>
 </body>
 </html>

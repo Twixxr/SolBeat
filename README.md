@@ -24,7 +24,7 @@ The dashboard (`dashboard/index.html`) is a **tabbed, chart-driven interface**:
 - **DeFi** — chain TVL trend, TVL split by protocol (bar chart + table, sourced from DeFiLlama's protocol list), and stablecoin supply split by peg type as the closest available keyless "by coin" cut
 - **Ecosystem** — the Twitter/X watchlist with direct clickable links to each account, plus upcoming upgrades
 
-It also auto-refreshes every 30 seconds in the browser (re-fetching `data.json`), so it feels live between the underlying ~30-minute data refreshes.
+It also auto-refreshes every 30 seconds in the browser (re-fetching `data.json`), so it feels live between the underlying ~30-minute data refreshes, and shows **"updated X seconds/minutes/hours ago"** in the header (ticking live every second) instead of a fixed timestamp. Every economic indicator card (SOL price, chain TVL, stablecoin supply, DEX volume, chain revenue, market cap, validator count, SOL supply, avg TPS, slot time) is **click-to-expand**: clicking a card reveals its own small history chart, sourced from the same rolling `history.jsonl` data described below.
 
 Every requirement in the bounty's "No API Keys/Dependencies" preference is honored: the entire data-collection path (RPC + DeFiLlama + CoinGecko) runs on Python's standard library (`urllib`) with zero required third-party packages. `requirements.txt` is intentionally empty for that reason.
 
