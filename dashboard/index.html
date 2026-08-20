@@ -184,7 +184,7 @@
   <div class="heartbeat-wrap" id="heartbeat">
     <div class="heartbeat-label">HR // SOL-MAINNET</div>
     <svg class="heartbeat-svg" id="heartbeat-svg" viewBox="0 0 1200 40" preserveAspectRatio="none">
-      <path class="heartbeat-path" pathLength="100" d="M0,20 L500,20
+      <path class="heartbeat-path" id="heartbeat-path" pathLength="100" d="M0,20 L500,20
         L530,20 L540,16 L550,20
         L570,20 L580,34 L590,2 L600,36 L610,20
         L630,14 L640,20
@@ -753,7 +753,7 @@ load();
 // Refresh data each time the heartbeat line completes one full loop across
 // the screen, instead of a fixed timer — keeps the "live" feel tied to what
 // the person actually sees animating.
-document.getElementById("heartbeat-svg").addEventListener("animationiteration", load);
+document.getElementById("heartbeat-path").addEventListener("animationiteration", load);
 setInterval(tickUpdatedLabel, 1000);
 </script>
 </body>
