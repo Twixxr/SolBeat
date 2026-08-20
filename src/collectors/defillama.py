@@ -96,24 +96,23 @@ def collect_fees_and_rev():
 
 def collect_top_protocols(limit=15):
     """
-    Break Solana chain TVL down by individual protocol (e.g. Jupiter,
-    Kamino, Marinade...) rather than just the aggregate chain total.
-
-    Note on "coins": DeFiLlama does not expose a single keyless endpoint
-    for "TVL by underlying token across an entire chain" — that requires
-    per-protocol token-breakdown calls (one request per protocol, which
-    would quickly hit rate limits across hundreds of Solana protocols).
-    As a practical proxy, we surface the pegged-asset breakdown from the
-    stablecoin collector (collect_stablecoin_supply) as the "by coin"
-    view, and protocol-level TVL here as the "by protocol" view — matching
-    the two most useful cuts DeFiLlama's own UI leads with.
+    Break Solana chain TVL down by individual **onchain** DeFi protocol
+    (e.g. Jupiter, Kamino, ONRE, Solstice...) rather than the aggregate
+    chain total. Centralized exchanges (DeFiLlama category "CEX") are
+    excluded — those aren't onchain DeFi and would misrepresent this as
+    a protocol breakdown when it's really a mix of onchain contracts and
+    off-chain custodial balances.
     """
     data, err = _safe_get(config.DEFILLAMA_PROTOCOLS_URL)
     if err or not data:
         return {"_errors": [err] if err else ["empty response"]}
 
+    EXCLUDED_CATEGORIES = {"CEX"}
+
     solana_protocols = []
     for p in data:
+        if p.get("category") in EXCLUDED_CATEGORIES:
+            continue
         chain_tvls = p.get("chainTvls", {})
         solana_tvl = chain_tvls.get("Solana")
         if solana_tvl is None:
@@ -144,3 +143,55 @@ def collect_all():
         "fees_and_rev": collect_fees_and_rev(),
         "top_protocols": collect_top_protocols(),
     }
+
+
+# ---------------------------------------------------------------------------
+# Long-run (multi-year) daily history, for the dashboard's expanded charts.
+# DeFiLlama keeps full daily history for these metrics going back to when
+# each first appeared on their platform — no key required.
+# ---------------------------------------------------------------------------
+
+def collect_tvl_history():
+    data, err = _safe_get(config.DEFILLAMA_CHAIN_TVL_URL)
+    if err or not data:
+        return {"_errors": [err] if err else ["empty response"]}
+    data_sorted = sorted(data, key=lambda d: d["date"])
+    trimmed = data_sorted[-config.LONG_HISTORY_MAX_POINTS:]
+    return {"series": [{"date_unix": d["date"], "value": round(d["tvl"], 2)} for d in trimmed]}
+
+
+def collect_stablecoin_history():
+    data, err = _safe_get(config.DEFILLAMA_STABLECOIN_CHART_URL)
+    if err or not data:
+        return {"_errors": [err] if err else ["empty response"]}
+    series = []
+    for d in data:
+        try:
+            date_unix = int(d.get("date"))
+        except (TypeError, ValueError):
+            continue
+        total = d.get("totalCirculating", {}) or {}
+        usd = sum(v for v in total.values() if isinstance(v, (int, float)))
+        series.append({"date_unix": date_unix, "value": round(usd, 2)})
+    series = series[-config.LONG_HISTORY_MAX_POINTS:]
+    return {"series": series}
+
+
+def collect_dex_volume_history():
+    data, err = _safe_get(config.DEFILLAMA_DEX_VOLUME_CHART_URL)
+    if err or not data:
+        return {"_errors": [err] if err else ["empty response"]}
+    chart = data.get("totalDataChart", [])
+    series = [{"date_unix": int(p[0]), "value": p[1]} for p in chart]
+    series = series[-config.LONG_HISTORY_MAX_POINTS:]
+    return {"series": series}
+
+
+def collect_fees_history():
+    data, err = _safe_get(config.DEFILLAMA_FEES_CHART_URL)
+    if err or not data:
+        return {"_errors": [err] if err else ["empty response"]}
+    chart = data.get("totalDataChart", [])
+    series = [{"date_unix": int(p[0]), "value": p[1]} for p in chart]
+    series = series[-config.LONG_HISTORY_MAX_POINTS:]
+    return {"series": series}

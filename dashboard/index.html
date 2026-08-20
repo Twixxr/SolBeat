@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SolPulse Canada — Solana Ecosystem Report</title>
+<title>SolBeat — Solana Ecosystem Heartbeat</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 <style>
   :root{
@@ -38,12 +38,34 @@
     margin-right:6px;animation:pulse 2s infinite;}
   @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
 
-  .pulsebar{height:3px;width:100%;margin:0 0 22px;border-radius:2px;overflow:hidden;
-    background:linear-gradient(90deg, var(--purple), var(--green));background-size:200% 100%;
-    animation:flow 6s linear infinite;}
-  @keyframes flow{0%{background-position:0% 0;}100%{background-position:-200% 0;}}
+  .heartbeat-wrap{position:relative;overflow:hidden;height:44px;width:100%;margin:0 0 22px;
+    border-radius:8px;
+    background:
+      repeating-linear-gradient(90deg, rgba(20,241,149,.07) 0 1px, transparent 1px 48px),
+      repeating-linear-gradient(0deg, rgba(20,241,149,.07) 0 1px, transparent 1px 11px),
+      #060706;
+    border:1px solid var(--panel-border);
+    box-shadow: inset 0 0 18px rgba(0,0,0,.7), inset 0 0 2px rgba(20,241,149,.15);}
+  .heartbeat-label{position:absolute;top:5px;left:9px;font-family:var(--mono);font-size:9px;
+    color:var(--green);letter-spacing:.12em;text-transform:uppercase;opacity:.75;z-index:2;
+    text-shadow:0 0 4px rgba(20,241,149,.6);}
+  .heartbeat-svg{height:100%;width:100%;display:block;}
+  .heartbeat-path{fill:none;stroke:var(--green);stroke-width:2;
+    filter:drop-shadow(0 0 4px rgba(20,241,149,.65));
+    stroke-dasharray:100 100;stroke-dashoffset:100;
+    animation:heartbeat-draw 4s ease-in-out infinite;}
+  .heartbeat-cursor{fill:var(--green);filter:drop-shadow(0 0 6px rgba(20,241,149,.95));}
+  @keyframes heartbeat-draw{
+    0%{stroke-dashoffset:100;opacity:0;}
+    4%{opacity:1;}
+    72%{stroke-dashoffset:0;opacity:1;}
+    85%{stroke-dashoffset:0;opacity:1;}
+    96%{opacity:0;}
+    100%{stroke-dashoffset:0;opacity:0;}
+  }
   @media (prefers-reduced-motion: reduce){
-    .pulsebar{animation:none;} .updated .dot{animation:none;}
+    .heartbeat-path,.heartbeat-cursor{animation:none;stroke-dashoffset:0;opacity:1;}
+    .updated .dot{animation:none;}
   }
 
   .tabs{display:flex;gap:4px;margin-bottom:24px;border-bottom:1px solid var(--panel-border);
@@ -83,10 +105,26 @@
   .card.expandable:hover{border-color:rgba(20,241,149,.4);}
   .card.expandable .expand-hint{font-family:var(--mono);font-size:10px;color:var(--text-faint);
     margin-top:8px;display:flex;align-items:center;gap:4px;}
-  .card.expandable .chevron{display:inline-block;transition:transform .15s;}
-  .card.expandable.expanded .chevron{transform:rotate(180deg);}
-  .mini-chart{height:0;overflow:hidden;transition:height .25s ease;margin-top:0;}
-  .card.expandable.expanded .mini-chart{height:90px;margin-top:10px;}
+
+  .modal-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:100;
+    align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(2px);}
+  .modal-backdrop.open{display:flex;}
+  .modal-panel{background:var(--panel);border:1px solid var(--panel-border);border-radius:14px;
+    padding:26px;max-width:960px;width:100%;max-height:88vh;overflow:auto;
+    box-shadow:0 20px 60px rgba(0,0,0,.5);}
+  .modal-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px;gap:16px;}
+  .modal-title{font-size:19px;font-weight:700;letter-spacing:-0.01em;}
+  .modal-subtitle{font-family:var(--mono);font-size:11px;color:var(--text-dim);margin-top:6px;line-height:1.5;}
+  .modal-close{background:none;border:1px solid var(--panel-border);color:var(--text-dim);
+    border-radius:8px;width:34px;height:34px;flex:none;cursor:pointer;font-size:15px;transition:.15s;}
+  .modal-close:hover{color:var(--text);border-color:var(--text-dim);}
+  .modal-chart-wrap{height:420px;position:relative;}
+  .modal-note{font-family:var(--mono);font-size:12px;color:var(--text-faint);margin-top:14px;
+    padding-top:14px;border-top:1px solid var(--panel-border);}
+  @media (max-width:600px){
+    .modal-panel{padding:18px;}
+    .modal-chart-wrap{height:280px;}
+  }
 
   .epoch-card{display:flex;align-items:center;gap:16px;}
   .ring{position:relative;width:64px;height:64px;flex:none;}
@@ -138,12 +176,27 @@
 <div class="wrap">
   <header>
     <div class="brand">
-      <h1>SolPulse <span style="color:var(--green)">Canada</span></h1>
-      <span class="sub">// solana ecosystem report</span>
+      <h1>Sol<span style="color:var(--green)">Beat</span></h1>
+      <span class="sub">// solana ecosystem heartbeat</span>
     </div>
     <div class="updated" id="updated">loading…</div>
   </header>
-  <div class="pulsebar"></div>
+  <div class="heartbeat-wrap" id="heartbeat">
+    <div class="heartbeat-label">HR // SOL-MAINNET</div>
+    <svg class="heartbeat-svg" id="heartbeat-svg" viewBox="0 0 1200 40" preserveAspectRatio="none">
+      <path class="heartbeat-path" pathLength="100" d="M0,20 L500,20
+        L530,20 L540,16 L550,20
+        L570,20 L580,34 L590,2 L600,36 L610,20
+        L630,14 L640,20
+        L1200,20"/>
+      <circle class="heartbeat-cursor" r="4" cy="20">
+        <animate attributeName="cx" values="0;0;1200;1200;1200" keyTimes="0;0.04;0.72;0.85;1"
+          dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;1;0;0" keyTimes="0;0.04;0.72;0.85;0.96;1"
+          dur="4s" repeatCount="indefinite"/>
+      </circle>
+    </svg>
+  </div>
 
   <div id="alerts"></div>
 
@@ -151,7 +204,7 @@
     <button class="tab-btn active" data-tab="overview">Overview</button>
     <button class="tab-btn" data-tab="network">Network</button>
     <button class="tab-btn" data-tab="validators">Validators</button>
-    <button class="tab-btn" data-tab="defi">DeFi</button>
+    <button class="tab-btn" data-tab="defi">Onchain DeFi</button>
     <button class="tab-btn" data-tab="ecosystem">Ecosystem</button>
   </nav>
 
@@ -160,6 +213,20 @@
   </div>
 
   <footer id="footer"></footer>
+</div>
+
+<div class="modal-backdrop" id="historyModalBackdrop" onclick="if(event.target===this) closeHistoryModal();">
+  <div class="modal-panel">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title" id="historyModalTitle"></div>
+        <div class="modal-subtitle" id="historyModalSubtitle"></div>
+      </div>
+      <button class="modal-close" onclick="closeHistoryModal()">✕</button>
+    </div>
+    <div class="modal-chart-wrap" id="historyModalChartWrap"><canvas id="historyModalCanvas"></canvas></div>
+    <div class="modal-note" id="historyModalNote"></div>
+  </div>
 </div>
 
 <script>
@@ -196,6 +263,9 @@ function deltaClass(v){
 }
 function twitterHandleUrl(handle){
   return "https://twitter.com/" + handle.replace(/^@/, "");
+}
+function isTwitterUrl(url){
+  return /(^|\/\/)(www\.)?(twitter\.com|x\.com)\//i.test(url || "");
 }
 
 function relativeTimeString(unixSeconds){
@@ -257,6 +327,24 @@ function barChart(id, labels, data, label, horizontal, colorFn){
     }
   });
 }
+const PIE_PALETTE = ["#14F195","#9945FF","#5ac8ff","#ffb454","#ff5c5c","#5eead4","#f472b6","#a3e635","#fb923c","#60a5fa","#c084fc","#94a3b8"];
+function pieChart(id, labels, data){
+  destroyChart(id);
+  const ctx = document.getElementById(id);
+  if(!ctx) return;
+  const colors = labels.map(function(_,i){ return PIE_PALETTE[i % PIE_PALETTE.length]; });
+  CHARTS[id] = new Chart(ctx, {
+    type: "doughnut",
+    data: { labels: labels, datasets: [{ data: data, backgroundColor: colors, borderColor: "#111318", borderWidth: 2 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { position: "right", labels: { boxWidth: 10, color: "#8b909c", font: {size: 10} } },
+        tooltip: { callbacks: { label: function(ctx){ return ctx.label + ": " + ctx.parsed.toFixed(2) + "%"; } } }
+      }
+    }
+  });
+}
 
 function statCard(label, value, deltaText, deltaCls, small){
   return "<div class=\"card\"><div class=\"label\">" + label + "</div>" +
@@ -280,42 +368,91 @@ function historyLabels(){
       {month:"short", day:"numeric", hour:"2-digit", minute:"2-digit"});
   });
 }
+function formatDateLabel(unixSeconds){
+  return new Date(unixSeconds * 1000).toLocaleDateString(undefined, {year:"numeric", month:"short", day:"numeric"});
+}
+function latestChangePct(series){
+  if(!series || series.length < 2) return null;
+  const last = series[series.length - 1].value;
+  const prev = series[series.length - 2].value;
+  if(prev === null || prev === undefined || prev === 0 || last === null || last === undefined) return null;
+  return 100 * (last - prev) / prev;
+}
 
-function expandableStatCard(label, value, deltaText, deltaCls, historyPath, color, formatter, small){
+/** A stat card that, when clicked, opens a large modal chart of its history.
+ *  `longHistoryKey` (optional) points into REPORT.long_history.<key>.series —
+ *  a multi-year daily series from DeFiLlama/CoinGecko, used when available.
+ *  `historyPath` is the fallback dot-path into this project's own short
+ *  rolling snapshot history, used when no long-run source exists for that
+ *  metric (e.g. TPS, validator count). */
+function expandableStatCard(label, value, deltaText, deltaCls, historyPath, color, formatter, small, longHistoryKey){
   const id = "ecard-" + (CARD_COUNTER++);
-  CARD_REGISTRY[id] = { historyPath: historyPath, color: color, formatter: formatter };
-  return "<div class=\"card expandable\" id=\"" + id + "\" onclick=\"toggleExpandCard('" + id + "')\">" +
+  CARD_REGISTRY[id] = { label: label, historyPath: historyPath, color: color, formatter: formatter, longHistoryKey: longHistoryKey || null };
+  return "<div class=\"card expandable\" id=\"" + id + "\" onclick=\"openHistoryModal('" + id + "')\">" +
     "<div class=\"label\">" + label + "</div>" +
     "<div class=\"value " + (small?"sm":"") + "\">" + value + "</div>" +
     (deltaText ? "<div class=\"delta " + deltaCls + "\">" + deltaText + "</div>" : "") +
-    "<div class=\"expand-hint\"><span class=\"chevron\">▾</span> click for history</div>" +
-    "<div class=\"mini-chart\"><canvas id=\"" + id + "-canvas\"></canvas></div>" +
+    "<div class=\"expand-hint\"><span class=\"chevron\">⤢</span> click to expand history</div>" +
     "</div>";
 }
 
-function toggleExpandCard(id){
-  const card = document.getElementById(id);
-  if(!card) return;
-  const wasExpanded = card.classList.contains("expanded");
-  card.classList.toggle("expanded");
-  if(!wasExpanded){
-    const meta = CARD_REGISTRY[id];
-    if(!meta) return;
-    const data = seriesForPath(meta.historyPath);
-    const hasData = data.some(function(v){ return v !== null && v !== undefined; });
-    const canvasWrap = document.getElementById(id + "-canvas").parentElement;
-    if(!hasData){
-      canvasWrap.innerHTML = "<div style=\"font-family:var(--mono);font-size:11px;color:var(--text-faint);padding-top:10px;\">Not enough history yet — check back after a few more automatic refreshes.</div>";
-      return;
+function openHistoryModal(id){
+  const meta = CARD_REGISTRY[id];
+  if(!meta) return;
+
+  document.getElementById("historyModalTitle").textContent = meta.label;
+
+  let series = null, sourceNote = "";
+  if(meta.longHistoryKey){
+    const lh = getByPath(REPORT, "long_history." + meta.longHistoryKey + ".series");
+    if(lh && lh.length){
+      series = lh;
+      sourceNote = "Full daily history since " + formatDateLabel(lh[0].date_unix) +
+        " — sourced from DeFiLlama / CoinGecko.";
     }
-    setTimeout(function(){
-      lineChart(id + "-canvas", historyLabels(), [{
-        data: data, borderColor: meta.color, backgroundColor: meta.color + "22",
-        fill: true, tension: 0.3, pointRadius: 0
-      }], meta.formatter, { axes: false });
-    }, 260);
   }
+  if(!series && meta.historyPath){
+    const shortValues = seriesForPath(meta.historyPath);
+    series = HISTORY.map(function(h, i){ return {date_unix: h.generated_at_unix, value: shortValues[i]}; })
+      .filter(function(p){ return p.value !== null && p.value !== undefined; });
+    sourceNote = "No long-run public data source exists for this metric — showing history since this " +
+      "report started tracking it" + (series.length ? (" (" + formatDateLabel(series[0].date_unix) + ")") : "") + ".";
+  }
+
+  document.getElementById("historyModalSubtitle").textContent = sourceNote;
+  const noteEl = document.getElementById("historyModalNote");
+  const chartWrap = document.getElementById("historyModalChartWrap");
+  document.getElementById("historyModalBackdrop").classList.add("open");
+
+  if(!series || series.length < 2){
+    chartWrap.innerHTML = "<canvas id=\"historyModalCanvas\"></canvas>";
+    noteEl.textContent = "Not enough history yet — check back after a few more automatic refreshes.";
+    return;
+  }
+
+  chartWrap.innerHTML = "<canvas id=\"historyModalCanvas\"></canvas>";
+  const change = latestChangePct(series);
+  noteEl.textContent = change !== null
+    ? ("Change vs. previous data point: " + (change > 0 ? "+" : "") + change.toFixed(2) + "%")
+    : "";
+
+  const labels = series.map(function(p){ return formatDateLabel(p.date_unix); });
+  const values = series.map(function(p){ return p.value; });
+
+  setTimeout(function(){
+    lineChart("historyModalCanvas", labels, [{
+      data: values, borderColor: meta.color, backgroundColor: meta.color + "22",
+      fill: true, tension: 0.25, pointRadius: 0
+    }], meta.formatter, { axes: true });
+  }, 30);
 }
+
+function closeHistoryModal(){
+  document.getElementById("historyModalBackdrop").classList.remove("open");
+}
+document.addEventListener("keydown", function(e){
+  if(e.key === "Escape") closeHistoryModal();
+});
 
 function epochRing(pct){
   pct = (pct === null || pct === undefined) ? 0 : pct;
@@ -331,7 +468,7 @@ function epochRing(pct){
 function renderAlerts(anomalies){
   const el = document.getElementById("alerts");
   if(!anomalies || anomalies.length === 0){
-    el.innerHTML = "<div class=\"alert ok\"><span class=\"badge\">OK</span> No anomalies detected in this snapshot.</div>";
+    el.innerHTML = "";
     return;
   }
   const order = {critical:0, warning:1, info:2};
@@ -351,9 +488,9 @@ function renderOverview(){
 
   let html = "<h2 class=\"section\">Network Performance</h2><div class=\"grid\">";
   html += expandableStatCard("Avg TPS", fmtNum(net.avg_tps, 0), null, null,
-    "network_performance.avg_tps", "#14F195", function(v){return fmtNum(v,0);});
+    "network_performance.avg_tps", "#14F195", function(v){return fmtNum(v,0);}, false, null);
   html += expandableStatCard("Avg Slot Time", fmtNum(net.avg_slot_time_ms,0) + " ms", null, null,
-    "network_performance.avg_slot_time_ms", "#14F195", function(v){return fmtNum(v,0)+"ms";});
+    "network_performance.avg_slot_time_ms", "#14F195", function(v){return fmtNum(v,0)+"ms";}, false, null);
   html += statCard("Block Height", fmtNum(net.block_height, 0), null, null, true);
   html += "<div class=\"card epoch-card\">" + epochRing(net.epoch_progress_pct) +
     "<div><div class=\"label\">Epoch " + (net.epoch != null ? net.epoch : "N/A") + "</div>" +
@@ -363,13 +500,13 @@ function renderOverview(){
 
   html += "<h2 class=\"section\">Economic Snapshot <span class=\"note\" style=\"margin:0;\">— click any card for its history</span></h2><div class=\"grid\">";
   html += expandableStatCard("SOL Price", fmtUsd(market.price_usd), fmtPct(market.price_change_pct_24h) + " (24h)", deltaClass(market.price_change_pct_24h),
-    "market.price.price_usd", "#14F195", function(v){return fmtUsd(v);});
+    "market.price.price_usd", "#14F195", function(v){return fmtUsd(v);}, false, "price");
   html += expandableStatCard("Chain TVL", fmtUsd(tvl.tvl_usd), fmtPct(tvl.tvl_change_pct_24h) + " (24h)", deltaClass(tvl.tvl_change_pct_24h),
-    "defi.tvl.tvl_usd", "#9945FF", function(v){return fmtUsd(v);});
+    "defi.tvl.tvl_usd", "#9945FF", function(v){return fmtUsd(v);}, false, "tvl");
   html += expandableStatCard("Active Validators", fmtNum(val.active_count, 0), null, null,
-    "validators.active_count", "#5ac8ff", function(v){return fmtNum(v,0);});
+    "validators.active_count", "#5ac8ff", function(v){return fmtNum(v,0);}, false, null);
   html += expandableStatCard("Total SOL Supply", fmtNum(supply.total_sol, 0), null, null,
-    "supply.total_sol", "#ffb454", function(v){return fmtNum(v,0);});
+    "supply.total_sol", "#ffb454", function(v){return fmtNum(v,0);}, false, null);
   html += "</div>";
 
   document.getElementById("tab-overview").innerHTML = html;
@@ -438,20 +575,30 @@ function renderValidators(){
     "<div class=\"chart-wrap tall\"><canvas id=\"chart-validator-stake\"></canvas></div></div>";
 
   if(top.length){
-    html += "<div class=\"table-wrap\" style=\"margin-top:16px;\"><table><thead><tr><th>#</th><th>Vote Account</th><th>Stake (SOL)</th><th>Commission</th><th>Last Vote</th></tr></thead><tbody>";
+    html += "<div class=\"table-wrap\" style=\"margin-top:16px;\"><table><thead><tr><th>#</th><th>Validator</th><th>Stake (SOL)</th><th>Commission</th><th>Last Vote</th></tr></thead><tbody>";
     top.forEach(function(v,i){
-      html += "<tr><td>" + (i+1) + "</td><td>" + (v.vote_pubkey ? v.vote_pubkey.slice(0,6)+"…"+v.vote_pubkey.slice(-6) : "N/A") + "</td>" +
+      const displayName = v.name ? v.name : (v.vote_pubkey ? v.vote_pubkey.slice(0,6)+"…"+v.vote_pubkey.slice(-6) : "Unknown");
+      let linkBadge = "";
+      if(v.website){
+        const icon = isTwitterUrl(v.website) ? "𝕏" : "🔗";
+        linkBadge = " <a class=\"twitter-link\" style=\"padding:2px 7px;font-size:10px;\" href=\"" + v.website + "\" target=\"_blank\" rel=\"noopener\">" + icon + "</a>";
+      }
+      html += "<tr><td>" + (i+1) + "</td><td>" + displayName + linkBadge + "</td>" +
         "<td>" + fmtNum(v.activated_stake_sol,0) + "</td><td>" + v.commission_pct + "%</td>" +
         "<td class=\"mono-dim\">" + (v.last_vote != null ? v.last_vote : "N/A") + "</td></tr>";
     });
     html += "</tbody></table></div>";
+    html += "<div class=\"note\">Validator names shown when self-reported via Stakewiz. The 𝕏 icon links to " +
+      "a validator's X/Twitter profile when their published site is one; 🔗 links to their regular website. " +
+      "Stakewiz has no dedicated Twitter field, so this is inferred from the URL. Validators with no published " +
+      "identity show as \"Unknown\" rather than a raw address.</div>";
   }
 
   document.getElementById("tab-validators").innerHTML = html;
 
   function draw(count){
     const subset = top.slice(0, count);
-    const labels = subset.map(function(v){ return v.vote_pubkey ? v.vote_pubkey.slice(0,4)+"…"+v.vote_pubkey.slice(-4) : "?"; });
+    const labels = subset.map(function(v){ return v.name ? v.name : (v.vote_pubkey ? v.vote_pubkey.slice(0,4)+"…"+v.vote_pubkey.slice(-4) : "?"); });
     const data = subset.map(function(v){ return v.activated_stake_sol; });
     barChart("chart-validator-stake", labels, data, "Stake (SOL)", true,
       function(i){ return "rgba(20,241,149," + (1 - i*0.03) + ")"; });
@@ -469,25 +616,26 @@ function renderDefi(){
   const market = (REPORT.market || {}).price || {};
   const protocols = (defi.top_protocols || {}).protocols || [];
 
-  let html = "<h2 class=\"section\">Chain-Wide Metrics <span class=\"note\" style=\"margin:0;\">— click any card for its history</span></h2><div class=\"grid\">";
+  let html = "<h2 class=\"section\">Onchain DeFi — Chain-Wide Metrics <span class=\"note\" style=\"margin:0;\">— click any card for its history</span></h2><div class=\"grid\">";
   html += expandableStatCard("Chain TVL", fmtUsd(tvl.tvl_usd), fmtPct(tvl.tvl_change_pct_24h) + " (24h)", deltaClass(tvl.tvl_change_pct_24h),
-    "defi.tvl.tvl_usd", "#9945FF", function(v){return fmtUsd(v);});
+    "defi.tvl.tvl_usd", "#9945FF", function(v){return fmtUsd(v);}, false, "tvl");
   html += statCard("TVL Change (7d)", fmtPct(tvl.tvl_change_pct_7d), null, null, true);
   html += expandableStatCard("Stablecoin Supply", fmtUsd(stable.total_stablecoin_supply_usd), null, null,
-    "defi.stablecoins.total_stablecoin_supply_usd", "#5ac8ff", function(v){return fmtUsd(v);});
+    "defi.stablecoins.total_stablecoin_supply_usd", "#5ac8ff", function(v){return fmtUsd(v);}, false, "stablecoin_supply");
   html += expandableStatCard("DEX Volume (24h)", fmtUsd(dex.dex_volume_24h_usd), null, null,
-    "defi.dex_volume.dex_volume_24h_usd", "#14F195", function(v){return fmtUsd(v);});
+    "defi.dex_volume.dex_volume_24h_usd", "#14F195", function(v){return fmtUsd(v);}, false, "dex_volume");
   html += expandableStatCard("Chain Revenue / REV (24h)", fmtUsd(fees.chain_revenue_24h_usd), null, null,
-    "defi.fees_and_rev.chain_revenue_24h_usd", "#ffb454", function(v){return fmtUsd(v);});
+    "defi.fees_and_rev.chain_revenue_24h_usd", "#ffb454", function(v){return fmtUsd(v);}, false, "chain_revenue");
   html += expandableStatCard("Market Cap", fmtUsd(market.market_cap_usd), null, null,
-    "market.price.market_cap_usd", "#9945FF", function(v){return fmtUsd(v);});
+    "market.price.market_cap_usd", "#9945FF", function(v){return fmtUsd(v);}, false, "market_cap");
   html += "</div>";
 
-  html += "<h2 class=\"section\">TVL Split by Protocol</h2>";
-  html += "<div class=\"chart-card\"><div class=\"chart-title\">Top " + protocols.length + " Solana protocols by TVL</div>" +
+  html += "<h2 class=\"section\">Onchain DeFi TVL by Project</h2>";
+  html += "<div class=\"chart-card\"><div class=\"chart-title\">Top " + protocols.length + " onchain Solana DeFi protocols by TVL " +
+    "<span style=\"text-transform:none;font-style:italic;\">(CEXs excluded)</span></div>" +
     "<div class=\"chart-wrap tall\"><canvas id=\"chart-protocols\"></canvas></div></div>";
   if(protocols.length){
-    html += "<div class=\"table-wrap\" style=\"margin-top:16px;\"><table><thead><tr><th>#</th><th>Protocol</th><th>Category</th><th>TVL</th><th>% of Chain TVL</th><th>24h</th></tr></thead><tbody>";
+    html += "<div class=\"table-wrap\" style=\"margin-top:16px;\"><table><thead><tr><th>#</th><th>Project</th><th>Category</th><th>TVL</th><th>% of Onchain DeFi TVL</th><th>24h</th></tr></thead><tbody>";
     protocols.forEach(function(p,i){
       html += "<tr><td>" + (i+1) + "</td><td>" + (p.url ? "<a href=\"" + p.url + "\" target=\"_blank\">" + p.name + "</a>" : p.name) + "</td>" +
         "<td class=\"mono-dim\">" + (p.category || "—") + "</td><td>" + fmtUsd(p.tvl_usd) + "</td>" +
@@ -496,17 +644,20 @@ function renderDefi(){
     html += "</tbody></table></div>";
   }
 
-  html += "<h2 class=\"section\">TVL Split by Coin (stablecoins)</h2>";
-  const breakdown = stable.breakdown || {};
-  const coinLabels = Object.keys(breakdown);
-  if(coinLabels.length){
-    html += "<div class=\"chart-card\"><div class=\"chart-title\">Stablecoin supply on Solana by peg type</div>" +
-      "<div class=\"chart-wrap\"><canvas id=\"chart-coins\"></canvas></div></div>" +
-      "<div class=\"note\">DeFiLlama does not expose a single keyless \"TVL by underlying token\" endpoint across " +
-      "an entire chain (it would require one call per protocol). This chart shows the closest available " +
-      "keyless breakdown — stablecoin supply by peg type. See README for details.</div>";
+  html += "<h2 class=\"section\">% Share of Onchain DeFi TVL by Project</h2>";
+  let pieLabels = [], pieData = [];
+  if(protocols.length){
+    const top10 = protocols.slice(0, 10);
+    const otherPct = Math.max(0, 100 - top10.reduce(function(sum,p){ return sum + (p.pct_of_solana_tvl || 0); }, 0));
+    pieLabels = top10.map(function(p){ return p.name; });
+    pieData = top10.map(function(p){ return p.pct_of_solana_tvl; });
+    if(otherPct > 0.5){ pieLabels.push("Other projects"); pieData.push(otherPct); }
+    html += "<div class=\"chart-card\"><div class=\"chart-title\">Share of onchain Solana DeFi TVL " +
+      "(e.g. Jupiter, Kamino, ONRE, Solstice...)</div>" +
+      "<div class=\"chart-wrap\"><canvas id=\"chart-defi-share\"></canvas></div></div>" +
+      "<div class=\"note\">Centralized exchanges are excluded — this reflects onchain DeFi protocols only.</div>";
   } else {
-    html += "<div class=\"list-card\"><div class=\"list-item\"><div class=\"desc\">No coin-level breakdown available in this snapshot.</div></div></div>";
+    html += "<div class=\"list-card\"><div class=\"list-item\"><div class=\"desc\">No protocol breakdown available in this snapshot.</div></div></div>";
   }
 
   document.getElementById("tab-defi").innerHTML = html;
@@ -514,9 +665,7 @@ function renderDefi(){
   if(protocols.length){
     barChart("chart-protocols", protocols.map(function(p){return p.name;}), protocols.map(function(p){return p.tvl_usd;}), "TVL", true,
       function(i){ return "rgba(153,69,255," + (1 - i*0.05) + ")"; });
-  }
-  if(coinLabels.length){
-    barChart("chart-coins", coinLabels, coinLabels.map(function(k){return breakdown[k];}), "Supply (USD)", false);
+    pieChart("chart-defi-share", pieLabels, pieData);
   }
 }
 
@@ -601,7 +750,10 @@ async function load(){
 }
 
 load();
-setInterval(load, 30000);
+// Refresh data each time the heartbeat line completes one full loop across
+// the screen, instead of a fixed timer — keeps the "live" feel tied to what
+// the person actually sees animating.
+document.getElementById("heartbeat-svg").addEventListener("animationiteration", load);
 setInterval(tickUpdatedLabel, 1000);
 </script>
 </body>

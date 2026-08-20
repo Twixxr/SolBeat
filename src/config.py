@@ -31,8 +31,11 @@ TOP_VALIDATOR_COUNT = 20
 DEFILLAMA_CHAIN_TVL_URL = "https://api.llama.fi/v2/historicalChainTvl/Solana"
 DEFILLAMA_PROTOCOLS_URL = "https://api.llama.fi/protocols"
 DEFILLAMA_STABLECOINS_URL = "https://stablecoins.llama.fi/stablecoinchains"
+DEFILLAMA_STABLECOIN_CHART_URL = "https://stablecoins.llama.fi/stablecoincharts/Solana"
 DEFILLAMA_DEX_VOLUME_URL = "https://api.llama.fi/overview/dexs/Solana?excludeTotalDataChart=true&excludeTotalDataChartBreakdown=true"
+DEFILLAMA_DEX_VOLUME_CHART_URL = "https://api.llama.fi/overview/dexs/Solana?dataType=dailyVolume"
 DEFILLAMA_FEES_REV_URL = "https://api.llama.fi/overview/fees/Solana?excludeTotalDataChart=true&excludeTotalDataChartBreakdown=true&dataType=dailyRevenue"
+DEFILLAMA_FEES_CHART_URL = "https://api.llama.fi/overview/fees/Solana?dataType=dailyRevenue"
 
 COINGECKO_PRICE_URL = (
     "https://api.coingecko.com/api/v3/simple/price"
@@ -42,6 +45,15 @@ COINGECKO_PRICE_URL = (
 COINGECKO_MARKET_CHART_URL = (
     "https://api.coingecko.com/api/v3/coins/solana/market_chart"
     "?vs_currency=usd&days=7&interval=daily"
+)
+# Best-effort ~2 year history for the dashboard's expanded charts. CoinGecko's
+# free/public tier has, at times, capped how far back anonymous requests can
+# go — if that happens here, this call fails gracefully (see collect_long_history)
+# and the dashboard shows "not enough history" for price/market cap/volume
+# rather than breaking. See README "Known limitations."
+COINGECKO_MARKET_CHART_LONG_URL = (
+    "https://api.coingecko.com/api/v3/coins/solana/market_chart"
+    "?vs_currency=usd&days=730&interval=daily"
 )
 
 # solana.com/data is a client-rendered dashboard (no clean public JSON API).
@@ -58,6 +70,11 @@ HTTP_TIMEOUT_SECONDS = 15
 HTTP_MAX_RETRIES = 3
 HTTP_RETRY_BACKOFF_SECONDS = 2.0
 USER_AGENT = "SolPulseCanada/1.0 (+https://github.com/YOUR_GITHUB_USERNAME/solpulse-canada)"
+
+# Cap on how many daily points are kept per long-history series (price, TVL,
+# stablecoin supply, DEX volume, chain revenue), to keep the JSON payload
+# a reasonable size. ~2 years of daily points.
+LONG_HISTORY_MAX_POINTS = 730
 
 # ---------------------------------------------------------------------------
 # Anomaly detection thresholds

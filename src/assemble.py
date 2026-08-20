@@ -30,8 +30,32 @@ def build_report():
         "ecosystem_site": solana_data_site.collect(),
         "social": twitter_feed.collect(),
         "upcoming": _static_upcoming_notes(),
+        "long_history": _build_long_history(),
     }
     return report
+
+
+def _build_long_history():
+    """
+    Multi-year daily history for the dashboard's expanded charts, pulled
+    fresh each run from DeFiLlama (TVL, stablecoin supply, DEX volume,
+    chain revenue — full history, no key needed) and CoinGecko (price,
+    market cap, volume — best-effort ~2 years). Metrics with no long-run
+    keyless source (TPS, slot time, validator count, SOL supply) are NOT
+    here — the dashboard falls back to this project's own rolling
+    history.jsonl for those, clearly labeled as starting from whenever
+    this report first went live.
+    """
+    cg_long = coingecko.collect_long_history()
+    return {
+        "price": cg_long.get("price", {}),
+        "market_cap": cg_long.get("market_cap", {}),
+        "volume": cg_long.get("volume", {}),
+        "tvl": defillama.collect_tvl_history(),
+        "stablecoin_supply": defillama.collect_stablecoin_history(),
+        "dex_volume": defillama.collect_dex_volume_history(),
+        "chain_revenue": defillama.collect_fees_history(),
+    }
 
 
 def _static_upcoming_notes():

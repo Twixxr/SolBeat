@@ -49,3 +49,31 @@ def collect_all():
         "price": collect_price(),
         "trend_7d": collect_7d_trend(),
     }
+
+
+def collect_long_history():
+    """
+    ~2 years of daily price, market cap, and volume for the dashboard's
+    expanded charts. Best-effort: CoinGecko's public tier has, at times,
+    restricted how far back anonymous requests can go — if this call fails
+    or returns nothing, each series comes back empty and the dashboard
+    shows "not enough history" for that card rather than breaking.
+    """
+    try:
+        data = get_json(config.COINGECKO_MARKET_CHART_LONG_URL)
+    except SourceUnavailable as e:
+        err = [str(e)]
+        return {"price": {"_errors": err}, "market_cap": {"_errors": err}, "volume": {"_errors": err}}
+
+    prices = data.get("prices", [])
+    caps = data.get("market_caps", [])
+    vols = data.get("total_volumes", [])
+
+    def _series(points):
+        return [{"date_unix": int(p[0] / 1000), "value": round(p[1], 4)} for p in points][-config.LONG_HISTORY_MAX_POINTS:]
+
+    return {
+        "price": {"series": _series(prices)},
+        "market_cap": {"series": _series(caps)},
+        "volume": {"series": _series(vols)},
+    }

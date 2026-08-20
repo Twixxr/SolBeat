@@ -12,6 +12,7 @@ import time
 
 from .. import config
 from ..http_client import post_json, SourceUnavailable
+from . import stakewiz
 
 _RPC_ID = 0
 
@@ -220,6 +221,16 @@ def collect_validators():
         }
         for v in top_validators
     ]
+    # Best-effort identity enrichment (operator name / Twitter) via Stakewiz.
+    # Degrades to None/None per validator if the identity map is empty or a
+    # given vote account isn't in it — the dashboard falls back to a
+    # shortened address in that case.
+    identity_map = stakewiz.collect_identity_map()
+    for entry in out["top_validators"]:
+        identity = identity_map.get(entry["vote_pubkey"], {})
+        entry["name"] = identity.get("name")
+        entry["website"] = identity.get("website")
+
     # Nakamoto-coefficient-style stat: how many validators to reach 33% of stake
     out["stake_concentration"] = _stake_concentration(current, total_active_stake)
 

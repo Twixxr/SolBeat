@@ -68,11 +68,29 @@ FAKE_PROTOCOLS = [
      "change_1d": -1.4, "url": "https://kamino.finance"},
     {"name": "Aave", "category": "Lending", "chainTvls": {"Ethereum": 5_000_000_000},
      "change_1d": 0.3, "url": "https://aave.com"},  # no Solana entry -> should be excluded
+    {"name": "Binance CEX", "category": "CEX", "chainTvls": {"Solana": 2_000_000_000},
+     "change_1d": 0.1, "url": "https://binance.com"},  # CEX -> should be excluded
+]
+
+FAKE_STAKEWIZ_VALIDATORS = [
+    {"vote_identity": "Vote0", "name": "Test Validator Zero", "website": "https://twitter.com/testvalidator0"},
+    {"vote_identity": "Vote1", "name": "Test Validator One", "website": "https://testvalidator1.io"},
 ]
 
 FAKE_COINGECKO_PRICE = {"solana": {"usd": 210.5, "usd_24h_change": 12.4, "usd_24h_vol": 3_000_000_000,
                                     "usd_market_cap": 100_000_000_000}}
 FAKE_COINGECKO_TREND = {"prices": [[1_700_000_000_000 + i * 86400000, 200 + i] for i in range(7)]}
+FAKE_COINGECKO_LONG = {
+    "prices": [[1_700_000_000_000 + i * 86400000, 150 + i] for i in range(30)],
+    "market_caps": [[1_700_000_000_000 + i * 86400000, 70_000_000_000 + i * 1_000_000] for i in range(30)],
+    "total_volumes": [[1_700_000_000_000 + i * 86400000, 2_000_000_000 + i * 10_000] for i in range(30)],
+}
+FAKE_STABLECOIN_CHART = [
+    {"date": "1700000000", "totalCirculating": {"peggedUSD": 8_000_000_000}},
+    {"date": "1700086400", "totalCirculating": {"peggedUSD": 8_100_000_000}},
+]
+FAKE_DEX_VOLUME_CHART = {"totalDataChart": [[1700000000, 1_100_000_000], [1700086400, 1_150_000_000]]}
+FAKE_FEES_CHART = {"totalDataChart": [[1700000000, 2_400_000], [1700086400, 2_450_000]]}
 
 
 def fake_rpc(method, params=None):
@@ -96,21 +114,31 @@ def fake_rpc(method, params=None):
 def fake_get_json(url, timeout=None, retries=None):
     if "historicalChainTvl" in url:
         return FAKE_TVL_SERIES
+    if "stablecoincharts" in url:
+        return FAKE_STABLECOIN_CHART
     if "stablecoinchains" in url:
         return FAKE_STABLECOINS
+    if "overview/dexs" in url and "dataType=dailyVolume" in url:
+        return FAKE_DEX_VOLUME_CHART
     if "overview/dexs" in url:
         return FAKE_DEX_VOLUME
+    if "overview/fees" in url and "excludeTotalDataChart" not in url:
+        return FAKE_FEES_CHART
     if "overview/fees" in url:
         return FAKE_FEES
     if "/protocols" in url:
         return FAKE_PROTOCOLS
     if "simple/price" in url:
         return FAKE_COINGECKO_PRICE
+    if "days=730" in url:
+        return FAKE_COINGECKO_LONG
     if "market_chart" in url:
         return FAKE_COINGECKO_TREND
     if "solana.com" in url:
         from src.http_client import SourceUnavailable
         raise SourceUnavailable("simulated 404 for solana.com/data (expected/handled)")
+    if "stakewiz.com" in url:
+        return FAKE_STAKEWIZ_VALIDATORS
     raise AssertionError(f"unexpected GET in smoke test: {url}")
 
 
@@ -157,9 +185,16 @@ def main():
     assert report["validators"]["active_count"] == 30
     assert report["validators"]["delinquent_count"] == 1
     assert report["defi"]["tvl"]["tvl_usd"] == 4_500_000_000
-    assert report["defi"]["top_protocols"]["protocol_count"] == 2  # Aave excluded (no Solana chainTvl)
+    assert report["defi"]["top_protocols"]["protocol_count"] == 2  # Aave excluded (no Solana chainTvl), Binance CEX excluded (category)
     assert report["defi"]["top_protocols"]["protocols"][0]["name"] == "Jupiter"
+    assert all(p["category"] != "CEX" for p in report["defi"]["top_protocols"]["protocols"])
+    assert report["validators"]["top_validators"][0]["name"] == "Test Validator Zero"
+    assert report["validators"]["top_validators"][0]["website"] == "https://twitter.com/testvalidator0"
     assert "history_series" in payload and len(payload["history_series"]) >= 5
+    assert "long_history" in report
+    assert len(report["long_history"]["price"]["series"]) == 30
+    assert len(report["long_history"]["tvl"]["series"]) == len(FAKE_TVL_SERIES)
+    assert len(report["long_history"]["stablecoin_supply"]["series"]) == 2
     assert report["market"]["price"]["price_usd"] == 210.5
     assert any(a["metric"] == "avg_tps" for a in anomalies), "expected a TPS anomaly to fire"
     assert any(a["metric"] == "sol_price_change_pct_24h" for a in anomalies), "expected a price-move anomaly to fire"
