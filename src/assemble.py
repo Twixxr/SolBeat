@@ -31,8 +31,60 @@ def build_report():
         "social": twitter_feed.collect(),
         "upcoming": _static_upcoming_notes(),
         "long_history": _build_long_history(),
+        "report_uptime": _compute_report_uptime(),
     }
     return report
+
+
+def _compute_report_uptime():
+    """
+    'Uptime' here means how long this SolBeat pipeline has run without
+    missing a scheduled refresh — NOT Solana network uptime, which has no
+    public keyless data source (Solana's own status page has no documented
+    public API this project relies on). Computed by scanning this project's
+    own history.jsonl for gaps larger than a generous multiple of the
+    expected refresh interval, which would indicate the GitHub Action
+    failed, was disabled, or GitHub itself had an outage.
+    """
+    if not os.path.exists(config.HISTORY_FILE):
+        return {"days": 0.0, "since_unix": int(time.time()), "note": "no history yet"}
+
+    timestamps = []
+    with open(config.HISTORY_FILE, "r") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                entry = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            ts = entry.get("generated_at_unix")
+            if ts:
+                timestamps.append(ts)
+
+    if not timestamps:
+        return {"days": 0.0, "since_unix": int(time.time()), "note": "no history yet"}
+
+    timestamps.sort()
+    now = int(time.time())
+    gap_threshold_seconds = config.DEFAULT_REFRESH_INTERVAL_MINUTES * 60 * 3  # generous tolerance
+
+    last_gap_end = None
+    for i in range(1, len(timestamps)):
+        gap = timestamps[i] - timestamps[i - 1]
+        if gap > gap_threshold_seconds:
+            last_gap_end = timestamps[i]
+
+    if last_gap_end is not None:
+        since_unix = last_gap_end
+        note = "since last missed refresh"
+    else:
+        since_unix = timestamps[0]
+        note = "since tracking began"
+
+    days = round((now - since_unix) / 86400, 2)
+    return {"days": days, "since_unix": since_unix, "note": note}
 
 
 def _build_long_history():

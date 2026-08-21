@@ -195,6 +195,7 @@ def main():
     assert len(report["long_history"]["price"]["series"]) == 30
     assert len(report["long_history"]["tvl"]["series"]) == len(FAKE_TVL_SERIES)
     assert len(report["long_history"]["stablecoin_supply"]["series"]) == 2
+    assert "report_uptime" in report and "days" in report["report_uptime"]
     assert report["market"]["price"]["price_usd"] == 210.5
     assert any(a["metric"] == "avg_tps" for a in anomalies), "expected a TPS anomaly to fire"
     assert any(a["metric"] == "sol_price_change_pct_24h" for a in anomalies), "expected a price-move anomaly to fire"

@@ -54,7 +54,6 @@
     filter:drop-shadow(0 0 4px rgba(20,241,149,.65));
     stroke-dasharray:100 100;stroke-dashoffset:100;
     animation:heartbeat-draw 4s ease-in-out infinite;}
-  .heartbeat-cursor{fill:var(--green);filter:drop-shadow(0 0 6px rgba(20,241,149,.95));}
   @keyframes heartbeat-draw{
     0%{stroke-dashoffset:100;opacity:0;}
     4%{opacity:1;}
@@ -64,7 +63,7 @@
     100%{stroke-dashoffset:0;opacity:0;}
   }
   @media (prefers-reduced-motion: reduce){
-    .heartbeat-path,.heartbeat-cursor{animation:none;stroke-dashoffset:0;opacity:1;}
+    .heartbeat-path{animation:none;stroke-dashoffset:0;opacity:1;}
     .updated .dot{animation:none;}
   }
 
@@ -138,6 +137,11 @@
     text-transform:uppercase;letter-spacing:.05em;font-weight:600;}
   .chart-wrap{position:relative;height:260px;}
   .chart-wrap.tall{height:340px;}
+  .tradingview-widget-container{height:460px;width:100%;}
+  .tradingview-widget-container__widget{height:100%;width:100%;}
+  @media (max-width:600px){
+    .tradingview-widget-container{height:320px;}
+  }
 
   table{width:100%;border-collapse:collapse;font-size:13px;}
   th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--text-dim);
@@ -189,12 +193,6 @@
         L570,20 L580,34 L590,2 L600,36 L610,20
         L630,14 L640,20
         L1200,20"/>
-      <circle class="heartbeat-cursor" r="4" cy="20">
-        <animate attributeName="cx" values="0;0;1200;1200;1200" keyTimes="0;0.04;0.72;0.85;1"
-          dur="4s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0;1;1;1;0;0" keyTimes="0;0.04;0.72;0.85;0.96;1"
-          dur="4s" repeatCount="indefinite"/>
-      </circle>
     </svg>
   </div>
 
@@ -509,7 +507,48 @@ function renderOverview(){
     "supply.total_sol", "#ffb454", function(v){return fmtNum(v,0);}, false, null);
   html += "</div>";
 
+  const uptime = REPORT.report_uptime || {};
+  html += "<h2 class=\"section\">Report Reliability</h2><div class=\"grid\">";
+  html += statCard("SolBeat Uptime", fmtNum(uptime.days, 1) + " days",
+    uptime.note ? (uptime.note.charAt(0).toUpperCase() + uptime.note.slice(1)) : null, "flat", true);
+  html += "</div>";
+  html += "<div class=\"note\">This tracks how long SolBeat's own automated pipeline has run without a " +
+    "missed scheduled refresh — not Solana network uptime, which has no public keyless data source.</div>";
+
+  html += "<h2 class=\"section\">SOL Price Chart <span class=\"note\" style=\"margin:0;\">— powered by TradingView</span></h2>";
+  html += "<div class=\"chart-card\"><div class=\"tradingview-widget-container\" id=\"tv-widget-container\">" +
+    "<div class=\"tradingview-widget-container__widget\" id=\"tv-widget-inner\"></div></div></div>";
+
   document.getElementById("tab-overview").innerHTML = html;
+  mountTradingViewWidget();
+}
+
+function mountTradingViewWidget(){
+  const container = document.getElementById("tv-widget-container");
+  if(!container) return;
+  // Scripts inserted via innerHTML don't execute in browsers, so the
+  // TradingView embed script has to be created and appended via the DOM
+  // API directly, each time this tab re-renders.
+  const script = document.createElement("script");
+  script.type = "text/javascript";
+  script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
+  script.async = true;
+  script.text = JSON.stringify({
+    autosize: true,
+    symbol: "BINANCE:SOLUSDT",
+    interval: "D",
+    timezone: "Etc/UTC",
+    theme: "dark",
+    style: "1",
+    locale: "en",
+    backgroundColor: "rgba(17, 19, 24, 1)",
+    gridColor: "rgba(30, 33, 41, 1)",
+    hide_top_toolbar: false,
+    hide_legend: false,
+    allow_symbol_change: false,
+    support_host: "https://www.tradingview.com"
+  });
+  container.appendChild(script);
 }
 
 function renderNetwork(){
@@ -630,12 +669,9 @@ function renderDefi(){
     "market.price.market_cap_usd", "#9945FF", function(v){return fmtUsd(v);}, false, "market_cap");
   html += "</div>";
 
-  html += "<h2 class=\"section\">Onchain DeFi TVL by Project</h2>";
-  html += "<div class=\"chart-card\"><div class=\"chart-title\">Top " + protocols.length + " onchain Solana DeFi protocols by TVL " +
-    "<span style=\"text-transform:none;font-style:italic;\">(CEXs excluded)</span></div>" +
-    "<div class=\"chart-wrap tall\"><canvas id=\"chart-protocols\"></canvas></div></div>";
+  html += "<h2 class=\"section\">Onchain DeFi TVL by Project <span style=\"text-transform:none;font-style:italic;color:var(--text-faint);\">(CEXs excluded)</span></h2>";
   if(protocols.length){
-    html += "<div class=\"table-wrap\" style=\"margin-top:16px;\"><table><thead><tr><th>#</th><th>Project</th><th>Category</th><th>TVL</th><th>% of Onchain DeFi TVL</th><th>24h</th></tr></thead><tbody>";
+    html += "<div class=\"table-wrap\"><table><thead><tr><th>#</th><th>Project</th><th>Category</th><th>TVL</th><th>% of Onchain DeFi TVL</th><th>24h</th></tr></thead><tbody>";
     protocols.forEach(function(p,i){
       html += "<tr><td>" + (i+1) + "</td><td>" + (p.url ? "<a href=\"" + p.url + "\" target=\"_blank\">" + p.name + "</a>" : p.name) + "</td>" +
         "<td class=\"mono-dim\">" + (p.category || "—") + "</td><td>" + fmtUsd(p.tvl_usd) + "</td>" +
@@ -663,8 +699,6 @@ function renderDefi(){
   document.getElementById("tab-defi").innerHTML = html;
 
   if(protocols.length){
-    barChart("chart-protocols", protocols.map(function(p){return p.name;}), protocols.map(function(p){return p.tvl_usd;}), "TVL", true,
-      function(i){ return "rgba(153,69,255," + (1 - i*0.05) + ")"; });
     pieChart("chart-defi-share", pieLabels, pieData);
   }
 }
@@ -715,17 +749,37 @@ function setupTabs(){
   });
 }
 
+let LAST_RENDERED_GENERATED_UNIX = null;
+
 async function load(){
   try{
     const res = await fetch(DATA_URL, {cache: "no-store"});
     if(!res.ok) throw new Error("HTTP " + res.status);
     const payload = await res.json();
+    const newGeneratedUnix = payload.report && payload.report.meta ? payload.report.meta.generated_at_unix : null;
+
+    // The bot only regenerates data.json roughly every 30 minutes, but we
+    // fetch it every heartbeat loop (~4s) so the dashboard picks up fresh
+    // data as soon as it's available. Re-fetching is cheap (it's a static
+    // file), but fully re-rendering the DOM/charts every 4s causes visible
+    // flicker for no reason when the content hasn't actually changed — so
+    // only rebuild the page when the report is genuinely newer than what's
+    // currently shown.
+    const isFirstLoad = REPORT === null;
+    const hasNewData = newGeneratedUnix !== null && newGeneratedUnix !== LAST_RENDERED_GENERATED_UNIX;
+
     REPORT = payload.report;
     ANOMALIES = payload.anomalies || [];
     HISTORY = payload.history_series || [];
-    LAST_GENERATED_UNIX = REPORT.meta.generated_at_unix;
+    LAST_GENERATED_UNIX = newGeneratedUnix;
 
     tickUpdatedLabel();
+
+    if(!isFirstLoad && !hasNewData){
+      return; // nothing new — skip re-render entirely, no flicker
+    }
+    LAST_RENDERED_GENERATED_UNIX = newGeneratedUnix;
+
     renderAlerts(ANOMALIES);
 
     if(document.getElementById("tab-overview") === null){
@@ -750,9 +804,10 @@ async function load(){
 }
 
 load();
-// Refresh data each time the heartbeat line completes one full loop across
-// the screen, instead of a fixed timer — keeps the "live" feel tied to what
-// the person actually sees animating.
+// Re-check for fresh data each time the heartbeat line completes one full
+// loop across the screen. load() itself decides whether that data is
+// actually new before touching the DOM (see comment above) — this keeps
+// the dashboard current without re-rendering (and flickering) every loop.
 document.getElementById("heartbeat-path").addEventListener("animationiteration", load);
 setInterval(tickUpdatedLabel, 1000);
 </script>
