@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolPulse Canada
 
-_Generated: 2026-08-21T23:44:53.132129+00:00 (UTC)_
+_Generated: 2026-08-22T00:35:44.300074+00:00 (UTC)_
 
 ## Alerts
 
@@ -11,14 +11,14 @@ _Generated: 2026-08-21T23:44:53.132129+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 440,797,019 |
-| Block height | 418,846,559 |
+| Current slot | 440,805,369 |
+| Block height | 418,854,897 |
 | Epoch | 1020 |
-| Epoch progress | 36.35% |
-| Current TPS | 4,180.57 |
-| Avg TPS (~30 samples) | 4,302.82 |
-| Max / Min TPS | 4,872.72 / 3,764.37 |
-| Avg slot time | 364.8 ms |
+| Epoch progress | 38.28% |
+| Current TPS | 3,996.17 |
+| Avg TPS (~30 samples) | 4,197.35 |
+| Max / Min TPS | 5,158.38 / 3,757.77 |
+| Avg slot time | 366.4 ms |
 
 ## Validator Status
 
@@ -27,39 +27,39 @@ _Generated: 2026-08-21T23:44:53.132129+00:00 (UTC)_
 | Active validators | 681 |
 | Delinquent validators | 13 |
 | Delinquent (% of validator count) | 1.87% |
-| Delinquent (% of active stake) | 0.15% |
-| Total active stake | 432,852,482 SOL |
+| Delinquent (% of active stake) | 0.09% |
+| Total active stake | 433,107,818 SOL |
 | Validators controlling 33% of stake | 18 |
 
 ### Top 20 Validators by Stake
 
 | # | Vote Account | Stake (SOL) | Commission | Last Vote |
 |---|---|---|---|---|
-| 1 | `CcaHc2L43ZWjwCHART3oZoJvHLAe9hzT2DJNUpBzoTN1` | 17,066,372 | 7% | 440797023 |
-| 2 | `he1iusunGwqrNtafDtLdhsUQDFvo13z9sUa36PauBtk` | 16,054,078 | 0% | 440797023 |
-| 3 | `3N7s9zXMZ4QqvHQR15t5GNHyqc89KduzMP7423eWiD5g` | 12,175,413 | 0% | 440797023 |
-| 4 | `CatzoSMUkTRidT5DwBxAC2pEtnwMBTpkCepHkFgZDiqb` | 11,782,032 | 5% | 440797023 |
-| 5 | `26pV97Ce83ZQ6Kz9XT4td8tdoUFPTng8Fb8gPyc53dJx` | 9,178,661 | 7% | 440797023 |
-| 6 | `51JBzSTU5rAM8gLAVQKgp4WoZerQcSqWC7BitBzgUNAm` | 8,917,577 | 10% | 440797023 |
-| 7 | `8GbwASqdpw4dVcwbWUxbHXMrjyQx2aKkoBR5H1GJF8iD` | 8,402,660 | 0% | 440797023 |
-| 8 | `9QU2QSxhb24FUX3Tu2FpczXjpK3VYrvRudywSZaM29mF` | 7,964,352 | 7% | 440797023 |
-| 9 | `CvSb7wdQAFpHuSpTYTJnX5SYH4hCfQ9VuGnqrKaKwycB` | 7,357,821 | 5% | 440797023 |
-| 10 | `DumiCKHVqoCQKD8roLApzR5Fit8qGV5fVQsJV9sTZk4a` | 6,547,243 | 0% | 440797023 |
-| 11 | `HZKopZYvv8v6un2H6KUNVQCnK5zM9emKKezvqhTBSpEc` | 6,122,617 | 100% | 440797023 |
-| 12 | `3JD3jMmnR6g88qff2WZ3cMHJRjJMUk9yVZtmYTYeFrXf` | 6,003,737 | 0% | 440797023 |
-| 13 | `DdCNGDpP7qMgoAy6paFzhhak2EeyCZcgjH7ak5u5v28m` | 5,958,065 | 5% | 440797023 |
-| 14 | `GHViLgbrJdZDPb6sphRbeuPNM9cmjsFuGWzrTF1sKF5n` | 5,773,480 | 100% | 440797023 |
-| 15 | `HimWQUK61d9wxhw7EYu9jUje7xQiDs4jKexaTSvuCmXE` | 4,663,306 | 8% | 440797023 |
-| 16 | `FKsC411dik9ktS6xPADxs4Fk2SCENvAiuccQHLAPndvk` | 4,585,073 | 7% | 440797023 |
-| 17 | `AZoCYB4VgoM9DR9f1ZFcBn8xPSbtbqoxZnKJR7tkvEoX` | 4,080,687 | 100% | 440797023 |
-| 18 | `3ZYJxzCeweSoh2Jj7oCgencFs9y27iKmXJeqYapje1cj` | 4,062,655 | 100% | 440797023 |
-| 19 | `G9x1mqewTeVnXLmv3FamYD5tq1AdS395RHH3MLQPj6TY` | 4,033,314 | 100% | 440797023 |
-| 20 | `EcEowA4GKDsdVBF9PNAZa6c9M4WgYG8y4GnpZSUaqioS` | 3,985,947 | 100% | 440797023 |
+| 1 | `CcaHc2L43ZWjwCHART3oZoJvHLAe9hzT2DJNUpBzoTN1` | 17,066,372 | 7% | 440805370 |
+| 2 | `he1iusunGwqrNtafDtLdhsUQDFvo13z9sUa36PauBtk` | 16,054,078 | 0% | 440805370 |
+| 3 | `3N7s9zXMZ4QqvHQR15t5GNHyqc89KduzMP7423eWiD5g` | 12,175,413 | 0% | 440805370 |
+| 4 | `CatzoSMUkTRidT5DwBxAC2pEtnwMBTpkCepHkFgZDiqb` | 11,782,032 | 5% | 440805370 |
+| 5 | `26pV97Ce83ZQ6Kz9XT4td8tdoUFPTng8Fb8gPyc53dJx` | 9,178,661 | 7% | 440805370 |
+| 6 | `51JBzSTU5rAM8gLAVQKgp4WoZerQcSqWC7BitBzgUNAm` | 8,917,577 | 10% | 440805370 |
+| 7 | `8GbwASqdpw4dVcwbWUxbHXMrjyQx2aKkoBR5H1GJF8iD` | 8,402,660 | 0% | 440805370 |
+| 8 | `9QU2QSxhb24FUX3Tu2FpczXjpK3VYrvRudywSZaM29mF` | 7,964,352 | 7% | 440805370 |
+| 9 | `CvSb7wdQAFpHuSpTYTJnX5SYH4hCfQ9VuGnqrKaKwycB` | 7,357,821 | 5% | 440805370 |
+| 10 | `DumiCKHVqoCQKD8roLApzR5Fit8qGV5fVQsJV9sTZk4a` | 6,547,243 | 0% | 440805370 |
+| 11 | `HZKopZYvv8v6un2H6KUNVQCnK5zM9emKKezvqhTBSpEc` | 6,122,617 | 100% | 440805370 |
+| 12 | `3JD3jMmnR6g88qff2WZ3cMHJRjJMUk9yVZtmYTYeFrXf` | 6,003,737 | 0% | 440805370 |
+| 13 | `DdCNGDpP7qMgoAy6paFzhhak2EeyCZcgjH7ak5u5v28m` | 5,958,065 | 5% | 440805370 |
+| 14 | `GHViLgbrJdZDPb6sphRbeuPNM9cmjsFuGWzrTF1sKF5n` | 5,773,480 | 100% | 440805370 |
+| 15 | `HimWQUK61d9wxhw7EYu9jUje7xQiDs4jKexaTSvuCmXE` | 4,663,306 | 8% | 440805370 |
+| 16 | `FKsC411dik9ktS6xPADxs4Fk2SCENvAiuccQHLAPndvk` | 4,585,073 | 7% | 440805370 |
+| 17 | `AZoCYB4VgoM9DR9f1ZFcBn8xPSbtbqoxZnKJR7tkvEoX` | 4,080,687 | 100% | 440805370 |
+| 18 | `3ZYJxzCeweSoh2Jj7oCgencFs9y27iKmXJeqYapje1cj` | 4,062,655 | 100% | 440805370 |
+| 19 | `G9x1mqewTeVnXLmv3FamYD5tq1AdS395RHH3MLQPj6TY` | 4,033,314 | 100% | 440805370 |
+| 20 | `EcEowA4GKDsdVBF9PNAZa6c9M4WgYG8y4GnpZSUaqioS` | 3,985,947 | 100% | 440805370 |
 
 ## SOL Supply
 
-- Total: 632,639,826 SOL
-- Circulating: 583,177,494 SOL
+- Total: 632,639,792 SOL
+- Circulating: 583,177,460 SOL
 - Non-circulating: 49,462,332 SOL
 
 ## Economic Indicators
@@ -67,15 +67,15 @@ _Generated: 2026-08-21T23:44:53.132129+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | SOL price | $94 |
-| SOL 24h change | +6.93% |
-| SOL 24h volume | $6,688,523,369 |
-| SOL market cap | $54,619,097,919 |
-| Solana chain TVL | $5,496,518,831 |
-| TVL change (24h) | +5.17% |
-| TVL change (7d) | +13.63% |
-| Stablecoin supply on Solana | $15,879,926,132 |
+| SOL 24h change | +6.00% |
+| SOL 24h volume | $6,812,862,966 |
+| SOL market cap | $54,582,483,711 |
+| Solana chain TVL | $5,519,953,384 |
+| TVL change (24h) | 0.00% |
+| TVL change (7d) | +14.60% |
+| Stablecoin supply on Solana | $15,857,699,190 |
 | DEX volume (24h) | $2,770,509,439 |
-| Chain revenue / REV proxy (24h) | $5,174,337 |
+| Chain revenue / REV proxy (24h) | $4,980,997 |
 
 ### Top DEXs by 24h Volume
 
@@ -84,8 +84,8 @@ _Generated: 2026-08-21T23:44:53.132129+00:00 (UTC)_
 | PumpSwap | $485,334,957 |
 | BisonFi | $465,635,126 |
 | Orca DEX | $411,742,186 |
-| Manifest Trade | $232,553,520 |
-| Raydium AMM | $218,334,673 |
+| Manifest Trade | $238,919,166 |
+| Raydium AMM | $214,801,339 |
 | Meteora DLMM | $167,525,303 |
 | Scorch | $153,478,660 |
 | Tessera V | $109,099,072 |
