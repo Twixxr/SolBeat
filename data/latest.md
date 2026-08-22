@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolPulse Canada
 
-_Generated: 2026-08-22T18:54:45.141544+00:00 (UTC)_
+_Generated: 2026-08-22T19:14:46.409193+00:00 (UTC)_
 
 ## Alerts
 
@@ -11,55 +11,55 @@ _Generated: 2026-08-22T18:54:45.141544+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 440,985,053 |
-| Block height | 419,034,400 |
+| Current slot | 440,988,334 |
+| Block height | 419,037,677 |
 | Epoch | 1020 |
-| Epoch progress | 79.87% |
-| Current TPS | 4,251.42 |
-| Avg TPS (~30 samples) | 4,039.69 |
-| Max / Min TPS | 4,962.40 / 3,527.43 |
-| Avg slot time | 369.4 ms |
+| Epoch progress | 80.63% |
+| Current TPS | 3,645.77 |
+| Avg TPS (~30 samples) | 4,009.27 |
+| Max / Min TPS | 4,727.78 / 3,538.78 |
+| Avg slot time | 366.9 ms |
 
 ## Validator Status
 
 | Metric | Value |
 |---|---|
-| Active validators | 687 |
-| Delinquent validators | 8 |
-| Delinquent (% of validator count) | 1.15% |
-| Delinquent (% of active stake) | 0.01% |
-| Total active stake | 433,424,499 SOL |
+| Active validators | 686 |
+| Delinquent validators | 9 |
+| Delinquent (% of validator count) | 1.29% |
+| Delinquent (% of active stake) | 0.04% |
+| Total active stake | 433,327,340 SOL |
 | Validators controlling 33% of stake | 18 |
 
 ### Top 20 Validators by Stake
 
 | # | Vote Account | Stake (SOL) | Commission | Last Vote |
 |---|---|---|---|---|
-| 1 | `CcaHc2L43ZWjwCHART3oZoJvHLAe9hzT2DJNUpBzoTN1` | 17,066,372 | 7% | 440985053 |
-| 2 | `he1iusunGwqrNtafDtLdhsUQDFvo13z9sUa36PauBtk` | 16,054,078 | 0% | 440985053 |
-| 3 | `3N7s9zXMZ4QqvHQR15t5GNHyqc89KduzMP7423eWiD5g` | 12,175,413 | 0% | 440985053 |
-| 4 | `CatzoSMUkTRidT5DwBxAC2pEtnwMBTpkCepHkFgZDiqb` | 11,782,032 | 5% | 440985053 |
-| 5 | `26pV97Ce83ZQ6Kz9XT4td8tdoUFPTng8Fb8gPyc53dJx` | 9,178,661 | 7% | 440985053 |
-| 6 | `51JBzSTU5rAM8gLAVQKgp4WoZerQcSqWC7BitBzgUNAm` | 8,917,577 | 10% | 440985053 |
-| 7 | `8GbwASqdpw4dVcwbWUxbHXMrjyQx2aKkoBR5H1GJF8iD` | 8,402,660 | 0% | 440985053 |
-| 8 | `9QU2QSxhb24FUX3Tu2FpczXjpK3VYrvRudywSZaM29mF` | 7,964,352 | 7% | 440985053 |
-| 9 | `CvSb7wdQAFpHuSpTYTJnX5SYH4hCfQ9VuGnqrKaKwycB` | 7,357,821 | 5% | 440985053 |
-| 10 | `DumiCKHVqoCQKD8roLApzR5Fit8qGV5fVQsJV9sTZk4a` | 6,547,243 | 0% | 440985053 |
-| 11 | `HZKopZYvv8v6un2H6KUNVQCnK5zM9emKKezvqhTBSpEc` | 6,122,617 | 100% | 440985053 |
-| 12 | `3JD3jMmnR6g88qff2WZ3cMHJRjJMUk9yVZtmYTYeFrXf` | 6,003,737 | 0% | 440985053 |
-| 13 | `DdCNGDpP7qMgoAy6paFzhhak2EeyCZcgjH7ak5u5v28m` | 5,958,065 | 5% | 440985053 |
-| 14 | `GHViLgbrJdZDPb6sphRbeuPNM9cmjsFuGWzrTF1sKF5n` | 5,773,480 | 100% | 440985053 |
-| 15 | `HimWQUK61d9wxhw7EYu9jUje7xQiDs4jKexaTSvuCmXE` | 4,663,306 | 8% | 440985053 |
-| 16 | `FKsC411dik9ktS6xPADxs4Fk2SCENvAiuccQHLAPndvk` | 4,585,073 | 7% | 440985053 |
-| 17 | `AZoCYB4VgoM9DR9f1ZFcBn8xPSbtbqoxZnKJR7tkvEoX` | 4,080,687 | 100% | 440985053 |
-| 18 | `3ZYJxzCeweSoh2Jj7oCgencFs9y27iKmXJeqYapje1cj` | 4,062,655 | 100% | 440985053 |
-| 19 | `G9x1mqewTeVnXLmv3FamYD5tq1AdS395RHH3MLQPj6TY` | 4,033,314 | 100% | 440985053 |
-| 20 | `EcEowA4GKDsdVBF9PNAZa6c9M4WgYG8y4GnpZSUaqioS` | 3,985,947 | 100% | 440985053 |
+| 1 | `CcaHc2L43ZWjwCHART3oZoJvHLAe9hzT2DJNUpBzoTN1` | 17,066,372 | 7% | 440988335 |
+| 2 | `he1iusunGwqrNtafDtLdhsUQDFvo13z9sUa36PauBtk` | 16,054,078 | 0% | 440988335 |
+| 3 | `3N7s9zXMZ4QqvHQR15t5GNHyqc89KduzMP7423eWiD5g` | 12,175,413 | 0% | 440988335 |
+| 4 | `CatzoSMUkTRidT5DwBxAC2pEtnwMBTpkCepHkFgZDiqb` | 11,782,032 | 5% | 440988335 |
+| 5 | `26pV97Ce83ZQ6Kz9XT4td8tdoUFPTng8Fb8gPyc53dJx` | 9,178,661 | 7% | 440988335 |
+| 6 | `51JBzSTU5rAM8gLAVQKgp4WoZerQcSqWC7BitBzgUNAm` | 8,917,577 | 10% | 440988335 |
+| 7 | `8GbwASqdpw4dVcwbWUxbHXMrjyQx2aKkoBR5H1GJF8iD` | 8,402,660 | 0% | 440988335 |
+| 8 | `9QU2QSxhb24FUX3Tu2FpczXjpK3VYrvRudywSZaM29mF` | 7,964,352 | 7% | 440988335 |
+| 9 | `CvSb7wdQAFpHuSpTYTJnX5SYH4hCfQ9VuGnqrKaKwycB` | 7,357,821 | 5% | 440988335 |
+| 10 | `DumiCKHVqoCQKD8roLApzR5Fit8qGV5fVQsJV9sTZk4a` | 6,547,243 | 0% | 440988335 |
+| 11 | `HZKopZYvv8v6un2H6KUNVQCnK5zM9emKKezvqhTBSpEc` | 6,122,617 | 100% | 440988335 |
+| 12 | `3JD3jMmnR6g88qff2WZ3cMHJRjJMUk9yVZtmYTYeFrXf` | 6,003,737 | 0% | 440988335 |
+| 13 | `DdCNGDpP7qMgoAy6paFzhhak2EeyCZcgjH7ak5u5v28m` | 5,958,065 | 5% | 440988335 |
+| 14 | `GHViLgbrJdZDPb6sphRbeuPNM9cmjsFuGWzrTF1sKF5n` | 5,773,480 | 100% | 440988335 |
+| 15 | `HimWQUK61d9wxhw7EYu9jUje7xQiDs4jKexaTSvuCmXE` | 4,663,306 | 8% | 440988335 |
+| 16 | `FKsC411dik9ktS6xPADxs4Fk2SCENvAiuccQHLAPndvk` | 4,585,073 | 7% | 440988335 |
+| 17 | `AZoCYB4VgoM9DR9f1ZFcBn8xPSbtbqoxZnKJR7tkvEoX` | 4,080,687 | 100% | 440988335 |
+| 18 | `3ZYJxzCeweSoh2Jj7oCgencFs9y27iKmXJeqYapje1cj` | 4,062,655 | 100% | 440988335 |
+| 19 | `G9x1mqewTeVnXLmv3FamYD5tq1AdS395RHH3MLQPj6TY` | 4,033,314 | 100% | 440988335 |
+| 20 | `EcEowA4GKDsdVBF9PNAZa6c9M4WgYG8y4GnpZSUaqioS` | 3,985,947 | 100% | 440988335 |
 
 ## SOL Supply
 
-- Total: 632,639,135 SOL
-- Circulating: 583,176,806 SOL
+- Total: 632,639,123 SOL
+- Circulating: 583,176,793 SOL
 - Non-circulating: 49,462,329 SOL
 
 ## Economic Indicators
@@ -67,12 +67,12 @@ _Generated: 2026-08-22T18:54:45.141544+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | SOL price | $94 |
-| SOL 24h change | +3.07% |
-| SOL 24h volume | $8,200,626,105 |
-| SOL market cap | $54,872,175,924 |
-| Solana chain TVL | $5,531,696,894 |
-| TVL change (24h) | +3.74% |
-| TVL change (7d) | +14.84% |
+| SOL 24h change | +3.48% |
+| SOL 24h volume | $8,179,124,016 |
+| SOL market cap | $55,075,970,535 |
+| Solana chain TVL | $5,534,653,343 |
+| TVL change (24h) | +3.80% |
+| TVL change (7d) | +14.91% |
 | Stablecoin supply on Solana | $15,871,512,100 |
 | DEX volume (24h) | $3,600,948,276 |
 | Chain revenue / REV proxy (24h) | $5,317,317 |
@@ -84,11 +84,11 @@ _Generated: 2026-08-22T18:54:45.141544+00:00 (UTC)_
 | Orca DEX | $635,945,651 |
 | PumpSwap | $600,737,491 |
 | BisonFi | $562,976,008 |
-| Raydium AMM | $279,801,599 |
+| Raydium AMM | $278,064,753 |
 | Scorch | $242,278,351 |
 | Meteora DLMM | $237,064,404 |
 | HumidiFi | $213,788,231 |
-| Manifest Trade | $191,617,781 |
+| Manifest Trade | $190,773,829 |
 | Tessera V | $136,625,071 |
 | SolFi V2 | $114,846,361 |
 
