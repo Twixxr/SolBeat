@@ -1,27 +1,27 @@
 {
   "report": {
     "meta": {
-      "generated_at_utc": "2026-08-22T18:13:49.893247+00:00",
-      "generated_at_unix": 1787422429,
+      "generated_at_utc": "2026-08-22T18:54:45.141544+00:00",
+      "generated_at_unix": 1787424885,
       "generator": "SolPulse Canada",
       "version": "1.0"
     },
     "network_performance": {
       "health": "ok",
-      "current_slot": 440978413,
-      "block_time_unix": 1787422417,
+      "current_slot": 440985053,
+      "block_time_unix": 1787424872,
       "epoch": 1020,
-      "slot_index": 338414,
+      "slot_index": 345054,
       "slots_in_epoch": 432000,
-      "epoch_progress_pct": 78.34,
-      "block_height": 419027768,
-      "current_tps": 4110.92,
-      "avg_tps": 3826.77,
-      "max_tps": 4675.97,
-      "min_tps": 3507.12,
+      "epoch_progress_pct": 79.87,
+      "block_height": 419034400,
+      "current_tps": 4251.42,
+      "avg_tps": 4039.69,
+      "max_tps": 4962.4,
+      "min_tps": 3527.43,
       "samples_used": 30,
-      "avg_slot_time_ms": 367.0,
-      "collected_at_unix": 1787422430
+      "avg_slot_time_ms": 369.4,
+      "collected_at_unix": 1787424885
     },
     "validators": {
       "active_count": 687,
@@ -37,8 +37,8 @@
           "node_pubkey": "Fd7btgySsrjuo25CJCj7oE7VPMyezDhnx7pZkj2v69Nk",
           "activated_stake_sol": 17066371.97,
           "commission_pct": 7,
-          "last_vote": 440978413,
-          "root_slot": 440978382,
+          "last_vote": 440985053,
+          "root_slot": 440985022,
           "name": "Figment",
           "website": ""
         },
@@ -47,8 +47,8 @@
           "node_pubkey": "HEL1USMZKAL2odpNBj2oCjffnFGaYwmbGmyewGv1e2TU",
           "activated_stake_sol": 16054077.97,
           "commission_pct": 0,
-          "last_vote": 440978413,
-          "root_slot": 440978382,
+          "last_vote": 440985053,
+          "root_slot": 440985022,
           "name": "Helius",
           "website": "https://helius.dev"
         },
@@ -57,8 +57,8 @@
           "node_pubkey": "DRpbCBMxVnDK7maPM5tGv6MvB3v1sRMC86PZ8okm21hy",
           "activated_stake_sol": 12175412.97,
           "commission_pct": 0,
-          "last_vote": 440978413,
-          "root_slot": 440978382,
+          "last_vote": 440985053,
+          "root_slot": 440985022,
           "name": "binance staking",
           "website": "https://www.binance.com"
         },
@@ -67,8 +67,8 @@
           "node_pubkey": "JUPiTERrZqgf1jUyR7dSkhMx4Kn2qJyekWsg3LT1h4b",
           "activated_stake_sol": 11782031.72,
           "commission_pct": 5,
-          "last_vote": 440978413,
-          "root_slot": 440978382,
+          "last_vote": 440985053,
+          "root_slot": 440985022,
           "name": "Jupiter",
           "website": "https://jup.ag"
         },
@@ -77,8 +77,8 @@
           "node_pubkey": "C8Bey3LKVJHVqN6xPTeW8WJfUgFQAeGNBpT4Rp99JP1k",
           "activated_stake_sol": 9178661.12,
           "commission_pct": 7,
-          "last_vote": 440978413,
-          "root_slot": 440978382,
+          "last_vote": 440985053,
+          "root_slot": 440985022,
           "name": "Ledger by Figment",
           "website": "https://www.ledger.com/staking"
         },
@@ -87,8 +87,8 @@
           "node_pubkey": "CAo1dCGYrB6NhHh5xb1cGjUiu86iyCfMTENxgHumSve4",
           "activated_stake_sol": 8917576.63,
           "commission_pct": 10,
-          "last_vote": 440978413,
-          "root_slot": 440978382,
+          "last_vote": 440985053,
+          "root_slot": 440985022,
           "name": "Kraken 2",
           "website": "https://www.kraken.com/"
         },
@@ -97,8 +97,8 @@
           "node_pubkey": "E1r4Psq84tHfQ6aPTvvDka4U3u8zPVD7gEUrH25RdxHL",
           "activated_stake_sol": 8402660.19,
           "commission_pct": 0,
-          "last_vote": 440978413,
-          "root_slot": 440978382,
+          "last_vote": 440985053,
+          "root_slot": 440985022,
           "name": "Bitwise Onchain Solutions",
           "website": "https://bitwiseinvestments.com"
         },
@@ -107,8 +107,8 @@
           "node_pubkey": "EvnRmnMrd69kFdbLMxWkTn1icZ7DCceRhvmb2SJXqDo4",
           "activated_stake_sol": 7964352.04,
           "commission_pct": 7,
-          "last_vote": 440978413,
-          "root_slot": 440978382,
+          "last_vote": 440985053,
+          "root_slot": 440985022,
           "name": "Everstake",
           "website": "https://everstake.one"
         },
@@ -117,8 +117,8 @@
           "node_pubkey": "9eGrDohdNTAo61DRHyfMuqKWXqYnA3i254Wiszxe8FoY",
           "activated_stake_sol": 7357820.58,
           "commission_pct": 5,
-          "last_vote": 440978413,
-          "root_slot": 440978382,
+          "last_vote": 440985053,
+          "root_slot": 440985022,
           "name": "Galaxy",
           "website": "https://galaxy.com/staking"
         },
@@ -127,8 +127,8 @@
           "node_pubkey": "Awes4Tr6TX8JDzEhCZY2QVNimT6iD1zWHzf1vNyGvpLM",
           "activated_stake_sol": 6547242.76,
           "commission_pct": 0,
-          "last_vote": 440978413,
-          "root_slot": 440978382,
+          "last_vote": 440985053,
+          "root_slot": 440985022,
           "name": "Staking Facilities | MEV \ud83d\udd25",
           "website": "https://stakingfacilities.com"
         },
@@ -137,8 +137,8 @@
           "node_pubkey": "9jxgosAfHgHzwnxsHw4RAZYaLVokMbnYtmiZBreynGFP",
           "activated_stake_sol": 6122616.98,
           "commission_pct": 100,
-          "last_vote": 440978413,
-          "root_slot": 440978382,
+          "last_vote": 440985053,
+          "root_slot": 440985022,
           "name": null,
           "website": null
         },
@@ -147,8 +147,8 @@
           "node_pubkey": "JD549HsbJHeEKKUrKgg4Fj2iyv2RGjsV7NTZjZUrHybB",
           "activated_stake_sol": 6003737.05,
           "commission_pct": 0,
-          "last_vote": 440978413,
-          "root_slot": 440978382,
+          "last_vote": 440985053,
+          "root_slot": 440985022,
           "name": "Forward Industries",
           "website": "https://sol.forwardindustries.com"
         },
@@ -157,8 +157,8 @@
           "node_pubkey": "5pPRHniefFjkiaArbGX3Y8NUysJmQ9tMZg3FrFGwHzSm",
           "activated_stake_sol": 5958065.39,
           "commission_pct": 5,
-          "last_vote": 440978413,
-          "root_slot": 440978382,
+          "last_vote": 440985053,
+          "root_slot": 440985022,
           "name": "Kiln1",
           "website": "https://kiln.fi"
         },
@@ -167,8 +167,8 @@
           "node_pubkey": "5Cchr1XGEg7dbBXByV5NY2ad8jfxAM7HA3x8D56rq9Ux",
           "activated_stake_sol": 5773479.67,
           "commission_pct": 100,
-          "last_vote": 440978413,
-          "root_slot": 440978382,
+          "last_vote": 440985053,
+          "root_slot": 440985022,
           "name": "Upbit Staking",
           "website": "https://upbit.com/staking"
         },
@@ -177,8 +177,8 @@
           "node_pubkey": "9rkJMARqK6VBkcxGfKBAwnA44gPAfGxPbPsfsggFNDSQ",
           "activated_stake_sol": 4663305.77,
           "commission_pct": 8,
-          "last_vote": 440978413,
-          "root_slot": 440978382,
+          "last_vote": 440985053,
+          "root_slot": 440985022,
           "name": null,
           "website": null
         },
@@ -187,8 +187,8 @@
           "node_pubkey": "GnC339vkyXRm1jRX69dt9mapPPu2LbzXfSDoxc91qta6",
           "activated_stake_sol": 4585072.79,
           "commission_pct": 7,
-          "last_vote": 440978413,
-          "root_slot": 440978382,
+          "last_vote": 440985053,
+          "root_slot": 440985022,
           "name": "P2P.org",
           "website": "https://p2p.org"
         },
@@ -197,8 +197,8 @@
           "node_pubkey": "FBKFWadXZJahGtFitAsBvbqh5968gLY7dMBBJUoUjeNi",
           "activated_stake_sol": 4080686.84,
           "commission_pct": 100,
-          "last_vote": 440978413,
-          "root_slot": 440978382,
+          "last_vote": 440985053,
+          "root_slot": 440985022,
           "name": null,
           "website": null
         },
@@ -207,8 +207,8 @@
           "node_pubkey": "EkvdKhULbMFqjKBKotAzGi3kwMvMpYNDKJXXQQmi6C1f",
           "activated_stake_sol": 4062655.15,
           "commission_pct": 100,
-          "last_vote": 440978413,
-          "root_slot": 440978382,
+          "last_vote": 440985053,
+          "root_slot": 440985022,
           "name": null,
           "website": null
         },
@@ -217,8 +217,8 @@
           "node_pubkey": "BtsmiEEvnSuUnKxqXj2PZRYpPJAc7C34mGz8gtJ1DAaH",
           "activated_stake_sol": 4033313.84,
           "commission_pct": 100,
-          "last_vote": 440978413,
-          "root_slot": 440978382,
+          "last_vote": 440985053,
+          "root_slot": 440985022,
           "name": null,
           "website": null
         },
@@ -227,8 +227,8 @@
           "node_pubkey": "5ZqveVffQPiUbkjBg4KD9kib1MKHLqiFno4ke9jSq9qk",
           "activated_stake_sol": 3985947.37,
           "commission_pct": 100,
-          "last_vote": 440978413,
-          "root_slot": 440978382,
+          "last_vote": 440985053,
+          "root_slot": 440985022,
           "name": null,
           "website": null
         }
@@ -238,30 +238,30 @@
       }
     },
     "supply": {
-      "total_sol": 632639160.48,
-      "circulating_sol": 583176831.11,
-      "non_circulating_sol": 49462329.37
+      "total_sol": 632639135.12,
+      "circulating_sol": 583176805.74,
+      "non_circulating_sol": 49462329.38
     },
     "defi": {
       "tvl": {
-        "tvl_usd": 5514360956,
+        "tvl_usd": 5531696894,
         "as_of_unix": 1787356800,
-        "tvl_change_pct_24h": 3.42,
-        "tvl_change_pct_7d": 14.48
+        "tvl_change_pct_24h": 3.74,
+        "tvl_change_pct_7d": 14.84
       },
       "stablecoins": {
-        "total_stablecoin_supply_usd": 15894843651.98,
+        "total_stablecoin_supply_usd": 15871512100.17,
         "breakdown": {
-          "peggedUSD": 15832427305.399818,
-          "peggedEUR": 57534226.803117834,
-          "peggedJPY": 51.82212456086649,
-          "peggedCHF": 1325752.9987506936,
-          "peggedAUD": 74285.63997208126,
-          "peggedVAR": 2474342.733522263,
-          "peggedGBP": 838348.7168230733,
+          "peggedUSD": 15808847340.512655,
+          "peggedEUR": 57789264.73524483,
+          "peggedJPY": 51.870389056351726,
+          "peggedCHF": 1335937.6240970325,
+          "peggedAUD": 74126.26603417064,
+          "peggedVAR": 2457703.2358123045,
+          "peggedGBP": 838338.0911077203,
           "peggedTRY": 167865.18933493822,
-          "peggedCAD": 1471.981110847479,
-          "peggedKRW": 0.6987888842345604
+          "peggedCAD": 1471.9420507145232,
+          "peggedKRW": 0.6995430532335093
         }
       },
       "dex_volume": {
@@ -311,34 +311,34 @@
         ]
       },
       "fees_and_rev": {
-        "chain_revenue_24h_usd": 5311192.580000001,
-        "chain_revenue_change_pct_24h": 2.64
+        "chain_revenue_24h_usd": 5317316.580000001,
+        "chain_revenue_change_pct_24h": 2.72
       },
       "top_protocols": {
         "protocols": [
           {
             "name": "Sanctum Validator LSTs",
             "category": "Liquid Staking",
-            "tvl_usd": 1396704403.17,
-            "change_1d_pct": 2.370596030027002,
+            "tvl_usd": 1409560104.32,
+            "change_1d_pct": 3.2689318173018194,
             "url": "https://www.sanctum.so",
-            "pct_of_solana_tvl": 9.12
+            "pct_of_solana_tvl": 9.17
           },
           {
             "name": "Kamino Lend",
             "category": "Lending",
-            "tvl_usd": 1178884097.41,
-            "change_1d_pct": 0.4772406174426749,
+            "tvl_usd": 1184657241.3,
+            "change_1d_pct": 1.5259128945251774,
             "url": "https://kamino.com/",
             "pct_of_solana_tvl": 7.7
           },
           {
             "name": "Jupiter Lend",
             "category": "Lending",
-            "tvl_usd": 1041804711.16,
-            "change_1d_pct": 0.6940465625995671,
+            "tvl_usd": 1047471152.62,
+            "change_1d_pct": 1.439370191814902,
             "url": "https://jup.ag/?ref=f6y1ryr2snn3",
-            "pct_of_solana_tvl": 6.8
+            "pct_of_solana_tvl": 6.81
           },
           {
             "name": "Raydium AMM",
@@ -346,31 +346,31 @@
             "tvl_usd": 1032877093.15,
             "change_1d_pct": 3.1453027033388565,
             "url": "https://raydium.io",
-            "pct_of_solana_tvl": 6.74
+            "pct_of_solana_tvl": 6.72
           },
           {
             "name": "Binance Staked SOL",
             "category": "Liquid Staking",
-            "tvl_usd": 942361597.54,
-            "change_1d_pct": 2.5799432052234295,
+            "tvl_usd": 950031673.09,
+            "change_1d_pct": 2.9180869947175836,
             "url": "https://www.binance.com/en/solana-staking",
-            "pct_of_solana_tvl": 6.15
+            "pct_of_solana_tvl": 6.18
           },
           {
             "name": "Jito Liquid Staking",
             "category": "Liquid Staking",
-            "tvl_usd": 936468353.5,
-            "change_1d_pct": 2.214549956634258,
+            "tvl_usd": 945027595.97,
+            "change_1d_pct": 2.973553546767377,
             "url": "https://jito.network",
-            "pct_of_solana_tvl": 6.11
+            "pct_of_solana_tvl": 6.14
           },
           {
             "name": "BlackRock BUIDL",
             "category": "RWA",
             "tvl_usd": 777140542.29,
-            "change_1d_pct": -3.7873639875096927,
+            "change_1d_pct": -3.7873639875096785,
             "url": "https://securitize.io/",
-            "pct_of_solana_tvl": 5.07
+            "pct_of_solana_tvl": 5.05
           },
           {
             "name": "Jupiter Perpetual Exchange",
@@ -378,39 +378,47 @@
             "tvl_usd": 737136823.14,
             "change_1d_pct": -0.32637132778697264,
             "url": "https://jup.ag/?ref=f6y1ryr2snn3",
-            "pct_of_solana_tvl": 4.81
+            "pct_of_solana_tvl": 4.79
           },
           {
             "name": "Jupiter Staked SOL",
             "category": "Liquid Staking",
-            "tvl_usd": 483244628.24,
-            "change_1d_pct": 1.5189785296504823,
+            "tvl_usd": 487053097.01,
+            "change_1d_pct": 2.0602739159843395,
             "url": "https://jup.ag/?ref=f6y1ryr2snn3",
-            "pct_of_solana_tvl": 3.15
+            "pct_of_solana_tvl": 3.17
           },
           {
             "name": "xStocks",
             "category": "RWA",
-            "tvl_usd": 419240089.63,
-            "change_1d_pct": -0.2108147511748797,
+            "tvl_usd": 417872871.81,
+            "change_1d_pct": -0.9715567532482652,
             "url": "https://defi.xstocks.fi",
-            "pct_of_solana_tvl": 2.74
+            "pct_of_solana_tvl": 2.72
           },
           {
             "name": "Solstice",
             "category": "Basis Trading",
-            "tvl_usd": 404317983.64,
-            "change_1d_pct": 0.016689602649705648,
+            "tvl_usd": 404412087.76,
+            "change_1d_pct": 0.02639751597170914,
             "url": "https://solstice.finance/",
-            "pct_of_solana_tvl": 2.64
+            "pct_of_solana_tvl": 2.63
           },
           {
             "name": "Sentora",
             "category": "Risk Curators",
-            "tvl_usd": 365901165.67,
-            "change_1d_pct": 1.9657254556644688,
+            "tvl_usd": 365819004.44,
+            "change_1d_pct": 1.7817290333582037,
             "url": "https://sentora.com/",
-            "pct_of_solana_tvl": 2.39
+            "pct_of_solana_tvl": 2.38
+          },
+          {
+            "name": "Marinade Native",
+            "category": "Staking Pool",
+            "tvl_usd": 317722117.48,
+            "change_1d_pct": 14.340339491802752,
+            "url": "https://app.marinade.finance/",
+            "pct_of_solana_tvl": 2.07
           },
           {
             "name": "PumpSwap",
@@ -418,14 +426,6 @@
             "tvl_usd": 317117854.59,
             "change_1d_pct": 3.380835506861075,
             "url": "https://swap.pump.fun",
-            "pct_of_solana_tvl": 2.07
-          },
-          {
-            "name": "Marinade Native",
-            "category": "Staking Pool",
-            "tvl_usd": 315167988.1,
-            "change_1d_pct": 13.4211714404844,
-            "url": "https://app.marinade.finance/",
             "pct_of_solana_tvl": 2.06
           },
           {
@@ -442,10 +442,10 @@
     },
     "market": {
       "price": {
-        "price_usd": 94.09,
-        "price_change_pct_24h": 2.42,
-        "volume_24h_usd": 8251444220.309645,
-        "market_cap_usd": 54855589952.05438
+        "price_usd": 94.08,
+        "price_change_pct_24h": 3.07,
+        "volume_24h_usd": 8200626104.765621,
+        "market_cap_usd": 54872175923.56843
       },
       "trend_7d": {
         "seven_day_series": [
@@ -478,8 +478,8 @@
             "price_usd": 93.6938
           },
           {
-            "date_unix": 1787422320,
-            "price_usd": 94.0927
+            "date_unix": 1787424800,
+            "price_usd": 94.0698
           }
         ]
       }
@@ -3488,7 +3488,7 @@
           },
           {
             "date_unix": 1787356800,
-            "value": 5514360956
+            "value": 5531696894
           }
         ]
       },
@@ -9336,7 +9336,7 @@
           },
           {
             "date_unix": 1787356800,
-            "value": 3817092674.22
+            "value": 3813575736.22
           }
         ]
       },
@@ -11396,918 +11396,883 @@
           },
           {
             "date_unix": 1768694400,
-            "value": 4656262.58
+            "value": 4656283.58
           },
           {
             "date_unix": 1768780800,
-            "value": 5119392.81
+            "value": 5119557.81
           },
           {
             "date_unix": 1768867200,
-            "value": 5405412.05
+            "value": 5405439.05
           },
           {
             "date_unix": 1768953600,
-            "value": 4673245.41
+            "value": 4673250.41
           },
           {
             "date_unix": 1769040000,
-            "value": 4970128.880000001
+            "value": 4971301.880000001
           },
           {
             "date_unix": 1769126400,
-            "value": 4174942.98
+            "value": 4175244.98
           },
           {
             "date_unix": 1769212800,
-            "value": 5177626.72
+            "value": 5178545.72
           },
           {
             "date_unix": 1769299200,
-            "value": 5956713.92
+            "value": 5961864.92
           },
           {
             "date_unix": 1769385600,
-            "value": 6605719.55
+            "value": 6606989.55
           },
           {
             "date_unix": 1769472000,
-            "value": 6264987.64
+            "value": 6266421.64
           },
           {
             "date_unix": 1769558400,
-            "value": 5826051.8100000005
+            "value": 5826980.8100000005
           },
           {
             "date_unix": 1769644800,
-            "value": 5357768.54
+            "value": 5360441.54
           },
           {
             "date_unix": 1769731200,
-            "value": 6724906.720000001
+            "value": 6727414.720000001
           },
           {
             "date_unix": 1769817600,
-            "value": 6404237.239999999
+            "value": 6407280.239999999
           },
           {
             "date_unix": 1769904000,
-            "value": 4059493.29
+            "value": 4062688.29
           },
           {
             "date_unix": 1769990400,
-            "value": 4463934
+            "value": 4464275
           },
           {
             "date_unix": 1770076800,
-            "value": 4330632.02
+            "value": 4333033.02
           },
           {
             "date_unix": 1770163200,
-            "value": 4282883.22
+            "value": 4284685.22
           },
           {
             "date_unix": 1770249600,
-            "value": 4913330.46
+            "value": 4931217.46
           },
           {
             "date_unix": 1770336000,
-            "value": 5406854.02
+            "value": 5422976.02
           },
           {
             "date_unix": 1770422400,
-            "value": 3536301.12
+            "value": 3537862.12
           },
           {
             "date_unix": 1770508800,
-            "value": 3524723.15
+            "value": 3527684.15
           },
           {
             "date_unix": 1770595200,
-            "value": 3418341.54
+            "value": 3419152.54
           },
           {
             "date_unix": 1770681600,
-            "value": 3164028.45
+            "value": 3164145.45
           },
           {
             "date_unix": 1770768000,
-            "value": 3197594.75
+            "value": 3198585.75
           },
           {
             "date_unix": 1770854400,
-            "value": 2999201.02
+            "value": 2999595.02
           },
           {
             "date_unix": 1770940800,
-            "value": 3194629.73
+            "value": 3194623.73
           },
           {
             "date_unix": 1771027200,
-            "value": 2675258.06
+            "value": 2676543.06
           },
           {
             "date_unix": 1771113600,
-            "value": 2964975.3400000003
+            "value": 2966170.3400000003
           },
           {
             "date_unix": 1771200000,
-            "value": 3056634
+            "value": 3056622
           },
           {
             "date_unix": 1771286400,
-            "value": 3909040.7199999997
+            "value": 3909447.7199999997
           },
           {
             "date_unix": 1771372800,
-            "value": 3342244.99
+            "value": 3342591.99
           },
           {
             "date_unix": 1771459200,
-            "value": 3620004.5
+            "value": 3620015.5
           },
           {
             "date_unix": 1771545600,
-            "value": 3473157.34
+            "value": 3473328.34
           },
           {
             "date_unix": 1771632000,
-            "value": 3296841
+            "value": 3296899
           },
           {
             "date_unix": 1771718400,
-            "value": 3032659.59
+            "value": 3032794.59
           },
           {
             "date_unix": 1771804800,
-            "value": 3405141.24
+            "value": 3405383.24
           },
           {
             "date_unix": 1771891200,
-            "value": 3474874
+            "value": 3475420
           },
           {
             "date_unix": 1771977600,
-            "value": 3916497.63
+            "value": 3926549.63
           },
           {
             "date_unix": 1772064000,
-            "value": 3053047.1100000003
+            "value": 3053957.1100000003
           },
           {
             "date_unix": 1772150400,
-            "value": 3486237.01
+            "value": 3486517.01
           },
           {
             "date_unix": 1772236800,
-            "value": 3182189
+            "value": 3183135
           },
           {
             "date_unix": 1772323200,
-            "value": 3005873.38
+            "value": 3005881.38
           },
           {
             "date_unix": 1772409600,
-            "value": 3308014.19
+            "value": 3308327.19
           },
           {
             "date_unix": 1772496000,
-            "value": 3211728.0900000003
+            "value": 3212208.0900000003
           },
           {
             "date_unix": 1772582400,
-            "value": 3180488.68
+            "value": 3186446.68
           },
           {
             "date_unix": 1772668800,
-            "value": 3201860.9800000004
+            "value": 3201967.9800000004
           },
           {
             "date_unix": 1772755200,
-            "value": 3261540.0700000003
+            "value": 3261576.0700000003
           },
           {
             "date_unix": 1772841600,
-            "value": 2876281.75
+            "value": 2876394.75
           },
           {
             "date_unix": 1772928000,
-            "value": 2513493.33
+            "value": 2513707.33
           },
           {
             "date_unix": 1773014400,
-            "value": 3034178.8200000003
+            "value": 3035182.8200000003
           },
           {
             "date_unix": 1773100800,
-            "value": 3067288.66
+            "value": 3067331.66
           },
           {
             "date_unix": 1773187200,
-            "value": 3083964.46
+            "value": 3084335.46
           },
           {
             "date_unix": 1773273600,
-            "value": 3016375.34
+            "value": 3016393.34
           },
           {
             "date_unix": 1773360000,
-            "value": 3139774.87
+            "value": 3140491.87
           },
           {
             "date_unix": 1773446400,
-            "value": 2400276.71
+            "value": 2400325.71
           },
           {
             "date_unix": 1773532800,
-            "value": 2612860
+            "value": 2616616
           },
           {
             "date_unix": 1773619200,
-            "value": 3487773.54
+            "value": 3494870.54
           },
           {
             "date_unix": 1773705600,
-            "value": 3259711.1799999997
+            "value": 3260063.1799999997
           },
           {
             "date_unix": 1773792000,
-            "value": 2676591.7
+            "value": 2677083.7
           },
           {
             "date_unix": 1773878400,
-            "value": 2683416.4699999997
+            "value": 2683663.4699999997
           },
           {
             "date_unix": 1773964800,
-            "value": 2417602.94
+            "value": 2417664.94
           },
           {
             "date_unix": 1774051200,
-            "value": 2508346.7
+            "value": 2508427.7
           },
           {
             "date_unix": 1774137600,
-            "value": 2204241.62
+            "value": 2204510.62
           },
           {
             "date_unix": 1774224000,
-            "value": 2962241.38
+            "value": 2963114.38
           },
           {
             "date_unix": 1774310400,
-            "value": 2830001.03
+            "value": 2830392.03
           },
           {
             "date_unix": 1774396800,
-            "value": 3195088.1799999997
+            "value": 3195119.1799999997
           },
           {
             "date_unix": 1774483200,
-            "value": 2655848.09
+            "value": 2658481.09
           },
           {
             "date_unix": 1774569600,
-            "value": 2659609.94
+            "value": 2659949.94
           },
           {
             "date_unix": 1774656000,
-            "value": 2119961.54
+            "value": 2120571.54
           },
           {
             "date_unix": 1774742400,
-            "value": 2166327.7
+            "value": 2166864.7
           },
           {
             "date_unix": 1774828800,
-            "value": 3450312.04
+            "value": 3451180.04
           },
           {
             "date_unix": 1774915200,
-            "value": 2868289.86
+            "value": 2870677.86
           },
           {
             "date_unix": 1775001600,
-            "value": 4011005.9699999997
+            "value": 4018536.9699999997
           },
           {
             "date_unix": 1775088000,
-            "value": 2725101.2100000004
+            "value": 2725777.2100000004
           },
           {
             "date_unix": 1775174400,
-            "value": 2569115.5300000003
+            "value": 2569462.5300000003
           },
           {
             "date_unix": 1775260800,
-            "value": 2230391.7
+            "value": 2230397.7
           },
           {
             "date_unix": 1775347200,
-            "value": 2033296.02
+            "value": 2033993.02
           },
           {
             "date_unix": 1775433600,
-            "value": 2415013.4
+            "value": 2415092.4
           },
           {
             "date_unix": 1775520000,
-            "value": 2552002.72
+            "value": 2555391.72
           },
           {
             "date_unix": 1775606400,
-            "value": 2482714.95
+            "value": 2482811.95
           },
           {
             "date_unix": 1775692800,
-            "value": 2875886.78
+            "value": 2876577.78
           },
           {
             "date_unix": 1775779200,
-            "value": 2319926.8400000003
+            "value": 2321834.8400000003
           },
           {
             "date_unix": 1775865600,
-            "value": 2092558.62
+            "value": 2093213.62
           },
           {
             "date_unix": 1775952000,
-            "value": 1910825.77
+            "value": 1910849.77
           },
           {
             "date_unix": 1776038400,
-            "value": 2557168.5
+            "value": 2560290.5
           },
           {
             "date_unix": 1776124800,
-            "value": 2512562.67
+            "value": 2512572.67
           },
           {
             "date_unix": 1776211200,
-            "value": 2758271.45
+            "value": 2758274.45
           },
           {
             "date_unix": 1776297600,
-            "value": 2736513.38
+            "value": 2736598.38
           },
           {
             "date_unix": 1776384000,
-            "value": 3172133.46
+            "value": 3172174.46
           },
           {
             "date_unix": 1776470400,
-            "value": 2330838.37
+            "value": 2330896.37
           },
           {
             "date_unix": 1776556800,
-            "value": 2206149.96
+            "value": 2206208.96
           },
           {
             "date_unix": 1776643200,
-            "value": 2363240.9499999997
+            "value": 2363250.9499999997
           },
           {
             "date_unix": 1776729600,
-            "value": 2910489.27
+            "value": 2910658.27
           },
           {
             "date_unix": 1776816000,
-            "value": 3124922.46
+            "value": 3124998.46
           },
           {
             "date_unix": 1776902400,
-            "value": 2798623.3699999996
+            "value": 2799013.3699999996
           },
           {
             "date_unix": 1776988800,
-            "value": 2643822.5100000002
+            "value": 2643850.5100000002
           },
           {
             "date_unix": 1777075200,
-            "value": 2714112.5199999996
+            "value": 2714117.5199999996
           },
           {
             "date_unix": 1777161600,
-            "value": 2350692.84
+            "value": 2350730.84
           },
           {
             "date_unix": 1777248000,
-            "value": 3026432.08
+            "value": 3026622.08
           },
           {
             "date_unix": 1777334400,
-            "value": 3453315.15
+            "value": 3453351.15
           },
           {
             "date_unix": 1777420800,
-            "value": 3376784.5
+            "value": 3377141.5
           },
           {
             "date_unix": 1777507200,
-            "value": 2911869.92
+            "value": 2911943.92
           },
           {
             "date_unix": 1777593600,
-            "value": 3082410.63
+            "value": 3082463.63
           },
           {
             "date_unix": 1777680000,
-            "value": 2857014.68
+            "value": 2857036.68
           },
           {
             "date_unix": 1777766400,
-            "value": 3026131.62
+            "value": 3026132.62
           },
           {
             "date_unix": 1777852800,
-            "value": 2958839.5900000003
+            "value": 2960211.5900000003
           },
           {
             "date_unix": 1777939200,
-            "value": 3340953.8200000003
+            "value": 3342097.8200000003
           },
           {
             "date_unix": 1778025600,
-            "value": 3566752.1700000004
+            "value": 3567001.1700000004
           },
           {
             "date_unix": 1778112000,
-            "value": 3431546.62
+            "value": 3431580.62
           },
           {
             "date_unix": 1778198400,
-            "value": 3775105.2600000002
+            "value": 3778203.2600000002
           },
           {
             "date_unix": 1778284800,
-            "value": 3078993.21
+            "value": 3079251.21
           },
           {
             "date_unix": 1778371200,
-            "value": 3116215.71
+            "value": 3117093.71
           },
           {
             "date_unix": 1778457600,
-            "value": 3860500.14
+            "value": 3860716.14
           },
           {
             "date_unix": 1778544000,
-            "value": 3756688.31
+            "value": 3756734.31
           },
           {
             "date_unix": 1778630400,
-            "value": 3659274.9899999998
+            "value": 3659435.9899999998
           },
           {
             "date_unix": 1778716800,
-            "value": 3204255.7499999995
+            "value": 3204362.7499999995
           },
           {
             "date_unix": 1778803200,
-            "value": 3144957.09
+            "value": 3145238.09
           },
           {
             "date_unix": 1778889600,
-            "value": 2624972.24
+            "value": 2625226.24
           },
           {
             "date_unix": 1778976000,
-            "value": 2570670.6300000004
+            "value": 2571004.6300000004
           },
           {
             "date_unix": 1779062400,
-            "value": 2849559.64
+            "value": 2849596.64
           },
           {
             "date_unix": 1779148800,
-            "value": 2995353.81
+            "value": 2995436.81
           },
           {
             "date_unix": 1779235200,
-            "value": 2930841.69
+            "value": 2930837.69
           },
           {
             "date_unix": 1779321600,
-            "value": 3020801.4200000004
+            "value": 3020833.4200000004
           },
           {
             "date_unix": 1779408000,
-            "value": 2837337.0900000003
+            "value": 2837347.0900000003
           },
           {
             "date_unix": 1779494400,
-            "value": 2432576.9
+            "value": 2432744.9
           },
           {
             "date_unix": 1779580800,
-            "value": 2368134.96
+            "value": 2368441.96
           },
           {
             "date_unix": 1779667200,
-            "value": 2998433.7800000003
+            "value": 2999122.7800000003
           },
           {
             "date_unix": 1779753600,
-            "value": 2615575.47
+            "value": 2615848.47
           },
           {
             "date_unix": 1779840000,
-            "value": 2848001.84
+            "value": 2848671.84
           },
           {
             "date_unix": 1779926400,
-            "value": 3043914.3499999996
+            "value": 3044422.3499999996
           },
           {
             "date_unix": 1780012800,
-            "value": 3040196.2399999998
+            "value": 3040888.2399999998
           },
           {
             "date_unix": 1780099200,
-            "value": 2361538.01
+            "value": 2361733.01
           },
           {
             "date_unix": 1780185600,
-            "value": 2758120.94
+            "value": 2758829.94
           },
           {
             "date_unix": 1780272000,
-            "value": 3553351.87
+            "value": 3553634.87
           },
           {
             "date_unix": 1780358400,
-            "value": 3207232.8000000003
+            "value": 3207842.8000000003
           },
           {
             "date_unix": 1780444800,
-            "value": 2637515.21
+            "value": 2637745.21
           },
           {
             "date_unix": 1780531200,
-            "value": 3040562.22
+            "value": 3041258.22
           },
           {
             "date_unix": 1780617600,
-            "value": 2844657.96
+            "value": 2845039.96
           },
           {
             "date_unix": 1780704000,
-            "value": 2100068.0300000003
+            "value": 2100515.0300000003
           },
           {
             "date_unix": 1780790400,
-            "value": 2103903.5
+            "value": 2104012.5
           },
           {
             "date_unix": 1780876800,
-            "value": 2777155.1799999997
+            "value": 2777643.1799999997
           },
           {
             "date_unix": 1780963200,
-            "value": 2615846.52
+            "value": 2616020.52
           },
           {
             "date_unix": 1781049600,
-            "value": 3726558.9499999997
+            "value": 3727138.9499999997
           },
           {
             "date_unix": 1781136000,
-            "value": 3448855.9
+            "value": 3449081.9
           },
           {
             "date_unix": 1781222400,
-            "value": 3077891.87
+            "value": 3078330.87
           },
           {
             "date_unix": 1781308800,
-            "value": 2537368.12
+            "value": 2537506.12
           },
           {
             "date_unix": 1781395200,
-            "value": 2791537.23
+            "value": 2792015.23
           },
           {
             "date_unix": 1781481600,
-            "value": 3953881.5
+            "value": 3954058.5
           },
           {
             "date_unix": 1781568000,
-            "value": 3736701.0300000003
+            "value": 3737281.0300000003
           },
           {
             "date_unix": 1781654400,
-            "value": 3449977.83
+            "value": 3450154.83
           },
           {
             "date_unix": 1781740800,
-            "value": 3109491.58
+            "value": 3109979.58
           },
           {
             "date_unix": 1781827200,
-            "value": 2900109.89
+            "value": 2900378.89
           },
           {
             "date_unix": 1781913600,
-            "value": 2596897.56
+            "value": 2597320.56
           },
           {
             "date_unix": 1782000000,
-            "value": 2530139.7
+            "value": 2530261.7
           },
           {
             "date_unix": 1782086400,
-            "value": 3325040.48
+            "value": 3325580.48
           },
           {
             "date_unix": 1782172800,
-            "value": 2882099.1399999997
+            "value": 2882226.1399999997
           },
           {
             "date_unix": 1782259200,
-            "value": 2602287.46
+            "value": 2602737.46
           },
           {
             "date_unix": 1782345600,
-            "value": 2897275.65
+            "value": 2897443.65
           },
           {
             "date_unix": 1782432000,
-            "value": 2915086.23
+            "value": 2915713.23
           },
           {
             "date_unix": 1782518400,
-            "value": 2186688.6
+            "value": 2186823.6
           },
           {
             "date_unix": 1782604800,
-            "value": 3388106.4699999997
+            "value": 3388594.4699999997
           },
           {
             "date_unix": 1782691200,
-            "value": 3307375.36
+            "value": 3307826.36
           },
           {
             "date_unix": 1782777600,
-            "value": 4015300.62
+            "value": 4016376.62
           },
           {
             "date_unix": 1782864000,
-            "value": 3445789.9099999997
+            "value": 3446125.9099999997
           },
           {
             "date_unix": 1782950400,
-            "value": 3755561.63
+            "value": 3756212.63
           },
           {
             "date_unix": 1783036800,
-            "value": 3726162.44
+            "value": 3726392.44
           },
           {
             "date_unix": 1783123200,
-            "value": 3772703.65
+            "value": 3773185.65
           },
           {
             "date_unix": 1783209600,
-            "value": 2763175.09
+            "value": 2763681.09
           },
           {
             "date_unix": 1783296000,
-            "value": 3610727.81
+            "value": 3611327.81
           },
           {
             "date_unix": 1783382400,
-            "value": 3909242.15
+            "value": 3909685.15
           },
           {
             "date_unix": 1783468800,
-            "value": 3182596.58
+            "value": 3183094.58
           },
           {
             "date_unix": 1783555200,
-            "value": 3144268.3799999994
+            "value": 3144592.3799999994
           },
           {
             "date_unix": 1783641600,
-            "value": 3151127.02
+            "value": 3151497.02
           },
           {
             "date_unix": 1783728000,
-            "value": 2100918.04
+            "value": 2101261.04
           },
           {
             "date_unix": 1783814400,
-            "value": 2135122.42
+            "value": 2135480.42
           },
           {
             "date_unix": 1783900800,
-            "value": 2820848.2500000005
+            "value": 2821229.2500000005
           },
           {
             "date_unix": 1783987200,
-            "value": 3523569.1599999997
+            "value": 3525751.1599999997
           },
           {
             "date_unix": 1784073600,
-            "value": 3177016.3600000003
+            "value": 3177913.3600000003
           },
           {
             "date_unix": 1784160000,
-            "value": 2849258.6599999997
+            "value": 2849962.6599999997
           },
           {
             "date_unix": 1784246400,
-            "value": 2971872.92
+            "value": 2973198.92
           },
           {
             "date_unix": 1784332800,
-            "value": 2870489.26
+            "value": 2870960.26
           },
           {
             "date_unix": 1784419200,
-            "value": 2398728.53
+            "value": 2399146.53
           },
           {
             "date_unix": 1784505600,
-            "value": 2841079.6400000006
+            "value": 2841635.6400000006
           },
           {
             "date_unix": 1784592000,
-            "value": 2671348.4499999997
+            "value": 2671814.4499999997
           },
           {
             "date_unix": 1784678400,
-            "value": 3646029.53
+            "value": 3646617.53
           },
           {
             "date_unix": 1784764800,
-            "value": 3672441.6699999995
+            "value": 3673184.6699999995
           },
           {
             "date_unix": 1784851200,
-            "value": 3211643.1599999997
+            "value": 3212260.1599999997
           },
           {
             "date_unix": 1784937600,
-            "value": 2886590.239999999
+            "value": 2887071.239999999
           },
           {
             "date_unix": 1785024000,
-            "value": 2896213.479999998
+            "value": 2896614.479999998
           },
           {
             "date_unix": 1785110400,
-            "value": 3797351.97
+            "value": 3797928.97
           },
           {
             "date_unix": 1785196800,
-            "value": 3636176.4199999995
+            "value": 3636881.4199999995
           },
           {
             "date_unix": 1785283200,
-            "value": 4038218.059999999
+            "value": 4038821.059999999
           },
           {
             "date_unix": 1785369600,
-            "value": 3581405.629999999
+            "value": 3581901.629999999
           },
           {
             "date_unix": 1785456000,
-            "value": 3348899.1800000006
+            "value": 3349578.1800000006
           },
           {
             "date_unix": 1785542400,
-            "value": 2779935.4600000004
+            "value": 2780680.4600000004
           },
           {
             "date_unix": 1785628800,
-            "value": 3190134.1700000004
+            "value": 3190555.1700000004
           },
           {
             "date_unix": 1785715200,
-            "value": 4370143.560000001
+            "value": 4370659.560000001
           },
           {
             "date_unix": 1785801600,
-            "value": 4513498.500000001
+            "value": 4514184.500000001
           },
           {
             "date_unix": 1785888000,
-            "value": 3649417.8299999996
+            "value": 3649869.8299999996
           },
           {
             "date_unix": 1785974400,
-            "value": 3735904.19
+            "value": 3736337.19
           },
           {
             "date_unix": 1786060800,
-            "value": 3814743.6
+            "value": 3815187.6
           },
           {
             "date_unix": 1786147200,
-            "value": 3796991.4000000004
+            "value": 3797586.4000000004
           },
           {
             "date_unix": 1786233600,
-            "value": 4339230.89
+            "value": 4340069.89
           },
           {
             "date_unix": 1786320000,
-            "value": 4227573.99
+            "value": 4228234.99
           },
           {
             "date_unix": 1786406400,
-            "value": 4851384.479999999
+            "value": 4852546.479999999
           },
           {
             "date_unix": 1786492800,
-            "value": 4816374.999999999
+            "value": 4817458.999999999
           },
           {
             "date_unix": 1786579200,
-            "value": 4232126.64
+            "value": 4232765.64
           },
           {
             "date_unix": 1786665600,
-            "value": 3810642.839999999
+            "value": 3811130.839999999
           },
           {
             "date_unix": 1786752000,
-            "value": 3187304.839999998
+            "value": 3187750.839999998
           },
           {
             "date_unix": 1786838400,
-            "value": 3351281.229999999
+            "value": 3351667.229999999
           },
           {
             "date_unix": 1786924800,
-            "value": 4469552.77
+            "value": 4470307.77
           },
           {
             "date_unix": 1787011200,
-            "value": 4040665.1999999997
+            "value": 4041425.1999999997
           },
           {
             "date_unix": 1787097600,
-            "value": 6025506.849999999
+            "value": 6032933.849999999
           },
           {
             "date_unix": 1787184000,
-            "value": 5174346.700000001
+            "value": 5176447.700000001
           },
           {
             "date_unix": 1787270400,
-            "value": 5311192.580000001
+            "value": 5317316.580000001
           },
           {
             "date_unix": 1787356800,
-            "value": 5414721.11
+            "value": 5414149.11
           }
         ]
       }
     },
     "report_uptime": {
-      "days": 0.67,
+      "days": 0.7,
       "since_unix": 1787364513,
       "note": "since last missed refresh"
     }
   },
   "anomalies": [],
   "history_series": [
-    {
-      "generated_at_unix": 1787205192,
-      "network_performance": {
-        "avg_tps": 2914.02,
-        "avg_slot_time_ms": 413.9
-      },
-      "validators": {
-        "delinquent_stake_pct": 0.023,
-        "active_count": 688
-      },
-      "defi": {
-        "tvl": {
-          "tvl_usd": 5196457676
-        },
-        "stablecoins": {
-          "total_stablecoin_supply_usd": 15818580490.17
-        },
-        "dex_volume": {
-          "dex_volume_24h_usd": 2789524387.95
-        },
-        "fees_and_rev": {
-          "chain_revenue_24h_usd": 5933856.749999999
-        }
-      },
-      "market": {
-        "price": {
-          "price_usd": 84.86,
-          "market_cap_usd": 49475694854.62666,
-          "volume_24h_usd": 4776038367.039459
-        }
-      },
-      "supply": {
-        "total_sol": 632513842.42
-      }
-    },
     {
       "generated_at_unix": 1787207131,
       "network_performance": {
@@ -15631,6 +15596,41 @@
       },
       "supply": {
         "total_sol": 632639160.48
+      }
+    },
+    {
+      "generated_at_unix": 1787424885,
+      "network_performance": {
+        "avg_tps": 4039.69,
+        "avg_slot_time_ms": 369.4
+      },
+      "validators": {
+        "delinquent_stake_pct": 0.014,
+        "active_count": 687
+      },
+      "defi": {
+        "tvl": {
+          "tvl_usd": 5531696894
+        },
+        "stablecoins": {
+          "total_stablecoin_supply_usd": 15871512100.17
+        },
+        "dex_volume": {
+          "dex_volume_24h_usd": 3600948276.22
+        },
+        "fees_and_rev": {
+          "chain_revenue_24h_usd": 5317316.580000001
+        }
+      },
+      "market": {
+        "price": {
+          "price_usd": 94.08,
+          "market_cap_usd": 54872175923.56843,
+          "volume_24h_usd": 8200626104.765621
+        }
+      },
+      "supply": {
+        "total_sol": 632639135.12
       }
     }
   ]
