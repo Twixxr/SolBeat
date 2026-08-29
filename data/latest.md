@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolPulse Canada
 
-_Generated: 2026-08-29T15:40:52.482141+00:00 (UTC)_
+_Generated: 2026-08-29T18:58:57.837215+00:00 (UTC)_
 
 ## Alerts
 
@@ -11,55 +11,55 @@ _Generated: 2026-08-29T15:40:52.482141+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 442,643,064 |
-| Block height | 420,690,940 |
+| Current slot | 442,680,489 |
+| Block height | 420,728,336 |
 | Epoch | 1024 |
-| Epoch progress | 63.67% |
-| Current TPS | 3,982.68 |
-| Avg TPS (~30 samples) | 3,827.48 |
-| Max / Min TPS | 4,197.60 / 3,470.50 |
+| Epoch progress | 72.34% |
+| Current TPS | 5,307.95 |
+| Avg TPS (~30 samples) | 4,396.53 |
+| Max / Min TPS | 5,307.95 / 3,631.50 |
 | Avg slot time | 317.1 ms |
 
 ## Validator Status
 
 | Metric | Value |
 |---|---|
-| Active validators | 688 |
-| Delinquent validators | 9 |
-| Delinquent (% of validator count) | 1.29% |
+| Active validators | 689 |
+| Delinquent validators | 8 |
+| Delinquent (% of validator count) | 1.15% |
 | Delinquent (% of active stake) | 0.00% |
-| Total active stake | 436,115,948 SOL |
+| Total active stake | 436,116,124 SOL |
 | Validators controlling 33% of stake | 18 |
 
 ### Top 20 Validators by Stake
 
 | # | Vote Account | Stake (SOL) | Commission | Last Vote |
 |---|---|---|---|---|
-| 1 | `CcaHc2L43ZWjwCHART3oZoJvHLAe9hzT2DJNUpBzoTN1` | 16,991,835 | 7% | 442643066 |
-| 2 | `he1iusunGwqrNtafDtLdhsUQDFvo13z9sUa36PauBtk` | 16,035,737 | 0% | 442643066 |
-| 3 | `3N7s9zXMZ4QqvHQR15t5GNHyqc89KduzMP7423eWiD5g` | 12,393,242 | 0% | 442643066 |
-| 4 | `CatzoSMUkTRidT5DwBxAC2pEtnwMBTpkCepHkFgZDiqb` | 11,460,007 | 5% | 442643066 |
-| 5 | `26pV97Ce83ZQ6Kz9XT4td8tdoUFPTng8Fb8gPyc53dJx` | 9,292,131 | 7% | 442643066 |
-| 6 | `8GbwASqdpw4dVcwbWUxbHXMrjyQx2aKkoBR5H1GJF8iD` | 9,081,213 | 0% | 442643066 |
-| 7 | `51JBzSTU5rAM8gLAVQKgp4WoZerQcSqWC7BitBzgUNAm` | 9,001,204 | 10% | 442643066 |
-| 8 | `CvSb7wdQAFpHuSpTYTJnX5SYH4hCfQ9VuGnqrKaKwycB` | 7,294,487 | 5% | 442643066 |
-| 9 | `9QU2QSxhb24FUX3Tu2FpczXjpK3VYrvRudywSZaM29mF` | 7,192,557 | 7% | 442643066 |
-| 10 | `DumiCKHVqoCQKD8roLApzR5Fit8qGV5fVQsJV9sTZk4a` | 6,585,996 | 0% | 442643066 |
-| 11 | `HZKopZYvv8v6un2H6KUNVQCnK5zM9emKKezvqhTBSpEc` | 6,122,617 | 100% | 442643066 |
-| 12 | `3JD3jMmnR6g88qff2WZ3cMHJRjJMUk9yVZtmYTYeFrXf` | 6,099,133 | 0% | 442643066 |
-| 13 | `DdCNGDpP7qMgoAy6paFzhhak2EeyCZcgjH7ak5u5v28m` | 5,942,389 | 5% | 442643066 |
-| 14 | `GHViLgbrJdZDPb6sphRbeuPNM9cmjsFuGWzrTF1sKF5n` | 5,597,980 | 100% | 442643066 |
-| 15 | `FKsC411dik9ktS6xPADxs4Fk2SCENvAiuccQHLAPndvk` | 4,822,304 | 7% | 442643066 |
-| 16 | `HimWQUK61d9wxhw7EYu9jUje7xQiDs4jKexaTSvuCmXE` | 4,668,121 | 8% | 442643066 |
-| 17 | `3ZYJxzCeweSoh2Jj7oCgencFs9y27iKmXJeqYapje1cj` | 4,082,806 | 100% | 442643066 |
-| 18 | `G9x1mqewTeVnXLmv3FamYD5tq1AdS395RHH3MLQPj6TY` | 4,035,950 | 100% | 442643066 |
-| 19 | `AZoCYB4VgoM9DR9f1ZFcBn8xPSbtbqoxZnKJR7tkvEoX` | 4,009,787 | 100% | 442643066 |
-| 20 | `EcEowA4GKDsdVBF9PNAZa6c9M4WgYG8y4GnpZSUaqioS` | 3,964,901 | 100% | 442643066 |
+| 1 | `CcaHc2L43ZWjwCHART3oZoJvHLAe9hzT2DJNUpBzoTN1` | 16,991,835 | 7% | 442680490 |
+| 2 | `he1iusunGwqrNtafDtLdhsUQDFvo13z9sUa36PauBtk` | 16,035,737 | 0% | 442680490 |
+| 3 | `3N7s9zXMZ4QqvHQR15t5GNHyqc89KduzMP7423eWiD5g` | 12,393,242 | 0% | 442680489 |
+| 4 | `CatzoSMUkTRidT5DwBxAC2pEtnwMBTpkCepHkFgZDiqb` | 11,460,007 | 5% | 442680490 |
+| 5 | `26pV97Ce83ZQ6Kz9XT4td8tdoUFPTng8Fb8gPyc53dJx` | 9,292,131 | 7% | 442680490 |
+| 6 | `8GbwASqdpw4dVcwbWUxbHXMrjyQx2aKkoBR5H1GJF8iD` | 9,081,213 | 0% | 442680490 |
+| 7 | `51JBzSTU5rAM8gLAVQKgp4WoZerQcSqWC7BitBzgUNAm` | 9,001,204 | 10% | 442680490 |
+| 8 | `CvSb7wdQAFpHuSpTYTJnX5SYH4hCfQ9VuGnqrKaKwycB` | 7,294,487 | 5% | 442680490 |
+| 9 | `9QU2QSxhb24FUX3Tu2FpczXjpK3VYrvRudywSZaM29mF` | 7,192,557 | 7% | 442680490 |
+| 10 | `DumiCKHVqoCQKD8roLApzR5Fit8qGV5fVQsJV9sTZk4a` | 6,585,996 | 0% | 442680490 |
+| 11 | `HZKopZYvv8v6un2H6KUNVQCnK5zM9emKKezvqhTBSpEc` | 6,122,617 | 100% | 442680490 |
+| 12 | `3JD3jMmnR6g88qff2WZ3cMHJRjJMUk9yVZtmYTYeFrXf` | 6,099,133 | 0% | 442680490 |
+| 13 | `DdCNGDpP7qMgoAy6paFzhhak2EeyCZcgjH7ak5u5v28m` | 5,942,389 | 5% | 442680490 |
+| 14 | `GHViLgbrJdZDPb6sphRbeuPNM9cmjsFuGWzrTF1sKF5n` | 5,597,980 | 100% | 442680489 |
+| 15 | `FKsC411dik9ktS6xPADxs4Fk2SCENvAiuccQHLAPndvk` | 4,822,304 | 7% | 442680490 |
+| 16 | `HimWQUK61d9wxhw7EYu9jUje7xQiDs4jKexaTSvuCmXE` | 4,668,121 | 8% | 442680489 |
+| 17 | `3ZYJxzCeweSoh2Jj7oCgencFs9y27iKmXJeqYapje1cj` | 4,082,806 | 100% | 442680490 |
+| 18 | `G9x1mqewTeVnXLmv3FamYD5tq1AdS395RHH3MLQPj6TY` | 4,035,950 | 100% | 442680490 |
+| 19 | `AZoCYB4VgoM9DR9f1ZFcBn8xPSbtbqoxZnKJR7tkvEoX` | 4,009,787 | 100% | 442680490 |
+| 20 | `EcEowA4GKDsdVBF9PNAZa6c9M4WgYG8y4GnpZSUaqioS` | 3,964,901 | 100% | 442680490 |
 
 ## SOL Supply
 
-- Total: 633,079,005 SOL
-- Circulating: 584,161,465 SOL
+- Total: 633,078,867 SOL
+- Circulating: 584,161,327 SOL
 - Non-circulating: 48,917,540 SOL
 
 ## Economic Indicators
@@ -67,13 +67,13 @@ _Generated: 2026-08-29T15:40:52.482141+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | SOL price | $105 |
-| SOL 24h change | -1.17% |
-| SOL 24h volume | $3,494,287,481 |
-| SOL market cap | $61,360,676,436 |
-| Solana chain TVL | $5,847,955,098 |
-| TVL change (24h) | -2.74% |
-| TVL change (7d) | +5.33% |
-| Stablecoin supply on Solana | $15,990,512,098 |
+| SOL 24h change | +2.46% |
+| SOL 24h volume | $2,678,600,510 |
+| SOL market cap | $61,438,401,836 |
+| Solana chain TVL | $5,897,867,215 |
+| TVL change (24h) | -1.91% |
+| TVL change (7d) | +6.23% |
+| Stablecoin supply on Solana | $15,965,156,372 |
 | DEX volume (24h) | $2,590,586,442 |
 | Chain revenue / REV proxy (24h) | $6,492,346 |
 
@@ -83,12 +83,12 @@ _Generated: 2026-08-29T15:40:52.482141+00:00 (UTC)_
 |---|---|
 | PumpSwap | $576,287,157 |
 | BisonFi | $331,440,938 |
-| Orca DEX | $281,016,396 |
 | Meteora DLMM | $279,394,720 |
-| Raydium AMM | $145,053,172 |
-| Manifest Trade | $126,585,909 |
+| Orca DEX | $187,428,210 |
+| Raydium AMM | $139,070,561 |
 | Axiom | $124,298,931 |
 | pump.fun | $117,622,078 |
+| Manifest Trade | $99,885,517 |
 | Scorch | $98,827,644 |
 | Tessera V | $69,435,772 |
 
