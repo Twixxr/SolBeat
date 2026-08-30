@@ -1,0 +1,14 @@
+## These files are regenerated automatically every ~30 minutes by the
+## GitHub Action (see .github/workflows/update.yml) and by python -m src.main
+## when run locally. They should never be hand-edited, so on merge conflicts
+## git should always keep whichever version came from the OTHER side being
+## merged in (usually the bot's latest commit from GitHub) rather than
+## stopping to ask for manual conflict resolution.
+##
+## This requires a one-time local git config command to actually take
+## effect — see README.md "Avoiding merge conflicts on generated files".
+
+dashboard/data.json merge=theirs
+data/history.jsonl merge=theirs
+data/latest.json merge=theirs
+data/latest.md merge=theirs

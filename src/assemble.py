@@ -25,6 +25,7 @@ def build_report():
         "network_performance": solana_rpc.collect_network_performance(),
         "validators": solana_rpc.collect_validators(),
         "supply": solana_rpc.collect_supply(),
+        "active_wallets_sample": solana_rpc.collect_active_wallets_sample(),
         "defi": defillama.collect_all(),
         "market": coingecko.collect_all(),
         "ecosystem_site": solana_data_site.collect(),
@@ -144,8 +145,9 @@ def _static_upcoming_notes():
 
 def append_history(report):
     os.makedirs(config.OUTPUT_DIR, exist_ok=True)
-    # Keep a slimmed-down snapshot in history to keep the file small; only
-    # the fields anomaly.py actually needs as baselines.
+    # Keep a slimmed-down snapshot in history — only the fields the
+    # dashboard's expandable history charts and anomaly.py's baselines
+    # actually need, not the full report.
     slim = {
         "generated_at_unix": report["meta"]["generated_at_unix"],
         "network_performance": {
@@ -180,15 +182,82 @@ def append_history(report):
         "supply": {
             "total_sol": report.get("supply", {}).get("total_sol"),
         },
+        "active_wallets_sample": {
+            "unique_wallets_in_block": report.get("active_wallets_sample", {}).get("unique_wallets_in_block"),
+        },
     }
 
-    lines = []
-    if os.path.exists(config.HISTORY_FILE):
-        with open(config.HISTORY_FILE, "r") as f:
-            lines = [ln for ln in f.readlines() if ln.strip()]
-
-    lines.append(json.dumps(slim) + "\n")
-    lines = lines[-config.MAX_HISTORY_ENTRIES:]
+    entries = _read_history_entries()
+    entries.append(slim)
+    entries = _downsample_history(entries)
 
     with open(config.HISTORY_FILE, "w") as f:
-        f.writelines(lines)
+        for entry in entries:
+            f.write(json.dumps(entry) + "\n")
+
+
+def _read_history_entries():
+    if not os.path.exists(config.HISTORY_FILE):
+        return []
+    entries = []
+    with open(config.HISTORY_FILE, "r") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                entries.append(json.loads(line))
+            except json.JSONDecodeError:
+                continue
+    return entries
+
+
+def _downsample_history(entries):
+    """
+    Tiered retention so history.jsonl gives genuinely long-term history for
+    EVERY tracked metric — including the ones with no external long-run
+    source (TPS, slot time, validator count, SOL supply, active wallets
+    sample) — while staying bounded in size forever, regardless of refresh
+    frequency:
+
+      - Last 48h:        every entry kept (full resolution)
+      - 48h to 30 days:  at most one entry per hour
+      - 30 to 180 days:  at most one entry per day
+      - Older than 180 days: dropped
+
+    This keeps the file to roughly (48h / interval) + 720 + 150 entries at
+    most — a few thousand even at a 5-minute refresh interval — while still
+    covering a full 6 months of history.
+    """
+    if not entries:
+        return entries
+
+    now = time.time()
+    recent = []
+    hourly_bucket = {}
+    daily_bucket = {}
+
+    for entry in entries:
+        ts = entry.get("generated_at_unix")
+        if ts is None:
+            continue
+        age = now - ts
+        if age <= config.HISTORY_FULL_RES_SECONDS:
+            recent.append(entry)
+        elif age <= config.HISTORY_HOURLY_RES_SECONDS:
+            bucket_key = int(ts // 3600)
+            hourly_bucket.setdefault(bucket_key, entry)
+        elif age <= config.HISTORY_DAILY_RES_SECONDS:
+            bucket_key = int(ts // 86400)
+            daily_bucket.setdefault(bucket_key, entry)
+        # else: older than the daily-resolution window — dropped entirely.
+
+    combined = list(daily_bucket.values()) + list(hourly_bucket.values()) + recent
+    combined.sort(key=lambda e: e.get("generated_at_unix", 0))
+
+    # Hard safety cap in case of unexpectedly frequent refreshes blowing up
+    # the "recent" (full-resolution) tier beyond what's reasonable.
+    if len(combined) > config.HISTORY_ABSOLUTE_MAX_ENTRIES:
+        combined = combined[-config.HISTORY_ABSOLUTE_MAX_ENTRIES:]
+
+    return combined

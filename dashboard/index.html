@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SolBeat — Solana Ecosystem Heartbeat</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3/dist/chartjs-plugin-annotation.min.js"></script>
 <style>
   :root{
     --bg: #0a0b0d;
@@ -86,6 +87,24 @@
   .alert.ok{border-color:rgba(20,241,149,.35);background:rgba(20,241,149,.06);color:var(--green);}
   .alert .badge{text-transform:uppercase;font-weight:700;font-size:10px;letter-spacing:.06em;}
 
+  .hero-strip{display:grid;grid-template-columns:repeat(auto-fit, minmax(180px,1fr));gap:1px;
+    background:var(--panel-border);border:1px solid var(--panel-border);border-radius:12px;
+    overflow:hidden;margin-bottom:24px;}
+  .hero-item{background:var(--panel);padding:18px 20px;}
+  .hero-item .hero-label{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-dim);
+    margin-bottom:6px;font-weight:600;}
+  .hero-item .hero-value{font-family:var(--mono);font-size:26px;font-weight:700;line-height:1.1;
+    background:linear-gradient(90deg, var(--green), var(--purple));-webkit-background-clip:text;
+    background-clip:text;-webkit-text-fill-color:transparent;}
+  .hero-item .hero-delta{font-family:var(--mono);font-size:11px;margin-top:6px;color:var(--text-dim);}
+  @media (max-width:600px){
+    .hero-item .hero-value{font-size:20px;}
+  }
+
+  .insight{background:rgba(20,241,149,.05);border:1px solid rgba(20,241,149,.2);border-radius:10px;
+    padding:14px 18px;font-size:14px;line-height:1.6;color:var(--text);margin-bottom:20px;}
+  .insight strong{color:var(--green);font-weight:700;}
+
   h2.section{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-dim);
     margin:30px 0 12px;font-weight:600;}
   h2.section:first-child{margin-top:0;}
@@ -139,8 +158,11 @@
   .chart-wrap.tall{height:340px;}
   .tradingview-widget-container{height:460px;width:100%;}
   .tradingview-widget-container__widget{height:100%;width:100%;}
+  .dune-embed-wrap{height:400px;width:100%;border-radius:8px;overflow:hidden;}
+  .dune-embed-wrap iframe{width:100%;height:100%;border:none;}
   @media (max-width:600px){
     .tradingview-widget-container{height:320px;}
+    .dune-embed-wrap{height:300px;}
   }
 
   table{width:100%;border-collapse:collapse;font-size:13px;}
@@ -197,6 +219,8 @@
   </div>
 
   <div id="alerts"></div>
+
+  <div class="hero-strip" id="hero"></div>
 
   <nav class="tabs" id="tabs">
     <button class="tab-btn active" data-tab="overview">Overview</button>
@@ -287,18 +311,74 @@ function tickUpdatedLabel(){
 function destroyChart(id){
   if(CHARTS[id]){ CHARTS[id].destroy(); delete CHARTS[id]; }
 }
+// Curated, verified dates for major events worth marking on historical
+// charts. Kept short and manually maintained (like the "upcoming upgrades"
+// list) since there's no keyless feed for "significant market/ecosystem
+// events" — these are hand-picked and their dates were verified before
+// being added here.
+const MAJOR_EVENTS = [
+  { date: "2025-01-17", label: "$TRUMP launches on Solana" },
+  { date: "2025-01-19", label: "$MELANIA launches on Solana" },
+  { date: "2025-10-10", label: "10/10 crash — ~$19B liquidated market-wide" },
+];
+
+function eventDateLabel(dateStr){
+  // Formats a YYYY-MM-DD string the same way formatDateLabel() formats
+  // chart timestamps, so event dates can be matched against whatever
+  // labels a given chart is actually using.
+  const d = new Date(dateStr + "T00:00:00Z");
+  return d.toLocaleDateString(undefined, {year:"numeric", month:"short", day:"numeric", timeZone:"UTC"});
+}
+
+function buildEventAnnotations(labels){
+  if(typeof Chart === "undefined" || !Chart.registry || !Chart.registry.plugins.get("annotation")){
+    return null; // annotation plugin failed to load (e.g. offline) — charts still work without it
+  }
+  const annotations = {};
+  let found = false;
+  MAJOR_EVENTS.forEach(function(ev, i){
+    const formatted = eventDateLabel(ev.date);
+    if(labels.indexOf(formatted) !== -1){
+      found = true;
+      annotations["event" + i] = {
+        type: "line",
+        scaleID: "x",
+        value: formatted,
+        borderColor: "#ffb454",
+        borderWidth: 1,
+        borderDash: [4, 4],
+        label: {
+          display: true,
+          content: ev.label,
+          position: "start",
+          rotation: 90,
+          font: {size: 9},
+          color: "#ffb454",
+          backgroundColor: "rgba(17,19,24,0.9)",
+          padding: 4
+        }
+      };
+    }
+  });
+  return found ? annotations : null;
+}
+
 function lineChart(id, labels, datasets, yFormatter, opts){
   opts = opts || {};
   destroyChart(id);
   const ctx = document.getElementById(id);
   if(!ctx) return;
+  const eventAnnotations = opts.markEvents ? buildEventAnnotations(labels) : null;
   CHARTS[id] = new Chart(ctx, {
     type: "line",
     data: { labels: labels, datasets: datasets },
     options: {
       responsive: true, maintainAspectRatio: false,
       interaction: {mode: "index", intersect: false},
-      plugins: { legend: { display: !!opts.legend && datasets.length > 1, labels: {boxWidth: 10} } },
+      plugins: {
+        legend: { display: !!opts.legend && datasets.length > 1, labels: {boxWidth: 10} },
+        annotation: eventAnnotations ? { annotations: eventAnnotations } : undefined
+      },
       scales: {
         x: { display: opts.axes !== false, grid: { color: GRID_COLOR }, ticks: { maxTicksLimit: 6 } },
         y: { display: opts.axes !== false, grid: { color: GRID_COLOR }, ticks: { callback: yFormatter || function(v){return v;}, maxTicksLimit: 4 } }
@@ -383,14 +463,16 @@ function latestChangePct(series){
  *  `historyPath` is the fallback dot-path into this project's own short
  *  rolling snapshot history, used when no long-run source exists for that
  *  metric (e.g. TPS, validator count). */
-function expandableStatCard(label, value, deltaText, deltaCls, historyPath, color, formatter, small, longHistoryKey){
+function expandableStatCard(label, value, deltaText, deltaCls, historyPath, color, formatter, small, longHistoryKey, useTradingView){
   const id = "ecard-" + (CARD_COUNTER++);
-  CARD_REGISTRY[id] = { label: label, historyPath: historyPath, color: color, formatter: formatter, longHistoryKey: longHistoryKey || null };
+  CARD_REGISTRY[id] = { label: label, historyPath: historyPath, color: color, formatter: formatter,
+    longHistoryKey: longHistoryKey || null, useTradingView: !!useTradingView };
   return "<div class=\"card expandable\" id=\"" + id + "\" onclick=\"openHistoryModal('" + id + "')\">" +
     "<div class=\"label\">" + label + "</div>" +
     "<div class=\"value " + (small?"sm":"") + "\">" + value + "</div>" +
     (deltaText ? "<div class=\"delta " + deltaCls + "\">" + deltaText + "</div>" : "") +
-    "<div class=\"expand-hint\"><span class=\"chevron\">⤢</span> click to expand history</div>" +
+    "<div class=\"expand-hint\"><span class=\"chevron\">⤢</span> click to expand" +
+    (useTradingView ? " live chart" : " history") + "</div>" +
     "</div>";
 }
 
@@ -399,6 +481,25 @@ function openHistoryModal(id){
   if(!meta) return;
 
   document.getElementById("historyModalTitle").textContent = meta.label;
+  const noteEl = document.getElementById("historyModalNote");
+  const chartWrap = document.getElementById("historyModalChartWrap");
+  document.getElementById("historyModalBackdrop").classList.add("open");
+
+  if(meta.useTradingView){
+    document.getElementById("historyModalSubtitle").textContent =
+      "Live interactive chart powered by TradingView — pick any timeframe from the toolbar.";
+    chartWrap.innerHTML = "<div class=\"tradingview-widget-container\" id=\"modal-tv-container\" style=\"height:100%;\">" +
+      "<div class=\"tradingview-widget-container__widget\" id=\"modal-tv-inner\"></div></div>";
+    mountTradingViewWidget("modal-tv-container");
+
+    // Bonus context from our own tracked data, alongside the live TradingView chart.
+    const lh = getByPath(REPORT, "long_history.price.series");
+    const change = lh && lh.length >= 2 ? latestChangePct(lh) : null;
+    noteEl.textContent = change !== null
+      ? ("Daily change (DeFiLlama/CoinGecko data): " + (change > 0 ? "+" : "") + change.toFixed(2) + "%")
+      : "";
+    return;
+  }
 
   let series = null, sourceNote = "";
   if(meta.longHistoryKey){
@@ -418,9 +519,6 @@ function openHistoryModal(id){
   }
 
   document.getElementById("historyModalSubtitle").textContent = sourceNote;
-  const noteEl = document.getElementById("historyModalNote");
-  const chartWrap = document.getElementById("historyModalChartWrap");
-  document.getElementById("historyModalBackdrop").classList.add("open");
 
   if(!series || series.length < 2){
     chartWrap.innerHTML = "<canvas id=\"historyModalCanvas\"></canvas>";
@@ -441,7 +539,7 @@ function openHistoryModal(id){
     lineChart("historyModalCanvas", labels, [{
       data: values, borderColor: meta.color, backgroundColor: meta.color + "22",
       fill: true, tension: 0.25, pointRadius: 0
-    }], meta.formatter, { axes: true });
+    }], meta.formatter, { axes: true, markEvents: true });
   }, 30);
 }
 
@@ -484,7 +582,13 @@ function renderOverview(){
   const tvl = defi.tvl || {};
   const market = (REPORT.market || {}).price || {};
 
-  let html = "<h2 class=\"section\">Network Performance</h2><div class=\"grid\">";
+  let html = "";
+  const insight = overviewInsightSentence(market, tvl, val);
+  if(insight){
+    html += "<div class=\"insight\">" + insight + "</div>";
+  }
+
+  html += "<h2 class=\"section\">Network Performance</h2><div class=\"grid\">";
   html += expandableStatCard("Avg TPS", fmtNum(net.avg_tps, 0), null, null,
     "network_performance.avg_tps", "#14F195", function(v){return fmtNum(v,0);}, false, null);
   html += expandableStatCard("Avg Slot Time", fmtNum(net.avg_slot_time_ms,0) + " ms", null, null,
@@ -498,7 +602,7 @@ function renderOverview(){
 
   html += "<h2 class=\"section\">Economic Snapshot <span class=\"note\" style=\"margin:0;\">— click any card for its history</span></h2><div class=\"grid\">";
   html += expandableStatCard("SOL Price", fmtUsd(market.price_usd), fmtPct(market.price_change_pct_24h) + " (24h)", deltaClass(market.price_change_pct_24h),
-    "market.price.price_usd", "#14F195", function(v){return fmtUsd(v);}, false, "price");
+    "market.price.price_usd", "#14F195", function(v){return fmtUsd(v);}, false, "price", true);
   html += expandableStatCard("Chain TVL", fmtUsd(tvl.tvl_usd), fmtPct(tvl.tvl_change_pct_24h) + " (24h)", deltaClass(tvl.tvl_change_pct_24h),
     "defi.tvl.tvl_usd", "#9945FF", function(v){return fmtUsd(v);}, false, "tvl");
   html += expandableStatCard("Active Validators", fmtNum(val.active_count, 0), null, null,
@@ -515,20 +619,30 @@ function renderOverview(){
   html += "<div class=\"note\">This tracks how long SolBeat's own automated pipeline has run without a " +
     "missed scheduled refresh — not Solana network uptime, which has no public keyless data source.</div>";
 
-  html += "<h2 class=\"section\">SOL Price Chart <span class=\"note\" style=\"margin:0;\">— powered by TradingView</span></h2>";
-  html += "<div class=\"chart-card\"><div class=\"tradingview-widget-container\" id=\"tv-widget-container\">" +
-    "<div class=\"tradingview-widget-container__widget\" id=\"tv-widget-inner\"></div></div></div>";
-
   document.getElementById("tab-overview").innerHTML = html;
-  mountTradingViewWidget();
 }
 
-function mountTradingViewWidget(){
-  const container = document.getElementById("tv-widget-container");
+function overviewInsightSentence(market, tvl, val){
+  if(market.price_usd === null || market.price_usd === undefined) return null;
+
+  const priceDir = market.price_change_pct_24h > 0 ? "up" : (market.price_change_pct_24h < 0 ? "down" : "flat");
+  const tvlDir = tvl.tvl_change_pct_24h > 0 ? "up" : (tvl.tvl_change_pct_24h < 0 ? "down" : "flat");
+  const delinquentNote = val.delinquent_stake_pct !== null && val.delinquent_stake_pct !== undefined && val.delinquent_stake_pct > 1
+    ? (" " + fmtNum(val.delinquent_stake_pct,2) + "% of stake is currently delinquent.")
+    : "";
+
+  return "SOL is trading at <strong>" + fmtUsd(market.price_usd) + "</strong>, " + priceDir +
+    " " + Math.abs(market.price_change_pct_24h || 0).toFixed(1) + "% over the last 24 hours, while onchain " +
+    "DeFi TVL is " + tvlDir + " " + Math.abs(tvl.tvl_change_pct_24h || 0).toFixed(1) + "% in the same window. " +
+    "<strong>" + fmtNum(val.active_count,0) + " validators</strong> are actively securing the network." + delinquentNote;
+}
+
+function mountTradingViewWidget(containerId){
+  const container = document.getElementById(containerId);
   if(!container) return;
   // Scripts inserted via innerHTML don't execute in browsers, so the
   // TradingView embed script has to be created and appended via the DOM
-  // API directly, each time this tab re-renders.
+  // API directly, each time it's mounted.
   const script = document.createElement("script");
   script.type = "text/javascript";
   script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
@@ -553,8 +667,15 @@ function mountTradingViewWidget(){
 
 function renderNetwork(){
   const net = REPORT.network_performance || {};
+  const wallets = REPORT.active_wallets_sample || {};
 
-  let html = "<h2 class=\"section\">Live Metrics</h2><div class=\"grid\">";
+  let html = "";
+  const insight = networkInsightSentence(net);
+  if(insight){
+    html += "<div class=\"insight\">" + insight + "</div>";
+  }
+
+  html += "<h2 class=\"section\">Live Metrics</h2><div class=\"grid\">";
   html += statCard("Current TPS", fmtNum(net.current_tps, 0));
   html += statCard("Avg / Max / Min TPS", fmtNum(net.avg_tps,0) + " / " + fmtNum(net.max_tps,0) + " / " + fmtNum(net.min_tps,0), null, null, true);
   html += statCard("Avg Slot Time", fmtNum(net.avg_slot_time_ms,0) + " ms");
@@ -565,12 +686,25 @@ function renderNetwork(){
   html += "<div class=\"chart-card\"><div class=\"chart-title\">Derived from avg TPS × 86,400s per snapshot — a proxy, not an exact daily tx count</div>" +
     "<div class=\"chart-wrap\"><canvas id=\"chart-tx-trend\"></canvas></div></div>";
 
-  html += "<h2 class=\"section\">Unique Active Wallets</h2>";
-  html += "<div class=\"list-card\"><div class=\"list-item\"><div class=\"desc\">" +
-    "Not available from this project's keyless data sources (Solana RPC / DeFiLlama / CoinGecko don't expose " +
-    "unique active-wallet counts). Getting this reliably requires a paid indexer (e.g. Dune, Flipside, Artemis). " +
-    "Left as a documented limitation rather than shown with fabricated numbers — see README \"Known limitations.\"" +
-    "</div></div></div>";
+  html += "<h2 class=\"section\">Active Wallets <span class=\"note\" style=\"margin:0;\">— sampled from a live block, not a network total</span></h2>";
+  html += "<div class=\"grid\">";
+  html += expandableStatCard("Wallets in Sampled Block", fmtNum(wallets.unique_wallets_in_block, 0), null, null,
+    "active_wallets_sample.unique_wallets_in_block", "#f472b6", function(v){return fmtNum(v,0);}, false, null);
+  html += statCard("Transactions in That Block", fmtNum(wallets.tx_count_in_block, 0), null, null, true);
+  html += statCard("Sampled Slot", fmtNum(wallets.sampled_slot, 0), null, null, true);
+  html += "</div>";
+  html += "<div class=\"note\">This is a real, live count of unique fee-payer wallets in one recently sampled " +
+    "Solana block — computed directly via RPC, not estimated. It is NOT a network-wide daily active address " +
+    "figure (no keyless source exists for that; see README). Tracked over time, it's still a genuine signal " +
+    "of relative network activity.</div>";
+
+  html += "<h2 class=\"section\">Active Wallets — Network-Wide Trend <span class=\"note\" style=\"margin:0;\">— via Dune Analytics</span></h2>";
+  html += "<div class=\"chart-card\"><div class=\"chart-title\">Solana weekly active addresses, network-wide (Dune's official chain page)</div>" +
+    "<div class=\"dune-embed-wrap\"><iframe src=\"https://dune.com/embeds/5350527/8763517\" loading=\"lazy\" title=\"Solana active addresses — Dune\"></iframe></div></div>" +
+    "<div class=\"note\">Embedded live from Dune Analytics' public chart embed (no API key involved — same technique " +
+    "as the TradingView chart on the SOL Price card). This is a genuine, multi-source-indexed, network-wide figure — " +
+    "a real answer to \"daily/weekly active wallets,\" unlike the single-block sample above which this project " +
+    "computes itself via RPC.</div>";
 
   html += "<h2 class=\"section\">TPS Trend (recent snapshots)</h2>";
   html += "<div class=\"chart-card\"><div class=\"chart-wrap\"><canvas id=\"chart-tps-trend\"></canvas></div></div>";
@@ -590,6 +724,14 @@ function renderNetwork(){
     backgroundColor: "rgba(153,69,255,0.08)", fill: true, tension: 0.3, pointRadius: 0
   }], function(v){return fmtNum(v,0);});
 }
+
+function networkInsightSentence(net){
+  if(net.avg_tps === null || net.avg_tps === undefined) return null;
+  const slotDesc = net.avg_slot_time_ms && net.avg_slot_time_ms > 500 ? "running a bit slower than usual" : "running at a healthy pace";
+  return "Solana is currently processing about <strong>" + fmtNum(net.avg_tps,0) + " transactions per second</strong>, " +
+    "with slot times " + slotDesc + " (" + fmtNum(net.avg_slot_time_ms,0) + "ms avg, target ~400ms).";
+}
+
 
 function renderValidators(){
   const val = REPORT.validators || {};
@@ -669,6 +811,18 @@ function renderDefi(){
     "market.price.market_cap_usd", "#9945FF", function(v){return fmtUsd(v);}, false, "market_cap");
   html += "</div>";
 
+  const categories = (defi.top_protocols || {}).categories || [];
+  html += "<h2 class=\"section\">Onchain DeFi TVL by Category <span style=\"text-transform:none;font-style:italic;color:var(--text-faint);\">(like defillama.com/chain/solana)</span></h2>";
+  if(categories.length){
+    html += "<div class=\"chart-card\"><div class=\"chart-title\">TVL across all onchain Solana protocols, grouped by category</div>" +
+      "<div class=\"chart-wrap\"><canvas id=\"chart-defi-categories\"></canvas></div></div>";
+    html += "<div class=\"table-wrap\" style=\"margin-top:16px;\"><table><thead><tr><th>Category</th><th>TVL</th><th>% of Onchain DeFi TVL</th></tr></thead><tbody>";
+    categories.forEach(function(c){
+      html += "<tr><td>" + c.category + "</td><td>" + fmtUsd(c.tvl_usd) + "</td><td>" + fmtNum(c.pct_of_solana_tvl,2) + "%</td></tr>";
+    });
+    html += "</tbody></table></div>";
+  }
+
   html += "<h2 class=\"section\">Onchain DeFi TVL by Project <span style=\"text-transform:none;font-style:italic;color:var(--text-faint);\">(CEXs excluded)</span></h2>";
   if(protocols.length){
     html += "<div class=\"table-wrap\"><table><thead><tr><th>#</th><th>Project</th><th>Category</th><th>TVL</th><th>% of Onchain DeFi TVL</th><th>24h</th></tr></thead><tbody>";
@@ -698,6 +852,11 @@ function renderDefi(){
 
   document.getElementById("tab-defi").innerHTML = html;
 
+  if(categories.length){
+    barChart("chart-defi-categories", categories.map(function(c){return c.category;}),
+      categories.map(function(c){return c.tvl_usd;}), "TVL", true,
+      function(i){ return "rgba(20,241,149," + (1 - i*0.08) + ")"; });
+  }
   if(protocols.length){
     pieChart("chart-defi-share", pieLabels, pieData);
   }
@@ -728,9 +887,35 @@ function renderEcosystem(){
   document.getElementById("tab-ecosystem").innerHTML = html;
 }
 
+function renderHero(){
+  const net = REPORT.network_performance || {};
+  const val = REPORT.validators || {};
+  const defi = REPORT.defi || {};
+  const tvl = defi.tvl || {};
+  const market = (REPORT.market || {}).price || {};
+
+  let html = "";
+  html += "<div class=\"hero-item\"><div class=\"hero-label\">SOL Price</div>" +
+    "<div class=\"hero-value\">" + fmtUsd(market.price_usd) + "</div>" +
+    "<div class=\"hero-delta\" style=\"color:var(--" + (deltaClass(market.price_change_pct_24h)==='up'?'green':deltaClass(market.price_change_pct_24h)==='down'?'crit':'text-dim') + ")\">" +
+    fmtPct(market.price_change_pct_24h) + " today</div></div>";
+  html += "<div class=\"hero-item\"><div class=\"hero-label\">Network TPS</div>" +
+    "<div class=\"hero-value\">" + fmtNum(net.avg_tps, 0) + "</div>" +
+    "<div class=\"hero-delta\">avg, last " + fmtNum(net.samples_used,0) + " samples</div></div>";
+  html += "<div class=\"hero-item\"><div class=\"hero-label\">Onchain DeFi TVL</div>" +
+    "<div class=\"hero-value\">" + fmtUsd(tvl.tvl_usd) + "</div>" +
+    "<div class=\"hero-delta\">" + fmtPct(tvl.tvl_change_pct_24h) + " (24h)</div></div>";
+  html += "<div class=\"hero-item\"><div class=\"hero-label\">Active Validators</div>" +
+    "<div class=\"hero-value\">" + fmtNum(val.active_count, 0) + "</div>" +
+    "<div class=\"hero-delta\">" + fmtNum(val.delinquent_stake_pct,2) + "% stake delinquent</div></div>";
+
+  document.getElementById("hero").innerHTML = html;
+}
+
 function renderAllTabs(){
   CARD_COUNTER = 0;
   Object.keys(CARD_REGISTRY).forEach(function(k){ delete CARD_REGISTRY[k]; });
+  renderHero();
   renderOverview();
   renderNetwork();
   renderValidators();
@@ -753,7 +938,11 @@ let LAST_RENDERED_GENERATED_UNIX = null;
 
 async function load(){
   try{
-    const res = await fetch(DATA_URL, {cache: "no-store"});
+    // Cache-busting query param: GitHub Pages' CDN can cache data.json for
+    // several minutes even after a fresh commit, independent of the
+    // browser's own cache (which {cache:"no-store"} already bypasses). A
+    // changing URL forces the CDN to treat this as a fresh request.
+    const res = await fetch(DATA_URL + "?_=" + Date.now(), {cache: "no-store"});
     if(!res.ok) throw new Error("HTTP " + res.status);
     const payload = await res.json();
     const newGeneratedUnix = payload.report && payload.report.meta ? payload.report.meta.generated_at_unix : null;

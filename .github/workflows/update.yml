@@ -2,10 +2,13 @@ name: Update Solana Ecosystem Report
 
 on:
   schedule:
-    # Every 30 minutes. Adjust to taste — Solana RPC / CoinGecko free tiers
-    # can handle this comfortably. Tighten for a more "live" dashboard,
-    # loosen if you see rate-limit errors in the Action logs.
-    - cron: "*/30 * * * *"
+    # Every 5 minutes — the shortest interval GitHub Actions reliably
+    # supports (anything tighter than 5 min isn't guaranteed and often gets
+    # silently delayed under load). If you start seeing 429/rate-limit
+    # errors in the Action logs — most likely from CoinGecko's free tier,
+    # which is the most easily rate-limited source this project uses —
+    # loosen this back toward */15 or */30.
+    - cron: "*/5 * * * *"
   workflow_dispatch: {}   # lets you trigger a manual refresh from the Actions tab
   push:
     branches: [main]      # also refresh on every push to main

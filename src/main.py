@@ -26,11 +26,14 @@ from .anomaly import detect
 from .report.build_markdown import render as render_markdown
 
 
-def _load_history_series(max_points=96):
+def _load_history_series():
     """
-    Trimmed time series (most recent `max_points` snapshots, ~48 hours at
-    the default 30-minute refresh interval) pulled from history.jsonl, for
-    the dashboard's trend charts (network activity, TVL, price over time).
+    Full time series from history.jsonl, for the dashboard's expandable
+    history charts. No trimming needed here — history.jsonl is already
+    kept bounded by assemble._downsample_history's tiered retention
+    (full resolution for 48h, hourly for 30 days, daily for up to 180
+    days), so this naturally covers up to ~6 months per metric while
+    staying a reasonable size (at most a few thousand entries).
     """
     if not os.path.exists(config.HISTORY_FILE):
         return []
@@ -44,7 +47,7 @@ def _load_history_series(max_points=96):
                 entries.append(json.loads(line))
             except json.JSONDecodeError:
                 continue
-    return entries[-max_points:]
+    return entries
 
 
 def run_once():

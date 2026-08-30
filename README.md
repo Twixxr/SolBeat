@@ -1,8 +1,8 @@
-# SolPulse Canada
+# SolBeat
 
-An automatically-updating report on the current state of the Solana ecosystem — built for the Superteam Canada "Solana Ecosystem Report" bounty.
+An automatically-updating heartbeat monitor for the Solana ecosystem — built for the Superteam Canada "Solana Ecosystem Report" bounty.
 
-**Live dashboard:** `https://YOUR_GITHUB_USERNAME.github.io/solpulse-canada/` (enable GitHub Pages, see [Setup](#setup))
+**Live dashboard:** `https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO_NAME/` (enable GitHub Pages, see [Setup](#setup))
 **Sample outputs:** [`data/sample/`](data/sample/) — a full JSON, Markdown, and dashboard-data sample generated from the pipeline, so you can see the shape of the real output without running anything.
 
 ---
@@ -11,24 +11,26 @@ An automatically-updating report on the current state of the Solana ecosystem �
 
 A no-API-key, low-dependency pipeline that:
 
-1. Pulls live data directly from **Solana RPC**, **DeFiLlama**, and **CoinGecko**.
-2. Assembles it into one structured report.
+1. Pulls live data directly from **Solana RPC**, **DeFiLlama**, **CoinGecko**, and **Stakewiz**.
+2. Assembles it into one structured report, with a **tiered history system** that keeps genuine long-term data for every metric — not just the ones with an external historical API.
 3. Runs a lightweight **anomaly detector** against rolling history.
 4. Writes three output formats: `data/latest.json` (machine-readable), `data/latest.md` (human-readable), and `dashboard/data.json` (feeds the dark-theme HTML dashboard).
 5. Repeats automatically on a schedule via **GitHub Actions**, committing fresh data and redeploying the dashboard to **GitHub Pages** — no server to run or maintain.
 
-The dashboard (`dashboard/index.html`) is a **tabbed, chart-driven interface**:
-- **Overview** — top-line network + economic stats
-- **Network** — TPS trend, slot time, estimated daily transaction trend (charted from rolling history)
-- **Validators** — stake distribution chart with a dropdown to show top 10/20/all fetched validators, plus the full table
-- **DeFi** — chain TVL trend, TVL split by protocol (bar chart + table, sourced from DeFiLlama's protocol list), and stablecoin supply split by peg type as the closest available keyless "by coin" cut
-- **Ecosystem** — the Twitter/X watchlist with direct clickable links to each account, plus upcoming upgrades
+Every requirement in the bounty's "No API Keys/Dependencies" preference is honored: the entire data-collection path runs on Python's standard library (`urllib`) with zero required third-party packages. `requirements.txt` is intentionally empty for that reason.
 
-It also auto-refreshes every 30 seconds in the browser (re-fetching `data.json`), so it feels live between the underlying ~30-minute data refreshes, and shows **"updated X seconds/minutes/hours ago"** in the header (ticking live every second) instead of a fixed timestamp. Every economic indicator card (SOL price, chain TVL, stablecoin supply, DEX volume, chain revenue, market cap, validator count, SOL supply, avg TPS, slot time) is **click-to-expand**: clicking a card opens a large modal chart of that metric's history.
+### The dashboard
 
-**On history depth:** SOL price, market cap, trading volume (CoinGecko), chain TVL, stablecoin supply, DEX volume, and chain revenue (DeFiLlama) show **real multi-year daily history** — these services keep full historical records and expose them for free, no key required. Avg TPS, slot time, active validator count, and total SOL supply have **no such public source** — Solana's live RPC only reports current state, not history — so those charts are limited to this project's own rolling snapshots, starting from whenever your GitHub Action first went live. The modal states clearly which kind of history you're looking at for any given card.
+`dashboard/index.html` is a tabbed, chart-driven interface with a few things worth calling out:
 
-Every requirement in the bounty's "No API Keys/Dependencies" preference is honored: the entire data-collection path (RPC + DeFiLlama + CoinGecko) runs on Python's standard library (`urllib`) with zero required third-party packages. `requirements.txt` is intentionally empty for that reason.
+- **Heartbeat monitor header** — an actual ECG-style trace draws itself left to right, then fades and repeats, styled like real patient-monitor hardware (grid background, glow, monospace readout). Data refreshes every time it completes a loop.
+- **Hero strip** — SOL price, network TPS, onchain DeFi TVL, and active validator count stay visible above the tabs at all times.
+- **Insight sentences** — a couple of sections open with a plain-English sentence synthesizing the numbers below it (e.g. "SOL is trading at $210, up 3.2% over the last 24 hours..."), rather than leaving raw numbers to interpret cold.
+- **Five tabs**: Overview, Network, Validators, Onchain DeFi, Ecosystem.
+- **Click-to-expand history** — every economic indicator card opens a large modal chart on click. The SOL Price card's modal is a real embedded **TradingView** widget instead of a custom chart. Other cards use the project's own tracked history, annotated with major market events where they fall in range (see below).
+- **Live-feeling but honest about cadence** — the browser re-checks `data.json` every heartbeat loop (~4s) with a cache-busting parameter to defeat GitHub Pages' CDN caching, but only re-renders when the data is actually new (the backend itself updates on whatever schedule `.github/workflows/update.yml` runs, default every 5 minutes) — so it never flickers on every check.
+- **"Updated X ago"** ticks live in the header instead of a static timestamp.
+- Anomaly banners only appear when there's an actual anomaly — no permanent "all clear" clutter.
 
 ---
 
@@ -36,42 +38,76 @@ Every requirement in the bounty's "No API Keys/Dependencies" preference is honor
 
 | Source | What it provides | How |
 |---|---|---|
-| **Solana JSON-RPC** (`api.mainnet-beta.solana.com`) | Slot, block height, epoch progress, TPS, slot time, validator set, stake distribution, commission, delinquency, SOL supply | Direct JSON-RPC POST calls via stdlib `urllib` — `getHealth`, `getSlot`, `getBlockTime`, `getEpochInfo`, `getRecentPerformanceSamples`, `getVoteAccounts`, `getSupply`, plus `getBalance`/`getSignaturesForAddress` exposed as reusable helpers. See [`src/collectors/solana_rpc.py`](src/collectors/solana_rpc.py). |
-| **DeFiLlama** | Chain TVL (+24h/7d change), stablecoin supply on Solana, DEX volume, chain fees/revenue (REV proxy) | Public, keyless REST endpoints (`api.llama.fi`, `stablecoins.llama.fi`). See [`src/collectors/defillama.py`](src/collectors/defillama.py). |
-| **CoinGecko** | SOL price, 24h change, volume, market cap, 7-day trend | Public `simple/price` and `market_chart` endpoints, no key required. See [`src/collectors/coingecko.py`](src/collectors/coingecko.py). |
-| **solana.com/data** | Best-effort ecosystem stats | That page has no documented public JSON API (it's client-rendered). Rather than bolt on a fragile/heavy headless-browser dependency, this collector tries a couple of known candidate endpoints and **degrades gracefully** if they're unavailable, logging a note instead of breaking the pipeline. See [`src/collectors/solana_data_site.py`](src/collectors/solana_data_site.py) for the documented extension point if you want to add Playwright-based scraping. |
-| **Twitter / X** | Ecosystem announcements & sentiment sources | X's official API requires a paid tier, which conflicts with "no API keys." Instead, a curated watchlist of high-signal accounts (`@solana`, `@heliuslabs`, `@SuperteamCA`, `@jup_ag`, etc.) is always included. If the *optional* `snscrape` package is installed, the collector live-pulls recent tweets from each account with no key required; otherwise it falls back to just the watchlist with an explanatory note. See [`src/collectors/twitter_feed.py`](src/collectors/twitter_feed.py) and `requirements-optional.txt`. |
-| **Upcoming upgrades** (Alpenglow, SIMD proposals, Firedancer) | Slow-moving roadmap items | Maintained as a short, curated, linked list in [`src/assemble.py`](src/assemble.py) — the one manually-updated section, since these move on a months-long cadence and there's no single stable feed for "current SIMD status." |
+| **Solana JSON-RPC** (`api.mainnet-beta.solana.com`) | Slot, block height, epoch progress, TPS, slot time, validator set, stake distribution, commission, delinquency, SOL supply, active-wallet sampling | Direct JSON-RPC POST calls via stdlib `urllib` — `getHealth`, `getSlot`, `getBlockTime`, `getEpochInfo`, `getRecentPerformanceSamples`, `getVoteAccounts`, `getSupply`, `getBlock`, plus `getBalance`/`getSignaturesForAddress` exposed as reusable helpers. See [`src/collectors/solana_rpc.py`](src/collectors/solana_rpc.py). |
+| **DeFiLlama** | Chain TVL (+24h/7d change, full history), stablecoin supply (+full history), DEX volume (+full history), chain fees/revenue (REV proxy, +full history), per-protocol TVL breakdown, TVL-by-category breakdown (mirrors defillama.com/chain/solana) | Public, keyless REST endpoints (`api.llama.fi`, `stablecoins.llama.fi`). See [`src/collectors/defillama.py`](src/collectors/defillama.py). |
+| **CoinGecko** | SOL price, 24h change, volume, market cap, ~2-year daily history | Public `simple/price` and `market_chart` endpoints, no key required. See [`src/collectors/coingecko.py`](src/collectors/coingecko.py). |
+| **Stakewiz** | Validator operator identity (name, website) | Free, keyless API aggregating validator-submitted off-chain profile info. See [`src/collectors/stakewiz.py`](src/collectors/stakewiz.py) and Known limitations below. |
+| **solana.com/data** | Best-effort ecosystem stats | That page has no documented public JSON API (it's client-rendered). Rather than bolt on a fragile/heavy headless-browser dependency, this collector tries a couple of known candidate endpoints and degrades gracefully if they're unavailable. See [`src/collectors/solana_data_site.py`](src/collectors/solana_data_site.py). |
+| **Twitter / X** | Ecosystem announcements & sentiment sources | X's official API requires a paid tier, which conflicts with "no API keys." A curated watchlist of high-signal accounts is always included, each with a direct clickable link. If the optional `snscrape` package is installed, the collector live-pulls recent tweets too. See [`src/collectors/twitter_feed.py`](src/collectors/twitter_feed.py). |
+| **Dune Analytics** | Solana weekly active addresses (real, network-wide, multi-source-indexed) | Free public chart embed (iframe, no API key -- Dune has no anonymous API access, but does support embedding a specific existing public chart, same technique as TradingView below), shown on the Network tab alongside this project's own single-block RPC sample. |
+| **TradingView** | Interactive SOL price chart | Free public embed widget (client-side script, no key), shown inside the SOL Price card's expand modal. |
+| **Upcoming upgrades** (Alpenglow, SIMD proposals, Firedancer) | Slow-moving roadmap items | Curated, linked list in [`src/assemble.py`](src/assemble.py) — manually maintained since these move on a months-long cadence with no single stable feed. |
+| **Major market events** (e.g. the Oct 10, 2025 crash, $TRUMP/$MELANIA launches) | Chart annotations | A short, hand-verified, curated list in the dashboard's JS — shown as marked vertical lines on history charts when a chart's date range covers them. |
 
-Every collector wraps its HTTP calls in retries with backoff (see [`src/http_client.py`](src/http_client.py)) and **fails independently** — if CoinGecko is rate-limited, the rest of the report (RPC, DeFiLlama, etc.) still generates normally, with the affected section marked `_errors` instead of crashing the whole run.
+Every collector wraps its HTTP calls in retries with backoff (see [`src/http_client.py`](src/http_client.py)) and fails independently — if one source is rate-limited or down, the rest of the report still generates normally, with the affected section marked `_errors` instead of crashing the whole run.
 
 ---
 
 ## Automation strategy
 
-Automation is handled two ways:
+1. **GitHub Actions** ([`.github/workflows/update.yml`](.github/workflows/update.yml)) — runs on a cron schedule (default: every 5 minutes), regenerates the report, commits the updated `data/*` and `dashboard/data.json` files back to the repo, and redeploys the dashboard to GitHub Pages. Zero servers, fully hosted, free on a public repo.
+2. **Local loop mode** — `python -m src.main --loop --interval 5` runs the same pipeline continuously on your own machine, a cron job, a systemd timer, or a container, if you'd rather not use GitHub Actions.
 
-1. **GitHub Actions** ([`.github/workflows/update.yml`](.github/workflows/update.yml)) — runs on a cron schedule (default: every 30 minutes), regenerates the report, commits the updated `data/*` and `dashboard/data.json` files back to the repo, and redeploys the dashboard to GitHub Pages. This is the recommended path: zero servers, fully hosted, free on a public repo, and the commit history in `data/history.jsonl` doubles as an audit trail of every snapshot ever taken.
-2. **Local loop mode** — `python -m src.main --loop --interval 15` runs the same pipeline continuously on your own machine or a cron job / systemd timer / Docker container, if you'd rather not use GitHub Actions.
+The dashboard itself is a static file that fetches `data.json` client-side — redeploying the HTML isn't needed between data refreshes, only `dashboard/data.json` needs to update, which the Action does automatically.
 
-The refresh interval is configurable in both paths (the cron expression in the workflow file, or `--interval` / `config.DEFAULT_REFRESH_INTERVAL_MINUTES` for the CLI).
-
-The dashboard itself (`dashboard/index.html`) is a static file that fetches `data.json` client-side on every page load — so redeploying it isn't even necessary between data refreshes once GitHub Pages is serving the folder; only `dashboard/data.json` needs to update, which the Action does automatically.
+**On refresh frequency:** 5 minutes is close to the edge of what CoinGecko's free tier comfortably tolerates from a shared GitHub Actions IP pool. If you see `429` errors in the Action logs, loosen the cron schedule back toward `*/15` or `*/30` in `.github/workflows/update.yml` — there's a comment right above the schedule line explaining this.
 
 ---
 
+## Historical data — how "everything" gets real history
+
+Rather than only tracking history for metrics with an external historical API (price, TVL, etc.), this project keeps genuine long-term history for every metric — including the ones Solana RPC only reports the current value for (TPS, slot time, validator count, SOL supply, active-wallet sample) — using a tiered retention system in [`src/assemble.py`](src/assemble.py):
+
+| Age of data point | Resolution kept |
+|---|---|
+| Last 48 hours | Every snapshot (full resolution) |
+| 48 hours – 30 days | One per hour |
+| 30 – 180 days | One per day |
+| Older than 180 days | Dropped |
+
+This keeps `data/history.jsonl` bounded to a few thousand lines forever, regardless of how often the Action runs, while still building toward a genuine 6-month picture for metrics that have no other source of history. It's covered by a dedicated unit test in [`tests/smoke_test.py`](tests/smoke_test.py).
+
+Metrics with a real external historical API (SOL price, market cap, volume via CoinGecko; chain TVL, stablecoin supply, DEX volume, chain revenue via DeFiLlama) additionally get ~2 years of real daily history pulled fresh each run — no waiting for this project's own tracking to catch up. The dashboard's history modal states which kind of history you're looking at for any given card.
+
+---
+
+## Active wallets — how it actually works
+
+Solana's live RPC has no "daily active addresses" endpoint, and building a true one requires a paid indexer (Dune, Flipside, Artemis), which conflicts with this bounty's "no API keys" preference. Instead of skipping the metric entirely, this project computes something real: it samples one recent finalized block via `getBlock` and counts the unique fee-payer addresses within it.
+
+This is honestly labeled as exactly what it is — a live, real, RPC-computed count of wallets seen in one sampled block, **not** a network-wide daily total. Tracked over time (via the tiered history system above), it still gives a genuine, comparable signal of relative network activity, computed directly from chain data rather than estimated or faked.
+
+Alongside this, the Network tab also embeds a real **Dune Analytics** chart showing Solana's actual weekly active addresses network-wide — pulled from Dune's public chart embed feature (an iframe, no API key), the same technique used for the TradingView chart on the SOL Price card. Dune has no anonymous/keyless programmatic API, so this project doesn't call Dune's backend directly; the embed shows a specific existing public chart from Dune's own official Solana chain page, kept up to date by Dune itself.
+
+---
+
+
+## Onchain DeFi — matching defillama.com/chain/solana
+
+The Onchain DeFi tab now mirrors the structure of DeFiLlama's own Solana chain page: chain-wide metrics, then a **TVL-by-category breakdown** (Lending, DEX, Liquid Staking, CDP, Yield, etc. — computed from the full protocol list DeFiLlama already returns, no extra API call needed), then the per-project TVL table and % share chart. CEXs are excluded throughout, since they aren't onchain DeFi.
+
 ## Anomaly detection
 
-Implemented in [`src/anomaly.py`](src/anomaly.py), each report run checks the new snapshot against both fixed thresholds and a rolling baseline built from `data/history.jsonl` (the last 20 snapshots):
+Implemented in [`src/anomaly.py`](src/anomaly.py), each run checks the new snapshot against fixed thresholds and a rolling baseline from recent history:
 
-- **TPS drop/spike** — current average TPS vs. the trailing average of recent snapshots (default: ±25% drop = warning, +60% spike = info).
-- **Slow slot times** — average ms/slot above 500ms (target is ~400ms).
-- **Validator delinquency** — % of active stake that's delinquent, with separate warning (5%) and critical (10%) thresholds.
-- **TVL moves** — ±10%+ swing in Solana chain TVL over 24h.
+- **TPS drop/spike** — vs. the trailing average of recent snapshots (±25% drop = warning, +60% spike = info).
+- **Slow slot times** — average ms/slot above 500ms (target ~400ms).
+- **Validator delinquency** — % of active stake delinquent, with warning (5%) and critical (10%) thresholds.
+- **TVL moves** — ±10%+ swing in chain TVL over 24h.
 - **SOL price moves** — ±8%+ swing over 24h.
-- **RPC health** — flags immediately (critical) if the node's own `getHealth` check doesn't return `"ok"`.
+- **RPC health** — flags immediately (critical) if `getHealth` doesn't return `"ok"`.
 
-Each anomaly carries a `severity` (`info` / `warning` / `critical`), a human-readable `message`, and the raw `value`/`baseline` numbers, so the same anomaly list drives the red/orange/blue alert banners in the HTML dashboard *and* the "Alerts" section at the top of the Markdown report — one detection pass, three consistent outputs. Thresholds are all in one place ([`config.ANOMALY_THRESHOLDS`](src/config.py)) if you want to tune sensitivity.
+Each anomaly carries a severity, a human-readable message, and the raw value/baseline, driving both the dashboard's alert banners (which only appear when something is actually flagged) and the Markdown report's "Alerts" section. Thresholds live in one place: `config.ANOMALY_THRESHOLDS`.
 
 ---
 
@@ -80,34 +116,39 @@ Each anomaly carries a `severity` (`info` / `warning` / `critical`), a human-rea
 ### Run it once, locally
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/solpulse-canada.git
-cd solpulse-canada
+git clone https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME.git
+cd YOUR_REPO_NAME
 python -m src.main
 ```
 
-That's it — no `pip install` required for the core report (see [Dependencies](#dependencies) below). This writes:
-
-- `data/latest.json`
-- `data/latest.md`
-- `data/history.jsonl` (appended to, used for anomaly baselines)
-- `dashboard/data.json`
-
-Open `dashboard/index.html` directly in a browser (or serve the `dashboard/` folder with any static file server) to view the live dashboard against your freshly generated data.
+No `pip install` required for the core report. This writes `data/latest.json`, `data/latest.md`, `data/history.jsonl`, and `dashboard/data.json`. Open `dashboard/index.html` directly in a browser (or serve the `dashboard/` folder with any static file server) to view it against your freshly generated data.
 
 ### Run it continuously, locally
 
 ```bash
-python -m src.main --loop --interval 15   # refresh every 15 minutes
+python -m src.main --loop --interval 5   # refresh every 5 minutes
 ```
 
 ### Host it automatically (recommended)
 
 1. Fork/clone this repo to your own GitHub account.
-2. In your repo settings → **Pages**, set the source to **GitHub Actions**.
-3. Push to `main` — the included workflow ([`.github/workflows/update.yml`](.github/workflows/update.yml)) will run immediately (and every 30 minutes after), commit fresh data, and deploy the dashboard.
-4. Your live dashboard will be at `https://YOUR_GITHUB_USERNAME.github.io/REPO_NAME/`.
+2. In your repo settings → Pages, set the source to GitHub Actions.
+3. Push to `main` — the included workflow runs immediately (and on its cron schedule after), commits fresh data, and deploys the dashboard.
+4. Your live dashboard will be at `https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO_NAME/`.
 
-No secrets or API keys need to be configured for this to work.
+No secrets or API keys need to be configured.
+
+### Avoiding merge conflicts on generated files
+
+`dashboard/data.json`, `data/latest.json`, `data/latest.md`, and `data/history.jsonl` are regenerated automatically by the Action. If you also edit files locally and push, git can ask you to manually resolve a "conflict" on these — even though there's nothing to decide, since they're always supposed to just reflect whatever the bot last generated.
+
+Run this once, locally, to make git auto-resolve those files by always keeping the bot's version:
+
+```bash
+git config merge.theirs.driver "cp -- %B %A"
+```
+
+This works with the `.gitattributes` file already in this repo. After running it once, `git pull` silently keeps the bot's version of those files on conflict, so you'll only ever need to resolve real conflicts in files you actually edited.
 
 ### Optional: live Twitter/X pulling
 
@@ -115,60 +156,62 @@ No secrets or API keys need to be configured for this to work.
 pip install -r requirements-optional.txt
 ```
 
-Without this, the ecosystem watchlist section still lists the curated high-signal accounts to check manually — the report just won't embed live tweet content.
+Without this, the ecosystem watchlist still lists the curated accounts to check manually — the report just won't embed live tweet content.
 
 ### Dependencies
 
-- **Required:** none beyond the Python standard library (3.9+). `requirements.txt` documents this explicitly.
-- **Optional:** `snscrape`, only for live Twitter/X pulling (`requirements-optional.txt`).
+- Required: none beyond the Python standard library (3.9+).
+- Optional: `snscrape`, only for live Twitter/X pulling.
 
 ---
 
 ## Project structure
 
 ```
-solpulse-canada/
+solbeat/
 ├── src/
-│   ├── config.py              # all endpoints, thresholds, paths in one place
+│   ├── config.py              # all endpoints, thresholds, retention tiers, paths
 │   ├── http_client.py         # stdlib urllib wrapper w/ retries + backoff
-│   ├── assemble.py            # pulls all collectors into one report dict
+│   ├── assemble.py            # pulls all collectors together, tiered history retention
 │   ├── anomaly.py             # threshold + rolling-baseline anomaly detection
 │   ├── main.py                # CLI entrypoint (single run or --loop)
 │   ├── collectors/
-│   │   ├── solana_rpc.py      # network perf, validators, supply
-│   │   ├── defillama.py       # TVL, stablecoins, DEX volume, fees/REV
-│   │   ├── coingecko.py       # SOL price + 7d trend
+│   │   ├── solana_rpc.py      # network perf, validators, supply, active-wallet sampling
+│   │   ├── defillama.py       # TVL, stablecoins, DEX volume, fees/REV + long history
+│   │   ├── coingecko.py       # SOL price, market cap, volume + ~2yr history
+│   │   ├── stakewiz.py        # validator name/website enrichment
 │   │   ├── solana_data_site.py# best-effort solana.com/data
 │   │   └── twitter_feed.py    # curated watchlist + optional live pulling
 │   └── report/
 │       └── build_markdown.py  # renders report dict -> Markdown
 ├── dashboard/
-│   ├── index.html             # dark-theme interactive dashboard (fetches data.json)
-│   └── data.json              # generated output the dashboard reads (seeded w/ sample data)
+│   ├── index.html             # dark-theme dashboard: heartbeat header, tabs, modals, charts
+│   └── data.json              # generated output the dashboard reads
 ├── data/
-│   ├── sample/                # sample JSON/MD/dashboard-data outputs (see below)
+│   ├── sample/                # sample JSON/MD/dashboard-data outputs
 │   ├── latest.json            # generated on run
 │   ├── latest.md              # generated on run
-│   └── history.jsonl          # generated/appended on run
+│   └── history.jsonl          # generated/appended on run, tiered retention applied
 ├── tests/
-│   └── smoke_test.py          # offline test w/ mocked network calls
+│   └── smoke_test.py          # offline test w/ mocked network calls + downsampling unit test
 ├── .github/workflows/update.yml
+├── .gitattributes
 ├── requirements.txt
 └── requirements-optional.txt
 ```
 
 ## Sample outputs
 
-[`data/sample/`](data/sample/) contains a full sample run (`sample-report.json`, `sample-report.md`, `sample-dashboard-data.json`) so reviewers can see exact output shape without running the pipeline. **These were generated from mocked data to validate the pipeline structure**, not a live network pull — run `python -m src.main` yourself for a real snapshot (see [`tests/smoke_test.py`](tests/smoke_test.py) for how the mock harness works, which doubles as a lightweight test suite).
+`data/sample/` contains a full sample run so reviewers can see exact output shape without running the pipeline. These were generated from mocked data to validate the pipeline structure, not a live network pull — run `python -m src.main` yourself for a real snapshot (see `tests/smoke_test.py` for how the mock harness works, which doubles as a lightweight test suite).
 
 ## Known limitations
 
-- **solana.com/data** has no stable public API — covered on a best-effort basis (see table above).
-- **Twitter/X live content** requires the optional `snscrape` dependency and can break if X changes their frontend; the curated watchlist is always present as a fallback, with direct clickable links to each account.
-- **Unique/daily active wallet counts** are not available from any keyless source used here (Solana RPC, DeFiLlama, CoinGecko). Reliable unique-address tracking requires a paid indexer (Dune, Flipside, Artemis, etc.), which conflicts with the bounty's "no API keys" preference. The dashboard's Network tab states this explicitly rather than showing a fabricated number, and instead charts an **estimated daily transaction trend** (avg TPS × seconds/day) as the closest available proxy.
-- **"TVL split by coin"** — DeFiLlama doesn't expose a single keyless "TVL by underlying token across a chain" endpoint (it would require one API call per protocol, which risks rate-limiting). The Onchain DeFi tab instead shows % share of onchain DeFi TVL by project (CEXs excluded), which is the more directly useful cut anyway.
-- **Validator identity (name/website)** is sourced from the free, keyless Stakewiz API, which aggregates validator-submitted off-chain profile info. Stakewiz has **no dedicated Twitter/X field** — the dashboard's 𝕏 badge links to a validator's published website when that URL is itself a twitter.com/x.com link, otherwise it links as a plain website (🔗). This is inherently best-effort — not every operator publishes a name or website, so validators without a match show as "Unknown" rather than a raw address.
-- **"Days of uptime since it was last down"** reports how long *this SolBeat pipeline itself* has run without missing a scheduled refresh (detected from gaps in its own history), not Solana's own network uptime — there's no public, keyless API this project relies on for the latter. This is stated explicitly in the dashboard rather than implied.
-- **SOL price chart** on the Overview tab is a real, embedded **TradingView** widget (their free public embed script, no account or key needed) — genuine multi-timeframe price history and charting tools, rather than a custom-built chart trying to reinvent that.
-- **History depth varies by metric.** SOL price, market cap, volume, chain TVL, stablecoin supply, DEX volume, and chain revenue have real multi-year daily history from DeFiLlama/CoinGecko. TPS, slot time, active validator count, and total SOL supply have no such source — Solana's live RPC has no historical endpoint — so those are limited to this project's own rolling snapshots since first deployment. CoinGecko's public tier has, at times, capped how far back anonymous requests can go (historically up to ~365 days); this project requests ~2 years and degrades gracefully (shows "not enough history") if that range isn't honored when you run it.
-- **Public RPC/CoinGecko rate limits** — the default 30-minute refresh interval comfortably respects free-tier limits; if you tighten it significantly, consider pointing `SOLANA_RPC_URL` at a private RPC provider (env var, still no code changes needed).
+- "Active wallets" is a single-block sample, not a network total — see the section above. This is a deliberate, honestly-labeled design choice, not an oversight.
+- History depth varies by metric's data source, not arbitrarily. Metrics with an external historical API (price, TVL, stablecoin supply, DEX volume, chain revenue, market cap) get ~2 years immediately. Metrics with no such source (TPS, slot time, validator count, SOL supply, active wallets) build up to 6 months over time via this project's own tiered retention.
+- CoinGecko's public tier has, at times, capped how far back anonymous requests can go (historically up to ~365 days); this project requests ~2 years and degrades gracefully (shows "not enough history") if that range isn't honored when you run it.
+- solana.com/data has no stable public API — covered best-effort only.
+- Twitter/X live content requires the optional `snscrape` dependency and can break if X changes their frontend; the curated watchlist with direct links is always present as a fallback.
+- "TVL split by coin" isn't offered — DeFiLlama has no keyless "TVL by underlying token across a chain" endpoint (it would require one call per protocol). The Onchain DeFi tab shows % share of TVL by project instead (CEXs excluded), which is more directly useful anyway.
+- Validator identity (name/website) comes from Stakewiz, which has no dedicated Twitter/X field — the dashboard's 𝕏 badge links to a validator's website when that URL happens to be a twitter.com/x.com link, otherwise it's a plain website link (🔗). Not every operator publishes either, so unmatched validators show as "Unknown" rather than a raw address.
+- "SolBeat Uptime" tracks this pipeline's own reliability (days since a missed scheduled refresh), not Solana network uptime — there's no public keyless API for the latter that this project relies on.
+- Public RPC/CoinGecko rate limits — see Automation strategy above.

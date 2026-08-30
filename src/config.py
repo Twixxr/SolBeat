@@ -97,7 +97,7 @@ ANOMALY_THRESHOLDS = {
 # Default refresh interval when running in continuous/loop mode (minutes).
 # Overridden by --interval CLI flag. The GitHub Actions workflow uses its
 # own cron schedule instead of this loop (see .github/workflows/update.yml).
-DEFAULT_REFRESH_INTERVAL_MINUTES = 30
+DEFAULT_REFRESH_INTERVAL_MINUTES = 5
 
 # Where outputs are written
 OUTPUT_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data")
@@ -110,4 +110,13 @@ DASHBOARD_DATA_JSON = os.path.join(DASHBOARD_DIR, "data.json")  # what the HTML 
 
 # Max history entries kept in history.jsonl (rolling window so the file
 # doesn't grow unbounded in a long-running repo)
-MAX_HISTORY_ENTRIES = 2000
+# Tiered history retention (see assemble._downsample_history for the
+# full explanation): full resolution for the first 48h, hourly for the
+# next ~30 days, daily for up to 180 days total, then dropped. This keeps
+# data/history.jsonl bounded in size indefinitely while still giving every
+# tracked metric — not just the ones with an external long-run source —
+# genuine long-term history.
+HISTORY_FULL_RES_SECONDS = 48 * 3600
+HISTORY_HOURLY_RES_SECONDS = 30 * 86400
+HISTORY_DAILY_RES_SECONDS = 180 * 86400
+HISTORY_ABSOLUTE_MAX_ENTRIES = 5000  # hard safety cap regardless of the above

@@ -132,7 +132,37 @@ def collect_top_protocols(limit=15):
     for p in top:
         p["pct_of_solana_tvl"] = round(100 * p["tvl_usd"] / total_tvl, 2) if total_tvl else None
 
-    return {"protocols": top, "protocol_count": len(solana_protocols)}
+    return {
+        "protocols": top,
+        "protocol_count": len(solana_protocols),
+        "categories": _aggregate_by_category(solana_protocols, total_tvl),
+    }
+
+
+def _aggregate_by_category(solana_protocols, total_tvl):
+    """
+    TVL grouped by protocol category (Lending, DEX, Liquid Staking, CDP,
+    Yield, Bridge, etc.) across ALL onchain Solana protocols DeFiLlama
+    tracks — not just the top N. This mirrors the category breakdown
+    DeFiLlama's own chain page (defillama.com/chain/solana) leads with,
+    computed from data already being fetched for the protocol list above
+    (no extra API calls needed).
+    """
+    buckets = {}
+    for p in solana_protocols:
+        category = p.get("category") or "Other"
+        buckets[category] = buckets.get(category, 0) + p["tvl_usd"]
+
+    categories = [
+        {
+            "category": name,
+            "tvl_usd": round(tvl, 2),
+            "pct_of_solana_tvl": round(100 * tvl / total_tvl, 2) if total_tvl else None,
+        }
+        for name, tvl in buckets.items()
+    ]
+    categories.sort(key=lambda c: c["tvl_usd"], reverse=True)
+    return categories
 
 
 def collect_all():

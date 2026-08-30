@@ -264,3 +264,68 @@ def collect_supply():
         "circulating_sol": round(_lamports_to_sol(value.get("circulating")), 2) if value.get("circulating") is not None else None,
         "non_circulating_sol": round(_lamports_to_sol(value.get("nonCirculating")), 2) if value.get("nonCirculating") is not None else None,
     }
+
+
+def collect_active_wallets_sample():
+    """
+    Estimates network activity by sampling ONE recent finalized block and
+    counting unique fee-payer addresses (the first account key on each
+    transaction) within it.
+
+    This is NOT a network-wide "daily active addresses" figure — no
+    keyless source for that exists (it requires a paid indexer like Dune
+    or Flipside, which this project deliberately avoids). It IS a real,
+    live number computed directly from a real Solana block via the public
+    RPC, and is reported honestly as exactly what it is: unique wallets
+    seen transacting in one sampled block, not a network total. Tracked
+    over time in this project's own history, it still gives a genuine,
+    comparable signal of relative network activity.
+    """
+    try:
+        current_slot = _rpc("getSlot", [{"commitment": "finalized"}])
+    except SourceUnavailable as e:
+        return {"_errors": [str(e)]}
+
+    if current_slot is None:
+        return {"_errors": ["getSlot returned no result"]}
+
+    # Finalized slots can occasionally lag block availability on a given
+    # RPC node — step back a few slots if the newest one isn't ready yet.
+    last_error = None
+    for candidate_slot in range(current_slot, current_slot - 5, -1):
+        try:
+            block = _rpc("getBlock", [candidate_slot, {
+                "transactionDetails": "accounts",
+                "maxSupportedTransactionVersion": 0,
+                "rewards": False,
+            }])
+        except SourceUnavailable as e:
+            last_error = str(e)
+            block = None
+
+        if block:
+            return _summarize_block_wallets(block, candidate_slot)
+
+    return {"_errors": [last_error or f"no block available in slots {current_slot} down to {current_slot - 4}"]}
+
+
+def _summarize_block_wallets(block, slot):
+    transactions = block.get("transactions", []) or []
+    fee_payers = set()
+    for tx in transactions:
+        account_keys = ((tx or {}).get("transaction") or {}).get("accountKeys", []) or []
+        if not account_keys:
+            continue
+        first_key = account_keys[0]
+        # accountKeys entries are plain address strings in most RPC
+        # versions, but some return {"pubkey": ..., "signer": ..., ...}
+        # objects instead — handle both defensively.
+        pubkey = first_key if isinstance(first_key, str) else (first_key or {}).get("pubkey")
+        if pubkey:
+            fee_payers.add(pubkey)
+
+    return {
+        "sampled_slot": slot,
+        "tx_count_in_block": len(transactions),
+        "unique_wallets_in_block": len(fee_payers),
+    }
