@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolPulse Canada
 
-_Generated: 2026-08-31T19:09:31.531318+00:00 (UTC)_
+_Generated: 2026-08-31T20:09:35.139171+00:00 (UTC)_
 
 ## Alerts
 
@@ -11,69 +11,69 @@ _Generated: 2026-08-31T19:09:31.531318+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 443,227,181 |
-| Block height | 421,274,823 |
-| Epoch | 1025 |
-| Epoch progress | 98.88% |
-| Current TPS | 4,697.53 |
-| Avg TPS (~30 samples) | 4,393.12 |
-| Max / Min TPS | 5,240.63 / 3,790.83 |
-| Avg slot time | 317.0 ms |
+| Current slot | 443,238,549 |
+| Block height | 421,286,183 |
+| Epoch | 1026 |
+| Epoch progress | 1.52% |
+| Current TPS | 3,502.63 |
+| Avg TPS (~30 samples) | 4,205.63 |
+| Max / Min TPS | 4,918.10 / 3,502.63 |
+| Avg slot time | 316.1 ms |
 
 ## Validator Status
 
 | Metric | Value |
 |---|---|
 | Active validators | 680 |
-| Delinquent validators | 17 |
-| Delinquent (% of validator count) | 2.44% |
-| Delinquent (% of active stake) | 0.15% |
-| Total active stake | 436,453,158 SOL |
+| Delinquent validators | 14 |
+| Delinquent (% of validator count) | 2.02% |
+| Delinquent (% of active stake) | 0.01% |
+| Total active stake | 438,157,999 SOL |
 | Validators controlling 33% of stake | 18 |
 
 ### Top 20 Validators by Stake
 
 | # | Vote Account | Stake (SOL) | Commission | Last Vote |
 |---|---|---|---|---|
-| 1 | `CcaHc2L43ZWjwCHART3oZoJvHLAe9hzT2DJNUpBzoTN1` | 17,203,741 | 7% | 443227182 |
-| 2 | `he1iusunGwqrNtafDtLdhsUQDFvo13z9sUa36PauBtk` | 16,085,807 | 0% | 443227182 |
-| 3 | `3N7s9zXMZ4QqvHQR15t5GNHyqc89KduzMP7423eWiD5g` | 12,389,824 | 0% | 443227182 |
-| 4 | `CatzoSMUkTRidT5DwBxAC2pEtnwMBTpkCepHkFgZDiqb` | 11,479,512 | 5% | 443227182 |
-| 5 | `8GbwASqdpw4dVcwbWUxbHXMrjyQx2aKkoBR5H1GJF8iD` | 9,452,658 | 0% | 443227182 |
-| 6 | `26pV97Ce83ZQ6Kz9XT4td8tdoUFPTng8Fb8gPyc53dJx` | 9,293,056 | 7% | 443227182 |
-| 7 | `51JBzSTU5rAM8gLAVQKgp4WoZerQcSqWC7BitBzgUNAm` | 9,023,631 | 10% | 443227182 |
-| 8 | `CvSb7wdQAFpHuSpTYTJnX5SYH4hCfQ9VuGnqrKaKwycB` | 7,295,972 | 5% | 443227182 |
-| 9 | `9QU2QSxhb24FUX3Tu2FpczXjpK3VYrvRudywSZaM29mF` | 7,201,762 | 7% | 443227182 |
-| 10 | `DumiCKHVqoCQKD8roLApzR5Fit8qGV5fVQsJV9sTZk4a` | 6,589,845 | 0% | 443227182 |
-| 11 | `HZKopZYvv8v6un2H6KUNVQCnK5zM9emKKezvqhTBSpEc` | 6,122,617 | 100% | 443227182 |
-| 12 | `3JD3jMmnR6g88qff2WZ3cMHJRjJMUk9yVZtmYTYeFrXf` | 6,108,083 | 0% | 443227182 |
-| 13 | `DdCNGDpP7qMgoAy6paFzhhak2EeyCZcgjH7ak5u5v28m` | 5,943,895 | 5% | 443227182 |
-| 14 | `GHViLgbrJdZDPb6sphRbeuPNM9cmjsFuGWzrTF1sKF5n` | 5,596,480 | 100% | 443227182 |
-| 15 | `FKsC411dik9ktS6xPADxs4Fk2SCENvAiuccQHLAPndvk` | 4,821,940 | 7% | 443227182 |
-| 16 | `HimWQUK61d9wxhw7EYu9jUje7xQiDs4jKexaTSvuCmXE` | 4,642,103 | 8% | 443227182 |
-| 17 | `3ZYJxzCeweSoh2Jj7oCgencFs9y27iKmXJeqYapje1cj` | 4,082,489 | 100% | 443227182 |
-| 18 | `G9x1mqewTeVnXLmv3FamYD5tq1AdS395RHH3MLQPj6TY` | 4,034,448 | 100% | 443227182 |
-| 19 | `AZoCYB4VgoM9DR9f1ZFcBn8xPSbtbqoxZnKJR7tkvEoX` | 4,007,466 | 100% | 443227182 |
-| 20 | `EcEowA4GKDsdVBF9PNAZa6c9M4WgYG8y4GnpZSUaqioS` | 3,973,318 | 100% | 443227182 |
+| 1 | `CcaHc2L43ZWjwCHART3oZoJvHLAe9hzT2DJNUpBzoTN1` | 17,174,436 | 7% | 443238550 |
+| 2 | `he1iusunGwqrNtafDtLdhsUQDFvo13z9sUa36PauBtk` | 16,281,426 | 0% | 443238550 |
+| 3 | `3N7s9zXMZ4QqvHQR15t5GNHyqc89KduzMP7423eWiD5g` | 12,434,730 | 0% | 443238550 |
+| 4 | `CatzoSMUkTRidT5DwBxAC2pEtnwMBTpkCepHkFgZDiqb` | 11,480,709 | 5% | 443238550 |
+| 5 | `8GbwASqdpw4dVcwbWUxbHXMrjyQx2aKkoBR5H1GJF8iD` | 9,455,250 | 0% | 443238550 |
+| 6 | `26pV97Ce83ZQ6Kz9XT4td8tdoUFPTng8Fb8gPyc53dJx` | 9,285,506 | 7% | 443238550 |
+| 7 | `51JBzSTU5rAM8gLAVQKgp4WoZerQcSqWC7BitBzgUNAm` | 9,044,016 | 10% | 443238550 |
+| 8 | `9QU2QSxhb24FUX3Tu2FpczXjpK3VYrvRudywSZaM29mF` | 7,216,300 | 7% | 443238550 |
+| 9 | `CvSb7wdQAFpHuSpTYTJnX5SYH4hCfQ9VuGnqrKaKwycB` | 6,930,213 | 5% | 443238550 |
+| 10 | `DumiCKHVqoCQKD8roLApzR5Fit8qGV5fVQsJV9sTZk4a` | 6,591,885 | 0% | 443238550 |
+| 11 | `HZKopZYvv8v6un2H6KUNVQCnK5zM9emKKezvqhTBSpEc` | 6,122,617 | 100% | 443238550 |
+| 12 | `3JD3jMmnR6g88qff2WZ3cMHJRjJMUk9yVZtmYTYeFrXf` | 6,108,585 | 0% | 443238550 |
+| 13 | `DdCNGDpP7qMgoAy6paFzhhak2EeyCZcgjH7ak5u5v28m` | 5,949,091 | 5% | 443238550 |
+| 14 | `GHViLgbrJdZDPb6sphRbeuPNM9cmjsFuGWzrTF1sKF5n` | 5,592,480 | 100% | 443238550 |
+| 15 | `FKsC411dik9ktS6xPADxs4Fk2SCENvAiuccQHLAPndvk` | 4,833,223 | 7% | 443238550 |
+| 16 | `HimWQUK61d9wxhw7EYu9jUje7xQiDs4jKexaTSvuCmXE` | 4,643,036 | 8% | 443238550 |
+| 17 | `3ZYJxzCeweSoh2Jj7oCgencFs9y27iKmXJeqYapje1cj` | 4,089,947 | 100% | 443238550 |
+| 18 | `G9x1mqewTeVnXLmv3FamYD5tq1AdS395RHH3MLQPj6TY` | 4,034,403 | 100% | 443238550 |
+| 19 | `AZoCYB4VgoM9DR9f1ZFcBn8xPSbtbqoxZnKJR7tkvEoX` | 4,019,280 | 100% | 443238550 |
+| 20 | `EcEowA4GKDsdVBF9PNAZa6c9M4WgYG8y4GnpZSUaqioS` | 3,978,327 | 100% | 443238550 |
 
 ## SOL Supply
 
-- Total: 633,172,520 SOL
-- Circulating: 585,120,743 SOL
-- Non-circulating: 48,051,778 SOL
+- Total: 633,267,881 SOL
+- Circulating: 585,207,311 SOL
+- Non-circulating: 48,060,570 SOL
 
 ## Economic Indicators
 
 | Metric | Value |
 |---|---|
-| SOL price | $105 |
-| SOL 24h change | -1.93% |
-| SOL 24h volume | $3,828,309,051 |
-| SOL market cap | $61,167,951,497 |
-| Solana chain TVL | $5,787,619,834 |
-| TVL change (24h) | -2.09% |
-| TVL change (7d) | +4.07% |
-| Stablecoin supply on Solana | $15,723,803,856 |
+| SOL price | $104 |
+| SOL 24h change | -2.00% |
+| SOL 24h volume | $3,793,991,265 |
+| SOL market cap | $60,670,958,782 |
+| Solana chain TVL | $5,800,802,783 |
+| TVL change (24h) | -1.87% |
+| TVL change (7d) | +4.30% |
+| Stablecoin supply on Solana | $15,729,804,016 |
 | DEX volume (24h) | $1,929,632,645 |
 | Chain revenue / REV proxy (24h) | $5,457,048 |
 
@@ -85,8 +85,8 @@ _Generated: 2026-08-31T19:09:31.531318+00:00 (UTC)_
 | Orca DEX | $274,296,370 |
 | BisonFi | $184,508,289 |
 | Meteora DLMM | $142,668,519 |
-| Manifest Trade | $130,724,040 |
-| Raydium AMM | $128,338,689 |
+| Raydium AMM | $136,827,173 |
+| Manifest Trade | $132,893,997 |
 | pump.fun | $91,647,307 |
 | Axiom | $83,771,413 |
 | Scorch | $66,305,907 |
