@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SolBeat — Solana Ecosystem Heartbeat</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3/dist/chartjs-plugin-annotation.min.js"></script>
 <style>
   :root{
     --bg: #0a0b0d;
@@ -156,12 +155,9 @@
     text-transform:uppercase;letter-spacing:.05em;font-weight:600;}
   .chart-wrap{position:relative;height:260px;}
   .chart-wrap.tall{height:340px;}
-  .tradingview-widget-container{height:460px;width:100%;}
-  .tradingview-widget-container__widget{height:100%;width:100%;}
   .dune-embed-wrap{height:400px;width:100%;border-radius:8px;overflow:hidden;}
   .dune-embed-wrap iframe{width:100%;height:100%;border:none;}
   @media (max-width:600px){
-    .tradingview-widget-container{height:320px;}
     .dune-embed-wrap{height:300px;}
   }
 
@@ -225,8 +221,8 @@
   <nav class="tabs" id="tabs">
     <button class="tab-btn active" data-tab="overview">Overview</button>
     <button class="tab-btn" data-tab="network">Network</button>
-    <button class="tab-btn" data-tab="validators">Validators</button>
     <button class="tab-btn" data-tab="defi">Onchain DeFi</button>
+    <button class="tab-btn" data-tab="validators">Validators</button>
     <button class="tab-btn" data-tab="ecosystem">Ecosystem</button>
   </nav>
 
@@ -311,64 +307,12 @@ function tickUpdatedLabel(){
 function destroyChart(id){
   if(CHARTS[id]){ CHARTS[id].destroy(); delete CHARTS[id]; }
 }
-// Curated, verified dates for major events worth marking on historical
-// charts. Kept short and manually maintained (like the "upcoming upgrades"
-// list) since there's no keyless feed for "significant market/ecosystem
-// events" — these are hand-picked and their dates were verified before
-// being added here.
-const MAJOR_EVENTS = [
-  { date: "2025-01-17", label: "$TRUMP launches on Solana" },
-  { date: "2025-01-19", label: "$MELANIA launches on Solana" },
-  { date: "2025-10-10", label: "10/10 crash — ~$19B liquidated market-wide" },
-];
-
-function eventDateLabel(dateStr){
-  // Formats a YYYY-MM-DD string the same way formatDateLabel() formats
-  // chart timestamps, so event dates can be matched against whatever
-  // labels a given chart is actually using.
-  const d = new Date(dateStr + "T00:00:00Z");
-  return d.toLocaleDateString(undefined, {year:"numeric", month:"short", day:"numeric", timeZone:"UTC"});
-}
-
-function buildEventAnnotations(labels){
-  if(typeof Chart === "undefined" || !Chart.registry || !Chart.registry.plugins.get("annotation")){
-    return null; // annotation plugin failed to load (e.g. offline) — charts still work without it
-  }
-  const annotations = {};
-  let found = false;
-  MAJOR_EVENTS.forEach(function(ev, i){
-    const formatted = eventDateLabel(ev.date);
-    if(labels.indexOf(formatted) !== -1){
-      found = true;
-      annotations["event" + i] = {
-        type: "line",
-        scaleID: "x",
-        value: formatted,
-        borderColor: "#ffb454",
-        borderWidth: 1,
-        borderDash: [4, 4],
-        label: {
-          display: true,
-          content: ev.label,
-          position: "start",
-          rotation: 90,
-          font: {size: 9},
-          color: "#ffb454",
-          backgroundColor: "rgba(17,19,24,0.9)",
-          padding: 4
-        }
-      };
-    }
-  });
-  return found ? annotations : null;
-}
 
 function lineChart(id, labels, datasets, yFormatter, opts){
   opts = opts || {};
   destroyChart(id);
   const ctx = document.getElementById(id);
   if(!ctx) return;
-  const eventAnnotations = opts.markEvents ? buildEventAnnotations(labels) : null;
   CHARTS[id] = new Chart(ctx, {
     type: "line",
     data: { labels: labels, datasets: datasets },
@@ -376,8 +320,7 @@ function lineChart(id, labels, datasets, yFormatter, opts){
       responsive: true, maintainAspectRatio: false,
       interaction: {mode: "index", intersect: false},
       plugins: {
-        legend: { display: !!opts.legend && datasets.length > 1, labels: {boxWidth: 10} },
-        annotation: eventAnnotations ? { annotations: eventAnnotations } : undefined
+        legend: { display: !!opts.legend && datasets.length > 1, labels: {boxWidth: 10} }
       },
       scales: {
         x: { display: opts.axes !== false, grid: { color: GRID_COLOR }, ticks: { maxTicksLimit: 6 } },
@@ -488,9 +431,9 @@ function openHistoryModal(id){
   if(meta.useTradingView){
     document.getElementById("historyModalSubtitle").textContent =
       "Live interactive chart powered by TradingView — pick any timeframe from the toolbar.";
-    chartWrap.innerHTML = "<div class=\"tradingview-widget-container\" id=\"modal-tv-container\" style=\"height:100%;\">" +
-      "<div class=\"tradingview-widget-container__widget\" id=\"modal-tv-inner\"></div></div>";
-    mountTradingViewWidget("modal-tv-container");
+    chartWrap.innerHTML = "<div class=\"dune-embed-wrap\" style=\"height:100%;\">" +
+      "<iframe src=\"https://s.tradingview.com/widgetembed/?symbol=BINANCE:SOLUSDT&interval=D&hidesidetoolbar=0&symboledit=0&saveimage=0&toolbarbg=131722&studies=&hideideas=1&theme=Dark&style=1&timezone=Etc/UTC&withdateranges=1&studies_overrides=%7B%7D&overrides=%7B%7D&enabled_features=%5B%5D&disabled_features=%5B%5D\" " +
+      "title=\"SOL price — TradingView\" loading=\"lazy\"></iframe></div>";
 
     // Bonus context from our own tracked data, alongside the live TradingView chart.
     const lh = getByPath(REPORT, "long_history.price.series");
@@ -539,7 +482,7 @@ function openHistoryModal(id){
     lineChart("historyModalCanvas", labels, [{
       data: values, borderColor: meta.color, backgroundColor: meta.color + "22",
       fill: true, tension: 0.25, pointRadius: 0
-    }], meta.formatter, { axes: true, markEvents: true });
+    }], meta.formatter, { axes: true });
   }, 30);
 }
 
@@ -612,12 +555,22 @@ function renderOverview(){
   html += "</div>";
 
   const uptime = REPORT.report_uptime || {};
-  html += "<h2 class=\"section\">Report Reliability</h2><div class=\"grid\">";
-  html += statCard("SolBeat Uptime", fmtNum(uptime.days, 1) + " days",
+  const netStatus = (REPORT.solana_network_status || {}).current || {};
+  const incidentHistory = (REPORT.solana_network_status || {}).incident_history || {};
+  const isOperational = netStatus.indicator === "none";
+
+  html += "<h2 class=\"section\">Reliability & Uptime</h2><div class=\"grid\">";
+  html += statCard("SolBeat Pipeline Uptime", fmtNum(uptime.days, 1) + " days",
     uptime.note ? (uptime.note.charAt(0).toUpperCase() + uptime.note.slice(1)) : null, "flat", true);
+  html += statCard("Solana Network Status", isOperational ? "🟢 Operational" : ("🔴 " + (netStatus.description || netStatus.indicator || "Unknown")),
+    null, null, true);
+  html += statCard("Days Since Last Solana Incident",
+    incidentHistory.days_since_last_incident != null ? fmtNum(incidentHistory.days_since_last_incident, 1) + " days" : "N/A",
+    incidentHistory.last_incident_name ? ("Last: " + incidentHistory.last_incident_name) : null, "flat", true);
   html += "</div>";
-  html += "<div class=\"note\">This tracks how long SolBeat's own automated pipeline has run without a " +
-    "missed scheduled refresh — not Solana network uptime, which has no public keyless data source.</div>";
+  html += "<div class=\"note\">\"SolBeat Pipeline Uptime\" tracks this project's own automated refresh reliability. " +
+    "\"Solana Network Status\" and \"Days Since Last Incident\" are sourced live from status.solana.com's official " +
+    "public API — a real, keyless source for actual Solana network uptime, distinct from SolBeat's own uptime above.</div>";
 
   document.getElementById("tab-overview").innerHTML = html;
 }
@@ -635,34 +588,6 @@ function overviewInsightSentence(market, tvl, val){
     " " + Math.abs(market.price_change_pct_24h || 0).toFixed(1) + "% over the last 24 hours, while onchain " +
     "DeFi TVL is " + tvlDir + " " + Math.abs(tvl.tvl_change_pct_24h || 0).toFixed(1) + "% in the same window. " +
     "<strong>" + fmtNum(val.active_count,0) + " validators</strong> are actively securing the network." + delinquentNote;
-}
-
-function mountTradingViewWidget(containerId){
-  const container = document.getElementById(containerId);
-  if(!container) return;
-  // Scripts inserted via innerHTML don't execute in browsers, so the
-  // TradingView embed script has to be created and appended via the DOM
-  // API directly, each time it's mounted.
-  const script = document.createElement("script");
-  script.type = "text/javascript";
-  script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
-  script.async = true;
-  script.text = JSON.stringify({
-    autosize: true,
-    symbol: "BINANCE:SOLUSDT",
-    interval: "D",
-    timezone: "Etc/UTC",
-    theme: "dark",
-    style: "1",
-    locale: "en",
-    backgroundColor: "rgba(17, 19, 24, 1)",
-    gridColor: "rgba(30, 33, 41, 1)",
-    hide_top_toolbar: false,
-    hide_legend: false,
-    allow_symbol_change: false,
-    support_host: "https://www.tradingview.com"
-  });
-  container.appendChild(script);
 }
 
 function renderNetwork(){
@@ -800,7 +725,6 @@ function renderDefi(){
   let html = "<h2 class=\"section\">Onchain DeFi — Chain-Wide Metrics <span class=\"note\" style=\"margin:0;\">— click any card for its history</span></h2><div class=\"grid\">";
   html += expandableStatCard("Chain TVL", fmtUsd(tvl.tvl_usd), fmtPct(tvl.tvl_change_pct_24h) + " (24h)", deltaClass(tvl.tvl_change_pct_24h),
     "defi.tvl.tvl_usd", "#9945FF", function(v){return fmtUsd(v);}, false, "tvl");
-  html += statCard("TVL Change (7d)", fmtPct(tvl.tvl_change_pct_7d), null, null, true);
   html += expandableStatCard("Stablecoin Supply", fmtUsd(stable.total_stablecoin_supply_usd), null, null,
     "defi.stablecoins.total_stablecoin_supply_usd", "#5ac8ff", function(v){return fmtUsd(v);}, false, "stablecoin_supply");
   html += expandableStatCard("DEX Volume (24h)", fmtUsd(dex.dex_volume_24h_usd), null, null,
@@ -811,17 +735,9 @@ function renderDefi(){
     "market.price.market_cap_usd", "#9945FF", function(v){return fmtUsd(v);}, false, "market_cap");
   html += "</div>";
 
-  const categories = (defi.top_protocols || {}).categories || [];
-  html += "<h2 class=\"section\">Onchain DeFi TVL by Category <span style=\"text-transform:none;font-style:italic;color:var(--text-faint);\">(like defillama.com/chain/solana)</span></h2>";
-  if(categories.length){
-    html += "<div class=\"chart-card\"><div class=\"chart-title\">TVL across all onchain Solana protocols, grouped by category</div>" +
-      "<div class=\"chart-wrap\"><canvas id=\"chart-defi-categories\"></canvas></div></div>";
-    html += "<div class=\"table-wrap\" style=\"margin-top:16px;\"><table><thead><tr><th>Category</th><th>TVL</th><th>% of Onchain DeFi TVL</th></tr></thead><tbody>";
-    categories.forEach(function(c){
-      html += "<tr><td>" + c.category + "</td><td>" + fmtUsd(c.tvl_usd) + "</td><td>" + fmtNum(c.pct_of_solana_tvl,2) + "%</td></tr>";
-    });
-    html += "</tbody></table></div>";
-  }
+  html += "<h2 class=\"section\">TVL Daily % Change</h2>";
+  html += "<div class=\"chart-card\"><div class=\"chart-title\">Day-over-day % change in Solana chain TVL</div>" +
+    "<div class=\"chart-wrap\"><canvas id=\"chart-tvl-daily-change\"></canvas></div></div>";
 
   html += "<h2 class=\"section\">Onchain DeFi TVL by Project <span style=\"text-transform:none;font-style:italic;color:var(--text-faint);\">(CEXs excluded)</span></h2>";
   if(protocols.length){
@@ -852,10 +768,20 @@ function renderDefi(){
 
   document.getElementById("tab-defi").innerHTML = html;
 
-  if(categories.length){
-    barChart("chart-defi-categories", categories.map(function(c){return c.category;}),
-      categories.map(function(c){return c.tvl_usd;}), "TVL", true,
-      function(i){ return "rgba(20,241,149," + (1 - i*0.08) + ")"; });
+  const tvlSeries = getByPath(REPORT, "long_history.tvl.series") || [];
+  if(tvlSeries.length > 1){
+    const dailyLabels = [];
+    const dailyChanges = [];
+    for(let i = 1; i < tvlSeries.length; i++){
+      const prev = tvlSeries[i-1].value;
+      const curr = tvlSeries[i].value;
+      if(prev){
+        dailyLabels.push(formatDateLabel(tvlSeries[i].date_unix));
+        dailyChanges.push(100 * (curr - prev) / prev);
+      }
+    }
+    barChart("chart-tvl-daily-change", dailyLabels, dailyChanges, "% change", false,
+      function(i){ return dailyChanges[i] >= 0 ? "#14F195" : "#ff5c5c"; });
   }
   if(protocols.length){
     pieChart("chart-defi-share", pieLabels, pieData);
@@ -975,8 +901,8 @@ async function load(){
       document.getElementById("content").innerHTML =
         "<div class=\"tab-panel active\" id=\"tab-overview\"></div>" +
         "<div class=\"tab-panel\" id=\"tab-network\"></div>" +
-        "<div class=\"tab-panel\" id=\"tab-validators\"></div>" +
         "<div class=\"tab-panel\" id=\"tab-defi\"></div>" +
+        "<div class=\"tab-panel\" id=\"tab-validators\"></div>" +
         "<div class=\"tab-panel\" id=\"tab-ecosystem\"></div>";
       setupTabs();
     }

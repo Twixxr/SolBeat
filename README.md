@@ -26,8 +26,8 @@ Every requirement in the bounty's "No API Keys/Dependencies" preference is honor
 - **Heartbeat monitor header** — an actual ECG-style trace draws itself left to right, then fades and repeats, styled like real patient-monitor hardware (grid background, glow, monospace readout). Data refreshes every time it completes a loop.
 - **Hero strip** — SOL price, network TPS, onchain DeFi TVL, and active validator count stay visible above the tabs at all times.
 - **Insight sentences** — a couple of sections open with a plain-English sentence synthesizing the numbers below it (e.g. "SOL is trading at $210, up 3.2% over the last 24 hours..."), rather than leaving raw numbers to interpret cold.
-- **Five tabs**: Overview, Network, Validators, Onchain DeFi, Ecosystem.
-- **Click-to-expand history** — every economic indicator card opens a large modal chart on click. The SOL Price card's modal is a real embedded **TradingView** widget instead of a custom chart. Other cards use the project's own tracked history, annotated with major market events where they fall in range (see below).
+- **Five tabs**: Overview, Network, Onchain DeFi, Validators, Ecosystem.
+- **Click-to-expand history** — every economic indicator card opens a large modal chart on click. The SOL Price card's modal is a real embedded **TradingView** widget (plain iframe embed) instead of a custom chart. Other cards use the project's own tracked history.
 - **Live-feeling but honest about cadence** — the browser re-checks `data.json` every heartbeat loop (~4s) with a cache-busting parameter to defeat GitHub Pages' CDN caching, but only re-renders when the data is actually new (the backend itself updates on whatever schedule `.github/workflows/update.yml` runs, default every 5 minutes) — so it never flickers on every check.
 - **"Updated X ago"** ticks live in the header instead of a static timestamp.
 - Anomaly banners only appear when there's an actual anomaly — no permanent "all clear" clutter.
@@ -39,15 +39,15 @@ Every requirement in the bounty's "No API Keys/Dependencies" preference is honor
 | Source | What it provides | How |
 |---|---|---|
 | **Solana JSON-RPC** (`api.mainnet-beta.solana.com`) | Slot, block height, epoch progress, TPS, slot time, validator set, stake distribution, commission, delinquency, SOL supply, active-wallet sampling | Direct JSON-RPC POST calls via stdlib `urllib` — `getHealth`, `getSlot`, `getBlockTime`, `getEpochInfo`, `getRecentPerformanceSamples`, `getVoteAccounts`, `getSupply`, `getBlock`, plus `getBalance`/`getSignaturesForAddress` exposed as reusable helpers. See [`src/collectors/solana_rpc.py`](src/collectors/solana_rpc.py). |
-| **DeFiLlama** | Chain TVL (+24h/7d change, full history), stablecoin supply (+full history), DEX volume (+full history), chain fees/revenue (REV proxy, +full history), per-protocol TVL breakdown, TVL-by-category breakdown (mirrors defillama.com/chain/solana) | Public, keyless REST endpoints (`api.llama.fi`, `stablecoins.llama.fi`). See [`src/collectors/defillama.py`](src/collectors/defillama.py). |
+| **DeFiLlama** | Chain TVL (+24h/7d change, full history, daily % change chart), stablecoin supply (+full history), DEX volume (+full history), chain fees/revenue (REV proxy, +full history), per-protocol TVL breakdown | Public, keyless REST endpoints (`api.llama.fi`, `stablecoins.llama.fi`). See [`src/collectors/defillama.py`](src/collectors/defillama.py). |
 | **CoinGecko** | SOL price, 24h change, volume, market cap, ~2-year daily history | Public `simple/price` and `market_chart` endpoints, no key required. See [`src/collectors/coingecko.py`](src/collectors/coingecko.py). |
 | **Stakewiz** | Validator operator identity (name, website) | Free, keyless API aggregating validator-submitted off-chain profile info. See [`src/collectors/stakewiz.py`](src/collectors/stakewiz.py) and Known limitations below. |
 | **solana.com/data** | Best-effort ecosystem stats | That page has no documented public JSON API (it's client-rendered). Rather than bolt on a fragile/heavy headless-browser dependency, this collector tries a couple of known candidate endpoints and degrades gracefully if they're unavailable. See [`src/collectors/solana_data_site.py`](src/collectors/solana_data_site.py). |
 | **Twitter / X** | Ecosystem announcements & sentiment sources | X's official API requires a paid tier, which conflicts with "no API keys." A curated watchlist of high-signal accounts is always included, each with a direct clickable link. If the optional `snscrape` package is installed, the collector live-pulls recent tweets too. See [`src/collectors/twitter_feed.py`](src/collectors/twitter_feed.py). |
+| **Solana Status** (status.solana.com) | Real Solana network status and days-since-last-incident | Free, keyless public API (Atlassian Statuspage's standard `/api/v2/status.json` and `/api/v2/incidents.json` endpoints) — verified against the real live response before building against it. See `src/collectors/solana_status.py`. |
 | **Dune Analytics** | Solana weekly active addresses (real, network-wide, multi-source-indexed) | Free public chart embed (iframe, no API key -- Dune has no anonymous API access, but does support embedding a specific existing public chart, same technique as TradingView below), shown on the Network tab alongside this project's own single-block RPC sample. |
 | **TradingView** | Interactive SOL price chart | Free public embed widget (client-side script, no key), shown inside the SOL Price card's expand modal. |
 | **Upcoming upgrades** (Alpenglow, SIMD proposals, Firedancer) | Slow-moving roadmap items | Curated, linked list in [`src/assemble.py`](src/assemble.py) — manually maintained since these move on a months-long cadence with no single stable feed. |
-| **Major market events** (e.g. the Oct 10, 2025 crash, $TRUMP/$MELANIA launches) | Chart annotations | A short, hand-verified, curated list in the dashboard's JS — shown as marked vertical lines on history charts when a chart's date range covers them. |
 
 Every collector wraps its HTTP calls in retries with backoff (see [`src/http_client.py`](src/http_client.py)) and fails independently — if one source is rate-limited or down, the rest of the report still generates normally, with the affected section marked `_errors` instead of crashing the whole run.
 
@@ -92,9 +92,9 @@ Alongside this, the Network tab also embeds a real **Dune Analytics** chart show
 ---
 
 
-## Onchain DeFi — matching defillama.com/chain/solana
+## Onchain DeFi
 
-The Onchain DeFi tab now mirrors the structure of DeFiLlama's own Solana chain page: chain-wide metrics, then a **TVL-by-category breakdown** (Lending, DEX, Liquid Staking, CDP, Yield, etc. — computed from the full protocol list DeFiLlama already returns, no extra API call needed), then the per-project TVL table and % share chart. CEXs are excluded throughout, since they aren't onchain DeFi.
+The Onchain DeFi tab shows chain-wide metrics (including a **TVL daily % change** chart, computed from DeFiLlama's daily TVL history), a **day-over-day % change bar chart** for TVL, and per-project TVL breakdown (table + % share chart). CEXs are excluded throughout, since they aren't onchain DeFi.
 
 ## Anomaly detection
 
@@ -213,5 +213,5 @@ solbeat/
 - Twitter/X live content requires the optional `snscrape` dependency and can break if X changes their frontend; the curated watchlist with direct links is always present as a fallback.
 - "TVL split by coin" isn't offered — DeFiLlama has no keyless "TVL by underlying token across a chain" endpoint (it would require one call per protocol). The Onchain DeFi tab shows % share of TVL by project instead (CEXs excluded), which is more directly useful anyway.
 - Validator identity (name/website) comes from Stakewiz, which has no dedicated Twitter/X field — the dashboard's 𝕏 badge links to a validator's website when that URL happens to be a twitter.com/x.com link, otherwise it's a plain website link (🔗). Not every operator publishes either, so unmatched validators show as "Unknown" rather than a raw address.
-- "SolBeat Uptime" tracks this pipeline's own reliability (days since a missed scheduled refresh), not Solana network uptime — there's no public keyless API for the latter that this project relies on.
+- "SolBeat Pipeline Uptime" tracks this project's own reliability (days since a missed scheduled refresh). Real Solana network uptime/incident history IS now sourced live from status.solana.com's official public API (shown as "Solana Network Status" and "Days Since Last Incident" on the Overview tab).
 - Public RPC/CoinGecko rate limits — see Automation strategy above.

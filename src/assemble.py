@@ -9,7 +9,7 @@ import time
 import datetime
 
 from . import config
-from .collectors import solana_rpc, defillama, coingecko, solana_data_site, twitter_feed
+from .collectors import solana_rpc, defillama, coingecko, solana_data_site, twitter_feed, solana_status
 
 
 def build_report():
@@ -31,6 +31,10 @@ def build_report():
         "ecosystem_site": solana_data_site.collect(),
         "social": twitter_feed.collect(),
         "upcoming": _static_upcoming_notes(),
+        "solana_network_status": {
+            "current": solana_status.collect_current_status(),
+            "incident_history": solana_status.collect_days_since_last_incident(),
+        },
         "long_history": _build_long_history(),
         "report_uptime": _compute_report_uptime(),
     }

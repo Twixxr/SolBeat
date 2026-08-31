@@ -101,6 +101,12 @@ FAKE_STABLECOIN_CHART = [
 FAKE_DEX_VOLUME_CHART = {"totalDataChart": [[1700000000, 1_100_000_000], [1700086400, 1_150_000_000]]}
 FAKE_FEES_CHART = {"totalDataChart": [[1700000000, 2_400_000], [1700086400, 2_450_000]]}
 
+FAKE_SOLANA_STATUS = {"page": {"id": "rm9mn997x8jd", "name": "Solana"}, "status": {"description": "All Systems Operational", "indicator": "none"}}
+FAKE_SOLANA_INCIDENTS = {"page": {"id": "rm9mn997x8jd", "name": "Solana"}, "incidents": [
+    {"id": "inc1", "name": "Elevated skip rate on mainnet-beta", "created_at": "2026-08-01T10:00:00Z", "resolved_at": "2026-08-01T14:00:00Z"},
+    {"id": "inc2", "name": "Degraded performance", "created_at": "2026-07-15T08:00:00Z", "resolved_at": "2026-07-15T09:30:00Z"},
+]}
+
 
 def fake_rpc(method, params=None):
     if method == "getHealth":
@@ -145,6 +151,10 @@ def fake_get_json(url, timeout=None, retries=None):
         return FAKE_COINGECKO_LONG
     if "market_chart" in url:
         return FAKE_COINGECKO_TREND
+    if "status.solana.com/api/v2/status.json" in url:
+        return FAKE_SOLANA_STATUS
+    if "status.solana.com/api/v2/incidents.json" in url:
+        return FAKE_SOLANA_INCIDENTS
     if "solana.com" in url:
         from src.http_client import SourceUnavailable
         raise SourceUnavailable("simulated 404 for solana.com/data (expected/handled)")
@@ -217,6 +227,9 @@ def main():
     assert "report_uptime" in report and "days" in report["report_uptime"]
     assert report["active_wallets_sample"]["unique_wallets_in_block"] == 2
     assert report["active_wallets_sample"]["tx_count_in_block"] == 3
+    assert report["solana_network_status"]["current"]["indicator"] == "none"
+    assert report["solana_network_status"]["incident_history"]["days_since_last_incident"] is not None
+    assert report["solana_network_status"]["incident_history"]["last_incident_name"] == "Elevated skip rate on mainnet-beta"
     assert report["market"]["price"]["price_usd"] == 210.5
     assert any(a["metric"] == "avg_tps" for a in anomalies), "expected a TPS anomaly to fire"
     assert any(a["metric"] == "sol_price_change_pct_24h" for a in anomalies), "expected a price-move anomaly to fire"
