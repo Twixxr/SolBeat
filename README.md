@@ -11,7 +11,7 @@ SolBeat combines live Solana network, validator, market, DeFi, activity, status,
 1. Pulls live data from Solana JSON-RPC, DeFiLlama, CoinGecko, Stakewiz, Solana Status, Dune (optional), and public ecosystem sources.
 2. Maintains tiered historical data.
 3. Runs anomaly detection against thresholds and recent history.
-4. Produces a deterministic **Current Solana Outlook** from network health, validators, DeFi, market, activity, and incident status.
+4. Produces a deterministic **Current Solana Outlook** from 7-day economic/activity trends plus current network, validator, and incident health.
 5. Writes JSON, Markdown, and dashboard data.
 6. Runs automatically through GitHub Actions and deploys to GitHub Pages.
 
@@ -22,14 +22,14 @@ The core pipeline has no required Python third-party packages. Dune and Twitter/
 - **Comprehensiveness:** network performance, validators, stake concentration, SOL economics, stablecoins, DEX volume, fees/revenue, daily active addresses, ecosystem watchlist, network incidents, and upcoming protocol developments.
 - **Automation & maintainability:** isolated collectors, graceful source failures, tiered history, anomaly detection, generated reports, and a 5-minute GitHub Actions schedule.
 - **Clarity & presentation:** dark interactive dashboard, tabs, expandable history, alerts, plain-English insights, and a landing-page outlook.
-- **Innovation:** the report turns raw metrics into a current network outlook and combines live health signals with historical baselines.
+- **Innovation:** the report turns raw metrics into a current network outlook and combines live health signals with 7-day historical trends.
 - **Technical implementation:** standard-library HTTP collection, modular collectors, retries, generated artifacts, and tests.
 
 ## Dashboard
 
 The static dashboard provides:
 
-- **Landing-page Solana Outlook** — a data-driven summary of current network condition, positive signals, and risks to watch.
+- **Landing-page Solana Outlook** — a data-driven summary using 7-day SOL, DeFi, and activity trends alongside current network-health signals.
 - **Heartbeat header** with an ECG-style Solana visualization.
 - **Hero metrics** for SOL price, network TPS, DeFi TVL, and active validators.
 - **Five tabs:** Overview, Network, Onchain DeFi, Validators, and Ecosystem.
@@ -47,8 +47,8 @@ The browser checks dashboard data about every 4 seconds, while the backend norma
 |---|---|---|
 | **Solana JSON-RPC** | Slots, block height, epoch progress, TPS, slot time, validators, stake, commission, delinquency, SOL supply, and a live-block activity sample | Standard-library JSON-RPC calls |
 | **DeFiLlama** | Chain TVL, stablecoin supply, DEX volume, fees/revenue, historical series, and protocol TVL | Public keyless REST endpoints |
-| **CoinGecko** | SOL price, 24h change, volume, market cap, and price history | Public keyless REST endpoints |
-| **Dune** | Daily active addresses | Optional Read-scoped API key; latest result from a public/owned Dune query |
+| **CoinGecko** | SOL price, 24h change, volume, market cap, and 7-day price history | Public keyless REST endpoints |
+| **Dune** | Daily active addresses and 7-day activity trend | Optional Read-scoped API key; latest results from a public/owned Dune query |
 | **Stakewiz** | Validator names and websites | Public validator profile API |
 | **Solana Status** | Current network status and incident history | Public Statuspage API |
 | **solana.com/data** | Best-effort ecosystem statistics | Candidate public endpoints with graceful failure |
@@ -61,18 +61,22 @@ Collectors are isolated. If a source is unavailable or rate-limited, the affecte
 
 Solana JSON-RPC can provide activity samples but not a reliable network-wide daily active-address count. SolBeat therefore supports Dune for the bounty's requested daily-active-address metric.
 
-The default integration uses Dune query **6267602**, the public **“SOL - daily active addresses”** query. Dune's latest-result API requires a Read-scoped API key; the key is kept only as a GitHub Actions secret and is never committed to the repository. If Dune is not configured, the report falls back to the clearly labeled single-block RPC activity sample. Dune's API documentation confirms that the latest-result endpoint accepts a query ID and requires a Read-scoped key. 
+The default integration uses Dune query **6267602**, the public **“SOL - daily active addresses”** query. Dune's latest-result API requires a Read-scoped API key; the key is kept only as a GitHub Actions secret and is never committed to the repository. SolBeat uses the latest Dune result for the current daily value and calculates a **7-day average plus the change versus the preceding 7-day average** when enough daily rows are available.
 
 ## Current Solana Outlook
 
-The landing-page outlook is generated automatically every report cycle. It is **not an AI investment prediction** and does not pretend to know the future. It synthesizes measurable signals:
+The landing-page outlook is generated automatically every report cycle. It is **not an AI investment prediction** and does not pretend to know the future. The outlook now uses a **7-day measurement window** for its economic and activity trend signals rather than noisy 24-hour moves.
 
-- network operational status and slot time
-- validator delinquency
-- SOL 24h movement
-- DeFi TVL movement
-- Dune daily active addresses when available
-- anomaly alerts
+The trend inputs are:
+
+- **SOL price:** 7-day change from CoinGecko's 7-day price series.
+- **DeFi TVL:** 7-day change from DeFiLlama.
+- **Daily active addresses:** 7-day average and change versus the preceding 7-day average from Dune.
+- **Network health:** current operational status and measured slot time.
+- **Validator health:** current delinquent stake.
+- **Incident status:** current Solana Status condition.
+
+This separates **trend** from **current health**: a one-day price spike or dip has less influence on the outlook, while an active network incident or elevated validator delinquency can still trigger a warning immediately.
 
 The result is a simple state such as **Constructive**, **Mixed / constructive**, **Mixed**, or **Cautious**, followed by the strongest positive signals and risks to watch. This makes the landing page useful even for someone who does not want to interpret every chart themselves.
 
@@ -94,7 +98,7 @@ To enable the daily-active-address metric in GitHub Actions:
 2. In GitHub, open **Settings → Secrets and variables → Actions**.
 3. Add a repository secret named `DUNE_API_KEY`.
 4. Optionally add a repository variable named `DUNE_ACTIVE_ADDRESSES_QUERY_ID` if you want to use a different public/owned Dune query. Otherwise SolBeat uses query `6267602`.
-5. Run the workflow manually once to populate the metric.
+5. Run the workflow manually once to populate the metric and its 7-day trend.
 
 The API key is never stored in source code. Dune recommends keeping API keys secure and not committing them to version control.
 
@@ -207,6 +211,7 @@ SolBeat/
 - `solana.com/data` is best-effort because it does not expose a stable documented public API for every metric.
 - Optional Twitter/X collection depends on an unofficial scraping dependency.
 - Public RPC and third-party API rate limits can affect individual collectors.
+- The 7-day outlook is a deterministic trend summary, not a forecast and not investment advice.
 
 ## License
 
