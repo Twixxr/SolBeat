@@ -574,18 +574,23 @@ function renderOverview(){
 }
 
 function overviewInsightSentence(market, tvl, val){
-  if(market.price_usd === null || market.price_usd === undefined) return null;
+  const outlook = REPORT.outlook || {};
+  if(outlook.summary){
+    const rating = outlook.rating || "Current Outlook";
+    const positives = (outlook.positive_signals || []).slice(0, 2).join("; ");
+    const risks = (outlook.risks_to_watch || []).slice(0, 2).join("; ");
+    return "<strong>Solana outlook: " + rating + "</strong> — " + outlook.summary +
+      (positives ? " <span style=\"color:var(--green)\">Positive: " + positives + ".</span>" : "") +
+      (risks ? " <span style=\"color:var(--warn)\">Watch: " + risks + ".</span>" : "");
+  }
 
+  if(market.price_usd === null || market.price_usd === undefined) return null;
   const priceDir = market.price_change_pct_24h > 0 ? "up" : (market.price_change_pct_24h < 0 ? "down" : "flat");
   const tvlDir = tvl.tvl_change_pct_24h > 0 ? "up" : (tvl.tvl_change_pct_24h < 0 ? "down" : "flat");
-  const delinquentNote = val.delinquent_stake_pct !== null && val.delinquent_stake_pct !== undefined && val.delinquent_stake_pct > 1
-    ? (" " + fmtNum(val.delinquent_stake_pct,2) + "% of stake is currently delinquent.")
-    : "";
-
   return "SOL is trading at <strong>" + fmtUsd(market.price_usd) + "</strong>, " + priceDir +
-    " " + Math.abs(market.price_change_pct_24h || 0).toFixed(1) + "% over the last 24 hours, while onchain " +
-    "DeFi TVL is " + tvlDir + " " + Math.abs(tvl.tvl_change_pct_24h || 0).toFixed(1) + "% in the same window. " +
-    "<strong>" + fmtNum(val.active_count,0) + " validators</strong> are actively securing the network." + delinquentNote;
+    " " + Math.abs(market.price_change_pct_24h || 0).toFixed(1) + "% over 24 hours, while DeFi TVL is " +
+    tvlDir + " " + Math.abs(tvl.tvl_change_pct_24h || 0).toFixed(1) + "% and <strong>" +
+    fmtNum(val.active_count,0) + " validators</strong> are active.";
 }
 
 function renderNetwork(){

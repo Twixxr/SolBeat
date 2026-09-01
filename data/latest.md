@@ -1,6 +1,10 @@
-# Solana Ecosystem Report — SolPulse Canada
+# Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-01T02:30:19.170364+00:00 (UTC)_
+_Generated: 2026-09-01T02:48:04.601982+00:00 (UTC)_
+
+## Current Solana Outlook
+
+**Constructive** — Solana's current outlook is constructive. Positive signals: the network is operational; recent slot times remain healthy; DeFi TVL is rising 0.5% over 24h. No major network-health warning is present in the latest automated snapshot.
 
 ## Alerts
 
@@ -11,14 +15,14 @@ _Generated: 2026-09-01T02:30:19.170364+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 443,310,476 |
-| Block height | 421,358,081 |
+| Current slot | 443,313,855 |
+| Block height | 421,361,461 |
 | Epoch | 1026 |
-| Epoch progress | 18.17% |
-| Current TPS | 3,955.27 |
-| Avg TPS (~30 samples) | 4,114.88 |
-| Max / Min TPS | 6,239.67 / 3,615.95 |
-| Avg slot time | 317.4 ms |
+| Epoch progress | 18.95% |
+| Current TPS | 3,937.70 |
+| Avg TPS | 3,791.04 |
+| Max / Min TPS | 4,653.13 / 3,468.40 |
+| Avg slot time | 317.0 ms |
 
 ## Validator Status
 
@@ -26,40 +30,23 @@ _Generated: 2026-09-01T02:30:19.170364+00:00 (UTC)_
 |---|---|
 | Active validators | 680 |
 | Delinquent validators | 14 |
-| Delinquent (% of validator count) | 2.02% |
 | Delinquent (% of active stake) | 0.01% |
 | Total active stake | 438,157,999 SOL |
 | Validators controlling 33% of stake | 18 |
 
-### Top 20 Validators by Stake
+## Network Activity
 
-| # | Vote Account | Stake (SOL) | Commission | Last Vote |
-|---|---|---|---|---|
-| 1 | `CcaHc2L43ZWjwCHART3oZoJvHLAe9hzT2DJNUpBzoTN1` | 17,174,436 | 7% | 443310479 |
-| 2 | `he1iusunGwqrNtafDtLdhsUQDFvo13z9sUa36PauBtk` | 16,281,426 | 0% | 443310479 |
-| 3 | `3N7s9zXMZ4QqvHQR15t5GNHyqc89KduzMP7423eWiD5g` | 12,434,730 | 0% | 443310479 |
-| 4 | `CatzoSMUkTRidT5DwBxAC2pEtnwMBTpkCepHkFgZDiqb` | 11,480,709 | 5% | 443310479 |
-| 5 | `8GbwASqdpw4dVcwbWUxbHXMrjyQx2aKkoBR5H1GJF8iD` | 9,455,250 | 0% | 443310479 |
-| 6 | `26pV97Ce83ZQ6Kz9XT4td8tdoUFPTng8Fb8gPyc53dJx` | 9,285,506 | 7% | 443310479 |
-| 7 | `51JBzSTU5rAM8gLAVQKgp4WoZerQcSqWC7BitBzgUNAm` | 9,044,016 | 10% | 443310479 |
-| 8 | `9QU2QSxhb24FUX3Tu2FpczXjpK3VYrvRudywSZaM29mF` | 7,216,300 | 7% | 443310479 |
-| 9 | `CvSb7wdQAFpHuSpTYTJnX5SYH4hCfQ9VuGnqrKaKwycB` | 6,930,213 | 5% | 443310479 |
-| 10 | `DumiCKHVqoCQKD8roLApzR5Fit8qGV5fVQsJV9sTZk4a` | 6,591,885 | 0% | 443310479 |
-| 11 | `HZKopZYvv8v6un2H6KUNVQCnK5zM9emKKezvqhTBSpEc` | 6,122,617 | 100% | 443310479 |
-| 12 | `3JD3jMmnR6g88qff2WZ3cMHJRjJMUk9yVZtmYTYeFrXf` | 6,108,585 | 0% | 443310479 |
-| 13 | `DdCNGDpP7qMgoAy6paFzhhak2EeyCZcgjH7ak5u5v28m` | 5,949,091 | 5% | 443310479 |
-| 14 | `GHViLgbrJdZDPb6sphRbeuPNM9cmjsFuGWzrTF1sKF5n` | 5,592,480 | 100% | 443310479 |
-| 15 | `FKsC411dik9ktS6xPADxs4Fk2SCENvAiuccQHLAPndvk` | 4,833,223 | 7% | 443310479 |
-| 16 | `HimWQUK61d9wxhw7EYu9jUje7xQiDs4jKexaTSvuCmXE` | 4,643,036 | 8% | 443310479 |
-| 17 | `3ZYJxzCeweSoh2Jj7oCgencFs9y27iKmXJeqYapje1cj` | 4,089,947 | 100% | 443310479 |
-| 18 | `G9x1mqewTeVnXLmv3FamYD5tq1AdS395RHH3MLQPj6TY` | 4,034,403 | 100% | 443310479 |
-| 19 | `AZoCYB4VgoM9DR9f1ZFcBn8xPSbtbqoxZnKJR7tkvEoX` | 4,019,280 | 100% | 443310479 |
-| 20 | `EcEowA4GKDsdVBF9PNAZa6c9M4WgYG8y4GnpZSUaqioS` | 3,978,327 | 100% | 443310479 |
+| Metric | Value |
+|---|---|
+| Daily active addresses | N/A |
+| Activity source | Dune |
+| Activity date | None |
+| Dune status | Dune is not configured. Add the DUNE_API_KEY GitHub Actions secret to enable daily active addresses. |
 
 ## SOL Supply
 
-- Total: 633,267,638 SOL
-- Circulating: 585,207,209 SOL
+- Total: 633,267,628 SOL
+- Circulating: 585,207,198 SOL
 - Non-circulating: 48,060,430 SOL
 
 ## Economic Indicators
@@ -67,30 +54,15 @@ _Generated: 2026-09-01T02:30:19.170364+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | SOL price | $103 |
-| SOL 24h change | +1.05% |
-| SOL 24h volume | $3,107,490,373 |
-| SOL market cap | $60,408,167,529 |
+| SOL 24h change | +1.15% |
+| SOL 24h volume | $3,107,492,278 |
+| SOL market cap | $60,330,511,612 |
 | Solana chain TVL | $5,841,254,449 |
 | TVL change (24h) | +0.51% |
 | TVL change (7d) | +1.81% |
-| Stablecoin supply on Solana | $15,812,397,343 |
+| Stablecoin supply on Solana | $15,795,758,289 |
 | DEX volume (24h) | $2,457,773,259 |
 | Chain revenue / REV proxy (24h) | $5,428,540 |
-
-### Top DEXs by 24h Volume
-
-| DEX | 24h Volume |
-|---|---|
-| PumpSwap | $939,214,885 |
-| BisonFi | $232,851,077 |
-| Orca DEX | $220,805,899 |
-| Meteora DLMM | $149,325,505 |
-| Raydium AMM | $137,944,507 |
-| Manifest Trade | $132,180,477 |
-| pump.fun | $98,906,383 |
-| Axiom | $83,771,413 |
-| Scorch | $66,305,907 |
-| Tessera V | $60,808,040 |
 
 ## Ecosystem & Community Watchlist
 
@@ -106,10 +78,10 @@ _Live tweet pulling requires the optional 'snscrape' package (pip install -r req
 
 ## Upcoming Upgrades & Developments
 
-- **Alpenglow** — Proposed consensus overhaul (Votor + Rotor) targeting ~100-150ms finality, replacing TowerBFT/Turbine-era assumptions. ([track](https://github.com/solana-foundation/solana-improvement-documents))
-- **SIMD-related fee market / tokenomics changes** — Ongoing SIMD proposals affecting base fee burn, priority fees, and inflation schedule. Check the SIMD repo for the current numbered proposal under active discussion. ([track](https://github.com/solana-foundation/solana-improvement-documents/pulls))
-- **Firedancer** — Independent validator client (Jump Crypto) aimed at client diversity and higher throughput ceilings; rolling out in stages across mainnet-beta. ([track](https://github.com/firedancer-io/firedancer))
+- **Alpenglow** — Consensus overhaul work targeting much faster finality; activation work is advancing through Agave releases and feature gates. ([track](https://github.com/solana-foundation/solana-improvement-documents))
+- **SIMD / fee-market changes** — Ongoing protocol proposals covering resource and inclusion fees, block capacity, and other economic mechanics. ([track](https://github.com/solana-foundation/solana-improvement-documents/pulls))
+- **Firedancer** — Independent validator client development continues, improving client diversity and the network's performance ceiling. ([track](https://github.com/firedancer-io/firedancer))
 
 ---
 
-_This report is generated automatically from public, keyless data sources (Solana RPC, DeFiLlama, CoinGecko). See README.md for the full source list, automation strategy, and how to run this yourself._
+_Generated automatically by SolBeat. The outlook is a data-driven summary, not investment advice._
