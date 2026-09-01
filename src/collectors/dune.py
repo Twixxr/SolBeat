@@ -1,5 +1,6 @@
 """Optional Dune collector for Solana daily active addresses."""
 
+import datetime
 import json
 import urllib.error
 import urllib.request
@@ -17,6 +18,18 @@ def _get_json(url, api_key):
         return json.loads(response.read().decode("utf-8"))
 
 
+def _date_key(row):
+    for key, value in row.items():
+        name = str(key).lower()
+        if any(token in name for token in ("date", "day", "time")):
+            text = str(value)
+            try:
+                return datetime.datetime.fromisoformat(text.replace("Z", "+00:00")).timestamp()
+            except ValueError:
+                return 0
+    return 0
+
+
 def collect_daily_active_addresses():
     api_key = config.DUNE_API_KEY
     query_id = config.DUNE_ACTIVE_ADDRESSES_QUERY_ID
@@ -28,7 +41,7 @@ def collect_daily_active_addresses():
 
     try:
         payload = _get_json(
-            f"{config.DUNE_API_URL}/api/v1/query/{query_id}/results?limit=10",
+            f"{config.DUNE_API_URL}/api/v1/query/{query_id}/results?limit=100",
             api_key,
         )
         rows = ((payload.get("result") or {}).get("rows") or [])
@@ -36,8 +49,7 @@ def collect_daily_active_addresses():
             return {**base, "value": None, "date": None,
                     "_note": "Dune returned no rows from the configured active-address query."}
 
-        # Prefer a numeric column whose name identifies active addresses/wallets/DAU.
-        row = rows[0]
+        row = max(rows, key=_date_key)
         candidates, date_value = [], None
         for key, value in row.items():
             name = str(key).lower()
