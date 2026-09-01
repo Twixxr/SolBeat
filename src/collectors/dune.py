@@ -30,6 +30,28 @@ def _date_key(row):
     return 0
 
 
+def _active_value(row):
+    candidates = []
+    for key, value in row.items():
+        name = str(key).lower()
+        if any(token in name for token in ("date", "day", "time")):
+            continue
+        try:
+            numeric = float(value)
+        except (TypeError, ValueError):
+            continue
+        candidates.append((name, numeric))
+    preferred = [x for x in candidates if any(t in x[0] for t in ("active", "address", "wallet", "dau"))]
+    chosen = preferred[0] if preferred else (candidates[0] if candidates else None)
+    return chosen[1] if chosen else None
+
+
+def _pct_change(new_value, old_value):
+    if new_value is None or old_value in (None, 0):
+        return None
+    return round(100 * (new_value - old_value) / old_value, 2)
+
+
 def collect_daily_active_addresses():
     api_key = config.DUNE_API_KEY
     query_id = config.DUNE_ACTIVE_ADDRESSES_QUERY_ID
@@ -37,6 +59,7 @@ def collect_daily_active_addresses():
 
     if not api_key:
         return {**base, "value": None, "date": None,
+                "average_7d": None, "change_pct_7d": None,
                 "_note": "Dune is not configured. Add the DUNE_API_KEY GitHub Actions secret to enable daily active addresses."}
 
     try:
@@ -45,28 +68,37 @@ def collect_daily_active_addresses():
             api_key,
         )
         rows = ((payload.get("result") or {}).get("rows") or [])
-        if not rows:
+        dated = sorted(
+            ((row, _date_key(row), _active_value(row)) for row in rows),
+            key=lambda item: item[1],
+        )
+        dated = [item for item in dated if item[1] > 0 and item[2] is not None]
+        if not dated:
             return {**base, "value": None, "date": None,
-                    "_note": "Dune returned no rows from the configured active-address query."}
+                    "average_7d": None, "change_pct_7d": None,
+                    "_note": "Dune returned no recognizable dated active-address rows."}
 
-        row = max(rows, key=_date_key)
-        candidates, date_value = [], None
-        for key, value in row.items():
-            name = str(key).lower()
-            if any(token in name for token in ("date", "day", "time")):
-                date_value = date_value or value
-                continue
-            try:
-                numeric = float(value)
-            except (TypeError, ValueError):
-                continue
-            candidates.append((name, numeric))
-        preferred = [x for x in candidates if any(t in x[0] for t in ("active", "address", "wallet", "dau"))]
-        chosen = preferred[0] if preferred else (candidates[0] if candidates else None)
-        if not chosen:
-            return {**base, "value": None, "date": date_value,
-                    "_note": "Dune result did not contain a recognizable numeric active-address column."}
-        return {**base, "value": int(round(chosen[1])), "date": date_value, "_note": None}
+        latest_row, _, latest_value = dated[-1]
+        recent = [item[2] for item in dated[-7:]]
+        prior = [item[2] for item in dated[-14:-7]]
+        average_7d = sum(recent) / len(recent)
+        prior_average_7d = sum(prior) / len(prior) if prior else None
+
+        date_value = None
+        for key, value in latest_row.items():
+            if any(token in str(key).lower() for token in ("date", "day", "time")):
+                date_value = value
+                break
+
+        return {
+            **base,
+            "value": int(round(latest_value)),
+            "date": date_value,
+            "average_7d": int(round(average_7d)),
+            "change_pct_7d": _pct_change(average_7d, prior_average_7d),
+            "_note": None,
+        }
     except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, json.JSONDecodeError, ValueError) as exc:
         return {**base, "value": None, "date": None,
+                "average_7d": None, "change_pct_7d": None,
                 "_note": f"Dune active-address collection failed: {exc}"}
