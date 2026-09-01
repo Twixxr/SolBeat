@@ -2,8 +2,6 @@ name: Update Solana Ecosystem Report
 
 on:
   schedule:
-    # Refresh every 5 minutes. If a public provider starts returning 429s,
-    # increase this to */15 or */30.
     - cron: "*/5 * * * *"
   workflow_dispatch: {}
   push:
@@ -21,6 +19,9 @@ concurrency:
 jobs:
   update-report:
     runs-on: ubuntu-latest
+    env:
+      DUNE_API_KEY: ${{ secrets.DUNE_API_KEY }}
+      DUNE_ACTIVE_ADDRESSES_QUERY_ID: ${{ vars.DUNE_ACTIVE_ADDRESSES_QUERY_ID }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
