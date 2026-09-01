@@ -1,5 +1,5 @@
 """
-SolPulse Canada — main entrypoint.
+SolBeat — main entrypoint.
 
 Usage:
     python -m src.main                 # generate one snapshot and exit
@@ -27,14 +27,7 @@ from .report.build_markdown import render as render_markdown
 
 
 def _load_history_series():
-    """
-    Full time series from history.jsonl, for the dashboard's expandable
-    history charts. No trimming needed here — history.jsonl is already
-    kept bounded by assemble._downsample_history's tiered retention
-    (full resolution for 48h, hourly for 30 days, daily for up to 180
-    days), so this naturally covers up to ~6 months per metric while
-    staying a reasonable size (at most a few thousand entries).
-    """
+    """Load the retained history series used by the dashboard charts."""
     if not os.path.exists(config.HISTORY_FILE):
         return []
     entries = []
@@ -83,7 +76,7 @@ def run_once():
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Generate the SolPulse Canada Solana ecosystem report.")
+    parser = argparse.ArgumentParser(description="Generate the SolBeat Solana ecosystem report.")
     parser.add_argument("--loop", action="store_true", help="Run continuously instead of once.")
     parser.add_argument(
         "--interval", type=int, default=config.DEFAULT_REFRESH_INTERVAL_MINUTES,
@@ -100,7 +93,6 @@ def main():
         try:
             run_once()
         except Exception:
-            # Never let one bad cycle kill a long-running process.
             print("Snapshot failed, will retry next interval:", file=sys.stderr)
             traceback.print_exc()
         time.sleep(args.interval * 60)
