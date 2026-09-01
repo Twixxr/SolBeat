@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-01T14:00:24.360569+00:00 (UTC)_
+_Generated: 2026-09-01T14:05:17.640429+00:00 (UTC)_
 
 ## Current Solana Outlook
 
@@ -15,23 +15,23 @@ _Generated: 2026-09-01T14:00:24.360569+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 443,440,802 |
-| Block height | 421,488,380 |
+| Current slot | 443,441,718 |
+| Block height | 421,489,297 |
 | Epoch | 1026 |
-| Epoch progress | 48.33% |
-| Current TPS | 4,795.13 |
-| Avg TPS | 4,844.74 |
-| Max / Min TPS | 5,287.57 / 4,543.00 |
-| Avg slot time | 318.9 ms |
+| Epoch progress | 48.55% |
+| Current TPS | 5,050.97 |
+| Avg TPS | 4,882.90 |
+| Max / Min TPS | 5,357.75 / 4,363.50 |
+| Avg slot time | 319.0 ms |
 
 ## Validator Status
 
 | Metric | Value |
 |---|---|
-| Active validators | 678 |
-| Delinquent validators | 16 |
-| Delinquent (% of active stake) | 0.04% |
-| Total active stake | 438,013,095 SOL |
+| Active validators | 679 |
+| Delinquent validators | 15 |
+| Delinquent (% of active stake) | 0.01% |
+| Total active stake | 438,147,548 SOL |
 | Validators controlling 33% of stake | 18 |
 
 ## Network Activity
@@ -45,8 +45,8 @@ _Generated: 2026-09-01T14:00:24.360569+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 633,267,235 SOL
-- Circulating: 585,206,805 SOL
+- Total: 633,267,231 SOL
+- Circulating: 585,206,802 SOL
 - Non-circulating: 48,060,430 SOL
 
 ## Economic Indicators
@@ -55,14 +55,14 @@ _Generated: 2026-09-01T14:00:24.360569+00:00 (UTC)_
 |---|---|
 | SOL price | $102 |
 | SOL 24h change | -0.52% |
-| SOL 24h volume | $3,023,699,089 |
-| SOL market cap | $59,591,700,317 |
+| SOL 24h volume | $3,017,919,713 |
+| SOL market cap | $59,728,222,340 |
 | Solana chain TVL | $5,791,620,924 |
 | TVL change (24h) | +0.07% |
 | TVL change (7d) | +0.95% |
 | Stablecoin supply on Solana | $15,725,284,263 |
 | DEX volume (24h) | $2,501,465,620 |
-| Chain revenue / REV proxy (24h) | $5,544,898 |
+| Chain revenue / REV proxy (24h) | $5,539,559 |
 
 ## Ecosystem & Community Watchlist
 
