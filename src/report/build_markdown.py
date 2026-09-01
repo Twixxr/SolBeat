@@ -1,6 +1,4 @@
-"""Renders the assembled report dict into a human-readable Markdown file."""
-
-import datetime
+"""Render the assembled report into human-readable Markdown."""
 
 
 def _fmt_usd(value):
@@ -41,133 +39,77 @@ def render(report, anomalies):
     market = report.get("market", {}).get("price", {})
     social = report.get("social", {})
     upcoming = report.get("upcoming", [])
+    activity = report.get("daily_active_addresses", {})
+    outlook = report.get("outlook", {})
 
-    lines = []
-    lines.append("# Solana Ecosystem Report — SolPulse Canada")
-    lines.append("")
-    lines.append(f"_Generated: {m['generated_at_utc']} (UTC)_")
-    lines.append("")
+    lines = ["# Solana Ecosystem Report — SolBeat", "", f"_Generated: {m['generated_at_utc']} (UTC)_", ""]
 
-    # ---- Anomalies up top so they're impossible to miss -------------------
+    if outlook:
+        lines += ["## Current Solana Outlook", "", f"**{outlook.get('rating', 'N/A')}** — {outlook.get('summary', '')}", ""]
+
     if anomalies:
-        lines.append("## Alerts")
-        lines.append("")
+        lines += ["## Alerts", ""]
         icon = {"critical": "🔴", "warning": "🟠", "info": "🔵"}
         for a in sorted(anomalies, key=lambda x: {"critical": 0, "warning": 1, "info": 2}[x["severity"]]):
             lines.append(f"- {icon.get(a['severity'], '⚪')} **{a['severity'].upper()}** — {a['message']}")
         lines.append("")
     else:
-        lines.append("## Alerts")
-        lines.append("")
-        lines.append("🟢 No anomalies detected in this snapshot.")
-        lines.append("")
+        lines += ["## Alerts", "", "🟢 No anomalies detected in this snapshot.", ""]
 
-    # ---- Network performance -----------------------------------------------
-    lines.append("## Network Performance")
-    lines.append("")
-    lines.append("| Metric | Value |")
-    lines.append("|---|---|")
-    lines.append(f"| RPC health | {net.get('health', 'N/A')} |")
-    lines.append(f"| Current slot | {_fmt_num(net.get('current_slot'), 0)} |")
-    lines.append(f"| Block height | {_fmt_num(net.get('block_height'), 0)} |")
-    lines.append(f"| Epoch | {net.get('epoch', 'N/A')} |")
-    lines.append(f"| Epoch progress | {_fmt_pct(net.get('epoch_progress_pct')).replace('+','')} |")
-    lines.append(f"| Current TPS | {_fmt_num(net.get('current_tps'))} |")
-    lines.append(f"| Avg TPS (~{net.get('samples_used','?')} samples) | {_fmt_num(net.get('avg_tps'))} |")
-    lines.append(f"| Max / Min TPS | {_fmt_num(net.get('max_tps'))} / {_fmt_num(net.get('min_tps'))} |")
-    lines.append(f"| Avg slot time | {_fmt_num(net.get('avg_slot_time_ms'), 1)} ms |")
-    lines.append("")
-
-    # ---- Validators ----------------------------------------------------------
-    lines.append("## Validator Status")
-    lines.append("")
-    lines.append("| Metric | Value |")
-    lines.append("|---|---|")
-    lines.append(f"| Active validators | {_fmt_num(val.get('active_count'), 0)} |")
-    lines.append(f"| Delinquent validators | {_fmt_num(val.get('delinquent_count'), 0)} |")
-    lines.append(f"| Delinquent (% of validator count) | {_fmt_pct(val.get('delinquent_pct_of_validators')).replace('+','')} |")
-    lines.append(f"| Delinquent (% of active stake) | {_fmt_pct(val.get('delinquent_stake_pct')).replace('+','')} |")
-    lines.append(f"| Total active stake | {_fmt_num(val.get('total_active_stake_sol'), 0)} SOL |")
+    lines += ["## Network Performance", "", "| Metric | Value |", "|---|---|"]
+    lines += [
+        f"| RPC health | {net.get('health', 'N/A')} |",
+        f"| Current slot | {_fmt_num(net.get('current_slot'), 0)} |",
+        f"| Block height | {_fmt_num(net.get('block_height'), 0)} |",
+        f"| Epoch | {net.get('epoch', 'N/A')} |",
+        f"| Epoch progress | {_fmt_pct(net.get('epoch_progress_pct')).replace('+','')} |",
+        f"| Current TPS | {_fmt_num(net.get('current_tps'))} |",
+        f"| Avg TPS | {_fmt_num(net.get('avg_tps'))} |",
+        f"| Max / Min TPS | {_fmt_num(net.get('max_tps'))} / {_fmt_num(net.get('min_tps'))} |",
+        f"| Avg slot time | {_fmt_num(net.get('avg_slot_time_ms'), 1)} ms |",
+        "",
+        "## Validator Status", "", "| Metric | Value |", "|---|---|",
+        f"| Active validators | {_fmt_num(val.get('active_count'), 0)} |",
+        f"| Delinquent validators | {_fmt_num(val.get('delinquent_count'), 0)} |",
+        f"| Delinquent (% of active stake) | {_fmt_pct(val.get('delinquent_stake_pct')).replace('+','')} |",
+        f"| Total active stake | {_fmt_num(val.get('total_active_stake_sol'), 0)} SOL |",
+    ]
     conc = val.get("stake_concentration") or {}
-    lines.append(f"| Validators controlling 33% of stake | {conc.get('validators_to_control_33pct', 'N/A')} |")
+    lines += [f"| Validators controlling 33% of stake | {conc.get('validators_to_control_33pct', 'N/A')} |", ""]
+
+    lines += ["## Network Activity", "", "| Metric | Value |", "|---|---|"]
+    lines += [f"| Daily active addresses | {_fmt_num(activity.get('value'), 0)} |", f"| Activity source | {activity.get('source', 'N/A')} |", f"| Activity date | {activity.get('date', 'N/A')} |"]
+    if activity.get("_note"):
+        lines.append(f"| Dune status | {activity['_note']} |")
     lines.append("")
 
-    top_validators = val.get("top_validators", [])
-    if top_validators:
-        lines.append(f"### Top {len(top_validators)} Validators by Stake")
-        lines.append("")
-        lines.append("| # | Vote Account | Stake (SOL) | Commission | Last Vote |")
-        lines.append("|---|---|---|---|---|")
-        for i, v in enumerate(top_validators, start=1):
-            lines.append(
-                f"| {i} | `{v.get('vote_pubkey')}` | {_fmt_num(v.get('activated_stake_sol'), 0)} "
-                f"| {v.get('commission_pct')}% | {v.get('last_vote')} |"
-            )
-        lines.append("")
+    lines += ["## SOL Supply", "", f"- Total: {_fmt_num(supply.get('total_sol'), 0)} SOL", f"- Circulating: {_fmt_num(supply.get('circulating_sol'), 0)} SOL", f"- Non-circulating: {_fmt_num(supply.get('non_circulating_sol'), 0)} SOL", ""]
 
-    # ---- Supply -----------------------------------------------------------
-    lines.append("## SOL Supply")
-    lines.append("")
-    lines.append(f"- Total: {_fmt_num(supply.get('total_sol'), 0)} SOL")
-    lines.append(f"- Circulating: {_fmt_num(supply.get('circulating_sol'), 0)} SOL")
-    lines.append(f"- Non-circulating: {_fmt_num(supply.get('non_circulating_sol'), 0)} SOL")
-    lines.append("")
+    lines += ["## Economic Indicators", "", "| Metric | Value |", "|---|---|"]
+    lines += [
+        f"| SOL price | {_fmt_usd(market.get('price_usd'))} |",
+        f"| SOL 24h change | {_fmt_pct(market.get('price_change_pct_24h'))} |",
+        f"| SOL 24h volume | {_fmt_usd(market.get('volume_24h_usd'))} |",
+        f"| SOL market cap | {_fmt_usd(market.get('market_cap_usd'))} |",
+        f"| Solana chain TVL | {_fmt_usd(tvl.get('tvl_usd'))} |",
+        f"| TVL change (24h) | {_fmt_pct(tvl.get('tvl_change_pct_24h'))} |",
+        f"| TVL change (7d) | {_fmt_pct(tvl.get('tvl_change_pct_7d'))} |",
+        f"| Stablecoin supply on Solana | {_fmt_usd(stable.get('total_stablecoin_supply_usd'))} |",
+        f"| DEX volume (24h) | {_fmt_usd(dex.get('dex_volume_24h_usd'))} |",
+        f"| Chain revenue / REV proxy (24h) | {_fmt_usd(fees.get('chain_revenue_24h_usd'))} |", "",
+    ]
 
-    # ---- Economic indicators ------------------------------------------------
-    lines.append("## Economic Indicators")
-    lines.append("")
-    lines.append("| Metric | Value |")
-    lines.append("|---|---|")
-    lines.append(f"| SOL price | {_fmt_usd(market.get('price_usd'))} |")
-    lines.append(f"| SOL 24h change | {_fmt_pct(market.get('price_change_pct_24h'))} |")
-    lines.append(f"| SOL 24h volume | {_fmt_usd(market.get('volume_24h_usd'))} |")
-    lines.append(f"| SOL market cap | {_fmt_usd(market.get('market_cap_usd'))} |")
-    lines.append(f"| Solana chain TVL | {_fmt_usd(tvl.get('tvl_usd'))} |")
-    lines.append(f"| TVL change (24h) | {_fmt_pct(tvl.get('tvl_change_pct_24h'))} |")
-    lines.append(f"| TVL change (7d) | {_fmt_pct(tvl.get('tvl_change_pct_7d'))} |")
-    lines.append(f"| Stablecoin supply on Solana | {_fmt_usd(stable.get('total_stablecoin_supply_usd'))} |")
-    lines.append(f"| DEX volume (24h) | {_fmt_usd(dex.get('dex_volume_24h_usd'))} |")
-    lines.append(f"| Chain revenue / REV proxy (24h) | {_fmt_usd(fees.get('chain_revenue_24h_usd'))} |")
-    lines.append("")
-
-    top_dexs = dex.get("top_dexs_by_volume", [])
-    if top_dexs:
-        lines.append("### Top DEXs by 24h Volume")
-        lines.append("")
-        lines.append("| DEX | 24h Volume |")
-        lines.append("|---|---|")
-        for d in top_dexs:
-            lines.append(f"| {d.get('name')} | {_fmt_usd(d.get('volume_24h_usd'))} |")
-        lines.append("")
-
-    # ---- Ecosystem / community news -----------------------------------------
-    lines.append("## Ecosystem & Community Watchlist")
-    lines.append("")
+    lines += ["## Ecosystem & Community Watchlist", ""]
     if social.get("_note"):
-        lines.append(f"_{social['_note']}_")
-        lines.append("")
+        lines += [f"_{social['_note']}_", ""]
     for acc in social.get("accounts", []):
         lines.append(f"- **{acc['handle']}** — {acc['reason']}")
         for t in acc.get("recent_tweets", [])[:3]:
             lines.append(f"  - {t.get('date', '')}: {t.get('content', '')[:200]} ({t.get('url', '')})")
     lines.append("")
 
-    # ---- Upcoming ------------------------------------------------------------
-    lines.append("## Upcoming Upgrades & Developments")
-    lines.append("")
+    lines += ["## Upcoming Upgrades & Developments", ""]
     for u in upcoming:
         lines.append(f"- **{u['name']}** — {u['description']} ([track]({u['track']}))")
-    lines.append("")
-
-    # ---- Footer --------------------------------------------------------------
-    lines.append("---")
-    lines.append("")
-    lines.append(
-        "_This report is generated automatically from public, keyless data "
-        "sources (Solana RPC, DeFiLlama, CoinGecko). See README.md for the "
-        "full source list, automation strategy, and how to run this "
-        "yourself._"
-    )
-    lines.append("")
-
+    lines += ["", "---", "", "_Generated automatically by SolBeat. The outlook is a data-driven summary, not investment advice._", ""]
     return "\n".join(lines)
