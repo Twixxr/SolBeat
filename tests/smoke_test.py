@@ -224,7 +224,6 @@ def main():
     assert len(report["long_history"]["price"]["series"]) == 30
     assert len(report["long_history"]["tvl"]["series"]) == len(FAKE_TVL_SERIES)
     assert len(report["long_history"]["stablecoin_supply"]["series"]) == 2
-    assert "report_uptime" in report and "days" in report["report_uptime"]
     assert report["active_wallets_sample"]["unique_wallets_in_block"] == 2
     assert report["active_wallets_sample"]["tx_count_in_block"] == 3
     assert report["solana_network_status"]["current"]["indicator"] == "none"

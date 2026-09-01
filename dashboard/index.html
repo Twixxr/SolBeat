@@ -31,7 +31,9 @@
   header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;
     padding-bottom:20px;margin-bottom:6px;border-bottom:1px solid var(--panel-border);}
   .brand{display:flex;align-items:baseline;gap:10px;}
-  .brand h1{font-size:22px;margin:0;font-weight:700;letter-spacing:-0.02em;}
+  .brand h1{font-size:22px;margin:0;font-weight:700;letter-spacing:-0.02em;
+    background:linear-gradient(90deg, var(--purple), var(--green));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
   .brand .sub{font-family:var(--mono);font-size:12px;color:var(--text-dim);}
   .updated{font-family:var(--mono);font-size:12px;color:var(--text-dim);text-align:right;}
   .updated .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);
@@ -198,7 +200,7 @@
 <div class="wrap">
   <header>
     <div class="brand">
-      <h1>Sol<span style="color:var(--green)">Beat</span></h1>
+      <h1>SolBeat</h1>
       <span class="sub">// solana ecosystem heartbeat</span>
     </div>
     <div class="updated" id="updated">loading…</div>
@@ -554,23 +556,19 @@ function renderOverview(){
     "supply.total_sol", "#ffb454", function(v){return fmtNum(v,0);}, false, null);
   html += "</div>";
 
-  const uptime = REPORT.report_uptime || {};
   const netStatus = (REPORT.solana_network_status || {}).current || {};
   const incidentHistory = (REPORT.solana_network_status || {}).incident_history || {};
   const isOperational = netStatus.indicator === "none";
 
-  html += "<h2 class=\"section\">Reliability & Uptime</h2><div class=\"grid\">";
-  html += statCard("SolBeat Pipeline Uptime", fmtNum(uptime.days, 1) + " days",
-    uptime.note ? (uptime.note.charAt(0).toUpperCase() + uptime.note.slice(1)) : null, "flat", true);
+  html += "<h2 class=\"section\">Solana Network Uptime</h2><div class=\"grid\">";
   html += statCard("Solana Network Status", isOperational ? "🟢 Operational" : ("🔴 " + (netStatus.description || netStatus.indicator || "Unknown")),
     null, null, true);
   html += statCard("Days Since Last Solana Incident",
     incidentHistory.days_since_last_incident != null ? fmtNum(incidentHistory.days_since_last_incident, 1) + " days" : "N/A",
     incidentHistory.last_incident_name ? ("Last: " + incidentHistory.last_incident_name) : null, "flat", true);
   html += "</div>";
-  html += "<div class=\"note\">\"SolBeat Pipeline Uptime\" tracks this project's own automated refresh reliability. " +
-    "\"Solana Network Status\" and \"Days Since Last Incident\" are sourced live from status.solana.com's official " +
-    "public API — a real, keyless source for actual Solana network uptime, distinct from SolBeat's own uptime above.</div>";
+  html += "<div class=\"note\">Sourced live from status.solana.com's official public API — a real, keyless " +
+    "source for actual Solana network uptime.</div>";
 
   document.getElementById("tab-overview").innerHTML = html;
 }
@@ -622,14 +620,6 @@ function renderNetwork(){
     "Solana block — computed directly via RPC, not estimated. It is NOT a network-wide daily active address " +
     "figure (no keyless source exists for that; see README). Tracked over time, it's still a genuine signal " +
     "of relative network activity.</div>";
-
-  html += "<h2 class=\"section\">Active Wallets — Network-Wide Trend <span class=\"note\" style=\"margin:0;\">— via Dune Analytics</span></h2>";
-  html += "<div class=\"chart-card\"><div class=\"chart-title\">Solana weekly active addresses, network-wide (Dune's official chain page)</div>" +
-    "<div class=\"dune-embed-wrap\"><iframe src=\"https://dune.com/embeds/5350527/8763517\" loading=\"lazy\" title=\"Solana active addresses — Dune\"></iframe></div></div>" +
-    "<div class=\"note\">Embedded live from Dune Analytics' public chart embed (no API key involved — same technique " +
-    "as the TradingView chart on the SOL Price card). This is a genuine, multi-source-indexed, network-wide figure — " +
-    "a real answer to \"daily/weekly active wallets,\" unlike the single-block sample above which this project " +
-    "computes itself via RPC.</div>";
 
   html += "<h2 class=\"section\">TPS Trend (recent snapshots)</h2>";
   html += "<div class=\"chart-card\"><div class=\"chart-wrap\"><canvas id=\"chart-tps-trend\"></canvas></div></div>";

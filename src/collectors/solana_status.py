@@ -6,8 +6,7 @@ needed, confirmed against real examples from other Statuspage-hosted sites
 before writing this.
 
 This is a genuine source for real Solana network status and incident
-history — distinct from this project's own "report_uptime" in assemble.py,
-which only tracks THIS PIPELINE's own reliability, not Solana's.
+history via a genuine, official, keyless source.
 """
 
 import datetime

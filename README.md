@@ -45,7 +45,6 @@ Every requirement in the bounty's "No API Keys/Dependencies" preference is honor
 | **solana.com/data** | Best-effort ecosystem stats | That page has no documented public JSON API (it's client-rendered). Rather than bolt on a fragile/heavy headless-browser dependency, this collector tries a couple of known candidate endpoints and degrades gracefully if they're unavailable. See [`src/collectors/solana_data_site.py`](src/collectors/solana_data_site.py). |
 | **Twitter / X** | Ecosystem announcements & sentiment sources | X's official API requires a paid tier, which conflicts with "no API keys." A curated watchlist of high-signal accounts is always included, each with a direct clickable link. If the optional `snscrape` package is installed, the collector live-pulls recent tweets too. See [`src/collectors/twitter_feed.py`](src/collectors/twitter_feed.py). |
 | **Solana Status** (status.solana.com) | Real Solana network status and days-since-last-incident | Free, keyless public API (Atlassian Statuspage's standard `/api/v2/status.json` and `/api/v2/incidents.json` endpoints) — verified against the real live response before building against it. See `src/collectors/solana_status.py`. |
-| **Dune Analytics** | Solana weekly active addresses (real, network-wide, multi-source-indexed) | Free public chart embed (iframe, no API key -- Dune has no anonymous API access, but does support embedding a specific existing public chart, same technique as TradingView below), shown on the Network tab alongside this project's own single-block RPC sample. |
 | **TradingView** | Interactive SOL price chart | Free public embed widget (client-side script, no key), shown inside the SOL Price card's expand modal. |
 | **Upcoming upgrades** (Alpenglow, SIMD proposals, Firedancer) | Slow-moving roadmap items | Curated, linked list in [`src/assemble.py`](src/assemble.py) — manually maintained since these move on a months-long cadence with no single stable feed. |
 
@@ -61,6 +60,17 @@ Every collector wraps its HTTP calls in retries with backoff (see [`src/http_cli
 The dashboard itself is a static file that fetches `data.json` client-side — redeploying the HTML isn't needed between data refreshes, only `dashboard/data.json` needs to update, which the Action does automatically.
 
 **On refresh frequency:** 5 minutes is close to the edge of what CoinGecko's free tier comfortably tolerates from a shared GitHub Actions IP pool. If you see `429` errors in the Action logs, loosen the cron schedule back toward `*/15` or `*/30` in `.github/workflows/update.yml` — there's a comment right above the schedule line explaining this.
+
+**On GitHub's scheduler reliability:** GitHub's own `schedule:` cron trigger is documented to be unreliable on public repos with light traffic — it can be delayed by hours or silently dropped entirely, even with a perfectly valid workflow file. `push` and manual (`workflow_dispatch`) triggers don't have this problem, since they're event-driven rather than polled. If your Action only seems to run when you push code or trigger it manually — never on its own — this is almost certainly why.
+
+The reliable fix: use a free external scheduler (e.g. [cron-job.org](https://cron-job.org)) to call GitHub's REST API on a real clock, sidestepping GitHub's internal scheduler entirely:
+
+1. Create a GitHub fine-grained personal access token (Settings → Developer settings → Personal access tokens → Fine-grained tokens), scoped to only this repository, with **Actions: Read and write** permission and nothing else.
+2. Set up a free cron job at a service like cron-job.org that sends a `POST` request every 5 minutes to:
+   `https://api.github.com/repos/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/actions/workflows/update.yml/dispatches`
+   with headers `Authorization: Bearer YOUR_TOKEN`, `Accept: application/vnd.github+json`, `Content-Type: application/json`, and body `{"ref":"main"}`.
+
+This calls GitHub's `workflow_dispatch` API on a genuinely reliable external clock, which then triggers the same workflow as a normal manual run.
 
 ---
 
@@ -87,7 +97,6 @@ Solana's live RPC has no "daily active addresses" endpoint, and building a true 
 
 This is honestly labeled as exactly what it is — a live, real, RPC-computed count of wallets seen in one sampled block, **not** a network-wide daily total. Tracked over time (via the tiered history system above), it still gives a genuine, comparable signal of relative network activity, computed directly from chain data rather than estimated or faked.
 
-Alongside this, the Network tab also embeds a real **Dune Analytics** chart showing Solana's actual weekly active addresses network-wide — pulled from Dune's public chart embed feature (an iframe, no API key), the same technique used for the TradingView chart on the SOL Price card. Dune has no anonymous/keyless programmatic API, so this project doesn't call Dune's backend directly; the embed shows a specific existing public chart from Dune's own official Solana chain page, kept up to date by Dune itself.
 
 ---
 
@@ -213,5 +222,5 @@ solbeat/
 - Twitter/X live content requires the optional `snscrape` dependency and can break if X changes their frontend; the curated watchlist with direct links is always present as a fallback.
 - "TVL split by coin" isn't offered — DeFiLlama has no keyless "TVL by underlying token across a chain" endpoint (it would require one call per protocol). The Onchain DeFi tab shows % share of TVL by project instead (CEXs excluded), which is more directly useful anyway.
 - Validator identity (name/website) comes from Stakewiz, which has no dedicated Twitter/X field — the dashboard's 𝕏 badge links to a validator's website when that URL happens to be a twitter.com/x.com link, otherwise it's a plain website link (🔗). Not every operator publishes either, so unmatched validators show as "Unknown" rather than a raw address.
-- "SolBeat Pipeline Uptime" tracks this project's own reliability (days since a missed scheduled refresh). Real Solana network uptime/incident history IS now sourced live from status.solana.com's official public API (shown as "Solana Network Status" and "Days Since Last Incident" on the Overview tab).
+- Solana network uptime/incident history is sourced live from status.solana.com's official public API (shown as "Solana Network Status" and "Days Since Last Incident" on the Overview tab) -- a real, keyless, official source.
 - Public RPC/CoinGecko rate limits — see Automation strategy above.
