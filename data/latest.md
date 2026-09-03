@@ -1,10 +1,10 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-03T01:10:15.465870+00:00 (UTC)_
+_Generated: 2026-09-03T01:15:16.176207+00:00 (UTC)_
 
 ## Current Solana Outlook
 
-**Mixed / constructive** — Solana's current outlook is mixed / constructive. Positive signals: the network is operational; recent slot times remain healthy. Risks to watch: SOL is down 8.5% over 7d.
+**Mixed / constructive** — Solana's current outlook is mixed / constructive. Positive signals: the network is operational; recent slot times remain healthy. Risks to watch: SOL is down 8.2% over 7d.
 
 ## Alerts
 
@@ -15,14 +15,14 @@ _Generated: 2026-09-03T01:10:15.465870+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 443,841,845 |
-| Block height | 421,889,103 |
+| Current slot | 443,842,798 |
+| Block height | 421,890,055 |
 | Epoch | 1027 |
-| Epoch progress | 41.17% |
-| Current TPS | 3,741.92 |
-| Avg TPS | 3,713.35 |
+| Epoch progress | 41.39% |
+| Current TPS | 3,806.13 |
+| Avg TPS | 3,683.15 |
 | Max / Min TPS | 4,172.05 / 3,327.17 |
-| Avg slot time | 313.7 ms |
+| Avg slot time | 313.6 ms |
 
 ## Validator Status
 
@@ -45,8 +45,8 @@ _Generated: 2026-09-03T01:10:15.465870+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 633,361,274 SOL
-- Circulating: 585,275,243 SOL
+- Total: 633,361,271 SOL
+- Circulating: 585,275,240 SOL
 - Non-circulating: 48,086,031 SOL
 
 ## Economic Indicators
@@ -54,15 +54,15 @@ _Generated: 2026-09-03T01:10:15.465870+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | SOL price | $100 |
-| SOL 24h change | +0.34% |
-| SOL 24h volume | $2,905,973,049 |
-| SOL market cap | $58,438,868,533 |
+| SOL 24h change | +0.43% |
+| SOL 24h volume | $2,923,224,396 |
+| SOL market cap | $58,645,445,002 |
 | Solana chain TVL | $5,682,903,931 |
 | TVL change (24h) | 0.00% |
 | TVL change (7d) | -1.57% |
 | Stablecoin supply on Solana | $15,761,360,750 |
 | DEX volume (24h) | $2,328,007,156 |
-| Chain revenue / REV proxy (24h) | $5,510,860 |
+| Chain revenue / REV proxy (24h) | $5,511,666 |
 
 ## Ecosystem & Community Watchlist
 
