@@ -1,10 +1,10 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-03T11:15:16.521997+00:00 (UTC)_
+_Generated: 2026-09-03T11:20:17.150864+00:00 (UTC)_
 
 ## Current Solana Outlook
 
-**Mixed / constructive** — Solana's current outlook is mixed / constructive. Positive signals: the network is operational; recent slot times remain healthy. Risks to watch: SOL is down 8.1% over 7d.
+**Constructive** — Solana's current outlook is constructive. Positive signals: the network is operational; recent slot times remain healthy. No major network-health warning is present in the latest automated snapshot.
 
 ## Alerts
 
@@ -15,14 +15,14 @@ _Generated: 2026-09-03T11:15:16.521997+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 443,957,252 |
-| Block height | 422,004,438 |
+| Current slot | 443,958,249 |
+| Block height | 422,005,433 |
 | Epoch | 1027 |
-| Epoch progress | 67.88% |
-| Current TPS | 3,431.78 |
-| Avg TPS | 3,332.79 |
-| Max / Min TPS | 3,582.03 / 3,079.67 |
-| Avg slot time | 315.1 ms |
+| Epoch progress | 68.11% |
+| Current TPS | 3,360.05 |
+| Avg TPS | 3,353.13 |
+| Max / Min TPS | 3,658.97 / 3,110.02 |
+| Avg slot time | 315.2 ms |
 
 ## Validator Status
 
@@ -45,22 +45,22 @@ _Generated: 2026-09-03T11:15:16.521997+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 633,360,941 SOL
-- Circulating: 585,274,905 SOL
+- Total: 633,360,939 SOL
+- Circulating: 585,274,902 SOL
 - Non-circulating: 48,086,036 SOL
 
 ## Economic Indicators
 
 | Metric | Value |
 |---|---|
-| SOL price | $100 |
-| SOL 24h change | +2.53% |
-| SOL 24h volume | $3,032,237,351 |
-| SOL market cap | $58,733,059,350 |
+| SOL price | $101 |
+| SOL 24h change | +2.74% |
+| SOL 24h volume | $3,036,272,275 |
+| SOL market cap | $58,865,491,226 |
 | Solana chain TVL | $5,764,406,638 |
 | TVL change (24h) | +2.06% |
 | TVL change (7d) | -0.16% |
-| Stablecoin supply on Solana | $15,754,710,122 |
+| Stablecoin supply on Solana | $15,756,585,084 |
 | DEX volume (24h) | $2,327,024,999 |
 | Chain revenue / REV proxy (24h) | $4,046,544 |
 
