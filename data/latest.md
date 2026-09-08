@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-08T23:25:30.432185+00:00 (UTC)_
+_Generated: 2026-09-08T23:30:24.599394+00:00 (UTC)_
 
 ## Current Solana Outlook
 
@@ -15,23 +15,23 @@ _Generated: 2026-09-08T23:25:30.432185+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 445,462,575 |
-| Block height | 423,506,472 |
+| Current slot | 445,463,506 |
+| Block height | 423,507,405 |
 | Epoch | 1031 |
-| Epoch progress | 16.34% |
-| Current TPS | 3,840.45 |
-| Avg TPS | 4,240.18 |
-| Max / Min TPS | 4,989.30 / 3,764.08 |
-| Avg slot time | 317.6 ms |
+| Epoch progress | 16.55% |
+| Current TPS | 4,209.40 |
+| Avg TPS | 4,136.26 |
+| Max / Min TPS | 4,475.70 / 3,824.63 |
+| Avg slot time | 317.9 ms |
 
 ## Validator Status
 
 | Metric | Value |
 |---|---|
-| Active validators | 676 |
-| Delinquent validators | 11 |
-| Delinquent (% of active stake) | 0.01% |
-| Total active stake | 438,600,954 SOL |
+| Active validators | 675 |
+| Delinquent validators | 12 |
+| Delinquent (% of active stake) | 0.07% |
+| Total active stake | 438,343,893 SOL |
 | Validators controlling 33% of stake | 18 |
 
 ## Network Activity
@@ -45,8 +45,8 @@ _Generated: 2026-09-08T23:25:30.432185+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 633,737,225 SOL
-- Circulating: 586,250,999 SOL
+- Total: 633,737,222 SOL
+- Circulating: 586,250,995 SOL
 - Non-circulating: 47,486,226 SOL
 
 ## Economic Indicators
@@ -54,13 +54,13 @@ _Generated: 2026-09-08T23:25:30.432185+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | SOL price | $103 |
-| SOL 24h change | -0.24% |
-| SOL 24h volume | $3,051,320,464 |
-| SOL market cap | $60,601,109,538 |
+| SOL 24h change | -0.30% |
+| SOL 24h volume | $3,051,752,008 |
+| SOL market cap | $60,599,441,037 |
 | Solana chain TVL | $5,915,350,799 |
 | TVL change (24h) | -1.30% |
 | TVL change (7d) | -1.16% |
-| Stablecoin supply on Solana | $16,298,170,663 |
+| Stablecoin supply on Solana | $16,337,421,766 |
 | DEX volume (24h) | $2,720,639,105 |
 | Chain revenue / REV proxy (24h) | $6,352,429 |
 
