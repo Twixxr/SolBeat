@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-09T04:30:25.846947+00:00 (UTC)_
+_Generated: 2026-09-09T04:35:20.861925+00:00 (UTC)_
 
 ## Current Solana Outlook
 
@@ -15,23 +15,23 @@ _Generated: 2026-09-09T04:30:25.846947+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 445,520,320 |
-| Block height | 423,564,140 |
+| Current slot | 445,521,255 |
+| Block height | 423,565,078 |
 | Epoch | 1031 |
-| Epoch progress | 29.70% |
-| Current TPS | 3,489.05 |
-| Avg TPS | 3,756.28 |
-| Max / Min TPS | 4,147.23 / 3,420.58 |
+| Epoch progress | 29.92% |
+| Current TPS | 3,695.27 |
+| Avg TPS | 3,716.01 |
+| Max / Min TPS | 4,177.75 / 3,481.02 |
 | Avg slot time | 317.5 ms |
 
 ## Validator Status
 
 | Metric | Value |
 |---|---|
-| Active validators | 675 |
-| Delinquent validators | 12 |
-| Delinquent (% of active stake) | 0.07% |
-| Total active stake | 438,359,977 SOL |
+| Active validators | 676 |
+| Delinquent validators | 11 |
+| Delinquent (% of active stake) | 0.01% |
+| Total active stake | 438,600,954 SOL |
 | Validators controlling 33% of stake | 18 |
 
 ## Network Activity
@@ -45,8 +45,8 @@ _Generated: 2026-09-09T04:30:25.846947+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 633,737,027 SOL
-- Circulating: 586,250,800 SOL
+- Total: 633,737,024 SOL
+- Circulating: 586,250,797 SOL
 - Non-circulating: 47,486,226 SOL
 
 ## Economic Indicators
@@ -54,15 +54,15 @@ _Generated: 2026-09-09T04:30:25.846947+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | SOL price | $104 |
-| SOL 24h change | +0.69% |
-| SOL 24h volume | $2,977,912,922 |
-| SOL market cap | $60,905,952,535 |
+| SOL 24h change | +0.55% |
+| SOL 24h volume | $2,977,605,141 |
+| SOL market cap | $60,903,390,362 |
 | Solana chain TVL | $5,960,665,362 |
 | TVL change (24h) | +0.74% |
 | TVL change (7d) | +5.38% |
 | Stablecoin supply on Solana | $16,307,107,319 |
 | DEX volume (24h) | $2,577,833,806 |
-| Chain revenue / REV proxy (24h) | $6,602,820 |
+| Chain revenue / REV proxy (24h) | $6,631,157 |
 
 ## Ecosystem & Community Watchlist
 
