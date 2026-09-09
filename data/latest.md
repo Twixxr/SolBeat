@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-09T03:00:33.471325+00:00 (UTC)_
+_Generated: 2026-09-09T03:05:22.645241+00:00 (UTC)_
 
 ## Current Solana Outlook
 
@@ -15,23 +15,23 @@ _Generated: 2026-09-09T03:00:33.471325+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 445,503,289 |
-| Block height | 423,547,172 |
+| Current slot | 445,504,208 |
+| Block height | 423,548,092 |
 | Epoch | 1031 |
-| Epoch progress | 25.76% |
-| Current TPS | 3,882.27 |
-| Avg TPS | 3,991.16 |
-| Max / Min TPS | 4,439.35 / 3,635.53 |
-| Avg slot time | 317.2 ms |
+| Epoch progress | 25.97% |
+| Current TPS | 4,029.52 |
+| Avg TPS | 3,996.26 |
+| Max / Min TPS | 4,301.68 / 3,624.05 |
+| Avg slot time | 317.3 ms |
 
 ## Validator Status
 
 | Metric | Value |
 |---|---|
-| Active validators | 676 |
-| Delinquent validators | 11 |
-| Delinquent (% of active stake) | 0.01% |
-| Total active stake | 438,600,954 SOL |
+| Active validators | 675 |
+| Delinquent validators | 12 |
+| Delinquent (% of active stake) | 0.04% |
+| Total active stake | 438,486,660 SOL |
 | Validators controlling 33% of stake | 18 |
 
 ## Network Activity
@@ -45,23 +45,23 @@ _Generated: 2026-09-09T03:00:33.471325+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 633,737,081 SOL
-- Circulating: 586,250,855 SOL
+- Total: 633,737,078 SOL
+- Circulating: 586,250,852 SOL
 - Non-circulating: 47,486,226 SOL
 
 ## Economic Indicators
 
 | Metric | Value |
 |---|---|
-| SOL price | $104 |
-| SOL 24h change | +0.23% |
-| SOL 24h volume | $2,996,110,407 |
-| SOL market cap | $60,702,872,964 |
+| SOL price | $103 |
+| SOL 24h change | +0.17% |
+| SOL 24h volume | $2,979,140,109 |
+| SOL market cap | $60,582,708,299 |
 | Solana chain TVL | $5,953,319,309 |
 | TVL change (24h) | +0.15% |
 | TVL change (7d) | +5.25% |
 | Stablecoin supply on Solana | $16,316,096,376 |
-| DEX volume (24h) | $2,577,836,693 |
+| DEX volume (24h) | $2,577,833,806 |
 | Chain revenue / REV proxy (24h) | $6,479,933 |
 
 ## Ecosystem & Community Watchlist
