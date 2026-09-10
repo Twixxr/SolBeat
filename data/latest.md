@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-10T18:20:28.039478+00:00 (UTC)_
+_Generated: 2026-09-10T18:24:44.112279+00:00 (UTC)_
 
 ## Current Solana Outlook
 
@@ -15,23 +15,23 @@ _Generated: 2026-09-10T18:20:28.039478+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 445,950,664 |
-| Block height | 423,994,022 |
+| Current slot | 445,951,501 |
+| Block height | 423,994,857 |
 | Epoch | 1032 |
-| Epoch progress | 29.32% |
-| Current TPS | 4,099.82 |
-| Avg TPS | 4,142.16 |
-| Max / Min TPS | 5,401.45 / 3,583.03 |
-| Avg slot time | 317.3 ms |
+| Epoch progress | 29.51% |
+| Current TPS | 4,166.75 |
+| Avg TPS | 4,230.66 |
+| Max / Min TPS | 5,345.88 / 3,544.83 |
+| Avg slot time | 316.4 ms |
 
 ## Validator Status
 
 | Metric | Value |
 |---|---|
-| Active validators | 676 |
-| Delinquent validators | 13 |
-| Delinquent (% of active stake) | 0.07% |
-| Total active stake | 438,893,230 SOL |
+| Active validators | 677 |
+| Delinquent validators | 12 |
+| Delinquent (% of active stake) | 0.02% |
+| Total active stake | 439,082,471 SOL |
 | Validators controlling 33% of stake | 18 |
 
 ## Network Activity
@@ -45,8 +45,8 @@ _Generated: 2026-09-10T18:20:28.039478+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 633,830,687 SOL
-- Circulating: 586,335,414 SOL
+- Total: 633,830,683 SOL
+- Circulating: 586,335,411 SOL
 - Non-circulating: 47,495,273 SOL
 
 ## Economic Indicators
@@ -54,13 +54,13 @@ _Generated: 2026-09-10T18:20:28.039478+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | SOL price | $99 |
-| SOL 24h change | -4.06% |
-| SOL 24h volume | $3,300,656,495 |
-| SOL market cap | $58,197,779,183 |
+| SOL 24h change | -3.92% |
+| SOL 24h volume | $3,308,993,823 |
+| SOL market cap | $58,269,042,133 |
 | Solana chain TVL | $5,768,305,199 |
 | TVL change (24h) | -3.06% |
 | TVL change (7d) | +1.03% |
-| Stablecoin supply on Solana | $16,034,230,499 |
+| Stablecoin supply on Solana | $16,019,245,195 |
 | DEX volume (24h) | $3,000,435,430 |
 | Chain revenue / REV proxy (24h) | $6,738,782 |
 
