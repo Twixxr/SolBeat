@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-10T16:35:21.629362+00:00 (UTC)_
+_Generated: 2026-09-10T16:40:24.531659+00:00 (UTC)_
 
 ## Current Solana Outlook
 
@@ -15,23 +15,23 @@ _Generated: 2026-09-10T16:35:21.629362+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 445,930,786 |
-| Block height | 423,974,142 |
+| Current slot | 445,931,738 |
+| Block height | 423,975,094 |
 | Epoch | 1032 |
-| Epoch progress | 24.72% |
-| Current TPS | 4,993.98 |
-| Avg TPS | 4,247.25 |
-| Max / Min TPS | 4,993.98 / 3,888.13 |
+| Epoch progress | 24.94% |
+| Current TPS | 4,188.08 |
+| Avg TPS | 4,289.32 |
+| Max / Min TPS | 4,993.98 / 3,949.75 |
 | Avg slot time | 317.4 ms |
 
 ## Validator Status
 
 | Metric | Value |
 |---|---|
-| Active validators | 677 |
-| Delinquent validators | 12 |
-| Delinquent (% of active stake) | 0.02% |
-| Total active stake | 439,082,043 SOL |
+| Active validators | 676 |
+| Delinquent validators | 13 |
+| Delinquent (% of active stake) | 0.05% |
+| Total active stake | 438,978,694 SOL |
 | Validators controlling 33% of stake | 18 |
 
 ## Network Activity
@@ -45,8 +45,8 @@ _Generated: 2026-09-10T16:35:21.629362+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 633,830,755 SOL
-- Circulating: 586,335,482 SOL
+- Total: 633,830,751 SOL
+- Circulating: 586,335,479 SOL
 - Non-circulating: 47,495,273 SOL
 
 ## Economic Indicators
@@ -54,12 +54,12 @@ _Generated: 2026-09-10T16:35:21.629362+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | SOL price | $99 |
-| SOL 24h change | -4.14% |
-| SOL 24h volume | $3,224,879,238 |
-| SOL market cap | $58,093,316,089 |
-| Solana chain TVL | $5,779,670,989 |
-| TVL change (24h) | -2.87% |
-| TVL change (7d) | +1.23% |
+| SOL 24h change | -3.98% |
+| SOL 24h volume | $3,152,501,473 |
+| SOL market cap | $58,170,072,725 |
+| Solana chain TVL | $5,778,474,623 |
+| TVL change (24h) | -2.89% |
+| TVL change (7d) | +1.21% |
 | Stablecoin supply on Solana | $16,035,629,139 |
 | DEX volume (24h) | $3,000,435,430 |
 | Chain revenue / REV proxy (24h) | $6,727,863 |
