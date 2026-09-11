@@ -1,10 +1,10 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-11T17:25:24.447787+00:00 (UTC)_
+_Generated: 2026-09-11T17:30:34.945149+00:00 (UTC)_
 
 ## Current Solana Outlook
 
-**Constructive** — Solana's current outlook is constructive. Positive signals: the network is operational; recent slot times remain healthy; SOL is up 0.3% over 7d. No major network-health warning is present in the latest automated snapshot.
+**Constructive** — Solana's current outlook is constructive. Positive signals: the network is operational; recent slot times remain healthy; SOL is up 0.4% over 7d. No major network-health warning is present in the latest automated snapshot.
 
 ## Alerts
 
@@ -15,14 +15,14 @@ _Generated: 2026-09-11T17:25:24.447787+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 446,213,121 |
-| Block height | 424,256,189 |
+| Current slot | 446,214,097 |
+| Block height | 424,257,164 |
 | Epoch | 1032 |
-| Epoch progress | 90.07% |
-| Current TPS | 3,567.83 |
-| Avg TPS | 4,306.64 |
+| Epoch progress | 90.30% |
+| Current TPS | 3,694.13 |
+| Avg TPS | 4,280.05 |
 | Max / Min TPS | 4,819.22 / 3,567.83 |
-| Avg slot time | 318.1 ms |
+| Avg slot time | 318.8 ms |
 
 ## Validator Status
 
@@ -45,8 +45,8 @@ _Generated: 2026-09-11T17:25:24.447787+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 633,829,818 SOL
-- Circulating: 586,537,253 SOL
+- Total: 633,829,815 SOL
+- Circulating: 586,537,250 SOL
 - Non-circulating: 47,292,565 SOL
 
 ## Economic Indicators
@@ -54,13 +54,13 @@ _Generated: 2026-09-11T17:25:24.447787+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | SOL price | $102 |
-| SOL 24h change | +2.18% |
-| SOL 24h volume | $4,197,755,636 |
-| SOL market cap | $59,897,390,897 |
+| SOL 24h change | +2.40% |
+| SOL 24h volume | $4,206,391,726 |
+| SOL market cap | $60,057,966,524 |
 | Solana chain TVL | $5,879,161,244 |
 | TVL change (24h) | +0.38% |
 | TVL change (7d) | -0.89% |
-| Stablecoin supply on Solana | $16,214,422,420 |
+| Stablecoin supply on Solana | $16,192,076,441 |
 | DEX volume (24h) | $2,921,890,110 |
 | Chain revenue / REV proxy (24h) | $5,775,726 |
 
