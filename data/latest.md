@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-11T06:30:27.311307+00:00 (UTC)_
+_Generated: 2026-09-11T06:35:20.666332+00:00 (UTC)_
 
 ## Current Solana Outlook
 
@@ -15,23 +15,23 @@ _Generated: 2026-09-11T06:30:27.311307+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 446,089,145 |
-| Block height | 424,132,416 |
+| Current slot | 446,090,101 |
+| Block height | 424,133,373 |
 | Epoch | 1032 |
-| Epoch progress | 61.38% |
-| Current TPS | 3,800.33 |
-| Avg TPS | 3,626.55 |
+| Epoch progress | 61.60% |
+| Current TPS | 4,005.52 |
+| Avg TPS | 3,630.74 |
 | Max / Min TPS | 4,034.28 / 3,392.45 |
-| Avg slot time | 316.4 ms |
+| Avg slot time | 316.3 ms |
 
 ## Validator Status
 
 | Metric | Value |
 |---|---|
-| Active validators | 672 |
-| Delinquent validators | 17 |
-| Delinquent (% of active stake) | 0.12% |
-| Total active stake | 438,674,501 SOL |
+| Active validators | 670 |
+| Delinquent validators | 19 |
+| Delinquent (% of active stake) | 0.31% |
+| Total active stake | 437,819,263 SOL |
 | Validators controlling 33% of stake | 18 |
 
 ## Network Activity
@@ -45,8 +45,8 @@ _Generated: 2026-09-11T06:30:27.311307+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 633,830,238 SOL
-- Circulating: 586,537,673 SOL
+- Total: 633,830,235 SOL
+- Circulating: 586,537,670 SOL
 - Non-circulating: 47,292,565 SOL
 
 ## Economic Indicators
@@ -54,12 +54,12 @@ _Generated: 2026-09-11T06:30:27.311307+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | SOL price | $100 |
-| SOL 24h change | -1.89% |
-| SOL 24h volume | $3,038,720,121 |
-| SOL market cap | $58,477,567,758 |
-| Solana chain TVL | $5,788,238,338 |
-| TVL change (24h) | -1.17% |
-| TVL change (7d) | -2.42% |
+| SOL 24h change | -2.01% |
+| SOL 24h volume | $3,045,369,827 |
+| SOL market cap | $58,474,871,837 |
+| Solana chain TVL | $5,792,190,606 |
+| TVL change (24h) | -1.11% |
+| TVL change (7d) | -2.36% |
 | Stablecoin supply on Solana | $16,047,981,585 |
 | DEX volume (24h) | $2,948,479,741 |
 | Chain revenue / REV proxy (24h) | $5,967,482 |
