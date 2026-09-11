@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-11T02:50:23.866351+00:00 (UTC)_
+_Generated: 2026-09-11T02:55:18.809766+00:00 (UTC)_
 
 ## Current Solana Outlook
 
@@ -15,23 +15,23 @@ _Generated: 2026-09-11T02:50:23.866351+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 446,047,415 |
-| Block height | 424,090,715 |
+| Current slot | 446,048,340 |
+| Block height | 424,091,643 |
 | Epoch | 1032 |
-| Epoch progress | 51.72% |
-| Current TPS | 4,525.22 |
-| Avg TPS | 3,872.90 |
-| Max / Min TPS | 4,525.22 / 3,411.77 |
-| Avg slot time | 317.5 ms |
+| Epoch progress | 51.93% |
+| Current TPS | 4,149.80 |
+| Avg TPS | 3,967.06 |
+| Max / Min TPS | 4,602.13 / 3,471.48 |
+| Avg slot time | 318.3 ms |
 
 ## Validator Status
 
 | Metric | Value |
 |---|---|
-| Active validators | 678 |
-| Delinquent validators | 11 |
-| Delinquent (% of active stake) | 0.02% |
-| Total active stake | 439,101,931 SOL |
+| Active validators | 676 |
+| Delinquent validators | 13 |
+| Delinquent (% of active stake) | 0.08% |
+| Total active stake | 438,855,905 SOL |
 | Validators controlling 33% of stake | 18 |
 
 ## Network Activity
@@ -45,8 +45,8 @@ _Generated: 2026-09-11T02:50:23.866351+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 633,830,368 SOL
-- Circulating: 586,537,803 SOL
+- Total: 633,830,365 SOL
+- Circulating: 586,537,800 SOL
 - Non-circulating: 47,292,565 SOL
 
 ## Economic Indicators
@@ -54,15 +54,15 @@ _Generated: 2026-09-11T02:50:23.866351+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | SOL price | $99 |
-| SOL 24h change | -2.32% |
-| SOL 24h volume | $3,002,922,513 |
-| SOL market cap | $58,250,794,222 |
+| SOL 24h change | -2.42% |
+| SOL 24h volume | $3,004,905,828 |
+| SOL market cap | $58,264,961,701 |
 | Solana chain TVL | $5,780,010,210 |
 | TVL change (24h) | -0.78% |
 | TVL change (7d) | -2.49% |
 | Stablecoin supply on Solana | $15,993,309,248 |
 | DEX volume (24h) | $2,948,486,576 |
-| Chain revenue / REV proxy (24h) | $6,159,875 |
+| Chain revenue / REV proxy (24h) | $5,973,515 |
 
 ## Ecosystem & Community Watchlist
 
