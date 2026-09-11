@@ -1,10 +1,10 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-11T21:15:26.268533+00:00 (UTC)_
+_Generated: 2026-09-11T21:20:25.729040+00:00 (UTC)_
 
 ## Current Solana Outlook
 
-**Constructive** — Solana's current outlook is constructive. Positive signals: the network is operational; recent slot times remain healthy; SOL is up 0.8% over 7d. No major network-health warning is present in the latest automated snapshot.
+**Constructive** — Solana's current outlook is constructive. Positive signals: the network is operational; recent slot times remain healthy; SOL is up 0.9% over 7d. No major network-health warning is present in the latest automated snapshot.
 
 ## Alerts
 
@@ -15,23 +15,23 @@ _Generated: 2026-09-11T21:15:26.268533+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 446,256,770 |
-| Block height | 424,299,772 |
+| Current slot | 446,257,696 |
+| Block height | 424,300,699 |
 | Epoch | 1033 |
-| Epoch progress | 0.18% |
-| Current TPS | 4,789.22 |
-| Avg TPS | 4,426.90 |
-| Max / Min TPS | 5,041.65 / 4,024.87 |
-| Avg slot time | 316.7 ms |
+| Epoch progress | 0.39% |
+| Current TPS | 4,615.42 |
+| Avg TPS | 4,501.45 |
+| Max / Min TPS | 5,013.23 / 3,943.45 |
+| Avg slot time | 317.0 ms |
 
 ## Validator Status
 
 | Metric | Value |
 |---|---|
-| Active validators | 677 |
-| Delinquent validators | 12 |
-| Delinquent (% of active stake) | 0.53% |
-| Total active stake | 434,527,889 SOL |
+| Active validators | 678 |
+| Delinquent validators | 11 |
+| Delinquent (% of active stake) | 0.38% |
+| Total active stake | 435,169,320 SOL |
 | Validators controlling 33% of stake | 17 |
 
 ## Network Activity
@@ -45,8 +45,8 @@ _Generated: 2026-09-11T21:15:26.268533+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 633,924,716 SOL
-- Circulating: 586,623,430 SOL
+- Total: 633,924,712 SOL
+- Circulating: 586,623,426 SOL
 - Non-circulating: 47,301,286 SOL
 
 ## Economic Indicators
@@ -54,9 +54,9 @@ _Generated: 2026-09-11T21:15:26.268533+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | SOL price | $103 |
-| SOL 24h change | +2.68% |
-| SOL 24h volume | $4,558,592,491 |
-| SOL market cap | $60,240,448,370 |
+| SOL 24h change | +2.96% |
+| SOL 24h volume | $4,578,742,127 |
+| SOL market cap | $60,350,730,751 |
 | Solana chain TVL | $5,866,052,476 |
 | TVL change (24h) | +0.15% |
 | TVL change (7d) | -1.11% |
