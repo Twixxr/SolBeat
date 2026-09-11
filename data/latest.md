@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-11T07:00:31.427720+00:00 (UTC)_
+_Generated: 2026-09-11T07:05:21.061223+00:00 (UTC)_
 
 ## Current Solana Outlook
 
@@ -15,13 +15,13 @@ _Generated: 2026-09-11T07:00:31.427720+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 446,094,897 |
-| Block height | 424,138,153 |
+| Current slot | 446,095,859 |
+| Block height | 424,139,106 |
 | Epoch | 1032 |
-| Epoch progress | 62.71% |
-| Current TPS | 3,228.27 |
-| Avg TPS | 3,501.64 |
-| Max / Min TPS | 3,853.95 / 3,201.28 |
+| Epoch progress | 62.93% |
+| Current TPS | 3,623.92 |
+| Avg TPS | 3,456.10 |
+| Max / Min TPS | 3,796.97 / 3,184.73 |
 | Avg slot time | 314.9 ms |
 
 ## Validator Status
@@ -30,8 +30,8 @@ _Generated: 2026-09-11T07:00:31.427720+00:00 (UTC)_
 |---|---|
 | Active validators | 666 |
 | Delinquent validators | 23 |
-| Delinquent (% of active stake) | 0.71% |
-| Total active stake | 436,066,074 SOL |
+| Delinquent (% of active stake) | 0.72% |
+| Total active stake | 436,028,671 SOL |
 | Validators controlling 33% of stake | 18 |
 
 ## Network Activity
@@ -45,24 +45,24 @@ _Generated: 2026-09-11T07:00:31.427720+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 633,830,221 SOL
-- Circulating: 586,537,656 SOL
+- Total: 633,830,219 SOL
+- Circulating: 586,537,654 SOL
 - Non-circulating: 47,292,565 SOL
 
 ## Economic Indicators
 
 | Metric | Value |
 |---|---|
-| SOL price | $100 |
-| SOL 24h change | -2.08% |
-| SOL 24h volume | $3,052,611,491 |
-| SOL market cap | $58,523,082,546 |
+| SOL price | N/A |
+| SOL 24h change | N/A |
+| SOL 24h volume | N/A |
+| SOL market cap | N/A |
 | Solana chain TVL | $5,792,190,606 |
 | TVL change (24h) | -1.11% |
 | TVL change (7d) | -2.36% |
-| Stablecoin supply on Solana | $16,047,981,585 |
+| Stablecoin supply on Solana | $16,026,883,134 |
 | DEX volume (24h) | $2,948,479,741 |
-| Chain revenue / REV proxy (24h) | $5,967,936 |
+| Chain revenue / REV proxy (24h) | $5,967,482 |
 
 ## Ecosystem & Community Watchlist
 
