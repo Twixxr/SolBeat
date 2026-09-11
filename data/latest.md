@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-11T01:50:23.486867+00:00 (UTC)_
+_Generated: 2026-09-11T01:55:21.602321+00:00 (UTC)_
 
 ## Current Solana Outlook
 
@@ -15,23 +15,23 @@ _Generated: 2026-09-11T01:50:23.486867+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 446,036,035 |
-| Block height | 424,079,344 |
+| Current slot | 446,037,015 |
+| Block height | 424,080,323 |
 | Epoch | 1032 |
-| Epoch progress | 49.08% |
-| Current TPS | 3,526.60 |
-| Avg TPS | 3,853.42 |
-| Max / Min TPS | 4,206.33 / 3,439.82 |
-| Avg slot time | 313.6 ms |
+| Epoch progress | 49.31% |
+| Current TPS | 3,338.02 |
+| Avg TPS | 3,831.19 |
+| Max / Min TPS | 4,206.33 / 3,338.02 |
+| Avg slot time | 314.4 ms |
 
 ## Validator Status
 
 | Metric | Value |
 |---|---|
-| Active validators | 675 |
-| Delinquent validators | 14 |
-| Delinquent (% of active stake) | 0.12% |
-| Total active stake | 438,644,457 SOL |
+| Active validators | 677 |
+| Delinquent validators | 12 |
+| Delinquent (% of active stake) | 0.02% |
+| Total active stake | 439,082,043 SOL |
 | Validators controlling 33% of stake | 18 |
 
 ## Network Activity
@@ -45,8 +45,8 @@ _Generated: 2026-09-11T01:50:23.486867+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 633,830,404 SOL
-- Circulating: 586,537,840 SOL
+- Total: 633,830,402 SOL
+- Circulating: 586,537,837 SOL
 - Non-circulating: 47,292,565 SOL
 
 ## Economic Indicators
@@ -54,9 +54,9 @@ _Generated: 2026-09-11T01:50:23.486867+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | SOL price | $99 |
-| SOL 24h change | -1.89% |
-| SOL 24h volume | $2,991,722,368 |
-| SOL market cap | $58,052,223,584 |
+| SOL 24h change | -1.43% |
+| SOL 24h volume | $2,997,277,809 |
+| SOL market cap | $58,241,360,166 |
 | Solana chain TVL | $5,753,705,299 |
 | TVL change (24h) | -0.13% |
 | TVL change (7d) | -2.93% |
