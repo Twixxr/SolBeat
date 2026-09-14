@@ -1,10 +1,10 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-14T21:20:26.011712+00:00 (UTC)_
+_Generated: 2026-09-14T21:25:22.839298+00:00 (UTC)_
 
 ## Current Solana Outlook
 
-**Constructive** — Solana's current outlook is constructive. Positive signals: the network is operational; recent slot times remain healthy. No major network-health warning is present in the latest automated snapshot.
+**Constructive** — Solana's current outlook is constructive. Positive signals: the network is operational; recent slot times remain healthy; SOL is up 0.0% over 7d. No major network-health warning is present in the latest automated snapshot.
 
 ## Alerts
 
@@ -15,14 +15,14 @@ _Generated: 2026-09-14T21:20:26.011712+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 447,077,484 |
-| Block height | 425,119,835 |
+| Current slot | 447,078,441 |
+| Block height | 425,120,793 |
 | Epoch | 1034 |
-| Epoch progress | 90.16% |
-| Current TPS | 4,267.80 |
-| Avg TPS | 4,265.51 |
-| Max / Min TPS | 5,180.90 / 3,713.38 |
-| Avg slot time | 317.3 ms |
+| Epoch progress | 90.38% |
+| Current TPS | 4,038.37 |
+| Avg TPS | 4,255.15 |
+| Max / Min TPS | 5,417.25 / 3,679.07 |
+| Avg slot time | 316.8 ms |
 
 ## Validator Status
 
@@ -45,8 +45,8 @@ _Generated: 2026-09-14T21:20:26.011712+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 634,017,155 SOL
-- Circulating: 586,892,410 SOL
+- Total: 634,017,152 SOL
+- Circulating: 586,892,407 SOL
 - Non-circulating: 47,124,745 SOL
 
 ## Economic Indicators
@@ -54,10 +54,10 @@ _Generated: 2026-09-14T21:20:26.011712+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | SOL price | $104 |
-| SOL 24h change | +2.14% |
-| SOL 24h volume | $3,520,759,414 |
-| SOL market cap | $60,800,515,784 |
-| Solana chain TVL | $5,959,195,845 |
+| SOL 24h change | +2.30% |
+| SOL 24h volume | $3,533,640,237 |
+| SOL market cap | $60,904,439,652 |
+| Solana chain TVL | $5,959,195,882 |
 | TVL change (24h) | +0.89% |
 | TVL change (7d) | -0.77% |
 | Stablecoin supply on Solana | $16,088,101,123 |
