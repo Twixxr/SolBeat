@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-15T03:20:23.894315+00:00 (UTC)_
+_Generated: 2026-09-15T03:25:22.183260+00:00 (UTC)_
 
 ## Current Solana Outlook
 
@@ -15,23 +15,23 @@ _Generated: 2026-09-15T03:20:23.894315+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 447,145,800 |
-| Block height | 425,187,792 |
+| Current slot | 447,146,762 |
+| Block height | 425,188,739 |
 | Epoch | 1035 |
-| Epoch progress | 5.97% |
-| Current TPS | 4,027.82 |
-| Avg TPS | 3,742.09 |
-| Max / Min TPS | 4,261.72 / 3,356.75 |
-| Avg slot time | 316.0 ms |
+| Epoch progress | 6.20% |
+| Current TPS | 3,840.12 |
+| Avg TPS | 3,771.36 |
+| Max / Min TPS | 4,395.15 / 3,389.50 |
+| Avg slot time | 315.6 ms |
 
 ## Validator Status
 
 | Metric | Value |
 |---|---|
-| Active validators | 678 |
-| Delinquent validators | 11 |
-| Delinquent (% of active stake) | 1.75% |
-| Total active stake | 431,550,964 SOL |
+| Active validators | 679 |
+| Delinquent validators | 10 |
+| Delinquent (% of active stake) | 0.07% |
+| Total active stake | 438,923,318 SOL |
 | Validators controlling 33% of stake | 18 |
 
 ## Network Activity
@@ -45,24 +45,24 @@ _Generated: 2026-09-15T03:20:23.894315+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 634,111,892 SOL
-- Circulating: 587,028,434 SOL
-- Non-circulating: 47,083,458 SOL
+- Total: 634,111,889 SOL
+- Circulating: 587,028,424 SOL
+- Non-circulating: 47,083,465 SOL
 
 ## Economic Indicators
 
 | Metric | Value |
 |---|---|
 | SOL price | $101 |
-| SOL 24h change | +0.23% |
-| SOL 24h volume | $3,257,618,542 |
-| SOL market cap | $59,455,581,548 |
+| SOL 24h change | +0.31% |
+| SOL 24h volume | $3,321,545,807 |
+| SOL market cap | $59,556,611,049 |
 | Solana chain TVL | $5,929,019,069 |
 | TVL change (24h) | +0.73% |
 | TVL change (7d) | +0.08% |
 | Stablecoin supply on Solana | $16,057,346,189 |
 | DEX volume (24h) | $2,212,763,997 |
-| Chain revenue / REV proxy (24h) | $5,029,233 |
+| Chain revenue / REV proxy (24h) | $5,110,753 |
 
 ## Ecosystem & Community Watchlist
 
