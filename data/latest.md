@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-15T00:29:37.590127+00:00 (UTC)_
+_Generated: 2026-09-15T00:31:08.476482+00:00 (UTC)_
 
 ## Current Solana Outlook
 
@@ -15,23 +15,23 @@ _Generated: 2026-09-15T00:29:37.590127+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 447,113,370 |
-| Block height | 425,155,692 |
+| Current slot | 447,113,657 |
+| Block height | 425,155,980 |
 | Epoch | 1034 |
-| Epoch progress | 98.47% |
-| Current TPS | 3,596.83 |
-| Avg TPS | 3,725.78 |
+| Epoch progress | 98.53% |
+| Current TPS | 3,485.72 |
+| Avg TPS | 3,706.45 |
 | Max / Min TPS | 4,132.25 / 3,445.40 |
-| Avg slot time | 314.9 ms |
+| Avg slot time | 314.8 ms |
 
 ## Validator Status
 
 | Metric | Value |
 |---|---|
-| Active validators | 677 |
-| Delinquent validators | 13 |
-| Delinquent (% of active stake) | 0.14% |
-| Total active stake | 438,117,795 SOL |
+| Active validators | 678 |
+| Delinquent validators | 12 |
+| Delinquent (% of active stake) | 0.08% |
+| Total active stake | 438,395,542 SOL |
 | Validators controlling 33% of stake | 18 |
 
 ## Network Activity
@@ -46,7 +46,7 @@ _Generated: 2026-09-15T00:29:37.590127+00:00 (UTC)_
 ## SOL Supply
 
 - Total: 634,017,036 SOL
-- Circulating: 586,942,277 SOL
+- Circulating: 586,942,276 SOL
 - Non-circulating: 47,074,759 SOL
 
 ## Economic Indicators
@@ -54,15 +54,15 @@ _Generated: 2026-09-15T00:29:37.590127+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | SOL price | $103 |
-| SOL 24h change | +3.61% |
-| SOL 24h volume | $3,360,596,209 |
-| SOL market cap | $60,240,454,984 |
+| SOL 24h change | +3.55% |
+| SOL 24h volume | $3,390,049,701 |
+| SOL market cap | $60,225,210,872 |
 | Solana chain TVL | $5,923,742,444 |
 | TVL change (24h) | +0.28% |
 | TVL change (7d) | -1.36% |
-| Stablecoin supply on Solana | $16,106,630,321 |
+| Stablecoin supply on Solana | $16,098,853,553 |
 | DEX volume (24h) | $1,790,994,712 |
-| Chain revenue / REV proxy (24h) | $5,075,582 |
+| Chain revenue / REV proxy (24h) | $5,104,316 |
 
 ## Ecosystem & Community Watchlist
 
