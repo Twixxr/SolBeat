@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-16T19:25:23.664120+00:00 (UTC)_
+_Generated: 2026-09-16T19:30:29.031771+00:00 (UTC)_
 
 ## Current Solana Outlook
 
@@ -15,23 +15,23 @@ _Generated: 2026-09-16T19:25:23.664120+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 447,601,491 |
-| Block height | 425,642,882 |
+| Current slot | 447,602,435 |
+| Block height | 425,643,828 |
 | Epoch | 1036 |
-| Epoch progress | 11.46% |
-| Current TPS | 4,684.45 |
-| Avg TPS | 4,875.37 |
-| Max / Min TPS | 5,759.37 / 4,467.57 |
-| Avg slot time | 317.8 ms |
+| Epoch progress | 11.68% |
+| Current TPS | 5,560.02 |
+| Avg TPS | 4,991.40 |
+| Max / Min TPS | 5,750.60 / 4,430.05 |
+| Avg slot time | 318.7 ms |
 
 ## Validator Status
 
 | Metric | Value |
 |---|---|
-| Active validators | 677 |
-| Delinquent validators | 14 |
-| Delinquent (% of active stake) | 0.04% |
-| Total active stake | 439,569,431 SOL |
+| Active validators | 675 |
+| Delinquent validators | 16 |
+| Delinquent (% of active stake) | 0.27% |
+| Total active stake | 438,569,431 SOL |
 | Validators controlling 33% of stake | 18 |
 
 ## Network Activity
@@ -45,22 +45,22 @@ _Generated: 2026-09-16T19:25:23.664120+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 634,205,262 SOL
-- Circulating: 587,150,353 SOL
-- Non-circulating: 47,054,909 SOL
+- Total: 634,205,257 SOL
+- Circulating: 587,150,340 SOL
+- Non-circulating: 47,054,917 SOL
 
 ## Economic Indicators
 
 | Metric | Value |
 |---|---|
-| SOL price | $98 |
-| SOL 24h change | -0.55% |
-| SOL 24h volume | $3,489,828,502 |
-| SOL market cap | $57,256,941,774 |
+| SOL price | $97 |
+| SOL 24h change | -0.70% |
+| SOL 24h volume | $3,489,994,575 |
+| SOL market cap | $56,915,086,166 |
 | Solana chain TVL | $5,707,522,512 |
 | TVL change (24h) | -3.57% |
 | TVL change (7d) | -4.15% |
-| Stablecoin supply on Solana | $15,479,262,121 |
+| Stablecoin supply on Solana | $15,474,769,160 |
 | DEX volume (24h) | $2,703,297,666 |
 | Chain revenue / REV proxy (24h) | $5,218,298 |
 
