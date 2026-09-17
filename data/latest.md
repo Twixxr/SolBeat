@@ -1,10 +1,10 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-17T09:50:25.991976+00:00 (UTC)_
+_Generated: 2026-09-17T09:58:45.678064+00:00 (UTC)_
 
 ## Current Solana Outlook
 
-**Constructive** — Solana's current outlook is constructive. Positive signals: the network is operational; recent slot times remain healthy; SOL is up 1.8% over 7d. No major network-health warning is present in the latest automated snapshot.
+**Constructive** — Solana's current outlook is constructive. Positive signals: the network is operational; recent slot times remain healthy; SOL is up 1.6% over 7d. No major network-health warning is present in the latest automated snapshot.
 
 ## Alerts
 
@@ -15,20 +15,20 @@ _Generated: 2026-09-17T09:50:25.991976+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 447,765,279 |
-| Block height | 425,806,499 |
+| Current slot | 447,766,854 |
+| Block height | 425,808,075 |
 | Epoch | 1036 |
-| Epoch progress | 49.37% |
-| Current TPS | 3,738.98 |
-| Avg TPS | 3,527.58 |
+| Epoch progress | 49.73% |
+| Current TPS | 3,615.57 |
+| Avg TPS | 3,555.25 |
 | Max / Min TPS | 3,918.13 / 3,227.18 |
-| Avg slot time | 316.1 ms |
+| Avg slot time | 317.0 ms |
 
 ## Validator Status
 
 | Metric | Value |
 |---|---|
-| Active validators | 675 |
+| Active validators | 674 |
 | Delinquent validators | 16 |
 | Delinquent (% of active stake) | 0.12% |
 | Total active stake | 439,252,970 SOL |
@@ -45,8 +45,8 @@ _Generated: 2026-09-17T09:50:25.991976+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 634,204,700 SOL
-- Circulating: 587,212,274 SOL
+- Total: 634,204,695 SOL
+- Circulating: 587,212,269 SOL
 - Non-circulating: 46,992,427 SOL
 
 ## Economic Indicators
@@ -54,9 +54,9 @@ _Generated: 2026-09-17T09:50:25.991976+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | SOL price | $100 |
-| SOL 24h change | +3.30% |
-| SOL 24h volume | $3,506,066,907 |
-| SOL market cap | $58,974,909,690 |
+| SOL 24h change | +3.03% |
+| SOL 24h volume | $3,511,606,159 |
+| SOL market cap | $58,842,974,838 |
 | Solana chain TVL | $5,840,820,934 |
 | TVL change (24h) | +2.03% |
 | TVL change (7d) | -0.28% |
