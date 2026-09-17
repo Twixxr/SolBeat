@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-17T19:35:23.691558+00:00 (UTC)_
+_Generated: 2026-09-17T19:40:27.974929+00:00 (UTC)_
 
 ## Current Solana Outlook
 
@@ -15,23 +15,23 @@ _Generated: 2026-09-17T19:35:23.691558+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 447,875,977 |
-| Block height | 425,917,108 |
+| Current slot | 447,876,926 |
+| Block height | 425,918,055 |
 | Epoch | 1036 |
-| Epoch progress | 75.00% |
-| Current TPS | 5,154.80 |
-| Avg TPS | 4,783.92 |
-| Max / Min TPS | 5,196.23 / 4,124.75 |
-| Avg slot time | 318.5 ms |
+| Epoch progress | 75.21% |
+| Current TPS | 4,812.48 |
+| Avg TPS | 4,907.80 |
+| Max / Min TPS | 5,311.52 / 4,305.93 |
+| Avg slot time | 319.4 ms |
 
 ## Validator Status
 
 | Metric | Value |
 |---|---|
-| Active validators | 677 |
-| Delinquent validators | 13 |
+| Active validators | 678 |
+| Delinquent validators | 12 |
 | Delinquent (% of active stake) | 0.04% |
-| Total active stake | 439,585,202 SOL |
+| Total active stake | 439,603,235 SOL |
 | Validators controlling 33% of stake | 18 |
 
 ## Network Activity
@@ -45,8 +45,8 @@ _Generated: 2026-09-17T19:35:23.691558+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 634,204,304 SOL
-- Circulating: 587,211,876 SOL
+- Total: 634,204,300 SOL
+- Circulating: 587,211,872 SOL
 - Non-circulating: 46,992,427 SOL
 
 ## Economic Indicators
@@ -54,15 +54,15 @@ _Generated: 2026-09-17T19:35:23.691558+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | SOL price | $101 |
-| SOL 24h change | +3.17% |
-| SOL 24h volume | $3,322,692,065 |
-| SOL market cap | $59,236,570,999 |
+| SOL 24h change | +3.21% |
+| SOL 24h volume | $3,313,690,997 |
+| SOL market cap | $59,228,917,161 |
 | Solana chain TVL | $5,870,438,834 |
 | TVL change (24h) | +2.55% |
 | TVL change (7d) | +0.23% |
 | Stablecoin supply on Solana | $16,369,491,632 |
 | DEX volume (24h) | $2,800,249,070 |
-| Chain revenue / REV proxy (24h) | $4,913,879 |
+| Chain revenue / REV proxy (24h) | $4,914,149 |
 
 ## Ecosystem & Community Watchlist
 
