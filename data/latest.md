@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-18T01:05:29.170730+00:00 (UTC)_
+_Generated: 2026-09-18T01:10:26.614850+00:00 (UTC)_
 
 ## Current Solana Outlook
 
@@ -15,23 +15,23 @@ _Generated: 2026-09-18T01:05:29.170730+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 447,938,390 |
-| Block height | 425,979,472 |
+| Current slot | 447,939,323 |
+| Block height | 425,980,403 |
 | Epoch | 1036 |
-| Epoch progress | 89.44% |
-| Current TPS | 4,001.07 |
-| Avg TPS | 4,017.45 |
-| Max / Min TPS | 4,433.20 / 3,466.60 |
-| Avg slot time | 315.4 ms |
+| Epoch progress | 89.66% |
+| Current TPS | 4,074.68 |
+| Avg TPS | 4,029.40 |
+| Max / Min TPS | 4,425.08 / 3,569.40 |
+| Avg slot time | 315.6 ms |
 
 ## Validator Status
 
 | Metric | Value |
 |---|---|
-| Active validators | 677 |
-| Delinquent validators | 13 |
-| Delinquent (% of active stake) | 0.04% |
-| Total active stake | 439,585,188 SOL |
+| Active validators | 676 |
+| Delinquent validators | 14 |
+| Delinquent (% of active stake) | 0.06% |
+| Total active stake | 439,490,981 SOL |
 | Validators controlling 33% of stake | 18 |
 
 ## Network Activity
@@ -45,8 +45,8 @@ _Generated: 2026-09-18T01:05:29.170730+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 634,204,075 SOL
-- Circulating: 587,211,648 SOL
+- Total: 634,204,072 SOL
+- Circulating: 587,211,645 SOL
 - Non-circulating: 46,992,427 SOL
 
 ## Economic Indicators
@@ -55,13 +55,13 @@ _Generated: 2026-09-18T01:05:29.170730+00:00 (UTC)_
 |---|---|
 | SOL price | $101 |
 | SOL 24h change | +2.93% |
-| SOL 24h volume | $3,240,224,590 |
-| SOL market cap | $59,536,725,815 |
+| SOL 24h volume | $3,242,418,976 |
+| SOL market cap | $59,573,481,786 |
 | Solana chain TVL | $5,876,167,433 |
 | TVL change (24h) | +2.65% |
 | TVL change (7d) | +0.33% |
 | Stablecoin supply on Solana | $15,403,573,147 |
-| DEX volume (24h) | $2,555,388,156 |
+| DEX volume (24h) | $2,699,535,109 |
 | Chain revenue / REV proxy (24h) | $5,198,859 |
 
 ## Ecosystem & Community Watchlist
