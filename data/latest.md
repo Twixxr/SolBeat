@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-19T17:40:30.813717+00:00 (UTC)_
+_Generated: 2026-09-19T17:45:28.076890+00:00 (UTC)_
 
 ## Current Solana Outlook
 
@@ -15,23 +15,23 @@ _Generated: 2026-09-19T17:40:30.813717+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 448,477,765 |
-| Block height | 426,518,566 |
+| Current slot | 448,478,874 |
+| Block height | 426,519,671 |
 | Epoch | 1038 |
-| Epoch progress | 14.30% |
-| Current TPS | 4,886.68 |
-| Avg TPS | 5,216.53 |
-| Max / Min TPS | 5,780.53 / 4,795.60 |
-| Avg slot time | 268.7 ms |
+| Epoch progress | 14.55% |
+| Current TPS | 4,584.53 |
+| Avg TPS | 5,078.65 |
+| Max / Min TPS | 5,780.53 / 4,554.93 |
+| Avg slot time | 268.2 ms |
 
 ## Validator Status
 
 | Metric | Value |
 |---|---|
-| Active validators | 677 |
-| Delinquent validators | 13 |
-| Delinquent (% of active stake) | 0.04% |
-| Total active stake | 440,069,130 SOL |
+| Active validators | 676 |
+| Delinquent validators | 14 |
+| Delinquent (% of active stake) | 0.15% |
+| Total active stake | 439,549,909 SOL |
 | Validators controlling 33% of stake | 18 |
 
 ## Network Activity
@@ -45,21 +45,21 @@ _Generated: 2026-09-19T17:40:30.813717+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 634,376,268 SOL
-- Circulating: 587,367,796 SOL
+- Total: 634,376,264 SOL
+- Circulating: 587,367,792 SOL
 - Non-circulating: 47,008,472 SOL
 
 ## Economic Indicators
 
 | Metric | Value |
 |---|---|
-| SOL price | $111 |
-| SOL 24h change | -0.63% |
-| SOL 24h volume | $3,560,077,119 |
-| SOL market cap | $65,447,433,944 |
-| Solana chain TVL | $6,242,545,729 |
-| TVL change (24h) | +5.86% |
-| TVL change (7d) | +5.81% |
+| SOL price | $112 |
+| SOL 24h change | -0.82% |
+| SOL 24h volume | $3,553,137,979 |
+| SOL market cap | $65,482,723,792 |
+| Solana chain TVL | $6,243,085,069 |
+| TVL change (24h) | +5.87% |
+| TVL change (7d) | +5.82% |
 | Stablecoin supply on Solana | $16,572,499,995 |
 | DEX volume (24h) | $3,536,797,881 |
 | Chain revenue / REV proxy (24h) | $6,167,298 |
