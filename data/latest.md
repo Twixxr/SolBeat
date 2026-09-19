@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-19T17:25:26.152303+00:00 (UTC)_
+_Generated: 2026-09-19T17:30:31.973190+00:00 (UTC)_
 
 ## Current Solana Outlook
 
@@ -15,14 +15,14 @@ _Generated: 2026-09-19T17:25:26.152303+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 448,474,381 |
-| Block height | 426,515,182 |
+| Current slot | 448,475,513 |
+| Block height | 426,516,314 |
 | Epoch | 1038 |
-| Epoch progress | 13.51% |
-| Current TPS | 5,094.42 |
-| Avg TPS | 5,034.45 |
-| Max / Min TPS | 5,780.53 / 4,056.50 |
-| Avg slot time | 268.4 ms |
+| Epoch progress | 13.78% |
+| Current TPS | 4,910.60 |
+| Avg TPS | 5,199.43 |
+| Max / Min TPS | 5,718.55 / 4,706.55 |
+| Avg slot time | 268.7 ms |
 
 ## Validator Status
 
@@ -45,8 +45,8 @@ _Generated: 2026-09-19T17:25:26.152303+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 634,376,280 SOL
-- Circulating: 587,367,808 SOL
+- Total: 634,376,275 SOL
+- Circulating: 587,367,804 SOL
 - Non-circulating: 47,008,472 SOL
 
 ## Economic Indicators
@@ -54,9 +54,9 @@ _Generated: 2026-09-19T17:25:26.152303+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | SOL price | $112 |
-| SOL 24h change | -0.02% |
-| SOL 24h volume | $3,606,205,380 |
-| SOL market cap | $65,705,459,909 |
+| SOL 24h change | -0.51% |
+| SOL 24h volume | $3,540,990,300 |
+| SOL market cap | $65,543,948,904 |
 | Solana chain TVL | $6,243,085,069 |
 | TVL change (24h) | +5.87% |
 | TVL change (7d) | +5.82% |
