@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-22T15:20:34.214621+00:00 (UTC)_
+_Generated: 2026-09-22T15:25:35.479401+00:00 (UTC)_
 
 ## Current Solana Outlook
 
@@ -15,24 +15,24 @@ _Generated: 2026-09-22T15:20:34.214621+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 449,417,540 |
-| Block height | 427,457,913 |
+| Current slot | 449,418,633 |
+| Block height | 427,459,000 |
 | Epoch | 1040 |
-| Epoch progress | 31.84% |
-| Current TPS | 4,777.50 |
-| Avg TPS | 4,810.16 |
-| Max / Min TPS | 5,046.58 / 4,489.52 |
+| Epoch progress | 32.09% |
+| Current TPS | 4,820.68 |
+| Avg TPS | 4,783.97 |
+| Max / Min TPS | 5,067.80 / 4,505.52 |
 | Avg slot time | 268.1 ms |
 
 ## Validator Status
 
 | Metric | Value |
 |---|---|
-| Active validators | 676 |
-| Delinquent validators | 13 |
-| Delinquent (% of active stake) | 0.48% |
-| Total active stake | 437,749,740 SOL |
-| Validators controlling 33% of stake | 17 |
+| Active validators | 675 |
+| Delinquent validators | 14 |
+| Delinquent (% of active stake) | 0.17% |
+| Total active stake | 439,129,774 SOL |
+| Validators controlling 33% of stake | 18 |
 
 ## Network Activity
 
@@ -45,8 +45,8 @@ _Generated: 2026-09-22T15:20:34.214621+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 634,531,285 SOL
-- Circulating: 587,507,657 SOL
+- Total: 634,531,281 SOL
+- Circulating: 587,507,654 SOL
 - Non-circulating: 47,023,628 SOL
 
 ## Economic Indicators
@@ -54,13 +54,13 @@ _Generated: 2026-09-22T15:20:34.214621+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | SOL price | $117 |
-| SOL 24h change | -0.90% |
-| SOL 24h volume | $5,158,208,808 |
-| SOL market cap | $68,795,053,887 |
-| Solana chain TVL | $6,466,700,027 |
-| TVL change (24h) | +4.20% |
+| SOL 24h change | -0.24% |
+| SOL 24h volume | $5,158,483,937 |
+| SOL market cap | $68,978,893,791 |
+| Solana chain TVL | $6,466,855,802 |
+| TVL change (24h) | +4.21% |
 | TVL change (7d) | +9.26% |
-| Stablecoin supply on Solana | $15,835,043,207 |
+| Stablecoin supply on Solana | $15,847,216,807 |
 | DEX volume (24h) | $3,428,858,821 |
 | Chain revenue / REV proxy (24h) | $7,791,477 |
 
