@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-22T10:20:31.980738+00:00 (UTC)_
+_Generated: 2026-09-22T10:25:31.421399+00:00 (UTC)_
 
 ## Current Solana Outlook
 
@@ -15,23 +15,23 @@ _Generated: 2026-09-22T10:20:31.980738+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 449,350,034 |
-| Block height | 427,390,450 |
+| Current slot | 449,351,178 |
+| Block height | 427,391,593 |
 | Epoch | 1040 |
-| Epoch progress | 16.21% |
-| Current TPS | 3,892.22 |
-| Avg TPS | 3,910.87 |
-| Max / Min TPS | 4,316.08 / 3,587.48 |
-| Avg slot time | 265.9 ms |
+| Epoch progress | 16.48% |
+| Current TPS | 3,824.52 |
+| Avg TPS | 3,892.41 |
+| Max / Min TPS | 4,299.80 / 3,588.08 |
+| Avg slot time | 265.4 ms |
 
 ## Validator Status
 
 | Metric | Value |
 |---|---|
-| Active validators | 675 |
-| Delinquent validators | 14 |
-| Delinquent (% of active stake) | 0.33% |
-| Total active stake | 438,407,213 SOL |
+| Active validators | 676 |
+| Delinquent validators | 13 |
+| Delinquent (% of active stake) | 0.10% |
+| Total active stake | 439,443,890 SOL |
 | Validators controlling 33% of stake | 18 |
 
 ## Network Activity
@@ -45,8 +45,8 @@ _Generated: 2026-09-22T10:20:31.980738+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 634,531,492 SOL
-- Circulating: 587,507,864 SOL
+- Total: 634,531,489 SOL
+- Circulating: 587,507,861 SOL
 - Non-circulating: 47,023,628 SOL
 
 ## Economic Indicators
@@ -54,15 +54,15 @@ _Generated: 2026-09-22T10:20:31.980738+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | SOL price | $117 |
-| SOL 24h change | +1.06% |
-| SOL 24h volume | $6,096,593,130 |
-| SOL market cap | $68,769,286,939 |
+| SOL 24h change | +1.01% |
+| SOL 24h volume | $6,147,198,382 |
+| SOL market cap | $68,715,700,470 |
 | Solana chain TVL | $6,426,160,622 |
 | TVL change (24h) | +3.55% |
 | TVL change (7d) | +8.58% |
-| Stablecoin supply on Solana | $16,578,154,924 |
+| Stablecoin supply on Solana | $15,851,819,967 |
 | DEX volume (24h) | $3,370,343,442 |
-| Chain revenue / REV proxy (24h) | $7,352,515 |
+| Chain revenue / REV proxy (24h) | $7,352,014 |
 
 ## Ecosystem & Community Watchlist
 
