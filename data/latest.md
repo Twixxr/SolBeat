@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-23T10:40:31.545986+00:00 (UTC)_
+_Generated: 2026-09-23T10:45:34.871383+00:00 (UTC)_
 
 ## Current Solana Outlook
 
@@ -15,23 +15,23 @@ _Generated: 2026-09-23T10:40:31.545986+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 449,678,956 |
-| Block height | 427,719,235 |
+| Current slot | 449,680,122 |
+| Block height | 427,720,402 |
 | Epoch | 1040 |
-| Epoch progress | 92.35% |
-| Current TPS | 3,977.00 |
-| Avg TPS | 3,980.66 |
-| Max / Min TPS | 4,230.12 / 3,795.15 |
+| Epoch progress | 92.62% |
+| Current TPS | 3,760.02 |
+| Avg TPS | 3,950.14 |
+| Max / Min TPS | 4,286.75 / 3,755.37 |
 | Avg slot time | 263.9 ms |
 
 ## Validator Status
 
 | Metric | Value |
 |---|---|
-| Active validators | 676 |
-| Delinquent validators | 12 |
-| Delinquent (% of active stake) | 0.04% |
-| Total active stake | 439,661,998 SOL |
+| Active validators | 675 |
+| Delinquent validators | 13 |
+| Delinquent (% of active stake) | 0.05% |
+| Total active stake | 439,647,672 SOL |
 | Validators controlling 33% of stake | 18 |
 
 ## Network Activity
@@ -45,8 +45,8 @@ _Generated: 2026-09-23T10:40:31.545986+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 634,530,474 SOL
-- Circulating: 587,506,847 SOL
+- Total: 634,530,471 SOL
+- Circulating: 587,506,844 SOL
 - Non-circulating: 47,023,628 SOL
 
 ## Economic Indicators
@@ -54,15 +54,15 @@ _Generated: 2026-09-23T10:40:31.545986+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | SOL price | $117 |
-| SOL 24h change | +0.48% |
-| SOL 24h volume | $4,456,120,482 |
-| SOL market cap | $68,961,682,573 |
+| SOL 24h change | +0.63% |
+| SOL 24h volume | $4,302,522,000 |
+| SOL market cap | $68,999,756,601 |
 | Solana chain TVL | $6,511,260,140 |
 | TVL change (24h) | +0.81% |
 | TVL change (7d) | +13.74% |
 | Stablecoin supply on Solana | $16,103,435,016 |
-| DEX volume (24h) | $3,449,152,863 |
-| Chain revenue / REV proxy (24h) | $6,854,110 |
+| DEX volume (24h) | $3,340,959,245 |
+| Chain revenue / REV proxy (24h) | $6,854,485 |
 
 ## Ecosystem & Community Watchlist
 
