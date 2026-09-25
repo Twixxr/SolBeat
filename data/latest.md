@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-25T02:10:31.852607+00:00 (UTC)_
+_Generated: 2026-09-25T02:15:31.222688+00:00 (UTC)_
 
 ## Current Solana Outlook
 
@@ -15,23 +15,23 @@ _Generated: 2026-09-25T02:10:31.852607+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 450,213,654 |
-| Block height | 428,253,643 |
+| Current slot | 450,214,780 |
+| Block height | 428,254,768 |
 | Epoch | 1042 |
-| Epoch progress | 16.12% |
-| Current TPS | 4,449.55 |
-| Avg TPS | 4,269.11 |
-| Max / Min TPS | 4,953.95 / 3,764.37 |
-| Avg slot time | 268.5 ms |
+| Epoch progress | 16.38% |
+| Current TPS | 4,274.43 |
+| Avg TPS | 4,286.97 |
+| Max / Min TPS | 4,909.42 / 3,744.30 |
+| Avg slot time | 268.3 ms |
 
 ## Validator Status
 
 | Metric | Value |
 |---|---|
-| Active validators | 675 |
-| Delinquent validators | 10 |
-| Delinquent (% of active stake) | 0.03% |
-| Total active stake | 440,528,828 SOL |
+| Active validators | 674 |
+| Delinquent validators | 11 |
+| Delinquent (% of active stake) | 0.08% |
+| Total active stake | 440,302,946 SOL |
 | Validators controlling 33% of stake | 18 |
 
 ## Network Activity
@@ -45,8 +45,8 @@ _Generated: 2026-09-25T02:10:31.852607+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 634,686,576 SOL
-- Circulating: 587,648,034 SOL
+- Total: 634,686,573 SOL
+- Circulating: 587,648,031 SOL
 - Non-circulating: 47,038,542 SOL
 
 ## Economic Indicators
@@ -54,14 +54,14 @@ _Generated: 2026-09-25T02:10:31.852607+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | SOL price | $118 |
-| SOL 24h change | +3.43% |
-| SOL 24h volume | $4,393,760,741 |
-| SOL market cap | $69,410,404,865 |
+| SOL 24h change | +3.33% |
+| SOL 24h volume | $4,413,942,769 |
+| SOL market cap | $69,440,417,341 |
 | Solana chain TVL | $6,487,369,348 |
 | TVL change (24h) | +0.54% |
 | TVL change (7d) | +10.01% |
 | Stablecoin supply on Solana | $17,393,476,301 |
-| DEX volume (24h) | $2,262,640,989 |
+| DEX volume (24h) | $2,262,604,262 |
 | Chain revenue / REV proxy (24h) | $5,941,046 |
 
 ## Ecosystem & Community Watchlist
