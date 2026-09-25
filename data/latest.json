@@ -1,27 +1,27 @@
 {
   "report": {
     "meta": {
-      "generated_at_utc": "2026-09-25T16:30:37.672246+00:00",
-      "generated_at_unix": 1790353837,
+      "generated_at_utc": "2026-09-25T16:35:31.180735+00:00",
+      "generated_at_unix": 1790354131,
       "generator": "SolBeat",
       "version": "1.1"
     },
     "network_performance": {
       "health": "ok",
-      "current_slot": 450406915,
-      "block_time_unix": 1790353830,
+      "current_slot": 450408017,
+      "block_time_unix": 1790354126,
       "epoch": 1042,
-      "slot_index": 262915,
+      "slot_index": 264018,
       "slots_in_epoch": 432000,
-      "epoch_progress_pct": 60.86,
-      "block_height": 428446799,
-      "current_tps": 4707.93,
-      "avg_tps": 5065.72,
+      "epoch_progress_pct": 61.12,
+      "block_height": 428447902,
+      "current_tps": 5331.32,
+      "avg_tps": 5080.32,
       "max_tps": 5439.7,
       "min_tps": 4561.68,
       "samples_used": 30,
-      "avg_slot_time_ms": 267.6,
-      "collected_at_unix": 1790353840
+      "avg_slot_time_ms": 268.0,
+      "collected_at_unix": 1790354136
     },
     "validators": {
       "active_count": 675,
@@ -37,8 +37,8 @@
           "node_pubkey": "Fd7btgySsrjuo25CJCj7oE7VPMyezDhnx7pZkj2v69Nk",
           "activated_stake_sol": 17819006.99,
           "commission_pct": 7,
-          "last_vote": 450406908,
-          "root_slot": 450406877,
+          "last_vote": 450408012,
+          "root_slot": 450407981,
           "name": "Figment",
           "website": ""
         },
@@ -47,8 +47,8 @@
           "node_pubkey": "HEL1USMZKAL2odpNBj2oCjffnFGaYwmbGmyewGv1e2TU",
           "activated_stake_sol": 15817078.8,
           "commission_pct": 0,
-          "last_vote": 450406908,
-          "root_slot": 450406877,
+          "last_vote": 450408012,
+          "root_slot": 450407981,
           "name": "Helius",
           "website": "https://helius.dev"
         },
@@ -57,8 +57,8 @@
           "node_pubkey": "DRpbCBMxVnDK7maPM5tGv6MvB3v1sRMC86PZ8okm21hy",
           "activated_stake_sol": 12387903.95,
           "commission_pct": 0,
-          "last_vote": 450406908,
-          "root_slot": 450406877,
+          "last_vote": 450408012,
+          "root_slot": 450407981,
           "name": "binance staking",
           "website": "https://www.binance.com"
         },
@@ -67,8 +67,8 @@
           "node_pubkey": "JUPiTERrZqgf1jUyR7dSkhMx4Kn2qJyekWsg3LT1h4b",
           "activated_stake_sol": 11274982.49,
           "commission_pct": 5,
-          "last_vote": 450406908,
-          "root_slot": 450406877,
+          "last_vote": 450408012,
+          "root_slot": 450407981,
           "name": "Jupiter",
           "website": "https://jup.ag"
         },
@@ -77,8 +77,8 @@
           "node_pubkey": "E1r4Psq84tHfQ6aPTvvDka4U3u8zPVD7gEUrH25RdxHL",
           "activated_stake_sol": 10595498.78,
           "commission_pct": 0,
-          "last_vote": 450406908,
-          "root_slot": 450406877,
+          "last_vote": 450408012,
+          "root_slot": 450407981,
           "name": "Bitwise Onchain Solutions",
           "website": "https://bitwiseinvestments.com"
         },
@@ -87,8 +87,8 @@
           "node_pubkey": "C8Bey3LKVJHVqN6xPTeW8WJfUgFQAeGNBpT4Rp99JP1k",
           "activated_stake_sol": 9221892.64,
           "commission_pct": 7,
-          "last_vote": 450406908,
-          "root_slot": 450406877,
+          "last_vote": 450408012,
+          "root_slot": 450407981,
           "name": "Ledger by Figment",
           "website": "https://www.ledger.com/staking"
         },
@@ -97,8 +97,8 @@
           "node_pubkey": "CAo1dCGYrB6NhHh5xb1cGjUiu86iyCfMTENxgHumSve4",
           "activated_stake_sol": 9163087.97,
           "commission_pct": 10,
-          "last_vote": 450406908,
-          "root_slot": 450406877,
+          "last_vote": 450408012,
+          "root_slot": 450407981,
           "name": "Kraken 2",
           "website": "https://www.kraken.com/"
         },
@@ -107,8 +107,8 @@
           "node_pubkey": "EvnRmnMrd69kFdbLMxWkTn1icZ7DCceRhvmb2SJXqDo4",
           "activated_stake_sol": 7599959.38,
           "commission_pct": 7,
-          "last_vote": 450406908,
-          "root_slot": 450406877,
+          "last_vote": 450408012,
+          "root_slot": 450407981,
           "name": "Everstake",
           "website": "https://everstake.com"
         },
@@ -117,8 +117,8 @@
           "node_pubkey": "9eGrDohdNTAo61DRHyfMuqKWXqYnA3i254Wiszxe8FoY",
           "activated_stake_sol": 7091910.61,
           "commission_pct": 5,
-          "last_vote": 450406908,
-          "root_slot": 450406877,
+          "last_vote": 450408012,
+          "root_slot": 450407981,
           "name": "Galaxy",
           "website": "https://galaxy.com/staking"
         },
@@ -127,8 +127,8 @@
           "node_pubkey": "Awes4Tr6TX8JDzEhCZY2QVNimT6iD1zWHzf1vNyGvpLM",
           "activated_stake_sol": 6557886.69,
           "commission_pct": 0,
-          "last_vote": 450406908,
-          "root_slot": 450406877,
+          "last_vote": 450408012,
+          "root_slot": 450407981,
           "name": "Staking Facilities | MEV \ud83d\udd25",
           "website": "https://stakingfacilities.com"
         },
@@ -137,8 +137,8 @@
           "node_pubkey": "JD549HsbJHeEKKUrKgg4Fj2iyv2RGjsV7NTZjZUrHybB",
           "activated_stake_sol": 6151251.52,
           "commission_pct": 0,
-          "last_vote": 450406908,
-          "root_slot": 450406877,
+          "last_vote": 450408012,
+          "root_slot": 450407981,
           "name": "Forward Industries",
           "website": "https://sol.forwardindustries.com"
         },
@@ -147,8 +147,8 @@
           "node_pubkey": "9jxgosAfHgHzwnxsHw4RAZYaLVokMbnYtmiZBreynGFP",
           "activated_stake_sol": 6002951.11,
           "commission_pct": 100,
-          "last_vote": 450406908,
-          "root_slot": 450406877,
+          "last_vote": 450408012,
+          "root_slot": 450407981,
           "name": null,
           "website": null
         },
@@ -157,8 +157,8 @@
           "node_pubkey": "5pPRHniefFjkiaArbGX3Y8NUysJmQ9tMZg3FrFGwHzSm",
           "activated_stake_sol": 5938497.36,
           "commission_pct": 5,
-          "last_vote": 450406908,
-          "root_slot": 450406877,
+          "last_vote": 450408011,
+          "root_slot": 450407980,
           "name": "Kiln1",
           "website": "https://kiln.fi"
         },
@@ -167,8 +167,8 @@
           "node_pubkey": "5Cchr1XGEg7dbBXByV5NY2ad8jfxAM7HA3x8D56rq9Ux",
           "activated_stake_sol": 5621480.08,
           "commission_pct": 100,
-          "last_vote": 450406908,
-          "root_slot": 450406877,
+          "last_vote": 450408012,
+          "root_slot": 450407981,
           "name": "Upbit Staking",
           "website": "https://upbit.com/staking"
         },
@@ -177,8 +177,8 @@
           "node_pubkey": "GnC339vkyXRm1jRX69dt9mapPPu2LbzXfSDoxc91qta6",
           "activated_stake_sol": 4830936.49,
           "commission_pct": 7,
-          "last_vote": 450406908,
-          "root_slot": 450406877,
+          "last_vote": 450408012,
+          "root_slot": 450407981,
           "name": "P2P.org",
           "website": "https://p2p.org"
         },
@@ -187,8 +187,8 @@
           "node_pubkey": "9rkJMARqK6VBkcxGfKBAwnA44gPAfGxPbPsfsggFNDSQ",
           "activated_stake_sol": 4699478.59,
           "commission_pct": 8,
-          "last_vote": 450406908,
-          "root_slot": 450406877,
+          "last_vote": 450408012,
+          "root_slot": 450407981,
           "name": null,
           "website": null
         },
@@ -197,8 +197,8 @@
           "node_pubkey": "EkvdKhULbMFqjKBKotAzGi3kwMvMpYNDKJXXQQmi6C1f",
           "activated_stake_sol": 4106051.16,
           "commission_pct": 100,
-          "last_vote": 450406908,
-          "root_slot": 450406877,
+          "last_vote": 450408012,
+          "root_slot": 450407981,
           "name": null,
           "website": null
         },
@@ -207,8 +207,8 @@
           "node_pubkey": "BtsmiEEvnSuUnKxqXj2PZRYpPJAc7C34mGz8gtJ1DAaH",
           "activated_stake_sol": 4054287.4,
           "commission_pct": 100,
-          "last_vote": 450406908,
-          "root_slot": 450406877,
+          "last_vote": 450408012,
+          "root_slot": 450407981,
           "name": null,
           "website": null
         },
@@ -217,8 +217,8 @@
           "node_pubkey": "FBKFWadXZJahGtFitAsBvbqh5968gLY7dMBBJUoUjeNi",
           "activated_stake_sol": 4049337.05,
           "commission_pct": 100,
-          "last_vote": 450406908,
-          "root_slot": 450406877,
+          "last_vote": 450408012,
+          "root_slot": 450407981,
           "name": null,
           "website": null
         },
@@ -227,8 +227,8 @@
           "node_pubkey": "5ZqveVffQPiUbkjBg4KD9kib1MKHLqiFno4ke9jSq9qk",
           "activated_stake_sol": 3996290.77,
           "commission_pct": 100,
-          "last_vote": 450406908,
-          "root_slot": 450406877,
+          "last_vote": 450408012,
+          "root_slot": 450407981,
           "name": null,
           "website": null
         }
@@ -238,8 +238,8 @@
       }
     },
     "supply": {
-      "total_sol": 634685992.58,
-      "circulating_sol": 587653398.16,
+      "total_sol": 634685988.65,
+      "circulating_sol": 587653394.23,
       "non_circulating_sol": 47032594.42
     },
     "active_wallets_sample": {
@@ -293,7 +293,7 @@
           },
           {
             "name": "Raydium AMM",
-            "volume_24h_usd": 283374432
+            "volume_24h_usd": 292887328
           },
           {
             "name": "Meteora DLMM",
@@ -304,12 +304,12 @@
             "volume_24h_usd": 190332051
           },
           {
-            "name": "PumpSwap",
-            "volume_24h_usd": 133758513
+            "name": "Manifest Trade",
+            "volume_24h_usd": 133791134
           },
           {
-            "name": "Manifest Trade",
-            "volume_24h_usd": 129947312
+            "name": "PumpSwap",
+            "volume_24h_usd": 133758513
           },
           {
             "name": "pump.fun",
@@ -714,10 +714,10 @@
     },
     "market": {
       "price": {
-        "price_usd": 121.27,
-        "price_change_pct_24h": 3.43,
-        "volume_24h_usd": 6164506351.4122,
-        "market_cap_usd": 71270477907.38321
+        "price_usd": 121.63,
+        "price_change_pct_24h": 3.99,
+        "volume_24h_usd": 6196481104.863509,
+        "market_cap_usd": 71359195837.27936
       },
       "trend_7d": {
         "seven_day_series": [
@@ -750,8 +750,8 @@
             "price_usd": 117.0095
           },
           {
-            "date_unix": 1790353740,
-            "price_usd": 121.2538
+            "date_unix": 1790354040,
+            "price_usd": 121.3721
           }
         ]
       }
@@ -7335,43 +7335,43 @@
           },
           {
             "date_unix": 1740960000,
-            "value": 5287385251
+            "value": 5287385295
           },
           {
             "date_unix": 1741046400,
-            "value": 4290500930
+            "value": 4290501027
           },
           {
             "date_unix": 1741132800,
-            "value": 3026104408
+            "value": 3026104673
           },
           {
             "date_unix": 1741219200,
-            "value": 3266010830
+            "value": 3266010924
           },
           {
             "date_unix": 1741305600,
-            "value": 4307761824
+            "value": 4307761966
           },
           {
             "date_unix": 1741392000,
-            "value": 1901290486
+            "value": 1901290508
           },
           {
             "date_unix": 1741478400,
-            "value": 2415545417
+            "value": 2415545419.87
           },
           {
             "date_unix": 1741564800,
-            "value": 3393624486
+            "value": 3393624681
           },
           {
             "date_unix": 1741651200,
-            "value": 3556074440
+            "value": 3556074459
           },
           {
             "date_unix": 1741737600,
-            "value": 2800246045
+            "value": 2800246048.75
           },
           {
             "date_unix": 1741824000,
@@ -7395,11 +7395,11 @@
           },
           {
             "date_unix": 1742256000,
-            "value": 1590561870
+            "value": 1590561876.58
           },
           {
             "date_unix": 1742342400,
-            "value": 2220558031
+            "value": 2220558166
           },
           {
             "date_unix": 1742428800,
@@ -7419,11 +7419,11 @@
           },
           {
             "date_unix": 1742774400,
-            "value": 2522062285
+            "value": 2522062288.49
           },
           {
             "date_unix": 1742860800,
-            "value": 2438695216
+            "value": 2438695230
           },
           {
             "date_unix": 1742947200,
@@ -7435,11 +7435,11 @@
           },
           {
             "date_unix": 1743120000,
-            "value": 2354208293
+            "value": 2354208306
           },
           {
             "date_unix": 1743206400,
-            "value": 1784831599
+            "value": 1784831615
           },
           {
             "date_unix": 1743292800,
@@ -7455,15 +7455,15 @@
           },
           {
             "date_unix": 1743552000,
-            "value": 3187983567
+            "value": 3187983783
           },
           {
             "date_unix": 1743638400,
-            "value": 2576061437
+            "value": 2576062426
           },
           {
             "date_unix": 1743724800,
-            "value": 2892370867
+            "value": 2892371258
           },
           {
             "date_unix": 1743811200,
@@ -7471,51 +7471,51 @@
           },
           {
             "date_unix": 1743897600,
-            "value": 2376631215
+            "value": 2376631432
           },
           {
             "date_unix": 1743984000,
-            "value": 4363976965
+            "value": 4363977471
           },
           {
             "date_unix": 1744070400,
-            "value": 2759974963
+            "value": 2759975561
           },
           {
             "date_unix": 1744156800,
-            "value": 3996577412
+            "value": 3996577885
           },
           {
             "date_unix": 1744243200,
-            "value": 2378912339
+            "value": 2378912457
           },
           {
             "date_unix": 1744329600,
-            "value": 2705089242
+            "value": 2705089991
           },
           {
             "date_unix": 1744416000,
-            "value": 2750884980
+            "value": 2750886844
           },
           {
             "date_unix": 1744502400,
-            "value": 2792204083
+            "value": 2792204460
           },
           {
             "date_unix": 1744588800,
-            "value": 3270868379
+            "value": 3270869102
           },
           {
             "date_unix": 1744675200,
-            "value": 3308087052
+            "value": 3308087811
           },
           {
             "date_unix": 1744761600,
-            "value": 3567329804
+            "value": 3567329813.42
           },
           {
             "date_unix": 1744848000,
-            "value": 2965870830
+            "value": 2965871035
           },
           {
             "date_unix": 1744934400,
@@ -7523,99 +7523,99 @@
           },
           {
             "date_unix": 1745020800,
-            "value": 2177817872
+            "value": 2177817932
           },
           {
             "date_unix": 1745107200,
-            "value": 2096906481
+            "value": 2096906486.25
           },
           {
             "date_unix": 1745193600,
-            "value": 2876260161
+            "value": 2876260184
           },
           {
             "date_unix": 1745280000,
-            "value": 3567544657
+            "value": 3567544668
           },
           {
             "date_unix": 1745366400,
-            "value": 4906408189
+            "value": 4906408282
           },
           {
             "date_unix": 1745452800,
-            "value": 3830832759
+            "value": 3830833053
           },
           {
             "date_unix": 1745539200,
-            "value": 4503547695
+            "value": 4503548287
           },
           {
             "date_unix": 1745625600,
-            "value": 3361035153
+            "value": 3361035513
           },
           {
             "date_unix": 1745712000,
-            "value": 3056743153
+            "value": 3056743485
           },
           {
             "date_unix": 1745798400,
-            "value": 4318529239
+            "value": 4318529575
           },
           {
             "date_unix": 1745884800,
-            "value": 3855497024
+            "value": 3855497514
           },
           {
             "date_unix": 1745971200,
-            "value": 4024837094
+            "value": 4024837224
           },
           {
             "date_unix": 1746057600,
-            "value": 4061139552
+            "value": 4061139575
           },
           {
             "date_unix": 1746144000,
-            "value": 3258445074
+            "value": 3258445469
           },
           {
             "date_unix": 1746230400,
-            "value": 3079361782
+            "value": 3079362326
           },
           {
             "date_unix": 1746316800,
-            "value": 3128878302
+            "value": 3128878328
           },
           {
             "date_unix": 1746403200,
-            "value": 4420488289
+            "value": 4420488320
           },
           {
             "date_unix": 1746489600,
-            "value": 2919510202
+            "value": 2919510286
           },
           {
             "date_unix": 1746576000,
-            "value": 3470205620
+            "value": 3470205770
           },
           {
             "date_unix": 1746662400,
-            "value": 4897894025
+            "value": 4897894684
           },
           {
             "date_unix": 1746748800,
-            "value": 5629258025
+            "value": 5629258314
           },
           {
             "date_unix": 1746835200,
-            "value": 4593912996
+            "value": 4593913066
           },
           {
             "date_unix": 1746921600,
-            "value": 7019887318
+            "value": 7019887396
           },
           {
             "date_unix": 1747008000,
-            "value": 9325342182
+            "value": 9325342251
           },
           {
             "date_unix": 1747094400,
@@ -7643,7 +7643,7 @@
           },
           {
             "date_unix": 1747612800,
-            "value": 3887195774
+            "value": 3887195776.48
           },
           {
             "date_unix": 1747699200,
@@ -7703,27 +7703,27 @@
           },
           {
             "date_unix": 1748908800,
-            "value": 3089339108
+            "value": 3089339241
           },
           {
             "date_unix": 1748995200,
-            "value": 2614280544
+            "value": 2614280906
           },
           {
             "date_unix": 1749081600,
-            "value": 3676937749
+            "value": 3676937874
           },
           {
             "date_unix": 1749168000,
-            "value": 2828060889
+            "value": 2828061050
           },
           {
             "date_unix": 1749254400,
-            "value": 1999772556
+            "value": 1999772562.61
           },
           {
             "date_unix": 1749340800,
-            "value": 1945804705
+            "value": 1945804710.63
           },
           {
             "date_unix": 1749427200,
@@ -7779,7 +7779,7 @@
           },
           {
             "date_unix": 1750550400,
-            "value": 3320314921
+            "value": 3320314929.15
           },
           {
             "date_unix": 1750636800,
@@ -7859,7 +7859,7 @@
           },
           {
             "date_unix": 1752278400,
-            "value": 4280586438
+            "value": 4280586507
           },
           {
             "date_unix": 1752364800,
@@ -7875,7 +7875,7 @@
           },
           {
             "date_unix": 1752624000,
-            "value": 4329958586
+            "value": 4329958594.59
           },
           {
             "date_unix": 1752710400,
@@ -9619,7 +9619,7 @@
           },
           {
             "date_unix": 1790294400,
-            "value": 2434235148.89
+            "value": 2448611325.89
           }
         ]
       },
@@ -12543,7 +12543,7 @@
           },
           {
             "date_unix": 1790294400,
-            "value": 5976381.729999999
+            "value": 6037222.569999999
           }
         ]
       }
@@ -12555,7 +12555,7 @@
         "the network is operational",
         "recent slot times remain healthy",
         "DeFi TVL is up 11.0% over 7d",
-        "SOL is up 7.6% over 7d"
+        "SOL is up 7.7% over 7d"
       ],
       "risks_to_watch": [],
       "window": "7d",
@@ -35297,47 +35297,6 @@
       },
       "supply": {
         "total_sol": 634609162.9
-      },
-      "active_wallets_sample": {
-        "unique_wallets_in_block": null
-      },
-      "daily_active_addresses": {
-        "value": null
-      }
-    },
-    {
-      "generated_at_unix": 1790181329,
-      "network_performance": {
-        "avg_tps": 5003.95,
-        "avg_slot_time_ms": 266.3
-      },
-      "validators": {
-        "delinquent_stake_pct": 0.054,
-        "active_count": 675
-      },
-      "defi": {
-        "tvl": {
-          "tvl_usd": 6436840592
-        },
-        "stablecoins": {
-          "total_stablecoin_supply_usd": 15925013026.09
-        },
-        "dex_volume": {
-          "dex_volume_24h_usd": 3195015036.76
-        },
-        "fees_and_rev": {
-          "chain_revenue_24h_usd": 6784541.0699999975
-        }
-      },
-      "market": {
-        "price": {
-          "price_usd": 114.72,
-          "market_cap_usd": 67448715649.7222,
-          "volume_24h_usd": 5315897801.060121
-        }
-      },
-      "supply": {
-        "total_sol": 634609135.24
       },
       "active_wallets_sample": {
         "unique_wallets_in_block": null
@@ -59282,6 +59241,47 @@
       },
       "supply": {
         "total_sol": 634685992.58
+      },
+      "active_wallets_sample": {
+        "unique_wallets_in_block": null
+      },
+      "daily_active_addresses": {
+        "value": null
+      }
+    },
+    {
+      "generated_at_unix": 1790354131,
+      "network_performance": {
+        "avg_tps": 5080.32,
+        "avg_slot_time_ms": 268.0
+      },
+      "validators": {
+        "delinquent_stake_pct": 0.008,
+        "active_count": 675
+      },
+      "defi": {
+        "tvl": {
+          "tvl_usd": 6543754304
+        },
+        "stablecoins": {
+          "total_stablecoin_supply_usd": 17321155880.26
+        },
+        "dex_volume": {
+          "dex_volume_24h_usd": 2450711180.4300003
+        },
+        "fees_and_rev": {
+          "chain_revenue_24h_usd": 5896513.089999999
+        }
+      },
+      "market": {
+        "price": {
+          "price_usd": 121.63,
+          "market_cap_usd": 71359195837.27936,
+          "volume_24h_usd": 6196481104.863509
+        }
+      },
+      "supply": {
+        "total_sol": 634685988.65
       },
       "active_wallets_sample": {
         "unique_wallets_in_block": null
