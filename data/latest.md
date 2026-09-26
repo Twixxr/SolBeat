@@ -1,10 +1,10 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-26T07:45:34.381126+00:00 (UTC)_
+_Generated: 2026-09-26T07:50:31.080214+00:00 (UTC)_
 
 ## Current Solana Outlook
 
-**Constructive** — Solana's current outlook is constructive. Positive signals: the network is operational; recent slot times remain healthy; DeFi TVL is up 4.8% over 7d. No major network-health warning is present in the latest automated snapshot.
+**Constructive** — Solana's current outlook is constructive. Positive signals: the network is operational; recent slot times remain healthy; DeFi TVL is up 4.7% over 7d. No major network-health warning is present in the latest automated snapshot.
 
 ## Alerts
 
@@ -15,14 +15,14 @@ _Generated: 2026-09-26T07:45:34.381126+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 450,611,117 |
-| Block height | 428,650,899 |
+| Current slot | 450,612,216 |
+| Block height | 428,651,998 |
 | Epoch | 1043 |
-| Epoch progress | 8.13% |
-| Current TPS | 4,513.82 |
-| Avg TPS | 4,556.26 |
-| Max / Min TPS | 4,794.08 / 4,303.95 |
-| Avg slot time | 267.7 ms |
+| Epoch progress | 8.38% |
+| Current TPS | 4,291.88 |
+| Avg TPS | 4,526.67 |
+| Max / Min TPS | 4,747.50 / 4,173.35 |
+| Avg slot time | 268.2 ms |
 
 ## Validator Status
 
@@ -45,8 +45,8 @@ _Generated: 2026-09-26T07:45:34.381126+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 634,764,156 SOL
-- Circulating: 587,712,954 SOL
+- Total: 634,764,153 SOL
+- Circulating: 587,712,951 SOL
 - Non-circulating: 47,051,202 SOL
 
 ## Economic Indicators
@@ -54,12 +54,12 @@ _Generated: 2026-09-26T07:45:34.381126+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | SOL price | $121 |
-| SOL 24h change | +3.88% |
-| SOL 24h volume | $6,091,293,886 |
-| SOL market cap | $70,883,903,527 |
-| Solana chain TVL | $6,607,921,807 |
-| TVL change (24h) | +1.89% |
-| TVL change (7d) | +4.79% |
+| SOL 24h change | +3.83% |
+| SOL 24h volume | $6,096,753,953 |
+| SOL market cap | $70,915,619,723 |
+| Solana chain TVL | $6,601,354,921 |
+| TVL change (24h) | +1.79% |
+| TVL change (7d) | +4.69% |
 | Stablecoin supply on Solana | $16,710,809,382 |
 | DEX volume (24h) | $2,800,185,916 |
 | Chain revenue / REV proxy (24h) | $6,038,790 |
