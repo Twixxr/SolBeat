@@ -1,27 +1,27 @@
 {
   "report": {
     "meta": {
-      "generated_at_utc": "2026-09-26T12:30:39.220680+00:00",
-      "generated_at_unix": 1790425839,
+      "generated_at_utc": "2026-09-26T12:35:31.662837+00:00",
+      "generated_at_unix": 1790426131,
       "generator": "SolBeat",
       "version": "1.1"
     },
     "network_performance": {
       "health": "ok",
-      "current_slot": 450675231,
-      "block_time_unix": 1790425869,
+      "current_slot": 450676181,
+      "block_time_unix": 1790426125,
       "epoch": 1043,
-      "slot_index": 99233,
+      "slot_index": 100181,
       "slots_in_epoch": 432000,
-      "epoch_progress_pct": 22.97,
-      "block_height": 428715006,
-      "current_tps": 4899.72,
-      "avg_tps": 4386.73,
-      "max_tps": 4899.72,
-      "min_tps": 3947.75,
+      "epoch_progress_pct": 23.19,
+      "block_height": 428715954,
+      "current_tps": 4851.57,
+      "avg_tps": 4490.13,
+      "max_tps": 5019.47,
+      "min_tps": 3988.88,
       "samples_used": 30,
-      "avg_slot_time_ms": 267.8,
-      "collected_at_unix": 1790425879
+      "avg_slot_time_ms": 268.2,
+      "collected_at_unix": 1790426134
     },
     "validators": {
       "active_count": 676,
@@ -37,8 +37,8 @@
           "node_pubkey": "Fd7btgySsrjuo25CJCj7oE7VPMyezDhnx7pZkj2v69Nk",
           "activated_stake_sol": 17860284.36,
           "commission_pct": 7,
-          "last_vote": 450675225,
-          "root_slot": 450675194,
+          "last_vote": 450676175,
+          "root_slot": 450676144,
           "name": "Figment",
           "website": ""
         },
@@ -47,8 +47,8 @@
           "node_pubkey": "HEL1USMZKAL2odpNBj2oCjffnFGaYwmbGmyewGv1e2TU",
           "activated_stake_sol": 15799204.35,
           "commission_pct": 0,
-          "last_vote": 450675225,
-          "root_slot": 450675194,
+          "last_vote": 450676175,
+          "root_slot": 450676144,
           "name": "Helius",
           "website": "https://helius.dev"
         },
@@ -57,8 +57,8 @@
           "node_pubkey": "DRpbCBMxVnDK7maPM5tGv6MvB3v1sRMC86PZ8okm21hy",
           "activated_stake_sol": 12343055.54,
           "commission_pct": 0,
-          "last_vote": 450675225,
-          "root_slot": 450675194,
+          "last_vote": 450676175,
+          "root_slot": 450676144,
           "name": "binance staking",
           "website": "https://www.binance.com"
         },
@@ -67,8 +67,8 @@
           "node_pubkey": "JUPiTERrZqgf1jUyR7dSkhMx4Kn2qJyekWsg3LT1h4b",
           "activated_stake_sol": 11222560.6,
           "commission_pct": 5,
-          "last_vote": 450675225,
-          "root_slot": 450675194,
+          "last_vote": 450676175,
+          "root_slot": 450676144,
           "name": "Jupiter",
           "website": "https://jup.ag"
         },
@@ -77,8 +77,8 @@
           "node_pubkey": "E1r4Psq84tHfQ6aPTvvDka4U3u8zPVD7gEUrH25RdxHL",
           "activated_stake_sol": 10836561.81,
           "commission_pct": 0,
-          "last_vote": 450675225,
-          "root_slot": 450675194,
+          "last_vote": 450676175,
+          "root_slot": 450676144,
           "name": "Bitwise Onchain Solutions",
           "website": "https://bitwiseinvestments.com"
         },
@@ -87,8 +87,8 @@
           "node_pubkey": "C8Bey3LKVJHVqN6xPTeW8WJfUgFQAeGNBpT4Rp99JP1k",
           "activated_stake_sol": 9237101.73,
           "commission_pct": 7,
-          "last_vote": 450675225,
-          "root_slot": 450675194,
+          "last_vote": 450676175,
+          "root_slot": 450676144,
           "name": "Ledger by Figment",
           "website": "https://www.ledger.com/staking"
         },
@@ -97,8 +97,8 @@
           "node_pubkey": "CAo1dCGYrB6NhHh5xb1cGjUiu86iyCfMTENxgHumSve4",
           "activated_stake_sol": 9182741.54,
           "commission_pct": 10,
-          "last_vote": 450675225,
-          "root_slot": 450675194,
+          "last_vote": 450676175,
+          "root_slot": 450676144,
           "name": "Kraken 2",
           "website": "https://www.kraken.com/"
         },
@@ -107,8 +107,8 @@
           "node_pubkey": "EvnRmnMrd69kFdbLMxWkTn1icZ7DCceRhvmb2SJXqDo4",
           "activated_stake_sol": 7606180.7,
           "commission_pct": 7,
-          "last_vote": 450675225,
-          "root_slot": 450675194,
+          "last_vote": 450676175,
+          "root_slot": 450676144,
           "name": "Everstake",
           "website": "https://everstake.com"
         },
@@ -117,8 +117,8 @@
           "node_pubkey": "9eGrDohdNTAo61DRHyfMuqKWXqYnA3i254Wiszxe8FoY",
           "activated_stake_sol": 7093311.0,
           "commission_pct": 5,
-          "last_vote": 450675225,
-          "root_slot": 450675194,
+          "last_vote": 450676175,
+          "root_slot": 450676144,
           "name": "Galaxy",
           "website": "https://galaxy.com/staking"
         },
@@ -127,8 +127,8 @@
           "node_pubkey": "Awes4Tr6TX8JDzEhCZY2QVNimT6iD1zWHzf1vNyGvpLM",
           "activated_stake_sol": 6506504.78,
           "commission_pct": 0,
-          "last_vote": 450675225,
-          "root_slot": 450675194,
+          "last_vote": 450676175,
+          "root_slot": 450676144,
           "name": "Staking Facilities | MEV \ud83d\udd25",
           "website": "https://stakingfacilities.com"
         },
@@ -137,8 +137,8 @@
           "node_pubkey": "JD549HsbJHeEKKUrKgg4Fj2iyv2RGjsV7NTZjZUrHybB",
           "activated_stake_sol": 6246846.59,
           "commission_pct": 0,
-          "last_vote": 450675225,
-          "root_slot": 450675194,
+          "last_vote": 450676175,
+          "root_slot": 450676144,
           "name": "Forward Industries",
           "website": "https://sol.forwardindustries.com"
         },
@@ -147,8 +147,8 @@
           "node_pubkey": "5pPRHniefFjkiaArbGX3Y8NUysJmQ9tMZg3FrFGwHzSm",
           "activated_stake_sol": 5931194.0,
           "commission_pct": 5,
-          "last_vote": 450675225,
-          "root_slot": 450675194,
+          "last_vote": 450676175,
+          "root_slot": 450676144,
           "name": "Kiln1",
           "website": "https://kiln.fi"
         },
@@ -157,8 +157,8 @@
           "node_pubkey": "5Cchr1XGEg7dbBXByV5NY2ad8jfxAM7HA3x8D56rq9Ux",
           "activated_stake_sol": 5631980.05,
           "commission_pct": 100,
-          "last_vote": 450675225,
-          "root_slot": 450675194,
+          "last_vote": 450676175,
+          "root_slot": 450676144,
           "name": "Upbit Staking",
           "website": "https://upbit.com/staking"
         },
@@ -167,8 +167,8 @@
           "node_pubkey": "9rkJMARqK6VBkcxGfKBAwnA44gPAfGxPbPsfsggFNDSQ",
           "activated_stake_sol": 4698598.73,
           "commission_pct": 8,
-          "last_vote": 450675225,
-          "root_slot": 450675194,
+          "last_vote": 450676175,
+          "root_slot": 450676144,
           "name": null,
           "website": null
         },
@@ -177,8 +177,8 @@
           "node_pubkey": "GnC339vkyXRm1jRX69dt9mapPPu2LbzXfSDoxc91qta6",
           "activated_stake_sol": 4622103.0,
           "commission_pct": 7,
-          "last_vote": 450675225,
-          "root_slot": 450675194,
+          "last_vote": 450676175,
+          "root_slot": 450676144,
           "name": "P2P.org",
           "website": "https://p2p.org"
         },
@@ -187,8 +187,8 @@
           "node_pubkey": "EkvdKhULbMFqjKBKotAzGi3kwMvMpYNDKJXXQQmi6C1f",
           "activated_stake_sol": 4101969.92,
           "commission_pct": 100,
-          "last_vote": 450675225,
-          "root_slot": 450675194,
+          "last_vote": 450676175,
+          "root_slot": 450676144,
           "name": null,
           "website": null
         },
@@ -197,8 +197,8 @@
           "node_pubkey": "FBKFWadXZJahGtFitAsBvbqh5968gLY7dMBBJUoUjeNi",
           "activated_stake_sol": 4061795.45,
           "commission_pct": 100,
-          "last_vote": 450675225,
-          "root_slot": 450675194,
+          "last_vote": 450676175,
+          "root_slot": 450676144,
           "name": null,
           "website": null
         },
@@ -207,8 +207,8 @@
           "node_pubkey": "BtsmiEEvnSuUnKxqXj2PZRYpPJAc7C34mGz8gtJ1DAaH",
           "activated_stake_sol": 4048463.45,
           "commission_pct": 100,
-          "last_vote": 450675225,
-          "root_slot": 450675194,
+          "last_vote": 450676175,
+          "root_slot": 450676144,
           "name": null,
           "website": null
         },
@@ -217,8 +217,8 @@
           "node_pubkey": "Fc6NNdS2j3EmrWbU6Uqt6wsKB5ef72NjaWfNxKYbULGD",
           "activated_stake_sol": 4001821.59,
           "commission_pct": 5,
-          "last_vote": 450675225,
-          "root_slot": 450675194,
+          "last_vote": 450676175,
+          "root_slot": 450676144,
           "name": "OKX Earn",
           "website": "https://www.okx.com"
         },
@@ -227,8 +227,8 @@
           "node_pubkey": "5ZqveVffQPiUbkjBg4KD9kib1MKHLqiFno4ke9jSq9qk",
           "activated_stake_sol": 3989272.41,
           "commission_pct": 100,
-          "last_vote": 450675225,
-          "root_slot": 450675194,
+          "last_vote": 450676175,
+          "root_slot": 450676144,
           "name": null,
           "website": null
         }
@@ -238,8 +238,8 @@
       }
     },
     "supply": {
-      "total_sol": 634763962.58,
-      "circulating_sol": 587712758.9,
+      "total_sol": 634763959.31,
+      "circulating_sol": 587712755.63,
       "non_circulating_sol": 47051203.68
     },
     "active_wallets_sample": {
@@ -714,10 +714,10 @@
     },
     "market": {
       "price": {
-        "price_usd": 121.07,
-        "price_change_pct_24h": 0.8,
-        "volume_24h_usd": 4965727635.809462,
-        "market_cap_usd": 71176396072.42894
+        "price_usd": 121.18,
+        "price_change_pct_24h": 0.57,
+        "volume_24h_usd": 4943467000.9404125,
+        "market_cap_usd": 71219567718.83408
       },
       "trend_7d": {
         "seven_day_series": [
@@ -750,8 +750,8 @@
             "price_usd": 122.081
           },
           {
-            "date_unix": 1790425750,
-            "price_usd": 121.0864
+            "date_unix": 1790426030,
+            "price_usd": 121.2333
           }
         ]
       }
@@ -6700,13 +6700,5851 @@
         ]
       },
       "dex_volume": {
-        "_errors": [
-          "GET https://api.llama.fi/overview/dexs/Solana?dataType=dailyVolume failed after 3 attempts: The read operation timed out"
+        "series": [
+          {
+            "date_unix": 1727395200,
+            "value": 1277229622
+          },
+          {
+            "date_unix": 1727481600,
+            "value": 1281810174
+          },
+          {
+            "date_unix": 1727568000,
+            "value": 1410289622
+          },
+          {
+            "date_unix": 1727654400,
+            "value": 1770998115
+          },
+          {
+            "date_unix": 1727740800,
+            "value": 1805179851
+          },
+          {
+            "date_unix": 1727827200,
+            "value": 1451062954
+          },
+          {
+            "date_unix": 1727913600,
+            "value": 1373275354
+          },
+          {
+            "date_unix": 1728000000,
+            "value": 1108959305
+          },
+          {
+            "date_unix": 1728086400,
+            "value": 988139455
+          },
+          {
+            "date_unix": 1728172800,
+            "value": 1392621888
+          },
+          {
+            "date_unix": 1728259200,
+            "value": 1490854123
+          },
+          {
+            "date_unix": 1728345600,
+            "value": 1432031672
+          },
+          {
+            "date_unix": 1728432000,
+            "value": 1313102888
+          },
+          {
+            "date_unix": 1728518400,
+            "value": 1359271192
+          },
+          {
+            "date_unix": 1728604800,
+            "value": 1364996389
+          },
+          {
+            "date_unix": 1728691200,
+            "value": 1458966348
+          },
+          {
+            "date_unix": 1728777600,
+            "value": 1915082867
+          },
+          {
+            "date_unix": 1728864000,
+            "value": 2310279689
+          },
+          {
+            "date_unix": 1728950400,
+            "value": 2102265418
+          },
+          {
+            "date_unix": 1729036800,
+            "value": 1792239803
+          },
+          {
+            "date_unix": 1729123200,
+            "value": 1793043950
+          },
+          {
+            "date_unix": 1729209600,
+            "value": 2137963631
+          },
+          {
+            "date_unix": 1729296000,
+            "value": 1956151066
+          },
+          {
+            "date_unix": 1729382400,
+            "value": 2597952800
+          },
+          {
+            "date_unix": 1729468800,
+            "value": 2514598297
+          },
+          {
+            "date_unix": 1729555200,
+            "value": 2790031286
+          },
+          {
+            "date_unix": 1729641600,
+            "value": 3241686528
+          },
+          {
+            "date_unix": 1729728000,
+            "value": 2846122002
+          },
+          {
+            "date_unix": 1729814400,
+            "value": 2525673001
+          },
+          {
+            "date_unix": 1729900800,
+            "value": 2188506225
+          },
+          {
+            "date_unix": 1729987200,
+            "value": 2150405083
+          },
+          {
+            "date_unix": 1730073600,
+            "value": 2479374285
+          },
+          {
+            "date_unix": 1730160000,
+            "value": 2209421617
+          },
+          {
+            "date_unix": 1730246400,
+            "value": 2094730465
+          },
+          {
+            "date_unix": 1730332800,
+            "value": 2245772858
+          },
+          {
+            "date_unix": 1730419200,
+            "value": 2110986695
+          },
+          {
+            "date_unix": 1730505600,
+            "value": 2046794921
+          },
+          {
+            "date_unix": 1730592000,
+            "value": 2023835573
+          },
+          {
+            "date_unix": 1730678400,
+            "value": 2088581097
+          },
+          {
+            "date_unix": 1730764800,
+            "value": 2847872779
+          },
+          {
+            "date_unix": 1730851200,
+            "value": 3398376947
+          },
+          {
+            "date_unix": 1730937600,
+            "value": 3008125169
+          },
+          {
+            "date_unix": 1731024000,
+            "value": 2525408427
+          },
+          {
+            "date_unix": 1731110400,
+            "value": 3080388752
+          },
+          {
+            "date_unix": 1731196800,
+            "value": 5411075499
+          },
+          {
+            "date_unix": 1731283200,
+            "value": 6178740845
+          },
+          {
+            "date_unix": 1731369600,
+            "value": 7814931627
+          },
+          {
+            "date_unix": 1731456000,
+            "value": 7948692915
+          },
+          {
+            "date_unix": 1731542400,
+            "value": 6935957035
+          },
+          {
+            "date_unix": 1731628800,
+            "value": 6105940643
+          },
+          {
+            "date_unix": 1731715200,
+            "value": 6970526686
+          },
+          {
+            "date_unix": 1731801600,
+            "value": 7807916450
+          },
+          {
+            "date_unix": 1731888000,
+            "value": 8667368406
+          },
+          {
+            "date_unix": 1731974400,
+            "value": 7835329768
+          },
+          {
+            "date_unix": 1732060800,
+            "value": 8426623442
+          },
+          {
+            "date_unix": 1732147200,
+            "value": 7659482158
+          },
+          {
+            "date_unix": 1732233600,
+            "value": 6661289466
+          },
+          {
+            "date_unix": 1732320000,
+            "value": 5760814427
+          },
+          {
+            "date_unix": 1732406400,
+            "value": 5966904511
+          },
+          {
+            "date_unix": 1732492800,
+            "value": 6150169422
+          },
+          {
+            "date_unix": 1732579200,
+            "value": 6432535477
+          },
+          {
+            "date_unix": 1732665600,
+            "value": 5266177484
+          },
+          {
+            "date_unix": 1732752000,
+            "value": 4258628780
+          },
+          {
+            "date_unix": 1732838400,
+            "value": 3699782557
+          },
+          {
+            "date_unix": 1732924800,
+            "value": 3433022045
+          },
+          {
+            "date_unix": 1733011200,
+            "value": 4969831928
+          },
+          {
+            "date_unix": 1733097600,
+            "value": 5836418234
+          },
+          {
+            "date_unix": 1733184000,
+            "value": 5229193264
+          },
+          {
+            "date_unix": 1733270400,
+            "value": 5914687773
+          },
+          {
+            "date_unix": 1733356800,
+            "value": 5067221396
+          },
+          {
+            "date_unix": 1733443200,
+            "value": 3792973564
+          },
+          {
+            "date_unix": 1733529600,
+            "value": 3069097099
+          },
+          {
+            "date_unix": 1733616000,
+            "value": 4514462517
+          },
+          {
+            "date_unix": 1733702400,
+            "value": 6037827754
+          },
+          {
+            "date_unix": 1733788800,
+            "value": 5543377783
+          },
+          {
+            "date_unix": 1733875200,
+            "value": 4516645934
+          },
+          {
+            "date_unix": 1733961600,
+            "value": 4220066498
+          },
+          {
+            "date_unix": 1734048000,
+            "value": 3691080242
+          },
+          {
+            "date_unix": 1734134400,
+            "value": 3235808858
+          },
+          {
+            "date_unix": 1734220800,
+            "value": 3583147200
+          },
+          {
+            "date_unix": 1734307200,
+            "value": 5328654215
+          },
+          {
+            "date_unix": 1734393600,
+            "value": 5306189128
+          },
+          {
+            "date_unix": 1734480000,
+            "value": 5772400657
+          },
+          {
+            "date_unix": 1734566400,
+            "value": 5855052224
+          },
+          {
+            "date_unix": 1734652800,
+            "value": 5201022667
+          },
+          {
+            "date_unix": 1734739200,
+            "value": 3783009960
+          },
+          {
+            "date_unix": 1734825600,
+            "value": 3614016042
+          },
+          {
+            "date_unix": 1734912000,
+            "value": 3565487196
+          },
+          {
+            "date_unix": 1734998400,
+            "value": 2833836117
+          },
+          {
+            "date_unix": 1735084800,
+            "value": 3006362341
+          },
+          {
+            "date_unix": 1735171200,
+            "value": 3192681772
+          },
+          {
+            "date_unix": 1735257600,
+            "value": 3226820055
+          },
+          {
+            "date_unix": 1735344000,
+            "value": 3189084846
+          },
+          {
+            "date_unix": 1735430400,
+            "value": 3528416212
+          },
+          {
+            "date_unix": 1735516800,
+            "value": 4473657903
+          },
+          {
+            "date_unix": 1735603200,
+            "value": 4181737910
+          },
+          {
+            "date_unix": 1735689600,
+            "value": 5041935231
+          },
+          {
+            "date_unix": 1735776000,
+            "value": 5718980062
+          },
+          {
+            "date_unix": 1735862400,
+            "value": 4547452478
+          },
+          {
+            "date_unix": 1735948800,
+            "value": 4175859144
+          },
+          {
+            "date_unix": 1736035200,
+            "value": 4529718547
+          },
+          {
+            "date_unix": 1736121600,
+            "value": 5336130062
+          },
+          {
+            "date_unix": 1736208000,
+            "value": 5711024161
+          },
+          {
+            "date_unix": 1736294400,
+            "value": 5768349697
+          },
+          {
+            "date_unix": 1736380800,
+            "value": 5197755620
+          },
+          {
+            "date_unix": 1736467200,
+            "value": 4890360336
+          },
+          {
+            "date_unix": 1736553600,
+            "value": 3655610100
+          },
+          {
+            "date_unix": 1736640000,
+            "value": 4166852676
+          },
+          {
+            "date_unix": 1736726400,
+            "value": 5501343023
+          },
+          {
+            "date_unix": 1736812800,
+            "value": 4809350876
+          },
+          {
+            "date_unix": 1736899200,
+            "value": 5039510943
+          },
+          {
+            "date_unix": 1736985600,
+            "value": 5601962875
+          },
+          {
+            "date_unix": 1737072000,
+            "value": 18181743839
+          },
+          {
+            "date_unix": 1737158400,
+            "value": 38178678753
+          },
+          {
+            "date_unix": 1737244800,
+            "value": 30537698682
+          },
+          {
+            "date_unix": 1737331200,
+            "value": 27710760572
+          },
+          {
+            "date_unix": 1737417600,
+            "value": 15902402918
+          },
+          {
+            "date_unix": 1737504000,
+            "value": 15902044039
+          },
+          {
+            "date_unix": 1737590400,
+            "value": 14607935871
+          },
+          {
+            "date_unix": 1737676800,
+            "value": 11614925414
+          },
+          {
+            "date_unix": 1737763200,
+            "value": 10365020122
+          },
+          {
+            "date_unix": 1737849600,
+            "value": 10942445522
+          },
+          {
+            "date_unix": 1737936000,
+            "value": 10888480950
+          },
+          {
+            "date_unix": 1738022400,
+            "value": 8214970597
+          },
+          {
+            "date_unix": 1738108800,
+            "value": 8377367322
+          },
+          {
+            "date_unix": 1738195200,
+            "value": 6921871093
+          },
+          {
+            "date_unix": 1738281600,
+            "value": 5874137828
+          },
+          {
+            "date_unix": 1738368000,
+            "value": 7792387622
+          },
+          {
+            "date_unix": 1738454400,
+            "value": 11721764903
+          },
+          {
+            "date_unix": 1738540800,
+            "value": 11437966001
+          },
+          {
+            "date_unix": 1738627200,
+            "value": 7698801164
+          },
+          {
+            "date_unix": 1738713600,
+            "value": 5723539789
+          },
+          {
+            "date_unix": 1738800000,
+            "value": 5941624928
+          },
+          {
+            "date_unix": 1738886400,
+            "value": 5284881726
+          },
+          {
+            "date_unix": 1738972800,
+            "value": 4990012845
+          },
+          {
+            "date_unix": 1739059200,
+            "value": 6739238825
+          },
+          {
+            "date_unix": 1739145600,
+            "value": 5893452352
+          },
+          {
+            "date_unix": 1739232000,
+            "value": 5357849424
+          },
+          {
+            "date_unix": 1739318400,
+            "value": 5041340128
+          },
+          {
+            "date_unix": 1739404800,
+            "value": 5079043837
+          },
+          {
+            "date_unix": 1739491200,
+            "value": 4287510664
+          },
+          {
+            "date_unix": 1739577600,
+            "value": 3717882376
+          },
+          {
+            "date_unix": 1739664000,
+            "value": 3692972641
+          },
+          {
+            "date_unix": 1739750400,
+            "value": 4728647937
+          },
+          {
+            "date_unix": 1739836800,
+            "value": 4934857832
+          },
+          {
+            "date_unix": 1739923200,
+            "value": 3656438029
+          },
+          {
+            "date_unix": 1740009600,
+            "value": 3665159721
+          },
+          {
+            "date_unix": 1740096000,
+            "value": 3399510727
+          },
+          {
+            "date_unix": 1740182400,
+            "value": 2376016144
+          },
+          {
+            "date_unix": 1740268800,
+            "value": 2891444851
+          },
+          {
+            "date_unix": 1740355200,
+            "value": 5390741941
+          },
+          {
+            "date_unix": 1740441600,
+            "value": 6339434756.72
+          },
+          {
+            "date_unix": 1740528000,
+            "value": 3881426418
+          },
+          {
+            "date_unix": 1740614400,
+            "value": 3449048983
+          },
+          {
+            "date_unix": 1740700800,
+            "value": 4031519288
+          },
+          {
+            "date_unix": 1740787200,
+            "value": 3818078941
+          },
+          {
+            "date_unix": 1740873600,
+            "value": 5486437094
+          },
+          {
+            "date_unix": 1740960000,
+            "value": 5287385295
+          },
+          {
+            "date_unix": 1741046400,
+            "value": 4290501027
+          },
+          {
+            "date_unix": 1741132800,
+            "value": 3026104673
+          },
+          {
+            "date_unix": 1741219200,
+            "value": 3266010924
+          },
+          {
+            "date_unix": 1741305600,
+            "value": 4307761966
+          },
+          {
+            "date_unix": 1741392000,
+            "value": 1901290508
+          },
+          {
+            "date_unix": 1741478400,
+            "value": 2415545419.87
+          },
+          {
+            "date_unix": 1741564800,
+            "value": 3393624681
+          },
+          {
+            "date_unix": 1741651200,
+            "value": 3556074459
+          },
+          {
+            "date_unix": 1741737600,
+            "value": 2800246048.75
+          },
+          {
+            "date_unix": 1741824000,
+            "value": 2293105889
+          },
+          {
+            "date_unix": 1741910400,
+            "value": 2221768323
+          },
+          {
+            "date_unix": 1741996800,
+            "value": 1418533126
+          },
+          {
+            "date_unix": 1742083200,
+            "value": 1564820369
+          },
+          {
+            "date_unix": 1742169600,
+            "value": 1682783256
+          },
+          {
+            "date_unix": 1742256000,
+            "value": 1590561876.58
+          },
+          {
+            "date_unix": 1742342400,
+            "value": 2220558166
+          },
+          {
+            "date_unix": 1742428800,
+            "value": 1740276616
+          },
+          {
+            "date_unix": 1742515200,
+            "value": 1619071984
+          },
+          {
+            "date_unix": 1742601600,
+            "value": 1199315730
+          },
+          {
+            "date_unix": 1742688000,
+            "value": 1573646839
+          },
+          {
+            "date_unix": 1742774400,
+            "value": 2522062288.49
+          },
+          {
+            "date_unix": 1742860800,
+            "value": 2438695230
+          },
+          {
+            "date_unix": 1742947200,
+            "value": 2416024166
+          },
+          {
+            "date_unix": 1743033600,
+            "value": 2166566842
+          },
+          {
+            "date_unix": 1743120000,
+            "value": 2354208306
+          },
+          {
+            "date_unix": 1743206400,
+            "value": 1784831615
+          },
+          {
+            "date_unix": 1743292800,
+            "value": 1547196504
+          },
+          {
+            "date_unix": 1743379200,
+            "value": 2133728269
+          },
+          {
+            "date_unix": 1743465600,
+            "value": 2166109650
+          },
+          {
+            "date_unix": 1743552000,
+            "value": 3187983783
+          },
+          {
+            "date_unix": 1743638400,
+            "value": 2576062426
+          },
+          {
+            "date_unix": 1743724800,
+            "value": 2892371258
+          },
+          {
+            "date_unix": 1743811200,
+            "value": 1362788918
+          },
+          {
+            "date_unix": 1743897600,
+            "value": 2376631432
+          },
+          {
+            "date_unix": 1743984000,
+            "value": 4363977471
+          },
+          {
+            "date_unix": 1744070400,
+            "value": 2759975561
+          },
+          {
+            "date_unix": 1744156800,
+            "value": 3996577885
+          },
+          {
+            "date_unix": 1744243200,
+            "value": 2378912457
+          },
+          {
+            "date_unix": 1744329600,
+            "value": 2705089991
+          },
+          {
+            "date_unix": 1744416000,
+            "value": 2750886844
+          },
+          {
+            "date_unix": 1744502400,
+            "value": 2792204460
+          },
+          {
+            "date_unix": 1744588800,
+            "value": 3270869102
+          },
+          {
+            "date_unix": 1744675200,
+            "value": 3308087811
+          },
+          {
+            "date_unix": 1744761600,
+            "value": 3567329813.42
+          },
+          {
+            "date_unix": 1744848000,
+            "value": 2965871035
+          },
+          {
+            "date_unix": 1744934400,
+            "value": 2114495233
+          },
+          {
+            "date_unix": 1745020800,
+            "value": 2177817932
+          },
+          {
+            "date_unix": 1745107200,
+            "value": 2096906486.25
+          },
+          {
+            "date_unix": 1745193600,
+            "value": 2876260184
+          },
+          {
+            "date_unix": 1745280000,
+            "value": 3567544668
+          },
+          {
+            "date_unix": 1745366400,
+            "value": 4906408282
+          },
+          {
+            "date_unix": 1745452800,
+            "value": 3830833053
+          },
+          {
+            "date_unix": 1745539200,
+            "value": 4503548287
+          },
+          {
+            "date_unix": 1745625600,
+            "value": 3361035513
+          },
+          {
+            "date_unix": 1745712000,
+            "value": 3056743485
+          },
+          {
+            "date_unix": 1745798400,
+            "value": 4318529575
+          },
+          {
+            "date_unix": 1745884800,
+            "value": 3855497514
+          },
+          {
+            "date_unix": 1745971200,
+            "value": 4024837224
+          },
+          {
+            "date_unix": 1746057600,
+            "value": 4061139575
+          },
+          {
+            "date_unix": 1746144000,
+            "value": 3258445469
+          },
+          {
+            "date_unix": 1746230400,
+            "value": 3079362326
+          },
+          {
+            "date_unix": 1746316800,
+            "value": 3128878328
+          },
+          {
+            "date_unix": 1746403200,
+            "value": 4420488320
+          },
+          {
+            "date_unix": 1746489600,
+            "value": 2919510286
+          },
+          {
+            "date_unix": 1746576000,
+            "value": 3470205770
+          },
+          {
+            "date_unix": 1746662400,
+            "value": 4897894684
+          },
+          {
+            "date_unix": 1746748800,
+            "value": 5629258314
+          },
+          {
+            "date_unix": 1746835200,
+            "value": 4593913066
+          },
+          {
+            "date_unix": 1746921600,
+            "value": 7019887396
+          },
+          {
+            "date_unix": 1747008000,
+            "value": 9325342251
+          },
+          {
+            "date_unix": 1747094400,
+            "value": 5415400030
+          },
+          {
+            "date_unix": 1747180800,
+            "value": 5580480354
+          },
+          {
+            "date_unix": 1747267200,
+            "value": 5139996719
+          },
+          {
+            "date_unix": 1747353600,
+            "value": 4142410773
+          },
+          {
+            "date_unix": 1747440000,
+            "value": 3386750073
+          },
+          {
+            "date_unix": 1747526400,
+            "value": 3776462288
+          },
+          {
+            "date_unix": 1747612800,
+            "value": 3887195776.48
+          },
+          {
+            "date_unix": 1747699200,
+            "value": 4098860900
+          },
+          {
+            "date_unix": 1747785600,
+            "value": 5269511536
+          },
+          {
+            "date_unix": 1747872000,
+            "value": 4750223641
+          },
+          {
+            "date_unix": 1747958400,
+            "value": 5292381618
+          },
+          {
+            "date_unix": 1748044800,
+            "value": 2643949478
+          },
+          {
+            "date_unix": 1748131200,
+            "value": 2672160215
+          },
+          {
+            "date_unix": 1748217600,
+            "value": 2967367688
+          },
+          {
+            "date_unix": 1748304000,
+            "value": 3488321256
+          },
+          {
+            "date_unix": 1748390400,
+            "value": 2875285831
+          },
+          {
+            "date_unix": 1748476800,
+            "value": 2968137652
+          },
+          {
+            "date_unix": 1748563200,
+            "value": 3221010233
+          },
+          {
+            "date_unix": 1748649600,
+            "value": 2583700048
+          },
+          {
+            "date_unix": 1748736000,
+            "value": 2463861371
+          },
+          {
+            "date_unix": 1748822400,
+            "value": 2714843074
+          },
+          {
+            "date_unix": 1748908800,
+            "value": 3089339241
+          },
+          {
+            "date_unix": 1748995200,
+            "value": 2614280906
+          },
+          {
+            "date_unix": 1749081600,
+            "value": 3676937874
+          },
+          {
+            "date_unix": 1749168000,
+            "value": 2828061050
+          },
+          {
+            "date_unix": 1749254400,
+            "value": 1999772562.61
+          },
+          {
+            "date_unix": 1749340800,
+            "value": 1945804710.63
+          },
+          {
+            "date_unix": 1749427200,
+            "value": 3287953270
+          },
+          {
+            "date_unix": 1749513600,
+            "value": 3770022930
+          },
+          {
+            "date_unix": 1749600000,
+            "value": 3812863255
+          },
+          {
+            "date_unix": 1749686400,
+            "value": 3223720971
+          },
+          {
+            "date_unix": 1749772800,
+            "value": 4165102260
+          },
+          {
+            "date_unix": 1749859200,
+            "value": 2089934333
+          },
+          {
+            "date_unix": 1749945600,
+            "value": 2239163109
+          },
+          {
+            "date_unix": 1750032000,
+            "value": 3305670810
+          },
+          {
+            "date_unix": 1750118400,
+            "value": 3060147421
+          },
+          {
+            "date_unix": 1750204800,
+            "value": 2487679285
+          },
+          {
+            "date_unix": 1750291200,
+            "value": 2326785203
+          },
+          {
+            "date_unix": 1750377600,
+            "value": 2912585978
+          },
+          {
+            "date_unix": 1750464000,
+            "value": 2638746724
+          },
+          {
+            "date_unix": 1750550400,
+            "value": 3320314929.15
+          },
+          {
+            "date_unix": 1750636800,
+            "value": 3522522969
+          },
+          {
+            "date_unix": 1750723200,
+            "value": 2687514072
+          },
+          {
+            "date_unix": 1750809600,
+            "value": 2958185627
+          },
+          {
+            "date_unix": 1750896000,
+            "value": 2552095243
+          },
+          {
+            "date_unix": 1750982400,
+            "value": 2484321242
+          },
+          {
+            "date_unix": 1751068800,
+            "value": 2333517293
+          },
+          {
+            "date_unix": 1751155200,
+            "value": 2340088642
+          },
+          {
+            "date_unix": 1751241600,
+            "value": 3366328571
+          },
+          {
+            "date_unix": 1751328000,
+            "value": 2576657522
+          },
+          {
+            "date_unix": 1751414400,
+            "value": 3047083075
+          },
+          {
+            "date_unix": 1751500800,
+            "value": 3170267344
+          },
+          {
+            "date_unix": 1751587200,
+            "value": 2822457821
+          },
+          {
+            "date_unix": 1751673600,
+            "value": 2534788192
+          },
+          {
+            "date_unix": 1751760000,
+            "value": 2813956551
+          },
+          {
+            "date_unix": 1751846400,
+            "value": 3681574844
+          },
+          {
+            "date_unix": 1751932800,
+            "value": 3371807317
+          },
+          {
+            "date_unix": 1752019200,
+            "value": 3513235444
+          },
+          {
+            "date_unix": 1752105600,
+            "value": 3529148059
+          },
+          {
+            "date_unix": 1752192000,
+            "value": 4277384898
+          },
+          {
+            "date_unix": 1752278400,
+            "value": 4280586507
+          },
+          {
+            "date_unix": 1752364800,
+            "value": 4127396653
+          },
+          {
+            "date_unix": 1752451200,
+            "value": 4769725495
+          },
+          {
+            "date_unix": 1752537600,
+            "value": 5370142779
+          },
+          {
+            "date_unix": 1752624000,
+            "value": 4329958594.59
+          },
+          {
+            "date_unix": 1752710400,
+            "value": 5018173830
+          },
+          {
+            "date_unix": 1752796800,
+            "value": 5472223967
+          },
+          {
+            "date_unix": 1752883200,
+            "value": 3115931806
+          },
+          {
+            "date_unix": 1752969600,
+            "value": 3685211778
+          },
+          {
+            "date_unix": 1753056000,
+            "value": 5069457087
+          },
+          {
+            "date_unix": 1753142400,
+            "value": 6520438369
+          },
+          {
+            "date_unix": 1753228800,
+            "value": 5541667409
+          },
+          {
+            "date_unix": 1753315200,
+            "value": 5275123926
+          },
+          {
+            "date_unix": 1753401600,
+            "value": 4646804814
+          },
+          {
+            "date_unix": 1753488000,
+            "value": 2727295737
+          },
+          {
+            "date_unix": 1753574400,
+            "value": 3310805865
+          },
+          {
+            "date_unix": 1753660800,
+            "value": 4495103889
+          },
+          {
+            "date_unix": 1753747200,
+            "value": 4049907303
+          },
+          {
+            "date_unix": 1753833600,
+            "value": 4070927290
+          },
+          {
+            "date_unix": 1753920000,
+            "value": 3677556090
+          },
+          {
+            "date_unix": 1754006400,
+            "value": 4596655670
+          },
+          {
+            "date_unix": 1754092800,
+            "value": 3044307315
+          },
+          {
+            "date_unix": 1754179200,
+            "value": 2327861914
+          },
+          {
+            "date_unix": 1754265600,
+            "value": 3244263819
+          },
+          {
+            "date_unix": 1754352000,
+            "value": 3842748024
+          },
+          {
+            "date_unix": 1754438400,
+            "value": 3416751841
+          },
+          {
+            "date_unix": 1754524800,
+            "value": 3500048182
+          },
+          {
+            "date_unix": 1754611200,
+            "value": 3731810717
+          },
+          {
+            "date_unix": 1754697600,
+            "value": 3192496769
+          },
+          {
+            "date_unix": 1754784000,
+            "value": 3418078040
+          },
+          {
+            "date_unix": 1754870400,
+            "value": 4322674663
+          },
+          {
+            "date_unix": 1754956800,
+            "value": 4172261633
+          },
+          {
+            "date_unix": 1755043200,
+            "value": 5957486501
+          },
+          {
+            "date_unix": 1755129600,
+            "value": 7972307097
+          },
+          {
+            "date_unix": 1755216000,
+            "value": 4620634063
+          },
+          {
+            "date_unix": 1755302400,
+            "value": 3014494521
+          },
+          {
+            "date_unix": 1755388800,
+            "value": 3107764981
+          },
+          {
+            "date_unix": 1755475200,
+            "value": 4151270732
+          },
+          {
+            "date_unix": 1755561600,
+            "value": 3685517108
+          },
+          {
+            "date_unix": 1755648000,
+            "value": 4000803705
+          },
+          {
+            "date_unix": 1755734400,
+            "value": 5428629124
+          },
+          {
+            "date_unix": 1755820800,
+            "value": 5851338720
+          },
+          {
+            "date_unix": 1755907200,
+            "value": 4164646186
+          },
+          {
+            "date_unix": 1755993600,
+            "value": 6344863061
+          },
+          {
+            "date_unix": 1756080000,
+            "value": 6157165233
+          },
+          {
+            "date_unix": 1756166400,
+            "value": 4006661862
+          },
+          {
+            "date_unix": 1756252800,
+            "value": 5685679769
+          },
+          {
+            "date_unix": 1756339200,
+            "value": 5421236373.99
+          },
+          {
+            "date_unix": 1756425600,
+            "value": 6969673476
+          },
+          {
+            "date_unix": 1756512000,
+            "value": 2895517182
+          },
+          {
+            "date_unix": 1756598400,
+            "value": 2580626057
+          },
+          {
+            "date_unix": 1756684800,
+            "value": 3916315687
+          },
+          {
+            "date_unix": 1756771200,
+            "value": 3943992390
+          },
+          {
+            "date_unix": 1756857600,
+            "value": 4101247051
+          },
+          {
+            "date_unix": 1756944000,
+            "value": 4135976746
+          },
+          {
+            "date_unix": 1757030400,
+            "value": 5556577458
+          },
+          {
+            "date_unix": 1757116800,
+            "value": 2701152596
+          },
+          {
+            "date_unix": 1757203200,
+            "value": 2843741398
+          },
+          {
+            "date_unix": 1757289600,
+            "value": 4080168692
+          },
+          {
+            "date_unix": 1757376000,
+            "value": 4477925550
+          },
+          {
+            "date_unix": 1757462400,
+            "value": 5335891066
+          },
+          {
+            "date_unix": 1757548800,
+            "value": 5096251669
+          },
+          {
+            "date_unix": 1757635200,
+            "value": 6106858225
+          },
+          {
+            "date_unix": 1757721600,
+            "value": 4410857089
+          },
+          {
+            "date_unix": 1757808000,
+            "value": 5520508836
+          },
+          {
+            "date_unix": 1757894400,
+            "value": 6474400359
+          },
+          {
+            "date_unix": 1757980800,
+            "value": 4875629537
+          },
+          {
+            "date_unix": 1758067200,
+            "value": 5477139149
+          },
+          {
+            "date_unix": 1758153600,
+            "value": 4374973863
+          },
+          {
+            "date_unix": 1758240000,
+            "value": 4591704848
+          },
+          {
+            "date_unix": 1758326400,
+            "value": 4054940871
+          },
+          {
+            "date_unix": 1758412800,
+            "value": 4636738883
+          },
+          {
+            "date_unix": 1758499200,
+            "value": 6523561394
+          },
+          {
+            "date_unix": 1758585600,
+            "value": 6120306131
+          },
+          {
+            "date_unix": 1758672000,
+            "value": 5762746590
+          },
+          {
+            "date_unix": 1758758400,
+            "value": 6704496038
+          },
+          {
+            "date_unix": 1758844800,
+            "value": 5487103771
+          },
+          {
+            "date_unix": 1758931200,
+            "value": 3325227294
+          },
+          {
+            "date_unix": 1759017600,
+            "value": 3408334036
+          },
+          {
+            "date_unix": 1759104000,
+            "value": 4064613184
+          },
+          {
+            "date_unix": 1759190400,
+            "value": 3978321689
+          },
+          {
+            "date_unix": 1759276800,
+            "value": 4203022184
+          },
+          {
+            "date_unix": 1759363200,
+            "value": 5124132469
+          },
+          {
+            "date_unix": 1759449600,
+            "value": 4891846242
+          },
+          {
+            "date_unix": 1759536000,
+            "value": 3659494585
+          },
+          {
+            "date_unix": 1759622400,
+            "value": 4480100736
+          },
+          {
+            "date_unix": 1759708800,
+            "value": 4540067948
+          },
+          {
+            "date_unix": 1759795200,
+            "value": 6413525867
+          },
+          {
+            "date_unix": 1759881600,
+            "value": 5835078903
+          },
+          {
+            "date_unix": 1759968000,
+            "value": 5615316526
+          },
+          {
+            "date_unix": 1760054400,
+            "value": 10290350823
+          },
+          {
+            "date_unix": 1760140800,
+            "value": 7170120039
+          },
+          {
+            "date_unix": 1760227200,
+            "value": 6773979155
+          },
+          {
+            "date_unix": 1760313600,
+            "value": 5976176877
+          },
+          {
+            "date_unix": 1760400000,
+            "value": 7017785488
+          },
+          {
+            "date_unix": 1760486400,
+            "value": 5639105345
+          },
+          {
+            "date_unix": 1760572800,
+            "value": 6578625506
+          },
+          {
+            "date_unix": 1760659200,
+            "value": 5760638646
+          },
+          {
+            "date_unix": 1760745600,
+            "value": 4448861772
+          },
+          {
+            "date_unix": 1760832000,
+            "value": 4473717727
+          },
+          {
+            "date_unix": 1760918400,
+            "value": 4698641976
+          },
+          {
+            "date_unix": 1761004800,
+            "value": 5062352874
+          },
+          {
+            "date_unix": 1761091200,
+            "value": 5350189322
+          },
+          {
+            "date_unix": 1761177600,
+            "value": 4781173905
+          },
+          {
+            "date_unix": 1761264000,
+            "value": 4251356287
+          },
+          {
+            "date_unix": 1761350400,
+            "value": 3603965421
+          },
+          {
+            "date_unix": 1761436800,
+            "value": 3454409422
+          },
+          {
+            "date_unix": 1761523200,
+            "value": 5285254847
+          },
+          {
+            "date_unix": 1761609600,
+            "value": 5757671429
+          },
+          {
+            "date_unix": 1761696000,
+            "value": 5543719105
+          },
+          {
+            "date_unix": 1761782400,
+            "value": 6644874693
+          },
+          {
+            "date_unix": 1761868800,
+            "value": 5111900233
+          },
+          {
+            "date_unix": 1761955200,
+            "value": 3804794905
+          },
+          {
+            "date_unix": 1762041600,
+            "value": 3387825591
+          },
+          {
+            "date_unix": 1762128000,
+            "value": 5977112768
+          },
+          {
+            "date_unix": 1762214400,
+            "value": 7611293545
+          },
+          {
+            "date_unix": 1762300800,
+            "value": 4981787162
+          },
+          {
+            "date_unix": 1762387200,
+            "value": 5998120885
+          },
+          {
+            "date_unix": 1762473600,
+            "value": 6026424882
+          },
+          {
+            "date_unix": 1762560000,
+            "value": 4005627776
+          },
+          {
+            "date_unix": 1762646400,
+            "value": 6378765715
+          },
+          {
+            "date_unix": 1762732800,
+            "value": 4859385796
+          },
+          {
+            "date_unix": 1762819200,
+            "value": 3955000698
+          },
+          {
+            "date_unix": 1762905600,
+            "value": 4482042006
+          },
+          {
+            "date_unix": 1762992000,
+            "value": 4009645788
+          },
+          {
+            "date_unix": 1763078400,
+            "value": 4013974774
+          },
+          {
+            "date_unix": 1763164800,
+            "value": 3994760654
+          },
+          {
+            "date_unix": 1763251200,
+            "value": 2806324118
+          },
+          {
+            "date_unix": 1763337600,
+            "value": 3209247040
+          },
+          {
+            "date_unix": 1763424000,
+            "value": 3694101548
+          },
+          {
+            "date_unix": 1763510400,
+            "value": 3146927171
+          },
+          {
+            "date_unix": 1763596800,
+            "value": 3852687193
+          },
+          {
+            "date_unix": 1763683200,
+            "value": 4516990796
+          },
+          {
+            "date_unix": 1763769600,
+            "value": 2690112954
+          },
+          {
+            "date_unix": 1763856000,
+            "value": 3088408547
+          },
+          {
+            "date_unix": 1763942400,
+            "value": 2569909138
+          },
+          {
+            "date_unix": 1764028800,
+            "value": 2997881128
+          },
+          {
+            "date_unix": 1764115200,
+            "value": 3350647131
+          },
+          {
+            "date_unix": 1764201600,
+            "value": 3589025150
+          },
+          {
+            "date_unix": 1764288000,
+            "value": 3682137525
+          },
+          {
+            "date_unix": 1764374400,
+            "value": 3245408536
+          },
+          {
+            "date_unix": 1764460800,
+            "value": 3464951471
+          },
+          {
+            "date_unix": 1764547200,
+            "value": 4141810041
+          },
+          {
+            "date_unix": 1764633600,
+            "value": 4011466378
+          },
+          {
+            "date_unix": 1764720000,
+            "value": 3987826431
+          },
+          {
+            "date_unix": 1764806400,
+            "value": 4059216237
+          },
+          {
+            "date_unix": 1764892800,
+            "value": 3547997798
+          },
+          {
+            "date_unix": 1764979200,
+            "value": 2977844355
+          },
+          {
+            "date_unix": 1765065600,
+            "value": 3565432786
+          },
+          {
+            "date_unix": 1765152000,
+            "value": 3787043866
+          },
+          {
+            "date_unix": 1765238400,
+            "value": 3912511184
+          },
+          {
+            "date_unix": 1765324800,
+            "value": 3958610796
+          },
+          {
+            "date_unix": 1765411200,
+            "value": 4090228484
+          },
+          {
+            "date_unix": 1765497600,
+            "value": 3891042546
+          },
+          {
+            "date_unix": 1765584000,
+            "value": 2500782237
+          },
+          {
+            "date_unix": 1765670400,
+            "value": 2303077047
+          },
+          {
+            "date_unix": 1765756800,
+            "value": 3633787740
+          },
+          {
+            "date_unix": 1765843200,
+            "value": 3376360007
+          },
+          {
+            "date_unix": 1765929600,
+            "value": 3537366136
+          },
+          {
+            "date_unix": 1766016000,
+            "value": 3745770005
+          },
+          {
+            "date_unix": 1766102400,
+            "value": 3290109981
+          },
+          {
+            "date_unix": 1766188800,
+            "value": 2835215985
+          },
+          {
+            "date_unix": 1766275200,
+            "value": 2687989355
+          },
+          {
+            "date_unix": 1766361600,
+            "value": 3648475698
+          },
+          {
+            "date_unix": 1766448000,
+            "value": 3577757135
+          },
+          {
+            "date_unix": 1766534400,
+            "value": 3347649069
+          },
+          {
+            "date_unix": 1766620800,
+            "value": 3477481762
+          },
+          {
+            "date_unix": 1766707200,
+            "value": 3628530034
+          },
+          {
+            "date_unix": 1766793600,
+            "value": 3087713203
+          },
+          {
+            "date_unix": 1766880000,
+            "value": 2698122259
+          },
+          {
+            "date_unix": 1766966400,
+            "value": 4280705255
+          },
+          {
+            "date_unix": 1767052800,
+            "value": 3842475533
+          },
+          {
+            "date_unix": 1767139200,
+            "value": 4087214843
+          },
+          {
+            "date_unix": 1767225600,
+            "value": 2812822045
+          },
+          {
+            "date_unix": 1767312000,
+            "value": 4472717181
+          },
+          {
+            "date_unix": 1767398400,
+            "value": 4429795090
+          },
+          {
+            "date_unix": 1767484800,
+            "value": 4966152976
+          },
+          {
+            "date_unix": 1767571200,
+            "value": 5823362778
+          },
+          {
+            "date_unix": 1767657600,
+            "value": 6139496027
+          },
+          {
+            "date_unix": 1767744000,
+            "value": 5084354468
+          },
+          {
+            "date_unix": 1767830400,
+            "value": 3853067602
+          },
+          {
+            "date_unix": 1767916800,
+            "value": 3421669651
+          },
+          {
+            "date_unix": 1768003200,
+            "value": 1850667229
+          },
+          {
+            "date_unix": 1768089600,
+            "value": 3412161992
+          },
+          {
+            "date_unix": 1768176000,
+            "value": 3441728281
+          },
+          {
+            "date_unix": 1768262400,
+            "value": 3691382048
+          },
+          {
+            "date_unix": 1768348800,
+            "value": 4508382295
+          },
+          {
+            "date_unix": 1768435200,
+            "value": 4851577680
+          },
+          {
+            "date_unix": 1768521600,
+            "value": 4706434150
+          },
+          {
+            "date_unix": 1768608000,
+            "value": 3164607219
+          },
+          {
+            "date_unix": 1768694400,
+            "value": 3794371210
+          },
+          {
+            "date_unix": 1768780800,
+            "value": 4298536489
+          },
+          {
+            "date_unix": 1768867200,
+            "value": 5185771162
+          },
+          {
+            "date_unix": 1768953600,
+            "value": 6271496647
+          },
+          {
+            "date_unix": 1769040000,
+            "value": 5589422554
+          },
+          {
+            "date_unix": 1769126400,
+            "value": 5152010901
+          },
+          {
+            "date_unix": 1769212800,
+            "value": 3435676890
+          },
+          {
+            "date_unix": 1769299200,
+            "value": 4110232808
+          },
+          {
+            "date_unix": 1769385600,
+            "value": 4839235382
+          },
+          {
+            "date_unix": 1769472000,
+            "value": 5368988158
+          },
+          {
+            "date_unix": 1769558400,
+            "value": 5057547018
+          },
+          {
+            "date_unix": 1769644800,
+            "value": 4565727870
+          },
+          {
+            "date_unix": 1769731200,
+            "value": 5934078062
+          },
+          {
+            "date_unix": 1769817600,
+            "value": 5621945948
+          },
+          {
+            "date_unix": 1769904000,
+            "value": 5460122392
+          },
+          {
+            "date_unix": 1769990400,
+            "value": 6045867481
+          },
+          {
+            "date_unix": 1770076800,
+            "value": 5915094753
+          },
+          {
+            "date_unix": 1770163200,
+            "value": 5816622181
+          },
+          {
+            "date_unix": 1770249600,
+            "value": 7108258727
+          },
+          {
+            "date_unix": 1770336000,
+            "value": 6831975470
+          },
+          {
+            "date_unix": 1770422400,
+            "value": 4713527622
+          },
+          {
+            "date_unix": 1770508800,
+            "value": 4250065648
+          },
+          {
+            "date_unix": 1770595200,
+            "value": 4444439204
+          },
+          {
+            "date_unix": 1770681600,
+            "value": 4126929570
+          },
+          {
+            "date_unix": 1770768000,
+            "value": 4206633161
+          },
+          {
+            "date_unix": 1770854400,
+            "value": 3558783119
+          },
+          {
+            "date_unix": 1770940800,
+            "value": 3903262255
+          },
+          {
+            "date_unix": 1771027200,
+            "value": 2969673111
+          },
+          {
+            "date_unix": 1771113600,
+            "value": 3495247135
+          },
+          {
+            "date_unix": 1771200000,
+            "value": 3019168845
+          },
+          {
+            "date_unix": 1771286400,
+            "value": 2919109059
+          },
+          {
+            "date_unix": 1771372800,
+            "value": 3132997089
+          },
+          {
+            "date_unix": 1771459200,
+            "value": 2783234697
+          },
+          {
+            "date_unix": 1771545600,
+            "value": 2575768531
+          },
+          {
+            "date_unix": 1771632000,
+            "value": 1685316980
+          },
+          {
+            "date_unix": 1771718400,
+            "value": 1711308580
+          },
+          {
+            "date_unix": 1771804800,
+            "value": 3224761417
+          },
+          {
+            "date_unix": 1771891200,
+            "value": 3015504882.31
+          },
+          {
+            "date_unix": 1771977600,
+            "value": 2869309327.2
+          },
+          {
+            "date_unix": 1772064000,
+            "value": 2693483238
+          },
+          {
+            "date_unix": 1772150400,
+            "value": 2997710031
+          },
+          {
+            "date_unix": 1772236800,
+            "value": 3414239054.99
+          },
+          {
+            "date_unix": 1772323200,
+            "value": 2552903891.26
+          },
+          {
+            "date_unix": 1772409600,
+            "value": 2959984211.34
+          },
+          {
+            "date_unix": 1772496000,
+            "value": 2935993686
+          },
+          {
+            "date_unix": 1772582400,
+            "value": 3305214267.75
+          },
+          {
+            "date_unix": 1772668800,
+            "value": 2984126001
+          },
+          {
+            "date_unix": 1772755200,
+            "value": 2900063523
+          },
+          {
+            "date_unix": 1772841600,
+            "value": 1743334372
+          },
+          {
+            "date_unix": 1772928000,
+            "value": 2078970821.94
+          },
+          {
+            "date_unix": 1773014400,
+            "value": 2790736617
+          },
+          {
+            "date_unix": 1773100800,
+            "value": 3033344385
+          },
+          {
+            "date_unix": 1773187200,
+            "value": 3037497408
+          },
+          {
+            "date_unix": 1773273600,
+            "value": 2763812654
+          },
+          {
+            "date_unix": 1773360000,
+            "value": 3302627224
+          },
+          {
+            "date_unix": 1773446400,
+            "value": 2208041827
+          },
+          {
+            "date_unix": 1773532800,
+            "value": 2548972586
+          },
+          {
+            "date_unix": 1773619200,
+            "value": 3226888079
+          },
+          {
+            "date_unix": 1773705600,
+            "value": 3030772856
+          },
+          {
+            "date_unix": 1773792000,
+            "value": 4322484414
+          },
+          {
+            "date_unix": 1773878400,
+            "value": 2923840316
+          },
+          {
+            "date_unix": 1773964800,
+            "value": 2705081963
+          },
+          {
+            "date_unix": 1774051200,
+            "value": 2111065370
+          },
+          {
+            "date_unix": 1774137600,
+            "value": 2560331457
+          },
+          {
+            "date_unix": 1774224000,
+            "value": 3669207750
+          },
+          {
+            "date_unix": 1774310400,
+            "value": 2806714176
+          },
+          {
+            "date_unix": 1774396800,
+            "value": 2478894861
+          },
+          {
+            "date_unix": 1774483200,
+            "value": 2609139620
+          },
+          {
+            "date_unix": 1774569600,
+            "value": 2577961625
+          },
+          {
+            "date_unix": 1774656000,
+            "value": 1724440632
+          },
+          {
+            "date_unix": 1774742400,
+            "value": 1822620749
+          },
+          {
+            "date_unix": 1774828800,
+            "value": 2405013833
+          },
+          {
+            "date_unix": 1774915200,
+            "value": 2625350986
+          },
+          {
+            "date_unix": 1775001600,
+            "value": 3568662644
+          },
+          {
+            "date_unix": 1775088000,
+            "value": 2147436616
+          },
+          {
+            "date_unix": 1775174400,
+            "value": 1906530353
+          },
+          {
+            "date_unix": 1775260800,
+            "value": 1537344636
+          },
+          {
+            "date_unix": 1775347200,
+            "value": 1500494027
+          },
+          {
+            "date_unix": 1775433600,
+            "value": 2373294116.01
+          },
+          {
+            "date_unix": 1775520000,
+            "value": 2194807470
+          },
+          {
+            "date_unix": 1775606400,
+            "value": 2622133963
+          },
+          {
+            "date_unix": 1775692800,
+            "value": 1862477807
+          },
+          {
+            "date_unix": 1775779200,
+            "value": 1997642336
+          },
+          {
+            "date_unix": 1775865600,
+            "value": 1387308738
+          },
+          {
+            "date_unix": 1775952000,
+            "value": 1478447719
+          },
+          {
+            "date_unix": 1776038400,
+            "value": 1855082363
+          },
+          {
+            "date_unix": 1776124800,
+            "value": 2445044243
+          },
+          {
+            "date_unix": 1776211200,
+            "value": 1802229115
+          },
+          {
+            "date_unix": 1776297600,
+            "value": 2265771279
+          },
+          {
+            "date_unix": 1776384000,
+            "value": 2595398204
+          },
+          {
+            "date_unix": 1776470400,
+            "value": 1756162327
+          },
+          {
+            "date_unix": 1776556800,
+            "value": 1938846645
+          },
+          {
+            "date_unix": 1776643200,
+            "value": 1694815965
+          },
+          {
+            "date_unix": 1776729600,
+            "value": 1651617543
+          },
+          {
+            "date_unix": 1776816000,
+            "value": 2248981803
+          },
+          {
+            "date_unix": 1776902400,
+            "value": 1753055795
+          },
+          {
+            "date_unix": 1776988800,
+            "value": 1743106146
+          },
+          {
+            "date_unix": 1777075200,
+            "value": 1419380804
+          },
+          {
+            "date_unix": 1777161600,
+            "value": 1648166844
+          },
+          {
+            "date_unix": 1777248000,
+            "value": 2176118711
+          },
+          {
+            "date_unix": 1777334400,
+            "value": 2474637123
+          },
+          {
+            "date_unix": 1777420800,
+            "value": 1759947824
+          },
+          {
+            "date_unix": 1777507200,
+            "value": 1609780076
+          },
+          {
+            "date_unix": 1777593600,
+            "value": 1602138664
+          },
+          {
+            "date_unix": 1777680000,
+            "value": 1252279866
+          },
+          {
+            "date_unix": 1777766400,
+            "value": 1177639614.84
+          },
+          {
+            "date_unix": 1777852800,
+            "value": 2172723946
+          },
+          {
+            "date_unix": 1777939200,
+            "value": 1891917373.92
+          },
+          {
+            "date_unix": 1778025600,
+            "value": 2084410635
+          },
+          {
+            "date_unix": 1778112000,
+            "value": 2191037958.1400003
+          },
+          {
+            "date_unix": 1778198400,
+            "value": 2637793948
+          },
+          {
+            "date_unix": 1778284800,
+            "value": 1912046836
+          },
+          {
+            "date_unix": 1778371200,
+            "value": 2428975441.55
+          },
+          {
+            "date_unix": 1778457600,
+            "value": 2621943688.09
+          },
+          {
+            "date_unix": 1778544000,
+            "value": 2521562149.23
+          },
+          {
+            "date_unix": 1778630400,
+            "value": 2140455273.34
+          },
+          {
+            "date_unix": 1778716800,
+            "value": 2250443512.16
+          },
+          {
+            "date_unix": 1778803200,
+            "value": 2332175600.06
+          },
+          {
+            "date_unix": 1778889600,
+            "value": 1781379287.3799999
+          },
+          {
+            "date_unix": 1778976000,
+            "value": 1381858208.84
+          },
+          {
+            "date_unix": 1779062400,
+            "value": 1742765390.3899999
+          },
+          {
+            "date_unix": 1779148800,
+            "value": 1819825500.84
+          },
+          {
+            "date_unix": 1779235200,
+            "value": 1765500069.1100001
+          },
+          {
+            "date_unix": 1779321600,
+            "value": 1860529810.98
+          },
+          {
+            "date_unix": 1779408000,
+            "value": 1744920197.1899998
+          },
+          {
+            "date_unix": 1779494400,
+            "value": 1637509413.75
+          },
+          {
+            "date_unix": 1779580800,
+            "value": 1606192174.8
+          },
+          {
+            "date_unix": 1779667200,
+            "value": 1498921195.17
+          },
+          {
+            "date_unix": 1779753600,
+            "value": 1796150858.63
+          },
+          {
+            "date_unix": 1779840000,
+            "value": 1478683026.3999999
+          },
+          {
+            "date_unix": 1779926400,
+            "value": 2029277206.61
+          },
+          {
+            "date_unix": 1780012800,
+            "value": 1935747634.53
+          },
+          {
+            "date_unix": 1780099200,
+            "value": 1426655457.31
+          },
+          {
+            "date_unix": 1780185600,
+            "value": 1501598569.3999999
+          },
+          {
+            "date_unix": 1780272000,
+            "value": 2208870704.13
+          },
+          {
+            "date_unix": 1780358400,
+            "value": 2410231304.1
+          },
+          {
+            "date_unix": 1780444800,
+            "value": 2677711653.73
+          },
+          {
+            "date_unix": 1780531200,
+            "value": 4151243138
+          },
+          {
+            "date_unix": 1780617600,
+            "value": 3773402345.1800003
+          },
+          {
+            "date_unix": 1780704000,
+            "value": 2102968823.95
+          },
+          {
+            "date_unix": 1780790400,
+            "value": 1717081667.24
+          },
+          {
+            "date_unix": 1780876800,
+            "value": 1870878955.8
+          },
+          {
+            "date_unix": 1780963200,
+            "value": 2008448699.15
+          },
+          {
+            "date_unix": 1781049600,
+            "value": 2027423312.65
+          },
+          {
+            "date_unix": 1781136000,
+            "value": 2099737632.7299998
+          },
+          {
+            "date_unix": 1781222400,
+            "value": 2092343563.37
+          },
+          {
+            "date_unix": 1781308800,
+            "value": 1450688260.66
+          },
+          {
+            "date_unix": 1781395200,
+            "value": 1534750533.48
+          },
+          {
+            "date_unix": 1781481600,
+            "value": 2192574526.7
+          },
+          {
+            "date_unix": 1781568000,
+            "value": 2070287648.85
+          },
+          {
+            "date_unix": 1781654400,
+            "value": 2168862595.26
+          },
+          {
+            "date_unix": 1781740800,
+            "value": 1966256673.6499999
+          },
+          {
+            "date_unix": 1781827200,
+            "value": 1899574427.17
+          },
+          {
+            "date_unix": 1781913600,
+            "value": 2010660711.39
+          },
+          {
+            "date_unix": 1782000000,
+            "value": 1874528590.29
+          },
+          {
+            "date_unix": 1782086400,
+            "value": 2247692042.43
+          },
+          {
+            "date_unix": 1782172800,
+            "value": 2493985271.51
+          },
+          {
+            "date_unix": 1782259200,
+            "value": 3278387246.47
+          },
+          {
+            "date_unix": 1782345600,
+            "value": 2664481572.31
+          },
+          {
+            "date_unix": 1782432000,
+            "value": 2887566075.81
+          },
+          {
+            "date_unix": 1782518400,
+            "value": 1248333148.22
+          },
+          {
+            "date_unix": 1782604800,
+            "value": 1695787774.53
+          },
+          {
+            "date_unix": 1782691200,
+            "value": 2991355618.09
+          },
+          {
+            "date_unix": 1782777600,
+            "value": 2375605563.46
+          },
+          {
+            "date_unix": 1782864000,
+            "value": 2373910145.77
+          },
+          {
+            "date_unix": 1782950400,
+            "value": 2370719435.13
+          },
+          {
+            "date_unix": 1783036800,
+            "value": 1835103458.55
+          },
+          {
+            "date_unix": 1783123200,
+            "value": 2211899514.63
+          },
+          {
+            "date_unix": 1783209600,
+            "value": 1978524208.34
+          },
+          {
+            "date_unix": 1783296000,
+            "value": 2282613645
+          },
+          {
+            "date_unix": 1783382400,
+            "value": 2665936439.7299995
+          },
+          {
+            "date_unix": 1783468800,
+            "value": 2548173666.7300005
+          },
+          {
+            "date_unix": 1783555200,
+            "value": 1890179396.88
+          },
+          {
+            "date_unix": 1783641600,
+            "value": 1720514992.14
+          },
+          {
+            "date_unix": 1783728000,
+            "value": 1145744223.1399999
+          },
+          {
+            "date_unix": 1783814400,
+            "value": 1292448363.5
+          },
+          {
+            "date_unix": 1783900800,
+            "value": 1866934854.69
+          },
+          {
+            "date_unix": 1783987200,
+            "value": 2014076247.31
+          },
+          {
+            "date_unix": 1784073600,
+            "value": 1756563901.6599998
+          },
+          {
+            "date_unix": 1784160000,
+            "value": 1680571928.16
+          },
+          {
+            "date_unix": 1784246400,
+            "value": 1573562630.75
+          },
+          {
+            "date_unix": 1784332800,
+            "value": 1303497616.08
+          },
+          {
+            "date_unix": 1784419200,
+            "value": 1417998314.2
+          },
+          {
+            "date_unix": 1784505600,
+            "value": 1985177787.9099998
+          },
+          {
+            "date_unix": 1784592000,
+            "value": 1552390947.31
+          },
+          {
+            "date_unix": 1784678400,
+            "value": 1767271659.8799999
+          },
+          {
+            "date_unix": 1784764800,
+            "value": 1616428026.72
+          },
+          {
+            "date_unix": 1784851200,
+            "value": 1623052660.94
+          },
+          {
+            "date_unix": 1784937600,
+            "value": 1066541939.9
+          },
+          {
+            "date_unix": 1785024000,
+            "value": 1225930127.17
+          },
+          {
+            "date_unix": 1785110400,
+            "value": 1874857617.14
+          },
+          {
+            "date_unix": 1785196800,
+            "value": 1759353963.1499999
+          },
+          {
+            "date_unix": 1785283200,
+            "value": 2020016584.16
+          },
+          {
+            "date_unix": 1785369600,
+            "value": 1613982015.25
+          },
+          {
+            "date_unix": 1785456000,
+            "value": 1726152519.08
+          },
+          {
+            "date_unix": 1785542400,
+            "value": 1319380101.65
+          },
+          {
+            "date_unix": 1785628800,
+            "value": 1364864992.96
+          },
+          {
+            "date_unix": 1785715200,
+            "value": 1756482483.88
+          },
+          {
+            "date_unix": 1785801600,
+            "value": 1783413450.9299998
+          },
+          {
+            "date_unix": 1785888000,
+            "value": 1679131888.91
+          },
+          {
+            "date_unix": 1785974400,
+            "value": 1413265760.1799998
+          },
+          {
+            "date_unix": 1786060800,
+            "value": 1392769640.02
+          },
+          {
+            "date_unix": 1786147200,
+            "value": 1501745432.54
+          },
+          {
+            "date_unix": 1786233600,
+            "value": 1353540958.98
+          },
+          {
+            "date_unix": 1786320000,
+            "value": 1595343022.19
+          },
+          {
+            "date_unix": 1786406400,
+            "value": 1665876015.28
+          },
+          {
+            "date_unix": 1786492800,
+            "value": 1752085985.89
+          },
+          {
+            "date_unix": 1786579200,
+            "value": 1959389920.16
+          },
+          {
+            "date_unix": 1786665600,
+            "value": 1635934413.56
+          },
+          {
+            "date_unix": 1786752000,
+            "value": 1191269074.04
+          },
+          {
+            "date_unix": 1786838400,
+            "value": 1080008049.95
+          },
+          {
+            "date_unix": 1786924800,
+            "value": 1510989401.3600001
+          },
+          {
+            "date_unix": 1787011200,
+            "value": 1883266013.04
+          },
+          {
+            "date_unix": 1787097600,
+            "value": 3056588165.95
+          },
+          {
+            "date_unix": 1787184000,
+            "value": 2872958165.33
+          },
+          {
+            "date_unix": 1787270400,
+            "value": 3652051777.22
+          },
+          {
+            "date_unix": 1787356800,
+            "value": 3776963020.7
+          },
+          {
+            "date_unix": 1787443200,
+            "value": 2992963928.25
+          },
+          {
+            "date_unix": 1787529600,
+            "value": 3043921967.64
+          },
+          {
+            "date_unix": 1787616000,
+            "value": 2983178860.19
+          },
+          {
+            "date_unix": 1787702400,
+            "value": 2413294236
+          },
+          {
+            "date_unix": 1787788800,
+            "value": 3762693440.54
+          },
+          {
+            "date_unix": 1787875200,
+            "value": 2641507008.2200003
+          },
+          {
+            "date_unix": 1787961600,
+            "value": 1705497234.31
+          },
+          {
+            "date_unix": 1788048000,
+            "value": 1978451265.74
+          },
+          {
+            "date_unix": 1788134400,
+            "value": 2568052237.05
+          },
+          {
+            "date_unix": 1788220800,
+            "value": 2231684341.49
+          },
+          {
+            "date_unix": 1788307200,
+            "value": 2345533366.32
+          },
+          {
+            "date_unix": 1788393600,
+            "value": 2540271271.8
+          },
+          {
+            "date_unix": 1788480000,
+            "value": 1934598322.01
+          },
+          {
+            "date_unix": 1788566400,
+            "value": 1914884688.84
+          },
+          {
+            "date_unix": 1788652800,
+            "value": 2973439573.6600003
+          },
+          {
+            "date_unix": 1788739200,
+            "value": 2787720640.98
+          },
+          {
+            "date_unix": 1788825600,
+            "value": 2783900569.34
+          },
+          {
+            "date_unix": 1788912000,
+            "value": 3076471156.63
+          },
+          {
+            "date_unix": 1788998400,
+            "value": 3001225162.0099998
+          },
+          {
+            "date_unix": 1789084800,
+            "value": 3278997129.4300003
+          },
+          {
+            "date_unix": 1789171200,
+            "value": 1743744737.08
+          },
+          {
+            "date_unix": 1789257600,
+            "value": 1791117755.97
+          },
+          {
+            "date_unix": 1789344000,
+            "value": 2530306442.6
+          },
+          {
+            "date_unix": 1789430400,
+            "value": 2703421695.3399997
+          },
+          {
+            "date_unix": 1789516800,
+            "value": 2800620406.5499997
+          },
+          {
+            "date_unix": 1789603200,
+            "value": 2592886366.21
+          },
+          {
+            "date_unix": 1789689600,
+            "value": 3537543811.43
+          },
+          {
+            "date_unix": 1789776000,
+            "value": 2876208376.8599997
+          },
+          {
+            "date_unix": 1789862400,
+            "value": 2795252680.3599997
+          },
+          {
+            "date_unix": 1789948800,
+            "value": 3428858820.75
+          },
+          {
+            "date_unix": 1790035200,
+            "value": 3195015036.76
+          },
+          {
+            "date_unix": 1790121600,
+            "value": 2552816122.21
+          },
+          {
+            "date_unix": 1790208000,
+            "value": 2450711186.84
+          },
+          {
+            "date_unix": 1790294400,
+            "value": 2612632382.63
+          },
+          {
+            "date_unix": 1790380800,
+            "value": 2591640954.99
+          }
         ]
       },
       "chain_revenue": {
-        "_errors": [
-          "GET https://api.llama.fi/overview/fees/Solana?dataType=dailyRevenue failed after 3 attempts: The read operation timed out"
+        "series": [
+          {
+            "date_unix": 1727395200,
+            "value": 3498416
+          },
+          {
+            "date_unix": 1727481600,
+            "value": 3371099
+          },
+          {
+            "date_unix": 1727568000,
+            "value": 3296729
+          },
+          {
+            "date_unix": 1727654400,
+            "value": 3403632
+          },
+          {
+            "date_unix": 1727740800,
+            "value": 7307304
+          },
+          {
+            "date_unix": 1727827200,
+            "value": 3122492
+          },
+          {
+            "date_unix": 1727913600,
+            "value": 3213122
+          },
+          {
+            "date_unix": 1728000000,
+            "value": 2823776
+          },
+          {
+            "date_unix": 1728086400,
+            "value": 3045975
+          },
+          {
+            "date_unix": 1728172800,
+            "value": 2835000
+          },
+          {
+            "date_unix": 1728259200,
+            "value": 3023281
+          },
+          {
+            "date_unix": 1728345600,
+            "value": 2775898
+          },
+          {
+            "date_unix": 1728432000,
+            "value": 2966403
+          },
+          {
+            "date_unix": 1728518400,
+            "value": 2782541
+          },
+          {
+            "date_unix": 1728604800,
+            "value": 2959500
+          },
+          {
+            "date_unix": 1728691200,
+            "value": 2971200
+          },
+          {
+            "date_unix": 1728777600,
+            "value": 3276884
+          },
+          {
+            "date_unix": 1728864000,
+            "value": 9972352
+          },
+          {
+            "date_unix": 1728950400,
+            "value": 5320283
+          },
+          {
+            "date_unix": 1729036800,
+            "value": 4277370
+          },
+          {
+            "date_unix": 1729123200,
+            "value": 4634251
+          },
+          {
+            "date_unix": 1729209600,
+            "value": 7528846
+          },
+          {
+            "date_unix": 1729296000,
+            "value": 5558176
+          },
+          {
+            "date_unix": 1729382400,
+            "value": 5148696
+          },
+          {
+            "date_unix": 1729468800,
+            "value": 5882129
+          },
+          {
+            "date_unix": 1729555200,
+            "value": 5569292
+          },
+          {
+            "date_unix": 1729641600,
+            "value": 6705693
+          },
+          {
+            "date_unix": 1729728000,
+            "value": 10938591
+          },
+          {
+            "date_unix": 1729814400,
+            "value": 6840278
+          },
+          {
+            "date_unix": 1729900800,
+            "value": 4917245
+          },
+          {
+            "date_unix": 1729987200,
+            "value": 4359386
+          },
+          {
+            "date_unix": 1730073600,
+            "value": 5181867
+          },
+          {
+            "date_unix": 1730160000,
+            "value": 5502289
+          },
+          {
+            "date_unix": 1730246400,
+            "value": 5741197
+          },
+          {
+            "date_unix": 1730332800,
+            "value": 4580208
+          },
+          {
+            "date_unix": 1730419200,
+            "value": 4309190
+          },
+          {
+            "date_unix": 1730505600,
+            "value": 4361540
+          },
+          {
+            "date_unix": 1730592000,
+            "value": 4274090
+          },
+          {
+            "date_unix": 1730678400,
+            "value": 5324287
+          },
+          {
+            "date_unix": 1730764800,
+            "value": 4730502
+          },
+          {
+            "date_unix": 1730851200,
+            "value": 6483387
+          },
+          {
+            "date_unix": 1730937600,
+            "value": 6839618
+          },
+          {
+            "date_unix": 1731024000,
+            "value": 7643479
+          },
+          {
+            "date_unix": 1731110400,
+            "value": 6688827
+          },
+          {
+            "date_unix": 1731196800,
+            "value": 6565622
+          },
+          {
+            "date_unix": 1731283200,
+            "value": 11964561
+          },
+          {
+            "date_unix": 1731369600,
+            "value": 13490858
+          },
+          {
+            "date_unix": 1731456000,
+            "value": 28460045
+          },
+          {
+            "date_unix": 1731542400,
+            "value": 19221489
+          },
+          {
+            "date_unix": 1731628800,
+            "value": 15304541
+          },
+          {
+            "date_unix": 1731715200,
+            "value": 13923325
+          },
+          {
+            "date_unix": 1731801600,
+            "value": 15342784
+          },
+          {
+            "date_unix": 1731888000,
+            "value": 25832885
+          },
+          {
+            "date_unix": 1731974400,
+            "value": 20370231
+          },
+          {
+            "date_unix": 1732060800,
+            "value": 21249076
+          },
+          {
+            "date_unix": 1732147200,
+            "value": 24516634
+          },
+          {
+            "date_unix": 1732233600,
+            "value": 20710174
+          },
+          {
+            "date_unix": 1732320000,
+            "value": 17327446
+          },
+          {
+            "date_unix": 1732406400,
+            "value": 15820912
+          },
+          {
+            "date_unix": 1732492800,
+            "value": 15389524
+          },
+          {
+            "date_unix": 1732579200,
+            "value": 14472565
+          },
+          {
+            "date_unix": 1732665600,
+            "value": 14979117
+          },
+          {
+            "date_unix": 1732752000,
+            "value": 15781513
+          },
+          {
+            "date_unix": 1732838400,
+            "value": 16836932
+          },
+          {
+            "date_unix": 1732924800,
+            "value": 11246539
+          },
+          {
+            "date_unix": 1733011200,
+            "value": 11761843
+          },
+          {
+            "date_unix": 1733097600,
+            "value": 13654541
+          },
+          {
+            "date_unix": 1733184000,
+            "value": 11739443
+          },
+          {
+            "date_unix": 1733270400,
+            "value": 11361231
+          },
+          {
+            "date_unix": 1733356800,
+            "value": 11491904
+          },
+          {
+            "date_unix": 1733443200,
+            "value": 10122500
+          },
+          {
+            "date_unix": 1733529600,
+            "value": 8800462
+          },
+          {
+            "date_unix": 1733616000,
+            "value": 7985374
+          },
+          {
+            "date_unix": 1733702400,
+            "value": 14293195
+          },
+          {
+            "date_unix": 1733788800,
+            "value": 12007847
+          },
+          {
+            "date_unix": 1733875200,
+            "value": 11669796
+          },
+          {
+            "date_unix": 1733961600,
+            "value": 11993024
+          },
+          {
+            "date_unix": 1734048000,
+            "value": 11950351
+          },
+          {
+            "date_unix": 1734134400,
+            "value": 11031379
+          },
+          {
+            "date_unix": 1734220800,
+            "value": 8832162
+          },
+          {
+            "date_unix": 1734307200,
+            "value": 13236733
+          },
+          {
+            "date_unix": 1734393600,
+            "value": 11379852
+          },
+          {
+            "date_unix": 1734480000,
+            "value": 12370057
+          },
+          {
+            "date_unix": 1734566400,
+            "value": 23674681
+          },
+          {
+            "date_unix": 1734652800,
+            "value": 18656310
+          },
+          {
+            "date_unix": 1734739200,
+            "value": 9811970
+          },
+          {
+            "date_unix": 1734825600,
+            "value": 8063854
+          },
+          {
+            "date_unix": 1734912000,
+            "value": 8174979
+          },
+          {
+            "date_unix": 1734998400,
+            "value": 7471220
+          },
+          {
+            "date_unix": 1735084800,
+            "value": 6915871
+          },
+          {
+            "date_unix": 1735171200,
+            "value": 7622402
+          },
+          {
+            "date_unix": 1735257600,
+            "value": 9467060
+          },
+          {
+            "date_unix": 1735344000,
+            "value": 8127995
+          },
+          {
+            "date_unix": 1735430400,
+            "value": 8563237
+          },
+          {
+            "date_unix": 1735516800,
+            "value": 8517902
+          },
+          {
+            "date_unix": 1735603200,
+            "value": 9349366
+          },
+          {
+            "date_unix": 1735689600,
+            "value": 20504177
+          },
+          {
+            "date_unix": 1735776000,
+            "value": 12700210
+          },
+          {
+            "date_unix": 1735862400,
+            "value": 13753494
+          },
+          {
+            "date_unix": 1735948800,
+            "value": 12297606
+          },
+          {
+            "date_unix": 1736035200,
+            "value": 11786749
+          },
+          {
+            "date_unix": 1736121600,
+            "value": 13580453
+          },
+          {
+            "date_unix": 1736208000,
+            "value": 23966957
+          },
+          {
+            "date_unix": 1736294400,
+            "value": 13536143
+          },
+          {
+            "date_unix": 1736380800,
+            "value": 13309371
+          },
+          {
+            "date_unix": 1736467200,
+            "value": 12991779
+          },
+          {
+            "date_unix": 1736553600,
+            "value": 10851755
+          },
+          {
+            "date_unix": 1736640000,
+            "value": 13291002
+          },
+          {
+            "date_unix": 1736726400,
+            "value": 15155008
+          },
+          {
+            "date_unix": 1736812800,
+            "value": 11629825
+          },
+          {
+            "date_unix": 1736899200,
+            "value": 11986316
+          },
+          {
+            "date_unix": 1736985600,
+            "value": 13780733
+          },
+          {
+            "date_unix": 1737072000,
+            "value": 16503240
+          },
+          {
+            "date_unix": 1737158400,
+            "value": 39859623
+          },
+          {
+            "date_unix": 1737244800,
+            "value": 46925911
+          },
+          {
+            "date_unix": 1737331200,
+            "value": 52869924
+          },
+          {
+            "date_unix": 1737417600,
+            "value": 35911966
+          },
+          {
+            "date_unix": 1737504000,
+            "value": 23960979.21
+          },
+          {
+            "date_unix": 1737590400,
+            "value": 31901890.34
+          },
+          {
+            "date_unix": 1737676800,
+            "value": 40023129.68
+          },
+          {
+            "date_unix": 1737763200,
+            "value": 23064666
+          },
+          {
+            "date_unix": 1737849600,
+            "value": 19199224
+          },
+          {
+            "date_unix": 1737936000,
+            "value": 19687068
+          },
+          {
+            "date_unix": 1738022400,
+            "value": 30724419
+          },
+          {
+            "date_unix": 1738108800,
+            "value": 16759467
+          },
+          {
+            "date_unix": 1738195200,
+            "value": 23550460
+          },
+          {
+            "date_unix": 1738281600,
+            "value": 19349473
+          },
+          {
+            "date_unix": 1738368000,
+            "value": 12376332
+          },
+          {
+            "date_unix": 1738454400,
+            "value": 12588633.08
+          },
+          {
+            "date_unix": 1738540800,
+            "value": 18582637
+          },
+          {
+            "date_unix": 1738627200,
+            "value": 11970087
+          },
+          {
+            "date_unix": 1738713600,
+            "value": 11091110.13
+          },
+          {
+            "date_unix": 1738800000,
+            "value": 9467176
+          },
+          {
+            "date_unix": 1738886400,
+            "value": 9587723
+          },
+          {
+            "date_unix": 1738972800,
+            "value": 7874491
+          },
+          {
+            "date_unix": 1739059200,
+            "value": 12953333
+          },
+          {
+            "date_unix": 1739145600,
+            "value": 18229434.48
+          },
+          {
+            "date_unix": 1739232000,
+            "value": 13600000.78
+          },
+          {
+            "date_unix": 1739318400,
+            "value": 16880828
+          },
+          {
+            "date_unix": 1739404800,
+            "value": 11796013.71
+          },
+          {
+            "date_unix": 1739491200,
+            "value": 11862006.29
+          },
+          {
+            "date_unix": 1739577600,
+            "value": 8671470
+          },
+          {
+            "date_unix": 1739664000,
+            "value": 7486523
+          },
+          {
+            "date_unix": 1739750400,
+            "value": 7578669.4
+          },
+          {
+            "date_unix": 1739836800,
+            "value": 10686078.5
+          },
+          {
+            "date_unix": 1739923200,
+            "value": 6984069.57
+          },
+          {
+            "date_unix": 1740009600,
+            "value": 7313909.48
+          },
+          {
+            "date_unix": 1740096000,
+            "value": 6316984.48
+          },
+          {
+            "date_unix": 1740182400,
+            "value": 5828557
+          },
+          {
+            "date_unix": 1740268800,
+            "value": 4986672.47
+          },
+          {
+            "date_unix": 1740355200,
+            "value": 8182078
+          },
+          {
+            "date_unix": 1740441600,
+            "value": 6854647.01
+          },
+          {
+            "date_unix": 1740528000,
+            "value": 5016274
+          },
+          {
+            "date_unix": 1740614400,
+            "value": 4376385
+          },
+          {
+            "date_unix": 1740700800,
+            "value": 4885674
+          },
+          {
+            "date_unix": 1740787200,
+            "value": 3676186.18
+          },
+          {
+            "date_unix": 1740873600,
+            "value": 5681531.6
+          },
+          {
+            "date_unix": 1740960000,
+            "value": 5563610.44
+          },
+          {
+            "date_unix": 1741046400,
+            "value": 4890959.97
+          },
+          {
+            "date_unix": 1741132800,
+            "value": 4894388.65
+          },
+          {
+            "date_unix": 1741219200,
+            "value": 6788505.94
+          },
+          {
+            "date_unix": 1741305600,
+            "value": 5775991.42
+          },
+          {
+            "date_unix": 1741392000,
+            "value": 4125139.22
+          },
+          {
+            "date_unix": 1741478400,
+            "value": 3848426.03
+          },
+          {
+            "date_unix": 1741564800,
+            "value": 4345733.95
+          },
+          {
+            "date_unix": 1741651200,
+            "value": 5832417.19
+          },
+          {
+            "date_unix": 1741737600,
+            "value": 4202401.04
+          },
+          {
+            "date_unix": 1741824000,
+            "value": 3867734
+          },
+          {
+            "date_unix": 1741910400,
+            "value": 4687627
+          },
+          {
+            "date_unix": 1741996800,
+            "value": 4005729
+          },
+          {
+            "date_unix": 1742083200,
+            "value": 3328984
+          },
+          {
+            "date_unix": 1742169600,
+            "value": 4658962
+          },
+          {
+            "date_unix": 1742256000,
+            "value": 3396904.07
+          },
+          {
+            "date_unix": 1742342400,
+            "value": 4094014.35
+          },
+          {
+            "date_unix": 1742428800,
+            "value": 3559328
+          },
+          {
+            "date_unix": 1742515200,
+            "value": 2663847
+          },
+          {
+            "date_unix": 1742601600,
+            "value": 2572762
+          },
+          {
+            "date_unix": 1742688000,
+            "value": 3619837
+          },
+          {
+            "date_unix": 1742774400,
+            "value": 6003888.03
+          },
+          {
+            "date_unix": 1742860800,
+            "value": 5430612.14
+          },
+          {
+            "date_unix": 1742947200,
+            "value": 4851028
+          },
+          {
+            "date_unix": 1743033600,
+            "value": 5044296
+          },
+          {
+            "date_unix": 1743120000,
+            "value": 5293701.13
+          },
+          {
+            "date_unix": 1743206400,
+            "value": 4150093.16
+          },
+          {
+            "date_unix": 1743292800,
+            "value": 3633960
+          },
+          {
+            "date_unix": 1743379200,
+            "value": 4617650
+          },
+          {
+            "date_unix": 1743465600,
+            "value": 5033773
+          },
+          {
+            "date_unix": 1743552000,
+            "value": 4967208.16
+          },
+          {
+            "date_unix": 1743638400,
+            "value": 4521617.89
+          },
+          {
+            "date_unix": 1743724800,
+            "value": 4173108.91
+          },
+          {
+            "date_unix": 1743811200,
+            "value": 3697267
+          },
+          {
+            "date_unix": 1743897600,
+            "value": 4046870.17
+          },
+          {
+            "date_unix": 1743984000,
+            "value": 5017134.06
+          },
+          {
+            "date_unix": 1744070400,
+            "value": 4691147.98
+          },
+          {
+            "date_unix": 1744156800,
+            "value": 6282676.73
+          },
+          {
+            "date_unix": 1744243200,
+            "value": 5036167.18
+          },
+          {
+            "date_unix": 1744329600,
+            "value": 5316159.49
+          },
+          {
+            "date_unix": 1744416000,
+            "value": 6052992
+          },
+          {
+            "date_unix": 1744502400,
+            "value": 5472458.77
+          },
+          {
+            "date_unix": 1744588800,
+            "value": 6135421.23
+          },
+          {
+            "date_unix": 1744675200,
+            "value": 6565903.59
+          },
+          {
+            "date_unix": 1744761600,
+            "value": 7332655.43
+          },
+          {
+            "date_unix": 1744848000,
+            "value": 6370064.05
+          },
+          {
+            "date_unix": 1744934400,
+            "value": 5624038.41
+          },
+          {
+            "date_unix": 1745020800,
+            "value": 5022991.6
+          },
+          {
+            "date_unix": 1745107200,
+            "value": 4671117.52
+          },
+          {
+            "date_unix": 1745193600,
+            "value": 6122301.23
+          },
+          {
+            "date_unix": 1745280000,
+            "value": 7092946.62
+          },
+          {
+            "date_unix": 1745366400,
+            "value": 7514409.93
+          },
+          {
+            "date_unix": 1745452800,
+            "value": 6790561.550000001
+          },
+          {
+            "date_unix": 1745539200,
+            "value": 7516297.92
+          },
+          {
+            "date_unix": 1745625600,
+            "value": 6579678.279999999
+          },
+          {
+            "date_unix": 1745712000,
+            "value": 5732164.32
+          },
+          {
+            "date_unix": 1745798400,
+            "value": 7278122.23
+          },
+          {
+            "date_unix": 1745884800,
+            "value": 9131708.9
+          },
+          {
+            "date_unix": 1745971200,
+            "value": 7760937.149999999
+          },
+          {
+            "date_unix": 1746057600,
+            "value": 8804718.23
+          },
+          {
+            "date_unix": 1746144000,
+            "value": 7844822.84
+          },
+          {
+            "date_unix": 1746230400,
+            "value": 7163863.44
+          },
+          {
+            "date_unix": 1746316800,
+            "value": 6697824.87
+          },
+          {
+            "date_unix": 1746403200,
+            "value": 6748880.31
+          },
+          {
+            "date_unix": 1746489600,
+            "value": 7894568.92
+          },
+          {
+            "date_unix": 1746576000,
+            "value": 7260442.5
+          },
+          {
+            "date_unix": 1746662400,
+            "value": 9414947.59
+          },
+          {
+            "date_unix": 1746748800,
+            "value": 8767332.89
+          },
+          {
+            "date_unix": 1746835200,
+            "value": 7126086.7
+          },
+          {
+            "date_unix": 1746921600,
+            "value": 6912373.78
+          },
+          {
+            "date_unix": 1747008000,
+            "value": 10524504.69
+          },
+          {
+            "date_unix": 1747094400,
+            "value": 18132886
+          },
+          {
+            "date_unix": 1747180800,
+            "value": 17919888
+          },
+          {
+            "date_unix": 1747267200,
+            "value": 14259771
+          },
+          {
+            "date_unix": 1747353600,
+            "value": 9445961
+          },
+          {
+            "date_unix": 1747440000,
+            "value": 7133728
+          },
+          {
+            "date_unix": 1747526400,
+            "value": 7461602
+          },
+          {
+            "date_unix": 1747612800,
+            "value": 8921410.02
+          },
+          {
+            "date_unix": 1747699200,
+            "value": 8771248
+          },
+          {
+            "date_unix": 1747785600,
+            "value": 8956372
+          },
+          {
+            "date_unix": 1747872000,
+            "value": 10066663
+          },
+          {
+            "date_unix": 1747958400,
+            "value": 9207443
+          },
+          {
+            "date_unix": 1748044800,
+            "value": 5512153
+          },
+          {
+            "date_unix": 1748131200,
+            "value": 5477366
+          },
+          {
+            "date_unix": 1748217600,
+            "value": 6707960
+          },
+          {
+            "date_unix": 1748304000,
+            "value": 6756192
+          },
+          {
+            "date_unix": 1748390400,
+            "value": 6250327
+          },
+          {
+            "date_unix": 1748476800,
+            "value": 6426112
+          },
+          {
+            "date_unix": 1748563200,
+            "value": 5750982
+          },
+          {
+            "date_unix": 1748649600,
+            "value": 4489542
+          },
+          {
+            "date_unix": 1748736000,
+            "value": 4854962
+          },
+          {
+            "date_unix": 1748822400,
+            "value": 6096256
+          },
+          {
+            "date_unix": 1748908800,
+            "value": 7267422.33
+          },
+          {
+            "date_unix": 1748995200,
+            "value": 5470352.62
+          },
+          {
+            "date_unix": 1749081600,
+            "value": 7588700.25
+          },
+          {
+            "date_unix": 1749168000,
+            "value": 5385757.61
+          },
+          {
+            "date_unix": 1749254400,
+            "value": 4466449.65
+          },
+          {
+            "date_unix": 1749340800,
+            "value": 4119689.06
+          },
+          {
+            "date_unix": 1749427200,
+            "value": 7226718
+          },
+          {
+            "date_unix": 1749513600,
+            "value": 6870462
+          },
+          {
+            "date_unix": 1749600000,
+            "value": 8006895
+          },
+          {
+            "date_unix": 1749686400,
+            "value": 5548742.97
+          },
+          {
+            "date_unix": 1749772800,
+            "value": 5873212
+          },
+          {
+            "date_unix": 1749859200,
+            "value": 3982374
+          },
+          {
+            "date_unix": 1749945600,
+            "value": 4695709.93
+          },
+          {
+            "date_unix": 1750032000,
+            "value": 6526466
+          },
+          {
+            "date_unix": 1750118400,
+            "value": 5651699
+          },
+          {
+            "date_unix": 1750204800,
+            "value": 5224570
+          },
+          {
+            "date_unix": 1750291200,
+            "value": 5092397.1899999995
+          },
+          {
+            "date_unix": 1750377600,
+            "value": 4805222
+          },
+          {
+            "date_unix": 1750464000,
+            "value": 4560708.83
+          },
+          {
+            "date_unix": 1750550400,
+            "value": 4547708.08
+          },
+          {
+            "date_unix": 1750636800,
+            "value": 5074462
+          },
+          {
+            "date_unix": 1750723200,
+            "value": 5215290
+          },
+          {
+            "date_unix": 1750809600,
+            "value": 6455115.53
+          },
+          {
+            "date_unix": 1750896000,
+            "value": 4832929.01
+          },
+          {
+            "date_unix": 1750982400,
+            "value": 5590974.55
+          },
+          {
+            "date_unix": 1751068800,
+            "value": 4654444
+          },
+          {
+            "date_unix": 1751155200,
+            "value": 5099351
+          },
+          {
+            "date_unix": 1751241600,
+            "value": 6544785
+          },
+          {
+            "date_unix": 1751328000,
+            "value": 6293790.02
+          },
+          {
+            "date_unix": 1751414400,
+            "value": 6856856.59
+          },
+          {
+            "date_unix": 1751500800,
+            "value": 6830221
+          },
+          {
+            "date_unix": 1751587200,
+            "value": 4833036
+          },
+          {
+            "date_unix": 1751673600,
+            "value": 5009815
+          },
+          {
+            "date_unix": 1751760000,
+            "value": 5030726
+          },
+          {
+            "date_unix": 1751846400,
+            "value": 9336925
+          },
+          {
+            "date_unix": 1751932800,
+            "value": 5284705
+          },
+          {
+            "date_unix": 1752019200,
+            "value": 5878987
+          },
+          {
+            "date_unix": 1752105600,
+            "value": 6094666
+          },
+          {
+            "date_unix": 1752192000,
+            "value": 6614869
+          },
+          {
+            "date_unix": 1752278400,
+            "value": 4254873.69
+          },
+          {
+            "date_unix": 1752364800,
+            "value": 8394621.05
+          },
+          {
+            "date_unix": 1752451200,
+            "value": 6164824.01
+          },
+          {
+            "date_unix": 1752537600,
+            "value": 8290016.2
+          },
+          {
+            "date_unix": 1752624000,
+            "value": 7822632.109999999
+          },
+          {
+            "date_unix": 1752710400,
+            "value": 7840563
+          },
+          {
+            "date_unix": 1752796800,
+            "value": 8195583
+          },
+          {
+            "date_unix": 1752883200,
+            "value": 4755014
+          },
+          {
+            "date_unix": 1752969600,
+            "value": 5109336.01
+          },
+          {
+            "date_unix": 1753056000,
+            "value": 7559625.75
+          },
+          {
+            "date_unix": 1753142400,
+            "value": 15098699
+          },
+          {
+            "date_unix": 1753228800,
+            "value": 7272033
+          },
+          {
+            "date_unix": 1753315200,
+            "value": 6487621
+          },
+          {
+            "date_unix": 1753401600,
+            "value": 5585705.02
+          },
+          {
+            "date_unix": 1753488000,
+            "value": 4286780.01
+          },
+          {
+            "date_unix": 1753574400,
+            "value": 9855262
+          },
+          {
+            "date_unix": 1753660800,
+            "value": 5815386.36
+          },
+          {
+            "date_unix": 1753747200,
+            "value": 5744953
+          },
+          {
+            "date_unix": 1753833600,
+            "value": 5552714
+          },
+          {
+            "date_unix": 1753920000,
+            "value": 6099470
+          },
+          {
+            "date_unix": 1754006400,
+            "value": 8985261
+          },
+          {
+            "date_unix": 1754092800,
+            "value": 3520108.16
+          },
+          {
+            "date_unix": 1754179200,
+            "value": 3807962.07
+          },
+          {
+            "date_unix": 1754265600,
+            "value": 5163374.39
+          },
+          {
+            "date_unix": 1754352000,
+            "value": 6416471.01
+          },
+          {
+            "date_unix": 1754438400,
+            "value": 6780920.24
+          },
+          {
+            "date_unix": 1754524800,
+            "value": 8023914
+          },
+          {
+            "date_unix": 1754611200,
+            "value": 7417118.08
+          },
+          {
+            "date_unix": 1754697600,
+            "value": 6891604.01
+          },
+          {
+            "date_unix": 1754784000,
+            "value": 6635201.07
+          },
+          {
+            "date_unix": 1754870400,
+            "value": 8111576.14
+          },
+          {
+            "date_unix": 1754956800,
+            "value": 9136815.34
+          },
+          {
+            "date_unix": 1755043200,
+            "value": 10345278.38
+          },
+          {
+            "date_unix": 1755129600,
+            "value": 9488738.09
+          },
+          {
+            "date_unix": 1755216000,
+            "value": 6775559
+          },
+          {
+            "date_unix": 1755302400,
+            "value": 5337340.42
+          },
+          {
+            "date_unix": 1755388800,
+            "value": 5216173.82
+          },
+          {
+            "date_unix": 1755475200,
+            "value": 6281996
+          },
+          {
+            "date_unix": 1755561600,
+            "value": 6246651
+          },
+          {
+            "date_unix": 1755648000,
+            "value": 6546141.029999999
+          },
+          {
+            "date_unix": 1755734400,
+            "value": 7438124.92
+          },
+          {
+            "date_unix": 1755820800,
+            "value": 7063171.72
+          },
+          {
+            "date_unix": 1755907200,
+            "value": 5490829
+          },
+          {
+            "date_unix": 1755993600,
+            "value": 5815917.33
+          },
+          {
+            "date_unix": 1756080000,
+            "value": 6682701.05
+          },
+          {
+            "date_unix": 1756166400,
+            "value": 6617542.88
+          },
+          {
+            "date_unix": 1756252800,
+            "value": 8608041
+          },
+          {
+            "date_unix": 1756339200,
+            "value": 7516931.789999999
+          },
+          {
+            "date_unix": 1756425600,
+            "value": 7921300
+          },
+          {
+            "date_unix": 1756512000,
+            "value": 4996875.65
+          },
+          {
+            "date_unix": 1756598400,
+            "value": 4839662.02
+          },
+          {
+            "date_unix": 1756684800,
+            "value": 5917083.22
+          },
+          {
+            "date_unix": 1756771200,
+            "value": 7225724
+          },
+          {
+            "date_unix": 1756857600,
+            "value": 7905988.54
+          },
+          {
+            "date_unix": 1756944000,
+            "value": 7164593
+          },
+          {
+            "date_unix": 1757030400,
+            "value": 6362475
+          },
+          {
+            "date_unix": 1757116800,
+            "value": 4818950.43
+          },
+          {
+            "date_unix": 1757203200,
+            "value": 4728171.02
+          },
+          {
+            "date_unix": 1757289600,
+            "value": 6658461.1
+          },
+          {
+            "date_unix": 1757376000,
+            "value": 7353532.03
+          },
+          {
+            "date_unix": 1757462400,
+            "value": 9310145
+          },
+          {
+            "date_unix": 1757548800,
+            "value": 6935011.359999999
+          },
+          {
+            "date_unix": 1757635200,
+            "value": 9484581.32
+          },
+          {
+            "date_unix": 1757721600,
+            "value": 6460190.95
+          },
+          {
+            "date_unix": 1757808000,
+            "value": 9901788
+          },
+          {
+            "date_unix": 1757894400,
+            "value": 10127433.06
+          },
+          {
+            "date_unix": 1757980800,
+            "value": 9186791
+          },
+          {
+            "date_unix": 1758067200,
+            "value": 6980944.11
+          },
+          {
+            "date_unix": 1758153600,
+            "value": 7028581
+          },
+          {
+            "date_unix": 1758240000,
+            "value": 6266743.01
+          },
+          {
+            "date_unix": 1758326400,
+            "value": 4690003
+          },
+          {
+            "date_unix": 1758412800,
+            "value": 3881257.99
+          },
+          {
+            "date_unix": 1758499200,
+            "value": 6240749
+          },
+          {
+            "date_unix": 1758585600,
+            "value": 4893927.16
+          },
+          {
+            "date_unix": 1758672000,
+            "value": 6054327.82
+          },
+          {
+            "date_unix": 1758758400,
+            "value": 5797026.09
+          },
+          {
+            "date_unix": 1758844800,
+            "value": 4695675
+          },
+          {
+            "date_unix": 1758931200,
+            "value": 3124589
+          },
+          {
+            "date_unix": 1759017600,
+            "value": 3501383
+          },
+          {
+            "date_unix": 1759104000,
+            "value": 5021153.18
+          },
+          {
+            "date_unix": 1759190400,
+            "value": 5600596
+          },
+          {
+            "date_unix": 1759276800,
+            "value": 6432570.82
+          },
+          {
+            "date_unix": 1759363200,
+            "value": 6522973.38
+          },
+          {
+            "date_unix": 1759449600,
+            "value": 6250357.069999999
+          },
+          {
+            "date_unix": 1759536000,
+            "value": 4661243
+          },
+          {
+            "date_unix": 1759622400,
+            "value": 4900615.62
+          },
+          {
+            "date_unix": 1759708800,
+            "value": 6069008.3
+          },
+          {
+            "date_unix": 1759795200,
+            "value": 4662116.07
+          },
+          {
+            "date_unix": 1759881600,
+            "value": 3682568
+          },
+          {
+            "date_unix": 1759968000,
+            "value": 4031241.26
+          },
+          {
+            "date_unix": 1760054400,
+            "value": 9189590
+          },
+          {
+            "date_unix": 1760140800,
+            "value": 4038466.19
+          },
+          {
+            "date_unix": 1760227200,
+            "value": 4118670
+          },
+          {
+            "date_unix": 1760313600,
+            "value": 3880969.81
+          },
+          {
+            "date_unix": 1760400000,
+            "value": 4851536
+          },
+          {
+            "date_unix": 1760486400,
+            "value": 4248335
+          },
+          {
+            "date_unix": 1760572800,
+            "value": 4444942
+          },
+          {
+            "date_unix": 1760659200,
+            "value": 4112409.31
+          },
+          {
+            "date_unix": 1760745600,
+            "value": 3873065
+          },
+          {
+            "date_unix": 1760832000,
+            "value": 3382087.0700000003
+          },
+          {
+            "date_unix": 1760918400,
+            "value": 4705455.91
+          },
+          {
+            "date_unix": 1761004800,
+            "value": 4917525.08
+          },
+          {
+            "date_unix": 1761091200,
+            "value": 4332395
+          },
+          {
+            "date_unix": 1761177600,
+            "value": 4378454.92
+          },
+          {
+            "date_unix": 1761264000,
+            "value": 4189021
+          },
+          {
+            "date_unix": 1761350400,
+            "value": 3455700.13
+          },
+          {
+            "date_unix": 1761436800,
+            "value": 3905321
+          },
+          {
+            "date_unix": 1761523200,
+            "value": 4726616
+          },
+          {
+            "date_unix": 1761609600,
+            "value": 5398258
+          },
+          {
+            "date_unix": 1761696000,
+            "value": 5261400
+          },
+          {
+            "date_unix": 1761782400,
+            "value": 5726323
+          },
+          {
+            "date_unix": 1761868800,
+            "value": 4603613.18
+          },
+          {
+            "date_unix": 1761955200,
+            "value": 4170069
+          },
+          {
+            "date_unix": 1762041600,
+            "value": 3786183
+          },
+          {
+            "date_unix": 1762128000,
+            "value": 4995269
+          },
+          {
+            "date_unix": 1762214400,
+            "value": 5399543.05
+          },
+          {
+            "date_unix": 1762300800,
+            "value": 4502782
+          },
+          {
+            "date_unix": 1762387200,
+            "value": 4265834.02
+          },
+          {
+            "date_unix": 1762473600,
+            "value": 4644185
+          },
+          {
+            "date_unix": 1762560000,
+            "value": 3859826
+          },
+          {
+            "date_unix": 1762646400,
+            "value": 4535498
+          },
+          {
+            "date_unix": 1762732800,
+            "value": 4896235
+          },
+          {
+            "date_unix": 1762819200,
+            "value": 5189575
+          },
+          {
+            "date_unix": 1762905600,
+            "value": 4837904.01
+          },
+          {
+            "date_unix": 1762992000,
+            "value": 4156624
+          },
+          {
+            "date_unix": 1763078400,
+            "value": 3943369.35
+          },
+          {
+            "date_unix": 1763164800,
+            "value": 3029558
+          },
+          {
+            "date_unix": 1763251200,
+            "value": 2786709.79
+          },
+          {
+            "date_unix": 1763337600,
+            "value": 3795679
+          },
+          {
+            "date_unix": 1763424000,
+            "value": 3519540
+          },
+          {
+            "date_unix": 1763510400,
+            "value": 3803960
+          },
+          {
+            "date_unix": 1763596800,
+            "value": 3541886.99
+          },
+          {
+            "date_unix": 1763683200,
+            "value": 3728619
+          },
+          {
+            "date_unix": 1763769600,
+            "value": 2577495.26
+          },
+          {
+            "date_unix": 1763856000,
+            "value": 3026197.94
+          },
+          {
+            "date_unix": 1763942400,
+            "value": 2998976
+          },
+          {
+            "date_unix": 1764028800,
+            "value": 3640936
+          },
+          {
+            "date_unix": 1764115200,
+            "value": 3984454.19
+          },
+          {
+            "date_unix": 1764201600,
+            "value": 4337699
+          },
+          {
+            "date_unix": 1764288000,
+            "value": 3963453
+          },
+          {
+            "date_unix": 1764374400,
+            "value": 3403775.01
+          },
+          {
+            "date_unix": 1764460800,
+            "value": 3220165.94
+          },
+          {
+            "date_unix": 1764547200,
+            "value": 3486312.95
+          },
+          {
+            "date_unix": 1764633600,
+            "value": 4387288
+          },
+          {
+            "date_unix": 1764720000,
+            "value": 3870581.6100000003
+          },
+          {
+            "date_unix": 1764806400,
+            "value": 4242799
+          },
+          {
+            "date_unix": 1764892800,
+            "value": 3648638.02
+          },
+          {
+            "date_unix": 1764979200,
+            "value": 3230975
+          },
+          {
+            "date_unix": 1765065600,
+            "value": 2898490.01
+          },
+          {
+            "date_unix": 1765152000,
+            "value": 3772083
+          },
+          {
+            "date_unix": 1765238400,
+            "value": 3898665.01
+          },
+          {
+            "date_unix": 1765324800,
+            "value": 3750327
+          },
+          {
+            "date_unix": 1765411200,
+            "value": 4228958
+          },
+          {
+            "date_unix": 1765497600,
+            "value": 3725274
+          },
+          {
+            "date_unix": 1765584000,
+            "value": 2772069
+          },
+          {
+            "date_unix": 1765670400,
+            "value": 2897316
+          },
+          {
+            "date_unix": 1765756800,
+            "value": 3835109.2699999996
+          },
+          {
+            "date_unix": 1765843200,
+            "value": 3570870.12
+          },
+          {
+            "date_unix": 1765929600,
+            "value": 3288741
+          },
+          {
+            "date_unix": 1766016000,
+            "value": 3250252.5700000003
+          },
+          {
+            "date_unix": 1766102400,
+            "value": 2950587.39
+          },
+          {
+            "date_unix": 1766188800,
+            "value": 2926725.99
+          },
+          {
+            "date_unix": 1766275200,
+            "value": 2699901.0399999996
+          },
+          {
+            "date_unix": 1766361600,
+            "value": 3700101.69
+          },
+          {
+            "date_unix": 1766448000,
+            "value": 3272848.23
+          },
+          {
+            "date_unix": 1766534400,
+            "value": 3076448.8200000003
+          },
+          {
+            "date_unix": 1766620800,
+            "value": 2938219.01
+          },
+          {
+            "date_unix": 1766707200,
+            "value": 3242443.13
+          },
+          {
+            "date_unix": 1766793600,
+            "value": 3254997.94
+          },
+          {
+            "date_unix": 1766880000,
+            "value": 3442677.71
+          },
+          {
+            "date_unix": 1766966400,
+            "value": 3749160.3
+          },
+          {
+            "date_unix": 1767052800,
+            "value": 4063513.17
+          },
+          {
+            "date_unix": 1767139200,
+            "value": 3613624.01
+          },
+          {
+            "date_unix": 1767225600,
+            "value": 3160526
+          },
+          {
+            "date_unix": 1767312000,
+            "value": 4302463
+          },
+          {
+            "date_unix": 1767398400,
+            "value": 4514840.26
+          },
+          {
+            "date_unix": 1767484800,
+            "value": 4158831.4
+          },
+          {
+            "date_unix": 1767571200,
+            "value": 5762595.86
+          },
+          {
+            "date_unix": 1767657600,
+            "value": 6804422.66
+          },
+          {
+            "date_unix": 1767744000,
+            "value": 5662483.62
+          },
+          {
+            "date_unix": 1767830400,
+            "value": 4767677
+          },
+          {
+            "date_unix": 1767916800,
+            "value": 4712570.91
+          },
+          {
+            "date_unix": 1768003200,
+            "value": 3967177.3499999996
+          },
+          {
+            "date_unix": 1768089600,
+            "value": 4782206.85
+          },
+          {
+            "date_unix": 1768176000,
+            "value": 5169575.86
+          },
+          {
+            "date_unix": 1768262400,
+            "value": 5825905.48
+          },
+          {
+            "date_unix": 1768348800,
+            "value": 5278983.539999999
+          },
+          {
+            "date_unix": 1768435200,
+            "value": 5712414.92
+          },
+          {
+            "date_unix": 1768521600,
+            "value": 7071298.3
+          },
+          {
+            "date_unix": 1768608000,
+            "value": 4397263.34
+          },
+          {
+            "date_unix": 1768694400,
+            "value": 4654054.58
+          },
+          {
+            "date_unix": 1768780800,
+            "value": 5113261.84
+          },
+          {
+            "date_unix": 1768867200,
+            "value": 5404163.05
+          },
+          {
+            "date_unix": 1768953600,
+            "value": 4664384.42
+          },
+          {
+            "date_unix": 1769040000,
+            "value": 4970027.880000001
+          },
+          {
+            "date_unix": 1769126400,
+            "value": 4160789.98
+          },
+          {
+            "date_unix": 1769212800,
+            "value": 5176972.72
+          },
+          {
+            "date_unix": 1769299200,
+            "value": 5959304.92
+          },
+          {
+            "date_unix": 1769385600,
+            "value": 6604640.55
+          },
+          {
+            "date_unix": 1769472000,
+            "value": 6229059.64
+          },
+          {
+            "date_unix": 1769558400,
+            "value": 5769951.8100000005
+          },
+          {
+            "date_unix": 1769644800,
+            "value": 5338111.54
+          },
+          {
+            "date_unix": 1769731200,
+            "value": 6591360.720000001
+          },
+          {
+            "date_unix": 1769817600,
+            "value": 6208656.2299999995
+          },
+          {
+            "date_unix": 1769904000,
+            "value": 3889619.29
+          },
+          {
+            "date_unix": 1769990400,
+            "value": 4345830
+          },
+          {
+            "date_unix": 1770076800,
+            "value": 4225464.02
+          },
+          {
+            "date_unix": 1770163200,
+            "value": 4172561.94
+          },
+          {
+            "date_unix": 1770249600,
+            "value": 4895819.46
+          },
+          {
+            "date_unix": 1770336000,
+            "value": 5378010.02
+          },
+          {
+            "date_unix": 1770422400,
+            "value": 3507269.12
+          },
+          {
+            "date_unix": 1770508800,
+            "value": 3490670.84
+          },
+          {
+            "date_unix": 1770595200,
+            "value": 3386656.54
+          },
+          {
+            "date_unix": 1770681600,
+            "value": 3107915.45
+          },
+          {
+            "date_unix": 1770768000,
+            "value": 3169775.75
+          },
+          {
+            "date_unix": 1770854400,
+            "value": 2960810.02
+          },
+          {
+            "date_unix": 1770940800,
+            "value": 3141038.73
+          },
+          {
+            "date_unix": 1771027200,
+            "value": 2627220.06
+          },
+          {
+            "date_unix": 1771113600,
+            "value": 2943353.3400000003
+          },
+          {
+            "date_unix": 1771200000,
+            "value": 3032916
+          },
+          {
+            "date_unix": 1771286400,
+            "value": 3881285.66
+          },
+          {
+            "date_unix": 1771372800,
+            "value": 3295654.99
+          },
+          {
+            "date_unix": 1771459200,
+            "value": 3575891.5
+          },
+          {
+            "date_unix": 1771545600,
+            "value": 3446443.8
+          },
+          {
+            "date_unix": 1771632000,
+            "value": 3264245
+          },
+          {
+            "date_unix": 1771718400,
+            "value": 3009365.24
+          },
+          {
+            "date_unix": 1771804800,
+            "value": 3383633.24
+          },
+          {
+            "date_unix": 1771891200,
+            "value": 3445906
+          },
+          {
+            "date_unix": 1771977600,
+            "value": 3898502.63
+          },
+          {
+            "date_unix": 1772064000,
+            "value": 3029447.5700000003
+          },
+          {
+            "date_unix": 1772150400,
+            "value": 3476710.01
+          },
+          {
+            "date_unix": 1772236800,
+            "value": 3169359
+          },
+          {
+            "date_unix": 1772323200,
+            "value": 3001221.38
+          },
+          {
+            "date_unix": 1772409600,
+            "value": 3291098.2199999997
+          },
+          {
+            "date_unix": 1772496000,
+            "value": 3209387.0900000003
+          },
+          {
+            "date_unix": 1772582400,
+            "value": 3184407.96
+          },
+          {
+            "date_unix": 1772668800,
+            "value": 3200120.0100000002
+          },
+          {
+            "date_unix": 1772755200,
+            "value": 3265578.5300000003
+          },
+          {
+            "date_unix": 1772841600,
+            "value": 2871790.92
+          },
+          {
+            "date_unix": 1772928000,
+            "value": 2508448.18
+          },
+          {
+            "date_unix": 1773014400,
+            "value": 3026929.8200000003
+          },
+          {
+            "date_unix": 1773100800,
+            "value": 3051409.41
+          },
+          {
+            "date_unix": 1773187200,
+            "value": 3078078.19
+          },
+          {
+            "date_unix": 1773273600,
+            "value": 3008106.04
+          },
+          {
+            "date_unix": 1773360000,
+            "value": 3130768.7500000005
+          },
+          {
+            "date_unix": 1773446400,
+            "value": 2405680.3499999996
+          },
+          {
+            "date_unix": 1773532800,
+            "value": 2623003
+          },
+          {
+            "date_unix": 1773619200,
+            "value": 3486867.54
+          },
+          {
+            "date_unix": 1773705600,
+            "value": 3264409.84
+          },
+          {
+            "date_unix": 1773792000,
+            "value": 2682832.2199999997
+          },
+          {
+            "date_unix": 1773878400,
+            "value": 2686761.3
+          },
+          {
+            "date_unix": 1773964800,
+            "value": 2421779.75
+          },
+          {
+            "date_unix": 1774051200,
+            "value": 2518996.1500000004
+          },
+          {
+            "date_unix": 1774137600,
+            "value": 2213731.5900000003
+          },
+          {
+            "date_unix": 1774224000,
+            "value": 2971950.38
+          },
+          {
+            "date_unix": 1774310400,
+            "value": 2837624.6599999997
+          },
+          {
+            "date_unix": 1774396800,
+            "value": 3201936.1799999997
+          },
+          {
+            "date_unix": 1774483200,
+            "value": 2665270.37
+          },
+          {
+            "date_unix": 1774569600,
+            "value": 2669399.79
+          },
+          {
+            "date_unix": 1774656000,
+            "value": 2125727.05
+          },
+          {
+            "date_unix": 1774742400,
+            "value": 2173713.39
+          },
+          {
+            "date_unix": 1774828800,
+            "value": 3468586.4099999997
+          },
+          {
+            "date_unix": 1774915200,
+            "value": 2878212.86
+          },
+          {
+            "date_unix": 1775001600,
+            "value": 4029260.9699999997
+          },
+          {
+            "date_unix": 1775088000,
+            "value": 2732250.22
+          },
+          {
+            "date_unix": 1775174400,
+            "value": 2577795.67
+          },
+          {
+            "date_unix": 1775260800,
+            "value": 2237042.1300000004
+          },
+          {
+            "date_unix": 1775347200,
+            "value": 2041423.32
+          },
+          {
+            "date_unix": 1775433600,
+            "value": 2424350.67
+          },
+          {
+            "date_unix": 1775520000,
+            "value": 2566203.72
+          },
+          {
+            "date_unix": 1775606400,
+            "value": 2491235.0700000003
+          },
+          {
+            "date_unix": 1775692800,
+            "value": 2891974.78
+          },
+          {
+            "date_unix": 1775779200,
+            "value": 2326089.59
+          },
+          {
+            "date_unix": 1775865600,
+            "value": 2097758.88
+          },
+          {
+            "date_unix": 1775952000,
+            "value": 1911008.07
+          },
+          {
+            "date_unix": 1776038400,
+            "value": 2536392.61
+          },
+          {
+            "date_unix": 1776124800,
+            "value": 2506420.67
+          },
+          {
+            "date_unix": 1776211200,
+            "value": 2752028.45
+          },
+          {
+            "date_unix": 1776297600,
+            "value": 2734039.38
+          },
+          {
+            "date_unix": 1776384000,
+            "value": 3173132.8
+          },
+          {
+            "date_unix": 1776470400,
+            "value": 2332022.04
+          },
+          {
+            "date_unix": 1776556800,
+            "value": 2206925.79
+          },
+          {
+            "date_unix": 1776643200,
+            "value": 2365300.31
+          },
+          {
+            "date_unix": 1776729600,
+            "value": 2913860.28
+          },
+          {
+            "date_unix": 1776816000,
+            "value": 3125155.71
+          },
+          {
+            "date_unix": 1776902400,
+            "value": 2801934.3699999996
+          },
+          {
+            "date_unix": 1776988800,
+            "value": 2649455.08
+          },
+          {
+            "date_unix": 1777075200,
+            "value": 2730244.0599999996
+          },
+          {
+            "date_unix": 1777161600,
+            "value": 2352752.3399999994
+          },
+          {
+            "date_unix": 1777248000,
+            "value": 3031786.7600000002
+          },
+          {
+            "date_unix": 1777334400,
+            "value": 3462993.7
+          },
+          {
+            "date_unix": 1777420800,
+            "value": 3391616.88
+          },
+          {
+            "date_unix": 1777507200,
+            "value": 2919466.5200000005
+          },
+          {
+            "date_unix": 1777593600,
+            "value": 3087997.13
+          },
+          {
+            "date_unix": 1777680000,
+            "value": 2856110.19
+          },
+          {
+            "date_unix": 1777766400,
+            "value": 3028044.17
+          },
+          {
+            "date_unix": 1777852800,
+            "value": 2963390.7
+          },
+          {
+            "date_unix": 1777939200,
+            "value": 3339662.3000000003
+          },
+          {
+            "date_unix": 1778025600,
+            "value": 3561317.810000001
+          },
+          {
+            "date_unix": 1778112000,
+            "value": 3431128.6999999997
+          },
+          {
+            "date_unix": 1778198400,
+            "value": 3775872.79
+          },
+          {
+            "date_unix": 1778284800,
+            "value": 3080557.6399999997
+          },
+          {
+            "date_unix": 1778371200,
+            "value": 3118671.5699999994
+          },
+          {
+            "date_unix": 1778457600,
+            "value": 3857493.46
+          },
+          {
+            "date_unix": 1778544000,
+            "value": 3748375.520000001
+          },
+          {
+            "date_unix": 1778630400,
+            "value": 3651600.6300000004
+          },
+          {
+            "date_unix": 1778716800,
+            "value": 3187658.419999999
+          },
+          {
+            "date_unix": 1778803200,
+            "value": 3141883.7100000004
+          },
+          {
+            "date_unix": 1778889600,
+            "value": 2618581.169999999
+          },
+          {
+            "date_unix": 1778976000,
+            "value": 2551702.9500000007
+          },
+          {
+            "date_unix": 1779062400,
+            "value": 2830620.3599999994
+          },
+          {
+            "date_unix": 1779148800,
+            "value": 2954662.5799999996
+          },
+          {
+            "date_unix": 1779235200,
+            "value": 2899117.86
+          },
+          {
+            "date_unix": 1779321600,
+            "value": 2975825.22
+          },
+          {
+            "date_unix": 1779408000,
+            "value": 2802182.6799999997
+          },
+          {
+            "date_unix": 1779494400,
+            "value": 2427668.4799999995
+          },
+          {
+            "date_unix": 1779580800,
+            "value": 2357747.34
+          },
+          {
+            "date_unix": 1779667200,
+            "value": 2988095.08
+          },
+          {
+            "date_unix": 1779753600,
+            "value": 2605888.93
+          },
+          {
+            "date_unix": 1779840000,
+            "value": 2846651.3199999994
+          },
+          {
+            "date_unix": 1779926400,
+            "value": 3040712.4299999992
+          },
+          {
+            "date_unix": 1780012800,
+            "value": 3040700.4099999997
+          },
+          {
+            "date_unix": 1780099200,
+            "value": 2359439.329999999
+          },
+          {
+            "date_unix": 1780185600,
+            "value": 2752304.76
+          },
+          {
+            "date_unix": 1780272000,
+            "value": 3547684.08
+          },
+          {
+            "date_unix": 1780358400,
+            "value": 3204009.73
+          },
+          {
+            "date_unix": 1780444800,
+            "value": 2633727.8699999987
+          },
+          {
+            "date_unix": 1780531200,
+            "value": 3036605.29
+          },
+          {
+            "date_unix": 1780617600,
+            "value": 2843460.0199999996
+          },
+          {
+            "date_unix": 1780704000,
+            "value": 2101855.7800000003
+          },
+          {
+            "date_unix": 1780790400,
+            "value": 2104664.62
+          },
+          {
+            "date_unix": 1780876800,
+            "value": 2779423.72
+          },
+          {
+            "date_unix": 1780963200,
+            "value": 2615632.25
+          },
+          {
+            "date_unix": 1781049600,
+            "value": 3733653.039999999
+          },
+          {
+            "date_unix": 1781136000,
+            "value": 3451530.51
+          },
+          {
+            "date_unix": 1781222400,
+            "value": 3083507.7499999995
+          },
+          {
+            "date_unix": 1781308800,
+            "value": 2538669.4899999998
+          },
+          {
+            "date_unix": 1781395200,
+            "value": 2796111.2500000005
+          },
+          {
+            "date_unix": 1781481600,
+            "value": 3962304.769999999
+          },
+          {
+            "date_unix": 1781568000,
+            "value": 3743902.5300000003
+          },
+          {
+            "date_unix": 1781654400,
+            "value": 3453979.4199999995
+          },
+          {
+            "date_unix": 1781740800,
+            "value": 3117858.53
+          },
+          {
+            "date_unix": 1781827200,
+            "value": 2902997.729999999
+          },
+          {
+            "date_unix": 1781913600,
+            "value": 2604144.2700000005
+          },
+          {
+            "date_unix": 1782000000,
+            "value": 2536437.819999999
+          },
+          {
+            "date_unix": 1782086400,
+            "value": 3332837.8599999994
+          },
+          {
+            "date_unix": 1782172800,
+            "value": 2883147.1799999983
+          },
+          {
+            "date_unix": 1782259200,
+            "value": 2608371.72
+          },
+          {
+            "date_unix": 1782345600,
+            "value": 2903441.4199999995
+          },
+          {
+            "date_unix": 1782432000,
+            "value": 2918364.0899999994
+          },
+          {
+            "date_unix": 1782518400,
+            "value": 2193091.5999999996
+          },
+          {
+            "date_unix": 1782604800,
+            "value": 3399087.2900000005
+          },
+          {
+            "date_unix": 1782691200,
+            "value": 3316691.969999999
+          },
+          {
+            "date_unix": 1782777600,
+            "value": 4021097.540000001
+          },
+          {
+            "date_unix": 1782864000,
+            "value": 3455625.439999999
+          },
+          {
+            "date_unix": 1782950400,
+            "value": 3765392.2099999995
+          },
+          {
+            "date_unix": 1783036800,
+            "value": 3743679.83
+          },
+          {
+            "date_unix": 1783123200,
+            "value": 3763855.5600000015
+          },
+          {
+            "date_unix": 1783209600,
+            "value": 2698083.529999999
+          },
+          {
+            "date_unix": 1783296000,
+            "value": 3588060.46
+          },
+          {
+            "date_unix": 1783382400,
+            "value": 3892685.4200000004
+          },
+          {
+            "date_unix": 1783468800,
+            "value": 3165661.389999999
+          },
+          {
+            "date_unix": 1783555200,
+            "value": 3107099.4299999992
+          },
+          {
+            "date_unix": 1783641600,
+            "value": 3022303.33
+          },
+          {
+            "date_unix": 1783728000,
+            "value": 1966196.94
+          },
+          {
+            "date_unix": 1783814400,
+            "value": 2021363.1499999997
+          },
+          {
+            "date_unix": 1783900800,
+            "value": 2735220.3299999996
+          },
+          {
+            "date_unix": 1783987200,
+            "value": 3401704.799999999
+          },
+          {
+            "date_unix": 1784073600,
+            "value": 3028977.9699999993
+          },
+          {
+            "date_unix": 1784160000,
+            "value": 2722319.94
+          },
+          {
+            "date_unix": 1784246400,
+            "value": 2811081.0199999996
+          },
+          {
+            "date_unix": 1784332800,
+            "value": 2809287.5599999996
+          },
+          {
+            "date_unix": 1784419200,
+            "value": 2331332.9899999993
+          },
+          {
+            "date_unix": 1784505600,
+            "value": 2739709.639999999
+          },
+          {
+            "date_unix": 1784592000,
+            "value": 2532623.7800000003
+          },
+          {
+            "date_unix": 1784678400,
+            "value": 3523648.4099999997
+          },
+          {
+            "date_unix": 1784764800,
+            "value": 3460742.0299999993
+          },
+          {
+            "date_unix": 1784851200,
+            "value": 3087187.489999999
+          },
+          {
+            "date_unix": 1784937600,
+            "value": 2808397.239999999
+          },
+          {
+            "date_unix": 1785024000,
+            "value": 2783954.1399999983
+          },
+          {
+            "date_unix": 1785110400,
+            "value": 3698195.56
+          },
+          {
+            "date_unix": 1785196800,
+            "value": 3541765.5399999996
+          },
+          {
+            "date_unix": 1785283200,
+            "value": 3946127.289999999
+          },
+          {
+            "date_unix": 1785369600,
+            "value": 3420029.6399999997
+          },
+          {
+            "date_unix": 1785456000,
+            "value": 3221241.5300000003
+          },
+          {
+            "date_unix": 1785542400,
+            "value": 2744926.0300000003
+          },
+          {
+            "date_unix": 1785628800,
+            "value": 3092237.0800000005
+          },
+          {
+            "date_unix": 1785715200,
+            "value": 4268707.53
+          },
+          {
+            "date_unix": 1785801600,
+            "value": 4397579.550000001
+          },
+          {
+            "date_unix": 1785888000,
+            "value": 3478237.6299999994
+          },
+          {
+            "date_unix": 1785974400,
+            "value": 3556837.9499999997
+          },
+          {
+            "date_unix": 1786060800,
+            "value": 3696741.27
+          },
+          {
+            "date_unix": 1786147200,
+            "value": 3691917.7300000004
+          },
+          {
+            "date_unix": 1786233600,
+            "value": 4198240.699999999
+          },
+          {
+            "date_unix": 1786320000,
+            "value": 4123539.27
+          },
+          {
+            "date_unix": 1786406400,
+            "value": 4752460.419999997
+          },
+          {
+            "date_unix": 1786492800,
+            "value": 4685423.029999998
+          },
+          {
+            "date_unix": 1786579200,
+            "value": 4118383.2199999993
+          },
+          {
+            "date_unix": 1786665600,
+            "value": 3684238.769999999
+          },
+          {
+            "date_unix": 1786752000,
+            "value": 3048342.9499999983
+          },
+          {
+            "date_unix": 1786838400,
+            "value": 3120129.459999999
+          },
+          {
+            "date_unix": 1786924800,
+            "value": 4304825.259999999
+          },
+          {
+            "date_unix": 1787011200,
+            "value": 3878645.5
+          },
+          {
+            "date_unix": 1787097600,
+            "value": 5903449.939999999
+          },
+          {
+            "date_unix": 1787184000,
+            "value": 5035696.860000001
+          },
+          {
+            "date_unix": 1787270400,
+            "value": 5159607.580000001
+          },
+          {
+            "date_unix": 1787356800,
+            "value": 4833402.919999999
+          },
+          {
+            "date_unix": 1787443200,
+            "value": 4819994.51
+          },
+          {
+            "date_unix": 1787529600,
+            "value": 5561602.019999999
+          },
+          {
+            "date_unix": 1787616000,
+            "value": 5624679.070000001
+          },
+          {
+            "date_unix": 1787702400,
+            "value": 6089779.789999999
+          },
+          {
+            "date_unix": 1787788800,
+            "value": 7374106.230000001
+          },
+          {
+            "date_unix": 1787875200,
+            "value": 6260794.150000001
+          },
+          {
+            "date_unix": 1787961600,
+            "value": 4825138.37
+          },
+          {
+            "date_unix": 1788048000,
+            "value": 4846150.3599999985
+          },
+          {
+            "date_unix": 1788134400,
+            "value": 4885518.160000002
+          },
+          {
+            "date_unix": 1788220800,
+            "value": 4840501.969999999
+          },
+          {
+            "date_unix": 1788307200,
+            "value": 3718540.9599999995
+          },
+          {
+            "date_unix": 1788393600,
+            "value": 3624502.34
+          },
+          {
+            "date_unix": 1788480000,
+            "value": 3178637.8199999994
+          },
+          {
+            "date_unix": 1788566400,
+            "value": 2637146.71
+          },
+          {
+            "date_unix": 1788652800,
+            "value": 4796774.54
+          },
+          {
+            "date_unix": 1788739200,
+            "value": 5395843.56
+          },
+          {
+            "date_unix": 1788825600,
+            "value": 5644546
+          },
+          {
+            "date_unix": 1788912000,
+            "value": 5932235.74
+          },
+          {
+            "date_unix": 1788998400,
+            "value": 4998904.509999999
+          },
+          {
+            "date_unix": 1789084800,
+            "value": 6212208.08
+          },
+          {
+            "date_unix": 1789171200,
+            "value": 4538552.700000002
+          },
+          {
+            "date_unix": 1789257600,
+            "value": 4596230.669999997
+          },
+          {
+            "date_unix": 1789344000,
+            "value": 4736826.379999998
+          },
+          {
+            "date_unix": 1789430400,
+            "value": 4995988.93
+          },
+          {
+            "date_unix": 1789516800,
+            "value": 4914349.379999998
+          },
+          {
+            "date_unix": 1789603200,
+            "value": 5700262.189999999
+          },
+          {
+            "date_unix": 1789689600,
+            "value": 6136579.269999999
+          },
+          {
+            "date_unix": 1789776000,
+            "value": 5482748.35
+          },
+          {
+            "date_unix": 1789862400,
+            "value": 5351356.169999998
+          },
+          {
+            "date_unix": 1789948800,
+            "value": 7460497.13
+          },
+          {
+            "date_unix": 1790035200,
+            "value": 6450536.0699999975
+          },
+          {
+            "date_unix": 1790121600,
+            "value": 5849290.24
+          },
+          {
+            "date_unix": 1790208000,
+            "value": 5896513.089999999
+          },
+          {
+            "date_unix": 1790294400,
+            "value": 6026746.489999997
+          },
+          {
+            "date_unix": 1790380800,
+            "value": 5904302.769999999
+          }
         ]
       }
     },
@@ -6717,7 +12555,7 @@
         "the network is operational",
         "recent slot times remain healthy",
         "DeFi TVL is up 4.6% over 7d",
-        "SOL is up 9.1% over 7d"
+        "SOL is up 9.2% over 7d"
       ],
       "risks_to_watch": [],
       "window": "7d",
@@ -30174,47 +36012,6 @@
       },
       "supply": {
         "total_sol": 634608324.49
-      },
-      "active_wallets_sample": {
-        "unique_wallets_in_block": null
-      },
-      "daily_active_addresses": {
-        "value": null
-      }
-    },
-    {
-      "generated_at_unix": 1790253366,
-      "network_performance": {
-        "avg_tps": 4122.39,
-        "avg_slot_time_ms": 264.6
-      },
-      "validators": {
-        "delinquent_stake_pct": 0.045,
-        "active_count": 674
-      },
-      "defi": {
-        "tvl": {
-          "tvl_usd": 6336810567
-        },
-        "stablecoins": {
-          "total_stablecoin_supply_usd": 16117766239.63
-        },
-        "dex_volume": {
-          "dex_volume_24h_usd": 2552816117.41
-        },
-        "fees_and_rev": {
-          "chain_revenue_24h_usd": 6149466.46
-        }
-      },
-      "market": {
-        "price": {
-          "price_usd": 113.31,
-          "market_cap_usd": 66589154046.06184,
-          "volume_24h_usd": 4748544865.503649
-        }
-      },
-      "supply": {
-        "total_sol": 634608301.69
       },
       "active_wallets_sample": {
         "unique_wallets_in_block": null
@@ -54159,6 +59956,47 @@
       },
       "supply": {
         "total_sol": 634763962.58
+      },
+      "active_wallets_sample": {
+        "unique_wallets_in_block": null
+      },
+      "daily_active_addresses": {
+        "value": null
+      }
+    },
+    {
+      "generated_at_unix": 1790426131,
+      "network_performance": {
+        "avg_tps": 4490.13,
+        "avg_slot_time_ms": 268.2
+      },
+      "validators": {
+        "delinquent_stake_pct": 0.008,
+        "active_count": 676
+      },
+      "defi": {
+        "tvl": {
+          "tvl_usd": 6593784544
+        },
+        "stablecoins": {
+          "total_stablecoin_supply_usd": 16612853670.15
+        },
+        "dex_volume": {
+          "dex_volume_24h_usd": 2612632382.63
+        },
+        "fees_and_rev": {
+          "chain_revenue_24h_usd": 6026751.359999998
+        }
+      },
+      "market": {
+        "price": {
+          "price_usd": 121.18,
+          "market_cap_usd": 71219567718.83408,
+          "volume_24h_usd": 4943467000.9404125
+        }
+      },
+      "supply": {
+        "total_sol": 634763959.31
       },
       "active_wallets_sample": {
         "unique_wallets_in_block": null
