@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-27T00:30:38.172208+00:00 (UTC)_
+_Generated: 2026-09-27T00:35:32.413553+00:00 (UTC)_
 
 ## Current Solana Outlook
 
@@ -15,23 +15,23 @@ _Generated: 2026-09-27T00:30:38.172208+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 450,836,188 |
-| Block height | 428,875,920 |
+| Current slot | 450,837,297 |
+| Block height | 428,877,028 |
 | Epoch | 1043 |
-| Epoch progress | 60.23% |
-| Current TPS | 4,482.07 |
-| Avg TPS | 4,561.77 |
+| Epoch progress | 60.49% |
+| Current TPS | 4,250.28 |
+| Avg TPS | 4,553.85 |
 | Max / Min TPS | 4,984.95 / 4,050.07 |
-| Avg slot time | 268.0 ms |
+| Avg slot time | 267.2 ms |
 
 ## Validator Status
 
 | Metric | Value |
 |---|---|
-| Active validators | 674 |
-| Delinquent validators | 13 |
-| Delinquent (% of active stake) | 0.17% |
-| Total active stake | 436,794,609 SOL |
+| Active validators | 673 |
+| Delinquent validators | 14 |
+| Delinquent (% of active stake) | 0.18% |
+| Total active stake | 436,750,223 SOL |
 | Validators controlling 33% of stake | 18 |
 
 ## Network Activity
@@ -45,8 +45,8 @@ _Generated: 2026-09-27T00:30:38.172208+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 634,763,447 SOL
-- Circulating: 587,712,243 SOL
+- Total: 634,763,443 SOL
+- Circulating: 587,712,239 SOL
 - Non-circulating: 47,051,204 SOL
 
 ## Economic Indicators
@@ -54,14 +54,14 @@ _Generated: 2026-09-27T00:30:38.172208+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | SOL price | $121 |
-| SOL 24h change | -0.92% |
-| SOL 24h volume | $2,937,499,860 |
-| SOL market cap | $71,012,565,324 |
+| SOL 24h change | -0.23% |
+| SOL 24h volume | $2,936,203,329 |
+| SOL market cap | $71,131,268,846 |
 | Solana chain TVL | $6,631,960,026 |
 | TVL change (24h) | +2.27% |
 | TVL change (7d) | +5.17% |
 | Stablecoin supply on Solana | $17,619,778,763 |
-| DEX volume (24h) | $2,613,053,226 |
+| DEX volume (24h) | $2,322,946,324 |
 | Chain revenue / REV proxy (24h) | $6,033,165 |
 
 ## Ecosystem & Community Watchlist
