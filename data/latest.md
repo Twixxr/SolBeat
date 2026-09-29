@@ -1,10 +1,10 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-29T20:00:48.078975+00:00 (UTC)_
+_Generated: 2026-09-29T20:05:36.019057+00:00 (UTC)_
 
 ## Current Solana Outlook
 
-**Constructive** — Solana's current outlook is constructive. Positive signals: the network is operational; recent slot times remain healthy; DeFi TVL is up 1.0% over 7d. No major network-health warning is present in the latest automated snapshot.
+**Constructive** — Solana's current outlook is constructive. Positive signals: the network is operational; recent slot times remain healthy; DeFi TVL is up 0.5% over 7d. No major network-health warning is present in the latest automated snapshot.
 
 ## Alerts
 
@@ -15,14 +15,14 @@ _Generated: 2026-09-29T20:00:48.078975+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 451,743,081 |
-| Block height | 429,782,564 |
+| Current slot | 451,744,145 |
+| Block height | 429,783,628 |
 | Epoch | 1045 |
-| Epoch progress | 70.16% |
-| Current TPS | 4,941.00 |
-| Avg TPS | 5,308.39 |
-| Max / Min TPS | 6,096.70 / 4,563.22 |
-| Avg slot time | 268.4 ms |
+| Epoch progress | 70.40% |
+| Current TPS | 5,188.23 |
+| Avg TPS | 5,262.78 |
+| Max / Min TPS | 6,099.38 / 4,663.15 |
+| Avg slot time | 268.3 ms |
 
 ## Validator Status
 
@@ -45,8 +45,8 @@ _Generated: 2026-09-29T20:00:48.078975+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 634,918,172 SOL
-- Circulating: 587,851,471 SOL
+- Total: 634,918,169 SOL
+- Circulating: 587,851,467 SOL
 - Non-circulating: 47,066,702 SOL
 
 ## Economic Indicators
@@ -57,9 +57,9 @@ _Generated: 2026-09-29T20:00:48.078975+00:00 (UTC)_
 | SOL 24h change | N/A |
 | SOL 24h volume | N/A |
 | SOL market cap | N/A |
-| Solana chain TVL | $6,521,335,398 |
-| TVL change (24h) | -1.77% |
-| TVL change (7d) | +0.97% |
+| Solana chain TVL | $6,493,460,667 |
+| TVL change (24h) | -2.19% |
+| TVL change (7d) | +0.53% |
 | Stablecoin supply on Solana | $16,149,240,804 |
 | DEX volume (24h) | $2,662,061,803 |
 | Chain revenue / REV proxy (24h) | $5,869,538 |
