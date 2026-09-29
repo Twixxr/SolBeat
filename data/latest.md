@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-29T20:20:32.445948+00:00 (UTC)_
+_Generated: 2026-09-29T20:25:35.368250+00:00 (UTC)_
 
 ## Current Solana Outlook
 
@@ -15,14 +15,14 @@ _Generated: 2026-09-29T20:20:32.445948+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 451,747,494 |
-| Block height | 429,786,976 |
+| Current slot | 451,748,614 |
+| Block height | 429,788,097 |
 | Epoch | 1045 |
-| Epoch progress | 71.18% |
-| Current TPS | 4,807.38 |
-| Avg TPS | 5,103.82 |
-| Max / Min TPS | 5,712.92 / 4,729.65 |
-| Avg slot time | 268.2 ms |
+| Epoch progress | 71.44% |
+| Current TPS | 4,907.68 |
+| Avg TPS | 4,984.70 |
+| Max / Min TPS | 5,712.92 / 4,412.22 |
+| Avg slot time | 268.4 ms |
 
 ## Validator Status
 
@@ -45,8 +45,8 @@ _Generated: 2026-09-29T20:20:32.445948+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 634,918,157 SOL
-- Circulating: 587,851,455 SOL
+- Total: 634,918,153 SOL
+- Circulating: 587,851,451 SOL
 - Non-circulating: 47,066,702 SOL
 
 ## Economic Indicators
