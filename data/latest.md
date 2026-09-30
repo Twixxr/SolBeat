@@ -1,10 +1,10 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-09-30T01:25:39.766421+00:00 (UTC)_
+_Generated: 2026-09-30T01:30:41.319610+00:00 (UTC)_
 
 ## Current Solana Outlook
 
-**Constructive** — Solana's current outlook is constructive. Positive signals: the network is operational; recent slot times remain healthy; DeFi TVL is up 1.7% over 7d. No major network-health warning is present in the latest automated snapshot.
+**Constructive** — Solana's current outlook is constructive. Positive signals: the network is operational; recent slot times remain healthy; DeFi TVL is up 0.5% over 7d. No major network-health warning is present in the latest automated snapshot.
 
 ## Alerts
 
@@ -15,14 +15,14 @@ _Generated: 2026-09-30T01:25:39.766421+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 451,815,793 |
-| Block height | 429,855,250 |
+| Current slot | 451,816,903 |
+| Block height | 429,856,360 |
 | Epoch | 1045 |
-| Epoch progress | 86.99% |
-| Current TPS | 4,327.23 |
-| Avg TPS | 4,300.75 |
-| Max / Min TPS | 4,777.75 / 3,790.12 |
-| Avg slot time | 266.7 ms |
+| Epoch progress | 87.25% |
+| Current TPS | 4,473.18 |
+| Avg TPS | 4,372.40 |
+| Max / Min TPS | 5,115.85 / 4,040.67 |
+| Avg slot time | 267.2 ms |
 
 ## Validator Status
 
@@ -45,8 +45,8 @@ _Generated: 2026-09-30T01:25:39.766421+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 634,917,937 SOL
-- Circulating: 587,934,952 SOL
+- Total: 634,917,934 SOL
+- Circulating: 587,934,948 SOL
 - Non-circulating: 46,982,986 SOL
 
 ## Economic Indicators
@@ -57,11 +57,11 @@ _Generated: 2026-09-30T01:25:39.766421+00:00 (UTC)_
 | SOL 24h change | N/A |
 | SOL 24h volume | N/A |
 | SOL market cap | N/A |
-| Solana chain TVL | $6,566,724,710 |
-| TVL change (24h) | -1.09% |
-| TVL change (7d) | +1.67% |
+| Solana chain TVL | $6,567,695,087 |
+| TVL change (24h) | 0.00% |
+| TVL change (7d) | +0.51% |
 | Stablecoin supply on Solana | $16,178,925,560 |
-| DEX volume (24h) | $2,660,652,020 |
+| DEX volume (24h) | $2,661,249,046 |
 | Chain revenue / REV proxy (24h) | $6,053,383 |
 
 ## Ecosystem & Community Watchlist
