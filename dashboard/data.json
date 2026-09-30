@@ -1,27 +1,27 @@
 {
   "report": {
     "meta": {
-      "generated_at_utc": "2026-09-30T17:25:35.802774+00:00",
-      "generated_at_unix": 1790789135,
+      "generated_at_utc": "2026-09-30T17:30:45.105209+00:00",
+      "generated_at_unix": 1790789445,
       "generator": "SolBeat",
       "version": "1.1"
     },
     "network_performance": {
       "health": "ok",
-      "current_slot": 452031169,
-      "block_time_unix": 1790789128,
+      "current_slot": 452032355,
+      "block_time_unix": 1790789446,
       "epoch": 1046,
-      "slot_index": 159169,
+      "slot_index": 160356,
       "slots_in_epoch": 432000,
-      "epoch_progress_pct": 36.84,
-      "block_height": 430070441,
-      "current_tps": 5230.68,
-      "avg_tps": 5090.43,
-      "max_tps": 5612.53,
-      "min_tps": 4643.13,
+      "epoch_progress_pct": 37.12,
+      "block_height": 430071619,
+      "current_tps": 4886.03,
+      "avg_tps": 5139.73,
+      "max_tps": 5622.35,
+      "min_tps": 4635.68,
       "samples_used": 30,
-      "avg_slot_time_ms": 268.3,
-      "collected_at_unix": 1790789138
+      "avg_slot_time_ms": 268.7,
+      "collected_at_unix": 1790789455
     },
     "validators": {
       "active_count": 672,
@@ -37,8 +37,8 @@
           "node_pubkey": "Fd7btgySsrjuo25CJCj7oE7VPMyezDhnx7pZkj2v69Nk",
           "activated_stake_sol": 17227375.87,
           "commission_pct": 7,
-          "last_vote": 452031165,
-          "root_slot": 452031134,
+          "last_vote": 452032347,
+          "root_slot": 452032316,
           "name": "Figment",
           "website": ""
         },
@@ -47,8 +47,8 @@
           "node_pubkey": "HEL1USMZKAL2odpNBj2oCjffnFGaYwmbGmyewGv1e2TU",
           "activated_stake_sol": 15893944.57,
           "commission_pct": 0,
-          "last_vote": 452031165,
-          "root_slot": 452031134,
+          "last_vote": 452032347,
+          "root_slot": 452032316,
           "name": "Helius",
           "website": "https://helius.dev"
         },
@@ -57,8 +57,8 @@
           "node_pubkey": "DRpbCBMxVnDK7maPM5tGv6MvB3v1sRMC86PZ8okm21hy",
           "activated_stake_sol": 12330668.09,
           "commission_pct": 0,
-          "last_vote": 452031165,
-          "root_slot": 452031134,
+          "last_vote": 452032347,
+          "root_slot": 452032316,
           "name": "binance staking",
           "website": "https://www.binance.com"
         },
@@ -67,8 +67,8 @@
           "node_pubkey": "E1r4Psq84tHfQ6aPTvvDka4U3u8zPVD7gEUrH25RdxHL",
           "activated_stake_sol": 11384141.14,
           "commission_pct": 0,
-          "last_vote": 452031165,
-          "root_slot": 452031134,
+          "last_vote": 452032347,
+          "root_slot": 452032316,
           "name": "Bitwise Onchain Solutions",
           "website": "https://bitwiseinvestments.com"
         },
@@ -77,8 +77,8 @@
           "node_pubkey": "JUPiTERrZqgf1jUyR7dSkhMx4Kn2qJyekWsg3LT1h4b",
           "activated_stake_sol": 11206135.3,
           "commission_pct": 5,
-          "last_vote": 452031165,
-          "root_slot": 452031134,
+          "last_vote": 452032347,
+          "root_slot": 452032316,
           "name": "Jupiter",
           "website": "https://jup.ag"
         },
@@ -87,8 +87,8 @@
           "node_pubkey": "C8Bey3LKVJHVqN6xPTeW8WJfUgFQAeGNBpT4Rp99JP1k",
           "activated_stake_sol": 9257721.06,
           "commission_pct": 7,
-          "last_vote": 452031165,
-          "root_slot": 452031134,
+          "last_vote": 452032347,
+          "root_slot": 452032316,
           "name": "Ledger by Figment",
           "website": "https://www.ledger.com/staking"
         },
@@ -97,8 +97,8 @@
           "node_pubkey": "CAo1dCGYrB6NhHh5xb1cGjUiu86iyCfMTENxgHumSve4",
           "activated_stake_sol": 9232740.3,
           "commission_pct": 10,
-          "last_vote": 452031165,
-          "root_slot": 452031134,
+          "last_vote": 452032347,
+          "root_slot": 452032316,
           "name": "Kraken 2",
           "website": "https://www.kraken.com/"
         },
@@ -107,8 +107,8 @@
           "node_pubkey": "EvnRmnMrd69kFdbLMxWkTn1icZ7DCceRhvmb2SJXqDo4",
           "activated_stake_sol": 7652674.7,
           "commission_pct": 7,
-          "last_vote": 452031165,
-          "root_slot": 452031134,
+          "last_vote": 452032347,
+          "root_slot": 452032316,
           "name": "Everstake",
           "website": "https://everstake.com"
         },
@@ -117,8 +117,8 @@
           "node_pubkey": "9eGrDohdNTAo61DRHyfMuqKWXqYnA3i254Wiszxe8FoY",
           "activated_stake_sol": 7092577.15,
           "commission_pct": 5,
-          "last_vote": 452031165,
-          "root_slot": 452031134,
+          "last_vote": 452032347,
+          "root_slot": 452032316,
           "name": "Galaxy",
           "website": "https://galaxy.com/staking"
         },
@@ -127,8 +127,8 @@
           "node_pubkey": "Awes4Tr6TX8JDzEhCZY2QVNimT6iD1zWHzf1vNyGvpLM",
           "activated_stake_sol": 6513561.77,
           "commission_pct": 0,
-          "last_vote": 452031165,
-          "root_slot": 452031134,
+          "last_vote": 452032347,
+          "root_slot": 452032316,
           "name": "Staking Facilities | MEV \ud83d\udd25",
           "website": "https://stakingfacilities.com"
         },
@@ -137,8 +137,8 @@
           "node_pubkey": "JD549HsbJHeEKKUrKgg4Fj2iyv2RGjsV7NTZjZUrHybB",
           "activated_stake_sol": 6274984.73,
           "commission_pct": 0,
-          "last_vote": 452031165,
-          "root_slot": 452031134,
+          "last_vote": 452032347,
+          "root_slot": 452032316,
           "name": "Forward Industries",
           "website": "https://sol.forwardindustries.com"
         },
@@ -147,8 +147,8 @@
           "node_pubkey": "5pPRHniefFjkiaArbGX3Y8NUysJmQ9tMZg3FrFGwHzSm",
           "activated_stake_sol": 5921675.92,
           "commission_pct": 5,
-          "last_vote": 452031165,
-          "root_slot": 452031134,
+          "last_vote": 452032347,
+          "root_slot": 452032316,
           "name": "Kiln1",
           "website": "https://kiln.fi"
         },
@@ -157,8 +157,8 @@
           "node_pubkey": "5Cchr1XGEg7dbBXByV5NY2ad8jfxAM7HA3x8D56rq9Ux",
           "activated_stake_sol": 5628980.0,
           "commission_pct": 100,
-          "last_vote": 452031165,
-          "root_slot": 452031134,
+          "last_vote": 452032347,
+          "root_slot": 452032316,
           "name": "Upbit Staking",
           "website": "https://upbit.com/staking"
         },
@@ -167,8 +167,8 @@
           "node_pubkey": "9rkJMARqK6VBkcxGfKBAwnA44gPAfGxPbPsfsggFNDSQ",
           "activated_stake_sol": 4701258.84,
           "commission_pct": 8,
-          "last_vote": 452031165,
-          "root_slot": 452031134,
+          "last_vote": 452032347,
+          "root_slot": 452032316,
           "name": null,
           "website": null
         },
@@ -177,8 +177,8 @@
           "node_pubkey": "GnC339vkyXRm1jRX69dt9mapPPu2LbzXfSDoxc91qta6",
           "activated_stake_sol": 4626769.83,
           "commission_pct": 7,
-          "last_vote": 452031165,
-          "root_slot": 452031134,
+          "last_vote": 452032347,
+          "root_slot": 452032316,
           "name": "P2P.org",
           "website": "https://p2p.org"
         },
@@ -187,8 +187,8 @@
           "node_pubkey": "9jxgosAfHgHzwnxsHw4RAZYaLVokMbnYtmiZBreynGFP",
           "activated_stake_sol": 4612428.99,
           "commission_pct": 100,
-          "last_vote": 452031165,
-          "root_slot": 452031134,
+          "last_vote": 452032347,
+          "root_slot": 452032316,
           "name": null,
           "website": null
         },
@@ -197,8 +197,8 @@
           "node_pubkey": "EkvdKhULbMFqjKBKotAzGi3kwMvMpYNDKJXXQQmi6C1f",
           "activated_stake_sol": 4102639.86,
           "commission_pct": 100,
-          "last_vote": 452031165,
-          "root_slot": 452031134,
+          "last_vote": 452032347,
+          "root_slot": 452032316,
           "name": null,
           "website": null
         },
@@ -207,8 +207,8 @@
           "node_pubkey": "FBKFWadXZJahGtFitAsBvbqh5968gLY7dMBBJUoUjeNi",
           "activated_stake_sol": 4057588.29,
           "commission_pct": 100,
-          "last_vote": 452031165,
-          "root_slot": 452031134,
+          "last_vote": 452032347,
+          "root_slot": 452032316,
           "name": null,
           "website": null
         },
@@ -217,8 +217,8 @@
           "node_pubkey": "BtsmiEEvnSuUnKxqXj2PZRYpPJAc7C34mGz8gtJ1DAaH",
           "activated_stake_sol": 4046074.94,
           "commission_pct": 100,
-          "last_vote": 452031165,
-          "root_slot": 452031134,
+          "last_vote": 452032347,
+          "root_slot": 452032316,
           "name": null,
           "website": null
         },
@@ -227,8 +227,8 @@
           "node_pubkey": "5ZqveVffQPiUbkjBg4KD9kib1MKHLqiFno4ke9jSq9qk",
           "activated_stake_sol": 4002996.24,
           "commission_pct": 100,
-          "last_vote": 452031165,
-          "root_slot": 452031134,
+          "last_vote": 452032347,
+          "root_slot": 452032316,
           "name": null,
           "website": null
         }
@@ -238,8 +238,8 @@
       }
     },
     "supply": {
-      "total_sol": 634996028.27,
-      "circulating_sol": 588005651.06,
+      "total_sol": 634996024.14,
+      "circulating_sol": 588005646.93,
       "non_circulating_sol": 46990377.21
     },
     "active_wallets_sample": {
@@ -337,7 +337,7 @@
             "tvl_usd": 1944243365.6,
             "change_1d_pct": 1.0324469473889053,
             "url": "https://www.sanctum.so",
-            "pct_of_solana_tvl": 11.38
+            "pct_of_solana_tvl": 11.37
           },
           {
             "name": "Kamino Lend",
@@ -345,7 +345,7 @@
             "tvl_usd": 1414627341.97,
             "change_1d_pct": 3.0892453204028953,
             "url": "https://kamino.com/",
-            "pct_of_solana_tvl": 8.28
+            "pct_of_solana_tvl": 8.27
           },
           {
             "name": "Raydium AMM",
@@ -369,7 +369,7 @@
             "tvl_usd": 1222779749.11,
             "change_1d_pct": -1.0829116378891541,
             "url": "https://www.binance.com/en/solana-staking",
-            "pct_of_solana_tvl": 7.16
+            "pct_of_solana_tvl": 7.15
           },
           {
             "name": "Jupiter Lend",
@@ -452,22 +452,22 @@
             "pct_of_solana_tvl": 1.61
           }
         ],
-        "protocol_count": 396,
+        "protocol_count": 397,
         "categories": [
           {
             "category": "Liquid Staking",
             "tvl_usd": 7359224894.08,
-            "pct_of_solana_tvl": 43.07
+            "pct_of_solana_tvl": 43.05
           },
           {
             "category": "Lending",
-            "tvl_usd": 2938812840.87,
-            "pct_of_solana_tvl": 17.2
+            "tvl_usd": 2938814116.11,
+            "pct_of_solana_tvl": 17.19
           },
           {
             "category": "Dexs",
-            "tvl_usd": 2708682308.65,
-            "pct_of_solana_tvl": 15.85
+            "tvl_usd": 2708705079.48,
+            "pct_of_solana_tvl": 15.84
           },
           {
             "category": "Derivatives",
@@ -481,8 +481,8 @@
           },
           {
             "category": "Risk Curators",
-            "tvl_usd": 605515317.86,
-            "pct_of_solana_tvl": 3.54
+            "tvl_usd": 613038464.45,
+            "pct_of_solana_tvl": 3.59
           },
           {
             "category": "RWA",
@@ -491,7 +491,7 @@
           },
           {
             "category": "Bridge",
-            "tvl_usd": 478538210.06,
+            "tvl_usd": 478549842.66,
             "pct_of_solana_tvl": 2.8
           },
           {
@@ -506,7 +506,7 @@
           },
           {
             "category": "Yield Aggregator",
-            "tvl_usd": 97415354.98,
+            "tvl_usd": 97556489.2,
             "pct_of_solana_tvl": 0.57
           },
           {
@@ -551,12 +551,12 @@
           },
           {
             "category": "Token Locker",
-            "tvl_usd": 5947133.69,
+            "tvl_usd": 5944109.24,
             "pct_of_solana_tvl": 0.03
           },
           {
             "category": "Indexes",
-            "tvl_usd": 4167202.59,
+            "tvl_usd": 4193988.21,
             "pct_of_solana_tvl": 0.02
           },
           {
@@ -714,10 +714,10 @@
     },
     "market": {
       "price": {
-        "price_usd": 119.59,
-        "price_change_pct_24h": 1.48,
-        "volume_24h_usd": 4027132980.166807,
-        "market_cap_usd": 70340298478.0939
+        "price_usd": 119.64,
+        "price_change_pct_24h": 1.44,
+        "volume_24h_usd": 4039460848.6857376,
+        "market_cap_usd": 70348211079.96213
       },
       "trend_7d": {
         "seven_day_series": [
@@ -750,8 +750,8 @@
             "price_usd": 119.0932
           },
           {
-            "date_unix": 1790789020,
-            "price_usd": 119.6402
+            "date_unix": 1790789340,
+            "price_usd": 119.6387
           }
         ]
       }
@@ -830,7 +830,7 @@
         "description": "All Systems Operational"
       },
       "incident_history": {
-        "days_since_last_incident": 967.09,
+        "days_since_last_incident": 967.1,
         "last_incident_name": "mb-020624",
         "last_incident_date_unix": 1707232164
       }
@@ -39622,47 +39622,6 @@
       }
     },
     {
-      "generated_at_unix": 1790616643,
-      "network_performance": {
-        "avg_tps": 4947.52,
-        "avg_slot_time_ms": 268.3
-      },
-      "validators": {
-        "delinquent_stake_pct": 0.005,
-        "active_count": 676
-      },
-      "defi": {
-        "tvl": {
-          "tvl_usd": 6531617179
-        },
-        "stablecoins": {
-          "total_stablecoin_supply_usd": 16439005239.79
-        },
-        "dex_volume": {
-          "dex_volume_24h_usd": 1926466128.71
-        },
-        "fees_and_rev": {
-          "chain_revenue_24h_usd": 5303666.079999998
-        }
-      },
-      "market": {
-        "price": {
-          "price_usd": 119.66,
-          "market_cap_usd": 70335834185.3977,
-          "volume_24h_usd": 4249049805.2730823
-        }
-      },
-      "supply": {
-        "total_sol": 634840530.96
-      },
-      "active_wallets_sample": {
-        "unique_wallets_in_block": null
-      },
-      "daily_active_addresses": {
-        "value": null
-      }
-    },
-    {
       "generated_at_unix": 1790616931,
       "network_performance": {
         "avg_tps": 4930.25,
@@ -63475,6 +63434,47 @@
       },
       "supply": {
         "total_sol": 634996028.27
+      },
+      "active_wallets_sample": {
+        "unique_wallets_in_block": null
+      },
+      "daily_active_addresses": {
+        "value": null
+      }
+    },
+    {
+      "generated_at_unix": 1790789445,
+      "network_performance": {
+        "avg_tps": 5139.73,
+        "avg_slot_time_ms": 268.7
+      },
+      "validators": {
+        "delinquent_stake_pct": 0.051,
+        "active_count": 672
+      },
+      "defi": {
+        "tvl": {
+          "tvl_usd": 6572173464
+        },
+        "stablecoins": {
+          "total_stablecoin_supply_usd": 16139911827.88
+        },
+        "dex_volume": {
+          "dex_volume_24h_usd": 2534187471.8400006
+        },
+        "fees_and_rev": {
+          "chain_revenue_24h_usd": 5941631.889999998
+        }
+      },
+      "market": {
+        "price": {
+          "price_usd": 119.64,
+          "market_cap_usd": 70348211079.96213,
+          "volume_24h_usd": 4039460848.6857376
+        }
+      },
+      "supply": {
+        "total_sol": 634996024.14
       },
       "active_wallets_sample": {
         "unique_wallets_in_block": null
