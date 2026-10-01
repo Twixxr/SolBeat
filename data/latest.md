@@ -1,10 +1,10 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-10-01T00:06:10.785362+00:00 (UTC)_
+_Generated: 2026-10-01T00:10:40.085681+00:00 (UTC)_
 
 ## Current Solana Outlook
 
-**Constructive** — Solana's current outlook is constructive. Positive signals: the network is operational; recent slot times remain healthy; SOL is up 2.6% over 7d. No major network-health warning is present in the latest automated snapshot.
+**Constructive** — Solana's current outlook is constructive. Positive signals: the network is operational; recent slot times remain healthy; SOL is up 0.8% over 7d. No major network-health warning is present in the latest automated snapshot.
 
 ## Alerts
 
@@ -15,14 +15,14 @@ _Generated: 2026-10-01T00:06:10.785362+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 452,120,859 |
-| Block height | 430,160,013 |
+| Current slot | 452,121,853 |
+| Block height | 430,161,004 |
 | Epoch | 1046 |
-| Epoch progress | 57.61% |
-| Current TPS | 5,180.48 |
-| Avg TPS | 4,644.27 |
-| Max / Min TPS | 5,180.48 / 4,198.35 |
-| Avg slot time | 268.9 ms |
+| Epoch progress | 57.84% |
+| Current TPS | 4,858.25 |
+| Avg TPS | 4,709.87 |
+| Max / Min TPS | 5,226.12 / 4,118.43 |
+| Avg slot time | 269.0 ms |
 
 ## Validator Status
 
@@ -45,8 +45,8 @@ _Generated: 2026-10-01T00:06:10.785362+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 634,995,726 SOL
-- Circulating: 588,005,372 SOL
+- Total: 634,995,723 SOL
+- Circulating: 588,005,368 SOL
 - Non-circulating: 46,990,354 SOL
 
 ## Economic Indicators
@@ -54,10 +54,10 @@ _Generated: 2026-10-01T00:06:10.785362+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | SOL price | $118 |
-| SOL 24h change | -0.97% |
-| SOL 24h volume | $4,265,368,187 |
-| SOL market cap | $69,357,589,104 |
-| Solana chain TVL | $6,525,112,380 |
+| SOL 24h change | -0.81% |
+| SOL 24h volume | $4,261,888,276 |
+| SOL market cap | $69,379,352,520 |
+| Solana chain TVL | $6,525,032,015 |
 | TVL change (24h) | +1.06% |
 | TVL change (7d) | -0.14% |
 | Stablecoin supply on Solana | $16,108,906,360 |
