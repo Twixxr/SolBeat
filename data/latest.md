@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-10-01T07:55:35.921993+00:00 (UTC)_
+_Generated: 2026-10-01T08:00:42.758612+00:00 (UTC)_
 
 ## Current Solana Outlook
 
@@ -15,23 +15,23 @@ _Generated: 2026-10-01T07:55:35.921993+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 452,226,329 |
-| Block height | 430,265,401 |
+| Current slot | 452,227,485 |
+| Block height | 430,266,555 |
 | Epoch | 1046 |
-| Epoch progress | 82.02% |
-| Current TPS | 3,936.80 |
-| Avg TPS | 4,222.35 |
-| Max / Min TPS | 4,543.47 / 3,936.80 |
-| Avg slot time | 266.6 ms |
+| Epoch progress | 82.29% |
+| Current TPS | 3,750.40 |
+| Avg TPS | 4,134.05 |
+| Max / Min TPS | 4,524.42 / 3,750.40 |
+| Avg slot time | 267.0 ms |
 
 ## Validator Status
 
 | Metric | Value |
 |---|---|
-| Active validators | 672 |
-| Delinquent validators | 11 |
-| Delinquent (% of active stake) | 0.05% |
-| Total active stake | 440,326,160 SOL |
+| Active validators | 671 |
+| Delinquent validators | 12 |
+| Delinquent (% of active stake) | 0.07% |
+| Total active stake | 440,221,654 SOL |
 | Validators controlling 33% of stake | 18 |
 
 ## Network Activity
@@ -45,24 +45,24 @@ _Generated: 2026-10-01T07:55:35.921993+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 634,995,409 SOL
-- Circulating: 588,005,053 SOL
+- Total: 634,995,406 SOL
+- Circulating: 588,005,050 SOL
 - Non-circulating: 46,990,356 SOL
 
 ## Economic Indicators
 
 | Metric | Value |
 |---|---|
-| SOL price | $118 |
-| SOL 24h change | -0.93% |
-| SOL 24h volume | $4,250,520,272 |
-| SOL market cap | $69,144,720,584 |
+| SOL price | $117 |
+| SOL 24h change | -0.81% |
+| SOL 24h volume | $4,257,187,514 |
+| SOL market cap | $69,083,888,168 |
 | Solana chain TVL | $6,575,631,287 |
 | TVL change (24h) | +0.09% |
 | TVL change (7d) | +2.84% |
 | Stablecoin supply on Solana | $16,130,805,299 |
 | DEX volume (24h) | $2,544,678,620 |
-| Chain revenue / REV proxy (24h) | $5,945,564 |
+| Chain revenue / REV proxy (24h) | $6,021,846 |
 
 ## Ecosystem & Community Watchlist
 
