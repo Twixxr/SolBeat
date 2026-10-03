@@ -1,6 +1,6 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-10-03T00:25:38.111714+00:00 (UTC)_
+_Generated: 2026-10-03T00:30:35.795701+00:00 (UTC)_
 
 ## Current Solana Outlook
 
@@ -15,23 +15,23 @@ _Generated: 2026-10-03T00:25:38.111714+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 452,770,904 |
-| Block height | 430,809,528 |
+| Current slot | 452,772,082 |
+| Block height | 430,810,705 |
 | Epoch | 1048 |
-| Epoch progress | 8.08% |
-| Current TPS | 4,466.07 |
-| Avg TPS | 4,517.96 |
+| Epoch progress | 8.35% |
+| Current TPS | 4,410.77 |
+| Avg TPS | 4,525.30 |
 | Max / Min TPS | 5,177.40 / 3,931.42 |
-| Avg slot time | 266.4 ms |
+| Avg slot time | 266.2 ms |
 
 ## Validator Status
 
 | Metric | Value |
 |---|---|
-| Active validators | 671 |
-| Delinquent validators | 13 |
-| Delinquent (% of active stake) | 0.02% |
-| Total active stake | 441,919,304 SOL |
+| Active validators | 672 |
+| Delinquent validators | 12 |
+| Delinquent (% of active stake) | 0.01% |
+| Total active stake | 441,984,565 SOL |
 | Validators controlling 33% of stake | 18 |
 
 ## Network Activity
@@ -45,24 +45,24 @@ _Generated: 2026-10-03T00:25:38.111714+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 635,151,031 SOL
-- Circulating: 588,146,489 SOL
-- Non-circulating: 47,004,542 SOL
+- Total: 635,151,028 SOL
+- Circulating: 588,146,482 SOL
+- Non-circulating: 47,004,546 SOL
 
 ## Economic Indicators
 
 | Metric | Value |
 |---|---|
 | SOL price | $119 |
-| SOL 24h change | +0.03% |
-| SOL 24h volume | $4,651,946,462 |
-| SOL market cap | $69,871,507,095 |
+| SOL 24h change | +0.31% |
+| SOL 24h volume | $4,662,353,879 |
+| SOL market cap | $69,974,860,061 |
 | Solana chain TVL | $6,583,670,787 |
 | TVL change (24h) | +1.18% |
 | TVL change (7d) | +1.57% |
 | Stablecoin supply on Solana | $16,725,998,443 |
-| DEX volume (24h) | $2,488,460,103 |
-| Chain revenue / REV proxy (24h) | $6,202,590 |
+| DEX volume (24h) | $2,565,674,894 |
+| Chain revenue / REV proxy (24h) | $6,207,042 |
 
 ## Ecosystem & Community Watchlist
 
