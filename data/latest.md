@@ -1,10 +1,10 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-10-05T01:05:40.022155+00:00 (UTC)_
+_Generated: 2026-10-05T01:10:53.426648+00:00 (UTC)_
 
 ## Current Solana Outlook
 
-**Constructive** — Solana's current outlook is constructive. Positive signals: the network is operational; recent slot times remain healthy; DeFi TVL is up 1.9% over 7d. No major network-health warning is present in the latest automated snapshot.
+**Constructive** — Solana's current outlook is constructive. Positive signals: the network is operational; recent slot times remain healthy; DeFi TVL is up 1.8% over 7d. No major network-health warning is present in the latest automated snapshot.
 
 ## Alerts
 
@@ -15,13 +15,13 @@ _Generated: 2026-10-05T01:05:40.022155+00:00 (UTC)_
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 453,425,859 |
-| Block height | 431,464,186 |
+| Current slot | 453,427,039 |
+| Block height | 431,465,368 |
 | Epoch | 1049 |
-| Epoch progress | 59.69% |
-| Current TPS | 4,324.85 |
-| Avg TPS | 4,590.57 |
-| Max / Min TPS | 4,929.77 / 4,182.55 |
+| Epoch progress | 59.96% |
+| Current TPS | 4,630.52 |
+| Avg TPS | 4,563.80 |
+| Max / Min TPS | 5,131.93 / 4,213.20 |
 | Avg slot time | 267.5 ms |
 
 ## Validator Status
@@ -45,8 +45,8 @@ _Generated: 2026-10-05T01:05:40.022155+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 635,227,673 SOL
-- Circulating: 588,314,211 SOL
+- Total: 635,227,669 SOL
+- Circulating: 588,314,207 SOL
 - Non-circulating: 46,913,462 SOL
 
 ## Economic Indicators
@@ -55,13 +55,13 @@ _Generated: 2026-10-05T01:05:40.022155+00:00 (UTC)_
 |---|---|
 | SOL price | $121 |
 | SOL 24h change | +0.79% |
-| SOL 24h volume | $2,135,009,994 |
-| SOL market cap | $71,266,089,681 |
-| Solana chain TVL | $6,748,891,163 |
-| TVL change (24h) | +1.88% |
-| TVL change (7d) | +1.93% |
+| SOL 24h volume | $2,135,136,331 |
+| SOL market cap | $71,251,084,629 |
+| Solana chain TVL | $6,737,276,471 |
+| TVL change (24h) | +1.70% |
+| TVL change (7d) | +1.76% |
 | Stablecoin supply on Solana | $16,576,230,614 |
-| DEX volume (24h) | $1,639,823,524 |
+| DEX volume (24h) | $1,649,372,420 |
 | Chain revenue / REV proxy (24h) | $5,347,022 |
 
 ## Ecosystem & Community Watchlist
