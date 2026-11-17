@@ -1,37 +1,37 @@
 # Solana Ecosystem Report — SolBeat
 
-_Generated: 2026-11-17T00:59:21.760504+00:00 (UTC)_
+_Generated: 2026-11-17T08:49:46.989587+00:00 (UTC)_
 
 ## Current Solana Outlook
 
-**Mixed** — Solana's current outlook is mixed. Positive signals: the network is operational; recent slot times remain healthy. Risks to watch: DeFi TVL is down 6.6% over 7d; SOL is down 14.2% over 7d.
+**Mixed** — Solana's current outlook is mixed. Positive signals: the network is operational; recent slot times remain healthy. Risks to watch: DeFi TVL is down 5.7% over 7d; SOL is down 13.1% over 7d.
 
 ## Alerts
 
-🟢 No anomalies detected in this snapshot.
+- 🟠 **WARNING** — TPS dropped 43.9% vs. recent baseline (1043 vs. ~1861)
 
 ## Network Performance
 
 | Metric | Value |
 |---|---|
 | RPC health | ok |
-| Current slot | 470,341,330 |
-| Block height | 448,356,184 |
-| Epoch | 1088 |
-| Epoch progress | 75.31% |
-| Current TPS | 2,016.12 |
-| Avg TPS | 1,851.54 |
-| Max / Min TPS | 2,212.67 / 1,204.63 |
-| Avg slot time | 214.0 ms |
+| Current slot | 470,472,757 |
+| Block height | 448,487,585 |
+| Epoch | 1089 |
+| Epoch progress | 5.73% |
+| Current TPS | 1,066.05 |
+| Avg TPS | 1,043.40 |
+| Max / Min TPS | 1,351.02 / 905.30 |
+| Avg slot time | 214.7 ms |
 
 ## Validator Status
 
 | Metric | Value |
 |---|---|
-| Active validators | 662 |
-| Delinquent validators | 37 |
-| Delinquent (% of active stake) | 0.04% |
-| Total active stake | 428,992,845 SOL |
+| Active validators | 661 |
+| Delinquent validators | 5 |
+| Delinquent (% of active stake) | 0.01% |
+| Total active stake | 428,741,222 SOL |
 | Validators controlling 33% of stake | 17 |
 
 ## Network Activity
@@ -45,24 +45,24 @@ _Generated: 2026-11-17T00:59:21.760504+00:00 (UTC)_
 
 ## SOL Supply
 
-- Total: 637,676,714 SOL
-- Circulating: 591,684,227 SOL
-- Non-circulating: 45,992,487 SOL
+- Total: 637,738,037 SOL
+- Circulating: 591,739,803 SOL
+- Non-circulating: 45,998,234 SOL
 
 ## Economic Indicators
 
 | Metric | Value |
 |---|---|
-| SOL price | $71 |
-| SOL 24h change | -0.69% |
-| SOL 24h volume | $2,595,314,235 |
-| SOL market cap | $42,246,291,363 |
-| Solana chain TVL | $4,721,736,509 |
-| TVL change (24h) | -0.00% |
-| TVL change (7d) | -6.57% |
-| Stablecoin supply on Solana | $14,066,820,533 |
-| DEX volume (24h) | $1,381,573,831 |
-| Chain revenue / REV proxy (24h) | $2,464,033 |
+| SOL price | $72 |
+| SOL 24h change | +1.93% |
+| SOL 24h volume | $2,731,202,086 |
+| SOL market cap | $42,849,650,632 |
+| Solana chain TVL | $4,765,531,754 |
+| TVL change (24h) | +1.69% |
+| TVL change (7d) | -5.70% |
+| Stablecoin supply on Solana | $14,025,102,453 |
+| DEX volume (24h) | $1,397,954,142 |
+| Chain revenue / REV proxy (24h) | $2,971,336 |
 
 ## Ecosystem & Community Watchlist
 
